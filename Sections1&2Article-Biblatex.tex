@@ -1,0 +1,500 @@
+%%%%%%%%%%%%%%%%%%%%%%% file template.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is a general template file for the LaTeX package SVJour3
+% for Springer journals.          Springer Heidelberg 2010/09/16
+%
+% Copy it to a new file with a new name and use it as the basis
+% for your article. Delete % signs as needed.
+%
+% This template includes a few options for different layouts and
+% content for various journals. Please consult a previous issue of
+% your journal as needed.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% First comes an example EPS file -- just ignore it and
+% proceed on the \documentclass line
+% your LaTeX will extract the file if required
+%
+\RequirePackage{fix-cm}
+
+\documentclass{article}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+%\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+%\smartqed  % flush right qed marks, e.g. at end of proof
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{pgf}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage[autostyle]{csquotes}
+\usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
+
+
+\addbibresource{ExIn.bib}
+
+
+
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA}{U}{MnSymbolA}{m}{n}
+\DeclareMathSymbol{\twoheaduparrow}{\mathop}{MnSyA}{25}
+
+
+
+\makeatletter
+
+% % % % % % % % % % % % % % % Internal Commands % % % % % % % % % % % % %
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+
+\newcommand{\uuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt .6pt 0pt 0pt}{$\uparrow$}}
+}
+\newcommand{\tuuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt 1pt 0pt 0pt}{$\scriptscriptstyle\uparrow$}}
+}
+\newcommand{\muparrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .65pt 0pt 0pt}{$\scriptstyle\uparrow$}}
+}
+\newcommand{\Uuparrow}{% 
+	\raisebox{.2ex}{\clipbox{0pt .2pt 0pt 0pt}{$\Uparrow$}}
+}
+\newcommand{\thuarrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .8pt 0pt 0pt}{$\twoheaduparrow$}}
+}
+
+% % % % % COMMANDS FOR NON-MONOTONIC CONSEQUENCES % % % % % % % % %
+\newcommand{\nms}{%
+	\mathbin{\mathpalette\@nms\expandafter}
+}
+\newcommand{\@nms}{\mid\joinrel\mkern-.5mu\sim}
+
+
+\newcommand{\nmc}{%
+	\mathbin{\mathpalette\nm@\expandafter}
+}
+\newcommand{\nm@}{\mid\joinrel\mkern-.5mu\sim\mkern-3mu}
+
+\newcommand{\qmc}[1]{\mathrel{
+		\mathchoice
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-13mu\tiny\uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow#1}}
+	}
+}
+
+\newcommand{\mqmc}{\mathrel{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\uuparrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow}}
+	}
+}
+
+\newcommand{\mrc}[1]{\mathbin{
+		\mathchoice
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\footnotesize\hspace{.5mm}\nms^{\mkern-13.5mu\fontsize{5.5}{0}\Uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\Uuparrow#1}}
+	}
+}
+
+\newcommand{\smc}{\mathbin{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\thuarrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\thuarrow}}
+	}
+}
+\newcommand{\nnmc}{\not\nmc}
+\newcommand{\nsmc}{\not\mkern-3mu\smc}
+\newcommand{\nmrc}{\not\mkern-3mu\mrc}
+\newcommand{\nmqmc}{\not\mkern1mu\mqmc}
+\newcommand{\nqmc}{\not\mkern1mu\qmc}
+
+% % % % % % % % % % %\BigPerp% % % % % % % % % % % %
+
+\newcommand{\bigperpp}{%
+	\mathop{\mathpalette\bigp@rpp\relax}%
+	\displaylimits
+}
+\newcommand{\bigp@rpp}[2]{%
+	\vcenter{
+		\m@th\hbox{\scalebox{\ifx#1\displaystyle1.3\else1.3\fi}{$#1\perp$}}
+	}%
+}
+\newcommand{\bigperp}{\raisemath{.5pt}{\bigperpp}}
+
+%% % % % % % % % % % % % % % % % % Incomaptibility Set % % % % % % % % % % % % %
+%\newcommand{\Bigtheta}{% 
+%     \setbox0=\hbox{$\Theta$}%
+%     \scalebox{1.4}{$\Theta$}
+%}
+%
+%\newcommand{\sris}[2]{\raisemath{-.5ex}{\Bigtheta}^{\!\!\raisemath{2pt}{\scriptscriptstyle #1}}_{\!\!\raisemath{-2pt}{\,\scriptscriptstyle #2\,}}} 
+%
+%% % % % % % Degree Command % % % % % % % % % % % % % % % % % % % %
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+%%%%%%%%%%%%%Vector Command%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\vec{\mathaccent"017E}
+
+\newcommand{\A}{\vec{A}}
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+ \newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+ \newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+ \newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+%%%%%%%%%%%%%%%%%Bibtex Command%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+\makeatother
+
+
+
+
+%\journalname{Synthese}
+%\renewcommand{\@cite}[1]{#1}
+%\usepackage[natbibapa]{apacite}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+\newcommand\pref[1]{(\ref{#1})}
+
+%\setcitestyle{aysep={}, notesep=:}
+
+
+\begin{document}
+
+\title{The New Explanatory Inferentialism%\thanks{Grants or other notes
+%about the article that should go on the front page should be
+%placed here. General acknowledgments should be placed at the end of the article.}
+}
+%\subtitle{Do you have a subtitle?\\ If so, write it here}
+
+%\titlerunning{Short form of title}        % if too long for running head
+
+% % % % % % % % % Removed Identifying Info % % % % % % % % % % % %
+%\author{}
+
+%\authorrunning{Short form of author list} % if too long for running head
+
+%\institute{}
+
+%\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+%\raggedbottom
+
+\maketitle
+\noindent\kk{Kareem is writing}
+\jm{Jared is writing}
+\mr{Mark is writing}
+\begin{abstract}
+Abstract
+\end{abstract}
+
+In this paper, we offer a new account to explanation. Its guiding idea is that explanation is an inferential practice. \kk{$\leftarrow$ Is that a fair characterization? I'd like something pithy that serves as our guiding idea. This will be important in how weave the various sections together, since it will presumably be the narrative frame that we use. Let's make sure that all three of us agree on a framing device/guiding idea before proceeding.} \jm{Yes, yes, and yes!}
+
+It is best seen as an opening shot. \kk{MORE ABOUT SYMMETRY.}
+
+Section \ref{background} provides a useful way of dividing the explanation literature. Section \ref{kernel} then introduces our new inferentialist approach to explanation. \kk{Complete the rest once Frankenstein-ing is complete.}
+
+\section{Re-Carving the Explanation Literature}
+\label{background}
+Before presenting our view, it will be useful to situate its placement within the broader explanation literature. Following \textcite{Salmon1989}'s masterful ``Four Decades of Scientific Explanation," philosophers of science have frequently divided the field into \textit{epistemic} and \textit{ontic} theories of explanation. The former take explanations to be some sort of representation, while the latter take explanations to be a certain kind of dependency relation that exists independently of any representation. 
+
+For our purposes, it is more useful to divide the explanation literature along slightly different fault lines. Let \textit{explanatory inferentialism} (EI) denote the position that the explanatory relation is fundamentally an inferential relation. \textit{Explanatory non-inferentialism} is simply the denial of explanatory inferentialism. In this section, we first discuss earlier proponents of EI (\ref{subsec:predecessors}), and then discuss the alternatives to EI (\ref{subsec:alternatives}). We conclude this discussion by briefly describing EI's advantages and disadvantages when compared to the leading (causal) alternative (\ref{subsec:current_state}).
+
+\subsection{Our Predecessors}
+\label{subsec:predecessors}
+Let's briefly recount some earlier explanatory inferentialists' central ideas. While \textcite{Hempel1965} is the paradigmatic explanatory inferentialist, the unificationists whom he strongly influenced also deserve this mantle \citep{Friedman1974,Kitcher1989,Schurz1999,Schurz1994}. Hempel's covering law model---consisting of deductive-nomological (DN), inductive-statistical (IS), and deductive-statistical (DS) explanations---stands as the ``fountainhead'' of contemporary theories of explanation. A DN explanation of $E$ is a sound argument of the form $C_1, \dots, C_k, L_1, \dots, L_r  \vdash E$, where $L_1, \dots, L_r$ are universal laws of nature and are indispensable to the argument's soundness. IS-explanations are the same, save that $L_1, \dots, L_r$ are statistical laws, and, when paired with $C_1, \dots, C_k$, the resulting argument is inductively strong rather than deductively valid. DS-explanations are sound deductive arguments, but have as their explananda ($E$) a statistical law, and contain at least one statistical law among $L_1, \dots, L_r$. 
+
+While the aforementioned unificationists differ on technical details, here and throughout, we will use Kitcher's view as an illustration. Unlike Hempel, Kitcher takes explanations to be more than mere arguments (i.e. premises and a conclusion). For Kitcher, explanations are derivations: sequences of statements that proceed from a set of premises to a desired conclusion according to a set of inference rules. These derivations must be part of an ``explanatory store'' that best systematizes the total corpus of accepted statements in a scientific community. 
+
+To get a sense of what this systematization consists, some of Kitcher's technical notions are needed. Each explanatory derivation is an instance of a more abstract \textit{schematic argument}, which is a sequence of unsaturated or \textit{schematic sentences}. Each schematic sentence has a set of \textit{filling instructions}, specifying the domains over which the different variables in the schematic sentences quantify. The schematic argument becomes a general \textit{argument pattern} when it is paired with filling instructions and a \textit{classification}, the latter of which specifies the premises of the schematic argument, the inference rules used to proceed from one sentence in the sequence to the next, etc. A \textit{systemization} of the corpus of accepted statements $K$ is any set of general argument patterns that derives some members of $K$ from others. Explanation consists of using instances of the ``best'' systemization, $E(K)$, as measured according to the following criteria:
+\begin{enumerate}
+	\item \textit{Acceptability}: Each step of each instance of a general argument pattern in $E(K)$ must be deductively valid, and acceptable relative to $K$.
+	\item \textit{Scope}: Unification increases in proportion to the size of the conclusion set of the number of acceptable instances of $E(K)$.
+	\item \textit{Stringency}: Unification increases in proportion to the strictness of the filling instructions and classifications in $E(K)$.
+	\item \textit{Number of patterns}: Unification decreases in proportion to the number of general argument patterns in $E(K)$.
+\end{enumerate}
+Kitcher does not develop an account of what to do in the case of tradeoffs. This will not matter in what follows.
+
+\subsection{The Alternatives}
+\label{subsec:alternatives}
+Explanatory \textit{non-inferentialists} deny that the explanatory relation is fundamentally inferential in nature. Typically, non-inferentialists hold that, at root, explanatory relationships represent some objective dependency relationship between events, facts, objects, or states of affairs. There are many variations of explanatory non-inferentialism. The aforementioned ontic theorists hold that explanations do not merely \textit{represent} these dependency relationships, but fundamentally \textit{are} these dependency relationships. There is also considerable variation in which dependency relationships are the relevant ones. The most popular view holds them to be causal. Others take them to be or include statistical, mechanistic, supervenience, etc. relationships. For the purposes of this paper, we will take the chief form of explanatory non-inferentialism to be the thesis that explanations represent causal relationships. With slight modification, our discussion of this ``causal representationalist'' foil to explanatory inferentialism extends to the different variations of explanatory non-inferentialism just sketched above.\footnote{Clear examples of causal representationalists include \textcite{Strevens2008} and \textcite{Woodward2003}.}
+
+In principle, non-inferentialists could hold that the explanatory relation is neither inferential nor ``dependency-representing.'' The most developed idea on this front comes from those who hold that the explanatory relationship is pragmatic in nature, e.g. it is the relationship of an answer to its corresponding why-question \citep{Achinstein1983,Faye2007,Garfinkel1981,Risjord2000,Fraassen1980}. We will mostly bracket this position here for three reasons. First, this pragmatic or ``erotetic'' position has been less prominent than the inferentialist or causal representationalist views discussed above. Second, there are ways of reconciling the pragmatic approach with the inferentialist approach, e.g. by arguing that any correct answer to a why-question must stand in the prescribed inferential relationships. Finally, the \textit{semantic} inferentialism that we will deploy below has traditionally been paired with a unique ``normative'' pragmatics, and, in future work, we hope to develop this pragmatic-semantic interface to our theory of explanation in greater detail.\footnote{In particular, we hope to provide a normative-pragmatic account of why-questions that utilizes the framework developed in \textcite{Millson2014}.}
+
+\subsection{The Current State of Play}
+\label{subsec:current_state}
+The classical explanatory inferentialists face a variety of problems.\footnote{For a review of these challenges, see \textcite{Salmon1989} and \textcite{Woodward2014}.} How should \textit{laws} be characterized? Can EI make sense of \textit{indeterministic explanations} of low-probability events, such as the fact that a person's untreated syphilis explains his paresis, despite the fact that only 25\% of untreated syphilitics suffer from paresis? What of \textit{problems unique to unificationism}, such as its implausible epistemology, and the variety of non-explanatory unifications? Can EI account for cases in which explanatorily \textit{irrelevant} information does not affect deductive validity or inductive strength, for instance, when we deduce that a man is not pregnant because he has consumed birth control pills? And, what of the \textit{b\^{e}te noire} of classic EI: the \textit{symmetry} problem? Intuitively, while a flagpole's height explains the length of its shadow, the converse does not hold. However, there are several examples of these explanatory symmetries that satisfy the covering law model, and some that also satisfy Kitcher's unificationist model.
+
+Importantly, causal representationalism handles these problematic cases with relative ease. However, the \textit{advantages} that EI enjoys over causal representationalism are often overlooked. In particular, explanatory inferentialists have underscored the importance of what we might call \textit{Humean modesty}. Both Hempel and Kitcher argue that explanations are simply inferential relationships between certain empirical statements. Hence, competent language users can explain by wielding inferences that carry no further commitment to a substantive modal or causal ontology. As a result, they avoid the various ``placement problems" associated with modality and causality (e.g. how modality fits within a naturalistic ontology, can be known, etc.). Additionally, proponents of EI have subsumed a wide variety of \textit{non-causal explanations} within their framework. This suggests that EI is latching onto explanation's deeper structures, and is further buttressed by the growing stockpile of examples of non-causal explanations arising from careful examination of scientific practice \citep{Baker2005,Batterman2002,Bokulich2011,Huneman2010,Irvine2015,Lange2013,Lange2013a,Rice2015,Risjord2005}.
+
+Virtually each of these topics---laws, indeterministic explanations, unificationism's unique problems, irrelevance, symmetry, Humean modesty, and non-causal explanation---is deserving of its own paper. This should give you a sense of where our research program is headed. This paper's chief objective is to present enough of our new version of EI so as to solve the symmetry problem, which we do in Section \ref{???}. Given the long \dots shadow that this problem casts upon traditional EI, this is no small feat. Having said this, a few other items on this list will make cameos in Section \ref{kernel}. In particular, we will provide a quick and dirty solution to the problem of irrelevance, and lean on traditional EI's virtues---Humean modesty and non-causal explanation---to motivate some parts of our account.
+
+\section{A New Approach to Explanatory Inferentialism}
+\label{kernel}
+In this section, we present our account of explanation. Programmatically, it states that $A$ explains $B$ if and only if 
+\begin{enumerate}
+\item Both $A$ and $B$ are true, and 
+\item $B$ is a sturdy consequence of $A$.
+\end{enumerate}
+Below, we provide a more detailed analysis of what we mean by a ``sturdy" consequence. More precisely, we shall argue that sturdy inferences have two defining features. First, they are a species of the broader class of \textit{material} inference, as we discuss in Section (\ref{Material}). Additionally, unlike other material inferences, they exhibit a kind of ``stability," as we discuss in Section (\ref{Sturdy}).
+
+However, before proceeding, we offer three preliminary clarifications. First, any explanatory inferentialist must place \textit{quality control} on the premises (explanans) and conclusion (explanandum) in an explanatory argument. For Hempel, at least one premise must be a law of nature, and all the statements in an explanatory argument must be true. For Kitcher, quality control is achieved through the four aforementioned criteria of unification: acceptability, scope, stringency, and number of patterns. Let us briefly discuss our treatment of quality control. For the purposes of this paper, the first of our conditions---that $A$ and $B$ must be true---is our account of quality control. Furthermore, given our larger semantic program, we are predisposed towards a deflationary theory of truth. Having said this, we suspect that there are alternative accounts of quality control, e.g. involving different theories of truth, and even significantly different semantic or epistemic properties than truth, that can be wedded to sturdiness, and that will also furnish similar solutions to the symmetry and relevance problems.\footnote{Below, we introduce a contextual element, $\Gamma$, which we also assume is true. Parallel points about alternative notions of quality control apply to $\Gamma$.} We leave these as an exercise to the reader. Importantly, our account of quality control does not appeal to laws or Kitcher's criteria of unification,\footnote{This is particularly true of the criteria we have labeled scope, stringency, and number of patterns.} as we hope to show that sturdiness already captures anything that is explanatory about laws and unification in future work.
+
+Any version of explanatory inferentialism must also specify the \textit{consequence relation} that doubles as the explanatory relation. Both Hempel and Kitcher take the classical consequence relation as their explanatory relation. By contrast, our second condition---that the explanandum must be a sturdy consequence of the explanans---appeals to a non-classical, non-monotonic consequence relation. This occasions our second clarification: in this paper, we only provide necessary conditions for when $B$ is a sturdy consequence of $A$; hence, our analysis is only partial. This will not matter in what follows, since we have provided enough of an analysis to solve the symmetry problem. In future work, we intend to complete this analysis by supplementing our account of sturdy inference accordingly. 
+ 
+Finally, our (partial) analysis is of a fairly demanding conception of explanation. Specifically, for many explananda $B$, there are multiple propositions $A_1, \dots A_n$­ such that it is natural to say that $A_1$ explains $B$ and that $A_2$ explains $B$, etc. For reasons that need not concern us here, on our view, if $A$ explains $B$, then $A$ is naturally interpreted as the ``exhaustive explanation" $A_1, \dots A_n$­. For ease of exposition, we will not enumerate all of these different components of this exhaustive explanation when we provide examples of sturdy inferences. For the purposes of this paper, what matters most is that our view entails that for any $A$ and $B$ that raises a symmetry problem (i.e. such that $A$ explains $B$, but $B$ does not explain $A$), $B$ can be shown not to be part of the sturdy inference that has $A$ as its conclusion, and hence can be excluded from the exhaustive explanation of $A$.
+
+\subsection{Material Inference} \label{Material}
+With these clarifications in hand, let's begin with the claim that the explanatory relation should be a kind of \textit{material} inference.\footnote{\textcite{Norton2003} endorses a slightly different material theory of induction. With modest modifications, our account of material inference dovetails with his.} We shall take material inferences to have three defining features. First, unlike the inferences codified by formal logic, material inferences are those whose correctness is \textit{not} determined by the meaning and arrangement of logical terms---i.e. their `logical form'. The inference from ``Boston is north of Atlanta'' to ``Atlanta is south of Boston'' is an example of a good material inference. The formalist's insistence that this inference is enthymematic until the suppressed premise ``If x is north of y, then y is south of x'' is added simply trades the goodness of the material inference for the truth of the conditional. On our view, the inference is good in virtue of its non-logical vocabulary, e.g. ``Atlanta," ``Boston," ``north," and ``south."\footnote{This conception of material inferences can be traced back to \citep{Sellars1953/2007}.}  The supposedly `suppressed' conditional---and logical vocabulary more generally---is a way of making commitment to that inference explicit.\footnote{This claim expresses one of the central tenets of \textit{logical expressivism}: a view about the role role or function of logical vocabulary articulated by \textcite{Brandom1994}.}
+
+Second, we shall assume that material inferences are, at root, \textit{activities} or \textit{practices}. For Hempel and Kitcher, inference is fundamentally a relation among sentences in a language. For us, inference is first and foremost something that we \textit{do}; its conception as a sentential relation or function is derivative. The idea that drawing inferences is one of, if not \textit{the} essential way in which we use language is central to the approach of semantic inferentialism pioneered by Wilfrid \textcite{Sellars1953/2007,Sellars1954/2007,Sellars1956/1997,Sellars1969/2007} and developed in detail by Robert \textcite{Brandom1994,Brandom2000,Brandom2008,Brandom2015} Jaroslav \textcite{Peregrin2006,Peregrin2010,Peregrin2014}, and most recently Ulf \textcite{Hlobil2016}, whose formulation of a sequent calculus for material inferences has been invaluable to our work here.\footnote{Note that \textit{semantic} inferentialism holds that the meaning of an expression is its inferential role, which is distinct from---and in this project, applied to---\textit{explanatory} inferentialism, which holds that the explanatory relation is an inferential relation. So far as we know, none of the explanatory inferentialists discussed in Section \ref{subsec:predecessors} also endorse semantic inferentialism. At the very least, none of them articulate a very clear relationship between explanatory and semantic inferentialism, as we do here.} According to semantic inferentialism, the making of inferences is part of rule-governed practice---what Brandom calls `a game of giving and asking for reasons.' In this game or practice, speakers are both players (making assertions and drawing inferences) and referees (keeping track of others' assertions and determining whether they are observing the rules of inference). But unlike other games, like \textit{Chess} or \textit{Simon Says}, the rules for the inference-game need not be available to players as explicit instructions. Rather, the propriety of inferential moves is exhibited by the way other participants respond to those who make them. In this sense, the rules governing the game (i.e. the rules of inference) are \textit{implicit} in the practice of playing it. It is only because locutions can be introduced that permit speakers to explicitly endorse inferential moves that the notion of \textit{inference} as a relation among sentences can have any purchase.
+
+This stands opposed to traditional EI's commitment to the classical project of analysis, which animated Anglo-American philosophy for much of the twentieth century. In its most general sense, that project sought to show that the meanings expressed by one class of locutions could be expressed by another, more familiar, epistemologically secure, or semantically autonomous class of locutions. Hempel's account of explanation, for instance, aims to show how the meaning expressed by a class of explanatory locutions---i.e. indicative sentences containing the predicates ``\ldots explains\ldots,'' ``\ldots is a potential explanation of\ldots,'' ``\ldots is an adequate explanation of\ldots'' etc. as well as certain why-interrogative sentences---can be expressed by inferences among sentences belonging to a model language consisting of names for physical objects or spatio-temporal locations and so-called `qualitative' predicates. In contrast, our approach attempts to demonstrate that locutions such as ``\ldots (exhaustively) explains \ldots'' enable speakers to \textit{say} something that they could otherwise only \textit{do}, in particular, to overtly \textit{endorse} inferences that they could otherwise---i.e. using a non-explanatory language---only \textit{make}.\footnote{In this sense, our approach to explanatory vocabulary is a contribution to the program of analytic pragmatism described by \textcite{Brandom2008}.} This is what we mean when we say that explanatory vocabulary makes explicit inferential commitments.
+
+Since material inferences are conceived as a type of rule-governed social activity, we may reasonably specify their varieties in explicitly normative terms. Inferences are correct (deductively valid) if commitment to the premises commits the speaker to the conclusion or (inductively good) if commitment and entitlement to the premises entitles the speaker to the conclusion. Speakers may also come to have incompatible commitments when one of their claims prohibits entitlement to another. Inferentialists thus understand inference and assertion in terms of the normative concepts of \textit{commitment} and \textit{entitlement}.
+
+This leads to our third and final point about material inferences. The class of material inferences with which we are concerned consists of those that preserve \textit{entitlement} such that if one is entitled to (assert) the premises, then one is entitled to (assert) the conclusion. Such inferences are distinctly \textit{non-monotonic}. Ordinary scientific practice is replete with them: e.g. ``The liquid is acidic. So, it will turn blue litmus paper red.'' A good material inference of this sort might turn bad if additional premises or auxiliary hypotheses were added---e.g. ``Chlorine gas is present''---and likewise, a bad inference might be made good by adding the right premises.\footnote{Chlorine gas bleaches damp litmus paper.} Thus, we shall ultimately argue that explanatory vocabulary makes explicit certain kinds of entitlements that would otherwise be left implicit in our inferential practices.
+
+Treating explanatory relations as material inferences allows us to preserve the strengths of traditional EI discussed in Section \ref{subsec:current_state}. On our view, Humean modesty is transposed from an empiricist key to a neo-pragmatist register, in which explanatory vocabulary need not be anything more than a way of making explicit what was otherwise only implicit in our inferential practices. As a result, there is no need to figure out how explanatory vocabularies map onto causes and other modally fraught dependency relationships. Second, because there are no \textit{a priori} causal constraints on material inferences, we have a highly flexible framework within which to capture the varieties of scientific explanation---both causal and otherwise. We return to these points in Section \ref{Attractions}.
+
+In order to perspicuously represent material inferences, let's introduce a formal structure with a non-monotonic material consequence relation defined over a finite language, $ \mathcal{L}_{0} $, consisting of atomic sentences $ p, p_1, p_2, \ldots, p_n$. Let $ A, B, C, D $ range over sentences; $ \Gamma, \Delta$ over sets of sentences; and $ W, W',W'' $ over sets of sets of sentences. In order to represent material incoherence, we extend $ \mathcal{L}_0 $ to include the constant $ \bigperp $, i.e. $ \mathcal{L} $ = $ \mathcal{L}_0 \,\,\bigcup \,\,\{\bigperp\}$.\footnote{We stipulate that $ \bigperp $ can neither appear to the left of the turnstile nor be embedded. Thus we define $\nmc$ as follows: $\nmc\subseteq \mathcal{P}(\mathcal{L}_0) \times \mathcal{L} $.} We define $ \nmc $ as the relation over $ \mathcal{L} $ such that $  \Gamma\nmc A $ iff  $\Gamma$ materially implies $ A $, and $\Gamma\nmc\!\!\bigperp $ iff $ \Gamma $ is materially incoherent. 
+
+We now have in place an object language $ \mathcal{L} $ (an extension of  $ \mathcal{L}_0 $ that includes $ \bigperp $) and a meta-language that consists of $ \nmc $.  In the \nameref{Appendix}, we formulate and explain the properties of the structure $ \langle \mathcal{L}, \nmc \rangle  $. For present purposes we simply note that $ \nmc $ is non-monotonic and non-transitive.  The most basic inferences with which we will be interested are of the form $ \Gamma, A \nmc B $.\footnote{Note that the comma is to be read as set-union with flanking individual formulas being read as in set brackets; e.g. ``$ A $'' on the left means ``$ \{ A\} $''.}  We read this expression as stating that anyone who is committed and entitled to $A$ in context $ \Gamma $ is entitled to $B$. Similarly, we read  $\Gamma, A, B \nmc \bigperp $ as stating that in context $ \Gamma $, commitment and entitlement to $A$  precludes entitlement to $B$ and vice versa. In keeping with our goal of articulating the inferential patterns that underwrite our `exhaustive explanations,' we will on occasion abuse our notation and use ``$\ushort{A}$'' to denote the set $ \{A_1, \dots A_n\} $. Paradigmatically, we will write $\Gamma,\, \ushort{A} \nmc B $ for $\Gamma, A_1,\ldots,A_n \nmc B $. 
+
+We reserve $ \Gamma $ exclusively for a (non-empty) set of collateral commitments intended to represent the epistemic context of inference. As such, we assume that $ \Gamma $ contains the relevant background knowledge that the agent ought to possess, e.g. information about the experimental set-up, background knowledge relevant to the system in question, etc., but does not contain the agent's total knowledge of the world.\footnote{Specifying the exact content of $\Gamma$ requires a pragmatics of explanation that we do not develop here. See Section \ref{subsec:alternatives}, where we briefly discuss pragmatics of explanation.} 
+
+To have a richer way of representing the non-monotonicity of a material inference, we simply quantify over our material consequence relation, $ \nmc $. \newline
+
+\noindent\textbf{Quantified Material Consequence (QMC):}\label{QMC}
+		\begin{equation}
+              \Gamma, A \qmc{W} B \Longleftrightarrow_{df}
+				      \begin{cases}\nonumber
+				        1.\,\, W\subseteq\mathcal{P}(\mathcal{L}) & $ and $ \\[3pt] 
+						2.\,\, \forall\Delta\in W(\Gamma, A,  \Delta \nmc B ) 
+						\end{cases}
+		\end{equation}
+
+The signature feature of QMC is $W$, or what we will call an inference's ``village of monotonicity." QMC states that the material inference from $A$ to $B$ remains good when any of the various sentences or suppositions comprising $W$ are added as auxiliary premises. In effect, the inference from $A$ to $B$ functions monotonically in the ``village" of $W$. As we will see, more restrictions on $W$ are needed before we can say that the inference breaks down once we leave the village. 
+
+In less figurative terms, QMC provides a precise way of talking about \textit{sets} of material inferences. Since $ \emptyset \in W $, our set must include $ \Gamma, A \nmc B $. Call this the \textit{base inference} of the set of inferences. Sets of inferences are delimited by the set of sets of sentences of $ \mathcal{L} $ whose members may be added to the premises without impugning the base inference. When $ W = \mathcal{P}(\mathcal{L}) $, the consequence relation $\Gamma, A \qmc{W} B $ is globally monotonic---in which case we write $ \mqmc $. The reason for circumscribing these sets of inferences by subsets of $ \mathcal{P}(\mathcal{L}) $ is that atomic sentences that would, by themselves materially defeat an inference if added to the premises, need not defeat that inference if they are added along with other atomic sentences.\footnote{For the remaining meta-theoretical claims, we omit reference to $\mathcal{L}$ and $\mathcal{P}(\mathcal{L})$.} For instance, the inference from ``The barometer's reading dropped suddenly'' to ``A storm is coming'' will be defeated by the singleton \{``The barometer was placed in a vacuum''  \} but not by the set \{``The barometer was placed in a vacuum", ``The atmospheric pressure dropped suddenly''\}. 
+
+To summarize thus far, we propose that explanatory relations are material-inferential relations. Material inferences are good in virtue of their non-logical (material) vocabulary rather than some oft-suppressed logical (formal) vocabulary. Material inferences are norm-governed practices rather than (just) relations between sentences, and the material inferences that figure in explanations are non-monotonic or entitlement-preserving rather than deductive and commitment-preserving. Explanatory and modal vocabulary ultimately make explicit these entitlements which would otherwise only be implicit in the practice of making and endorsing material inferences.
+
+\subsection{Sturdiness Defined} \label{Sturdy}
+Of course, we only claim that all explanatory relations are material consequence relations. As the barometer example illustrates, the converse is false: quite clearly some material consequence relations are not explanatory. What particular genus of material inferences is explanatory? Following others, we shall argue that explanations trade in a certain kind of `stability.' While different philosophical discussions of explanation and laws use different terminologies, in its most general form, $X$ is said to be stable if $X$ remains unchanged as other conditions $C$ change. Call $X$ the \textit{stability-bearer}, and $C$ the set of \textit{stability-conditions}. Unsurprisingly, philosophers disagree about the proper characterization of these two elements of stability. We shall first consider how Hempel fits within this bipartite framework, before presenting our own account of stability that we call ``sturdiness.''
+
+Hempel's stability-bearers are so-called ``lawlike generalizations," which must be expressible as universally quantified statements that trade exclusively in so-called qualitative predicates. This restriction on predicates guarantees that stability-conditions include, among other things, different spatiotemporal regions. In other words, Hempel regarded laws of nature as stable across all times and places.
+
+However, Hempel's account of stability faces two well-known difficulties. First, even by Hempel's own admission, his success in distinguishing laws of nature from accidental generalizations---particularly given his well-worn empiricist straitjacket---was limited at best. Second, by viewing laws of nature as universal statements, and also requiring such laws to figure in all explanations, Hempel's ability to capture biological and social scientific explanations is greatly imperiled.\footnote{In fairness to Hempel, he had a variety of devices by which he sought to recover explanations in the special sciences, IS explanations, explanation sketches, partial explanations, etc. However, many regard these maneuvers as having the untoward result that the special sciences are inferior simply for failing to emulate the physical sciences.} Within the context of identifying the material inferences that underwrite explanations, we can see these two challenges as pulling in opposite directions. On the one hand, if our account is so lax as to count (the inferential analogue of) accidental generalizations as stable, then the resulting account of explanation will be too permissive. If, on the other hand, it does not count the generalizations of the special sciences as stable, then the resulting account of explanation will be too restrictive. Call this \textit{Hempel's tightrope}.
+
+Seen in light of this tension, unificationism also comes up short. While accidental generalizations are not liable to end up as part of the explanatory store in the best systematization of our knowledge corpus,{\footnote{We note in passing the natural affinity between unificationist treatments of stability and the Mill-Ramsey-Lewis approach to laws.} it is unclear that unification provides an appropriate model of explanation for the special sciences, given the disunity and pluralism that frequently characterizes their attendant disciplines \citep{Cartwright1999,Dupre1993,Fodor1974,Mitchell2002,Risjord2000,Rosenberg1994}.}
+
+To traverse this tightrope, we shall offer a markedly different approach to stability. Hempel's stability-bearer is a kind of \textit{generalization} that then figures in an explanation as a premise in a covering law argument. By contrast, our fundamental stability-bearer is a kind of \textit{material inference}. Of course, generalizations can still figure as premises in these inferences. On our view, the stability of generalizations is derivative of their role in these inferences.\footnote{In future work, we hope to show that lawlike generalizations are merely a way of making explicit the inferential commitments and entitlements that are already implicit in material inferences that contain no nomic vocabulary. However, for the purposes of this paper, it suffices to say that a stable generalization is one that can be featured as a premise in a sturdy material inference.}
+
+How shall we characterize the sturdiness of material inferences? Recall that while the entitlement-preserving inferences of interest are non-monotonic, each has a village of monotonicity associated with it. This was represented as $W$ in QMC  above. Furthermore, the `inhabitants' of these villages were suppositions that, when added to the premises, did not impugn it. These suppositions will serve as our stability-conditions. Consider, for instance, the many pieces of additional information which would leave the propriety of our acid inference untouched---e.g. if the litmus paper \textit{were} soaked for two minutes, if the person dipping the paper \textit{were} wearing an orange shirt, if the test \textit{were} conducted in Romania, etc. Our emphasis in each of these suppositions is intended to draw attention to the fact that they are most naturally expressed using the subjunctive form of the verb \textit{to be} and, consequently, that they suppose \textit{possible} states-of-affairs.\footnote{We permit these suppositions to denote contrary-to-fact states of affairs. See note \ref{Grammar} below.} Thus, the material inferences with which we are presently concerned exhibit some degree of \textit{modal robustness} in the sense that for any particular, correct inference there are sets of subjunctive suppositions under which its propriety would remain unchanged and complementary sets of suppositions under which it would not.\footnotemark\, Below, we explain how this appeal to modal concepts still accords with the broadly Humean modesty of EI.
+
+Our stability-conditions for explanatory relations will be formulated in terms of the range of an inference's modal robustness. To do so, we will proceed in two steps. The first step identifies the class of what we call \textit{modally robust} inferences, which highlights the maximal stability that a given material inference can enjoy. Next, we introduce our ultimate stability-bearers, \textit{sturdy} inferences, which, for a given conclusion, are the most stable modally robust inferences.
+
+\footnotetext{{\label{Grammar}The English conditional ``If P were the case, then Q would be the case''  is formed with the subjunctive mood. Such sentences are sometimes called \textit{counterfactual} conditionals. Other times, they are \textit{distinguished} from counterfactual conditionals, which are identified with sentences of the form `If P had been the case, then Q would have been the case.' In many languages, the antecedent of the latter sentence would be formulated in the past subjunctive, however, since English lacks a past subjunctive, the antecedent appears in the indicative past perfect. We will use the term \textit{subjunctive} to pick out clauses of either type. In doing so, we reject the putative contrast between the two which claims that properly `counterfactual' conditionals presuppose that their antecedent is false, while simple `subjunctive' conditionals do not. As the following sentence shows, this is not always the case: ``If Susan had contracted influenza, then she would have presented exactly the symptoms that she does.''}  }
+
+Above, we noted that QMC tells us that the base inference $ \Gamma, A \nmc B$ remains materially good if we add any members of $W$ to the premises---i.e. if we stay in the village. However, QMC does not imply that this same inference will become materially bad if we add something from \textit{outside} of $W$ to the premises---i.e. if we leave the village. To extend the analogy, the village may be located on a larger `island' of monotonicity. This `island' represents the full extent to which a particular inference is modally robust. What we call \textit{modally robust} inferences are inferences that are good throughout the `island.' More precisely:\newline
+		
+\noindent\textbf{Modally Robust Consequence (MRC):}
+				  \begin{equation}
+				      \Gamma, A \mrc{W} B \Longleftrightarrow_{df}
+				      \begin{cases}\nonumber
+				        1.\,\, \Gamma, A \qmc{W} B& $ and $ \\[3pt] 
+						2.\,\, \forall W'(\Gamma, A \qmc{W'} B \Longrightarrow W' \subseteq W)  & $ and $\\[3pt] 
+						%3.\,\, \nqmc[]{\Gamma}{B}{W} & $ and $\\[3pt]  
+				        3.\,\, \forall\Delta(\Gamma, A, \Delta \mqmc \bigperp \Longrightarrow \Delta \not\in W)
+		
+						\end{cases}
+				  \end{equation}
+		
+%The third condition prevents the conclusion from simply following from the context alone,
+When the consequence relation $ \mrc{W} $ holds, we say that the base inference is \textit{modally robust up to} $ W $.The first condition simply repeats the lessons of Section \ref{Material}: the explanatory relation is a material inference. More precisely, this condition tells us that the base inference $ \Gamma, A \nmc B $ would be licensed if any of the members of  $W$ were to be added to its premise-set. However, the second condition says that $W$ contains \textit{all} those sets of sentences whose addition would not defeat the inference. This is how we move from a village to an island of monotonicity. Intuitively, it requires the inference to be more stable than it would be if it were merely an inductive inference (as in the barometer example above). In this way, it tracks with a feature readily associated with explanation. 
+
+The third condition prohibits the elements of $W$ from being logically inconsistent with the premises, thereby ensuring that the conclusion follows non-trivially.\footnote{If MRC3 were not present, $B$ could follow by \textit{Ex Falso Fixo Quodlibet} our structure's  modified version of  \textit{Ex Falso Quodlibet}. See \nameref{Appendix}.}  This condition accords with the intuition that an explanation would cease to be good on the supposition that it is logically inconsistent. More precisely, on our view, since an inference's island of monotonicity will always exclude those sets of sentences that are logically inconsistent with the premise-set, if $\Gamma, A \mrc{W}B$, then $ W \neq \mathcal{P}(\mathcal{L}) $. In classical deductive systems, the principle of  \textit{Ex Falso Quodlibet} preserves the consequence relation \textit{even} in cases of inconsistent premises, thereby securing (global) monotonicity. However, due to MRC3, a deductive inference will correspond to a modally robust inference that is good under any suppositions from $\mathcal{P}(\mathcal{L})$ \textit{except} those that contradict the premises, thereby prohibiting modally robust inferences from being globally monotonic (i.e. deductive). Hence, our non-classical consequence relation alone captures the intuition that explanations cease to be good on the supposition that they are inconsistent. By contrast, because Hempel and Kitcher use a classical consequence relation, they must rely on the quality control of their premises to capture this intuition. \footnote{Interestingly, because truth is not among Kitcher's criteria of quality control, it is not even clear that he does capture this intuition.}  \kk{OK, so it's becoming clearer to me: at this point, we've got nothing stronger than Hempel. We kick his ass only when MRC3 activates its Wonder-Twin powers with SC2.}\jm{Sounds good! I did some rephrasing above. Let me know if it works. There were too many 'By contrast's and 'Hence's.}
+
+However, if MRC were our ultimate stability-bearer, we would fall unceremoniously from Hempel's tightrope. In particular, some inferences involving accidental generalizations will be modally robust. For instance, consider a well-known counterexample to Hempel's DN model \citep{Salmon1977}:\footnote{A structurally analogous problem arises if we use \textcite{Kyburg1965}'s hexed salt example.}\newline  
+
+\noindent\label{JohnJones}\textbf{John Jones}
+\hspace{8mm}\begin{minipage}[t]{.8\textwidth}
+$\Gamma$, No males who consume birth control pills get pregnant,
+ John Jones is a male who consumes birth control pills
+$ \mrc{W} $  John Jones does not get pregnant\\
+\end{minipage}
+
+
+Clearly, this is not an explanation, in no small part because the first premise is an accidental generalization. However, since the conclusion follows deductively from the premises,  the only auxiliary suppositions that \textbf{John Jones} won't tolerate will be those inconsistent with the premises---in other words, $W$ will be very close to $ \mathcal{P}(\mathcal{L}) $. Thus, \textbf{John Jones} is modally robust but not an explanation. 
+
+To keep our feet firmly planted on Hempel's tightrope, we clearly need a kind of inference that is more demanding than MRC---what we are calling sturdy inferences. We circumscribe sturdy inferences as follows:\footnote{Recall that we only provide some \textit{necessary} conditions for sturdy inferences, that suffice to solve the problem of explanatory symmetry in Section ???.}\newline
+
+\noindent\textbf{Sturdy  Consequence (SC)\footnote{Recall that $\ushort{A} $ abbreviates $A_1, \dots, A_n$ on the left side of the turnstile.}:}
+				\begin{equation}
+				   \Gamma, \,\ushort{A} \smc B \Longrightarrow
+				    \begin{cases}\nonumber 
+					      1.\,\, \Gamma, \,\ushort{A} \mrc{W} B & $ where $ B \not\in \ushort{A} $, and $ \\[3pt] 
+						  2.\,\, \forall C\,(\Gamma, C \mrc{W'} B \Longrightarrow W'\subseteq W ) & $ where $ B\neq C  \\[3pt] 
+						  \end{cases}
+				\end{equation}
+	
+	
+SC1 simply states that all sturdy inferences are modally robust up to $W$. SC2 is where the action happens, for it introduces the idea that good explanations ought to be \textit{superlatively} robust. If we think of $ A $ as providing the best explanation of $ B $ and of $ C $ as any less-than-best explanation, then the second condition says that the best explanation is stable under more suppositions than any of its suboptimal competitors. More precisely, SC2 tells us that $W$ is the largest set of  suppositions under which any sentence from $\mathcal{L}$ materially implies $B$, excluding $B$ itself. For this reason $W$ need not appear on the left-side of the definition.
+
+The interaction of SC2 with MRC3 captures the comparative evaluation that characterizes familiar explanatory reasoning, and will prove important to our solution of the symmetry problem. A paradigmatic way of evaluating candidate explanations is to see if the explanandum still holds when one of the competing explanantia is false while the other is true. Indeed, this reasoning animates, \textit{inter alia}, controlled experiments. Since MRC3 prevents a modally robust inference from remaining good under suppositions inconsistent with its premises, one way to determine whether a particular inference satisfies SC2 is by seeing whether it holds under suppositions inconsistent with its competitors' premises. As we shall see below, this proves pivotal in our solution to the symmetry problem.
+
+Following this approach, we can see that \textbf{John Jones} fails as an explanation because it's not sturdy. Since it is modally robust up to \textit{some} $W$, it clearly satisfies SC1. However, it fails with respect to SC2. To see this, consider the following as an alternative explanation of John Jones' lack of pregnancy:\newline
+
+%\noindent \label{John Jones*}\textbf{John Jones*}\\
+%$ \Gamma $, No males get pregnant, John Jones is a male $ \src[]{}{}{W'} $  John Jones does not get pregnant\\
+%\noindent\label{John Jones}\textbf{John Jones:}
+
+\noindent \label{John Jones*}\textbf{John Jones*}\hspace{8mm}\begin{minipage}[t]{.8\textwidth}
+$ \Gamma $, No males get pregnant, John Jones is a male $ \mrc{W'} $  John Jones does not get pregnant\\
+\end{minipage}
+
+Next, consider the supposition, $ \{p_i \} $, that John Jones does not consume birth control pills. Quite clearly, adding this supposition to the premises of \textbf{John Jones*} does not impugn it. Hence it is part of the island of monotonicity for \textbf{John Jones*}, i.e. $ \{p_i \} \in W'$. However, since this supposition directly contradicts the premises of \textbf{John Jones}, it follows from MRC3 that this supposition cannot inhabit \textbf{John Jones}' island of monotonicity, i.e. $W$. So,  $ W'\not\subseteq W $, and \textbf{John Jones} is therefore not a sturdy inference. Since we require explanations to be sturdy inferences, it follows that \textbf{John Jones} is not an explanation. Parallel moves can be made with respect to other accidental generalizations.
+
+Thus, our ultimate stability-bearers are sturdy inferences. Moreover, sturdy inferences are stable in the sense that they still support their conclusions, even as different suppositions (i.e. members of $W$) change. Hence, these suppositions are our stability-conditions. Additionally, the \textbf{John Jones} example suggests that we have steered clear of at least one of the two dangers associated with Hempel's tightrope: namely that the view is so permissive as to incorrectly label inferences with accidental generalizations in their premises as explanations. As an added bonus, our treatment of this example also shows that our approach solves one problem that has plagued Hempel's approach to explanation: that it permits irrelevant information to figure in an explanation.
+
+All that remains, then, is to show that explanations in the special sciences have not tugged us off of Hempel's tightrope. Unlike Hempel's notion of lawlikeness, sturdiness is, at root, a comparative concept. More precisely, explanations are sturdy relative to the alternative ways of inferring the explanandum. As a result, explanations in the special sciences can be sturdy without being terribly lawlike. To see this, consider the following:\newline
+
+\noindent\label{Kate Kirk}\textbf{Kate Kirk}\hspace{8mm}\begin{minipage}[t]{.8\textwidth}
+$ \Gamma $, Kate Kirk is a female who consumes birth control pills $ \smc  $ Kate Kirk does not get pregnant.\\
+\end{minipage}
+
+Note that if we were to add a (Hempelian) law to this inference, it would state that no females who consume birth control pills get pregnant. However, this is false, for any of the following reasons: certain medications (rifampin, griseofulvin, certain HIV and anti-seizure medications) and supplements (e.g St. John's wort) decrease the effectiveness of birth control pills; if the birth control pill is progestin-only, then effectiveness decreases when the pill is ingested at different times of the day; vomiting and diarrhea also decrease the effectiveness of birth control pills.
+
+On our view, laws are not necessary. Since the addition of any of one of these considerations would infirm the inference from Kate Kirk's consumption of birth control pills to her non-pregnancy, then according to QMC2, they should be excluded from $W$. Given certain assumptions in $\Gamma$ about Kate Kirk's fertility, this needn't make \textbf{Kate Kirk} less than sturdy. So long as every other way of inferring Kate Kirk's non-pregnancy is modally robust up to the same $W$ as \textbf{Kate Kirk}, and both the premises and conclusion of the latter are true, then Kate Kirk's consumption of birth control pills explains why she is not pregnant. 
+
+Of course, one could also add a looser generalization to this inference so that it looks more Hempelian. Let $cp(A)$ be an abbreviation for sentences $A$ prefixed with the clause `\textit{ceteris paribus}'. Now consider the following inference:\newline
+
+\noindent\label{KateKirk-CP}\textbf{Kate Kirk-CP}\hspace{7mm}\begin{minipage}[t]{.8\textwidth}
+$ \Gamma, \,\,cp(\text{females who consume birth control pills do not get pregnant}) $, Kate Kirk is a female who consumes birth control pills $ \smc  $ Kate Kirk does not get pregnant.\\
+\end{minipage}
+
+We have no quarrel with this formulation, and will freely use \textit{ceteris paribus} laws as premises in the sturdy inferences we discuss in Sections 3 and 4 below. As noted above, for the purposes of this paper, we take the stability of generalizations to be derivative of their role in making explicit sturdy inferences. Endorsing generalizations is a way of expressing one's commitment to a pattern of inferences. By appending a \textit{ceteris paribus}-clause to a generalization, one acknowledges that those inferences are non-monotonic. In the case of \textbf{Kate Kirk-CP}, the generalization  \textit{cp}(females who consume birth control pills do not get pregnant)  can be called sturdy because its assertion counts as an endorsement of a whole class of sturdy inferences, of which \textbf{Kate Kirk} is a member. Indeed, that generalization will fail to apply in precisely those (actual and hypothetical) situations that the inference \textbf{Kate Kirk} is defeated. More importantly, on our view, \textbf{Kate Kirk-CP} is clearly a kind of explanation that is at home in the special sciences, and there is nothing to prevent it from being sturdy. Hence, we have successfully walked Hempel's tightrope.
+
+\subsection{Preserving EI's Attractions} \label{Attractions}
+We have presented our new approach to EI, in which the explanatory relation is taken to be a sturdy inferential relation. In what follows, we show that it retains traditional EI's areas of strength---Humean modesty and the ability to cover both causal and non-causal explanation. To be clear, the points we raise below deserve further discussion that we intend to develop in subsequent work. For now, we simply offer them as a way of warming you up to our view.  First, in navigating Hempel's tightrope, we have inherited many of the virtues of causal approaches to stability. For instance, \textcite{Mitchell2003}, \textcite{Skyrms1980}, and \textcite{Woodward2003} avoid Hempel's tightrope by treating stability as admitting of degrees.\footnote{``Stability'' is \textcite{Mitchell2003}'s preferred term of art. \textcite{Skyrms1980} prefers ``resiliency;" \textcite{Woodward2003}, ``invariance."} By doing so, laws (traditionally conceived) and accidental generalizations are two endpoints on a continuum of generalizations exhibiting varying degrees of stability. For similar reasons, explanations in the special sciences will be viable to the extent that they invoke stable generalizations, even if these generalizations fall well short of being laws of nature. This roughly mirrors our discussion in Section \ref{Sturdy}.
+
+However, those who have treated stability as graded have taken the stability-bearer to be a causal relationship. As noted in Section \ref{subsec:current_state}, traditional proponents of EI regard this as needlessly restrictive, and subsequent work has bolstered this claim. To that end, the stability of sturdy inferences does not presuppose anything about causes or any other metaphysical dependency relationship. Hence, our view holds the promise of offering a unified account of the kind of stability that applies to both causal and non-causal explanation.
+
+Second, as we noted in Section \ref{Material}, we respect the Humean modesty of our predecessors by treating explanatory vocabulary as nothing more than a way to make explicit certain norms that are implicit in inquirers' inferential practices. The preceding is consistent with that story---a surprising point given the modal implications of sturdy inferences. We begin by discussing the sense in which sturdy inferences are modal, and then briefly discuss why the notion of modality required by sturdy inferences is nevertheless congenial to the Humean picture that animated earlier versions of EI.
+
+It is natural to treat $ A \qmc{W} B $ as saying that the (base) inference from $ A $ to $ B $ \textit{would} remain materially good even if the sets of collateral suppositions from $ W $ she \textit{were} to obtain. \textit{A fortiori}, this applies to sturdy inferences. With this, we have appealed to subjunctive or counterfactual expressions in our account of explanation. Both Hempel and Kitcher are averse to the use of counterfactuals. Hence, it might seem that we have forsaken our EI forefathers.
+
+However, we think this charge of betrayal is too hasty. Observe that none of our three formal definitions (QMC, MRC, or SC) invokes modal vocabulary. All that is presupposed is that agents make material inferences that are stable under different configurations of suppositions. As we said above, modal and explanatory vocabulary need not be anything more than a way to talk about these inferences---i.e. to make the norms that are implicit in them explicit. This story is still a good one, so long as the sentences in our language $\mathcal{L}$ do not already contain modal vocabulary.\footnote{Robert Brandom has been developing and refining the idea that modal vocabulary plays a special role in making explicit features of material inferences, particularly those inferences whose mastery is required for competent deployment of ordinary descriptive empirical vocabulary. See \textcite{Brandom2008,Brandom2015}. This idea can be traced back to \citep{Sellars1957}. For similar approaches to the semantics of modal vocabulary see \citep{Thomasson2007} and \citep{Stovall2015}.}
+
+Indeed, the inferentialist approach to modal and explanatory vocabulary gives those of a Humean bent a compelling story about how one can \textit{use} modal vocabulary without having to \textit{represent} or be \textit{ontologically committed} to metaphysically controversial modal entities. It is precisely because entitlement-preserving material inferences are non-monotonic that mastery of them requires an ability to discriminate between those hypothetical circumstances in which they would remain good and those in which they would not. To be able to assess and criticize these discriminations, it is useful to be able to put them forward as assertions---to make them explicit. Modal vocabulary is one way of specifying what speakers must be able to \textit{do} in order to make stable material inferences. Hence, this vocabulary need not be anything more than a set of expressive devices. As noted above, this is not Humean in the strict \textit{empiricist} sense, but it is nevertheless Humean in spirit. In future work, we intend to develop these points more fully.
+
+\section{Appendix}\label{Appendix}
+
+
+We use a meta-theoretical conditional, $ \Longrightarrow $, to formulate the properties of the structure $ \langle \mathcal{L}, \nmc \rangle $ as follows:
+
+
+\begin{enumerate}
+\item $ \mathcal{L}_0\nmc\bigperp$
+\item $ \emptyset\nnmc\bigperp $
+\item $ \forall p, \forall\Delta\subseteq\mathcal{L}_0(\Gamma, \Delta \nmc\bigperp \Longrightarrow \Gamma\nmc p) $ (Ex Falso Fixo Quodlibet)
+\item $\forall \Gamma\subseteq\mathcal{L}_0 (\Delta \in \Gamma \Longrightarrow \Gamma\nmc \Delta)$ (Reflexivity)
+\item $\forall\Delta\subseteq\mathcal{L}_0(\Gamma\nmc p \,\,\not\!\!\Longrightarrow \Gamma, \Delta \nmc p)$ (Non-monotonicity)
+\item $(\Gamma\nmc p_j $ and $ \Gamma, p_j \nmc p_k ) \,\,\not\!\!\Longrightarrow \Gamma \nmc p_k$ (Non-transitivity)
+\end{enumerate}
+
+The first two properties state, respectively, that the totality of $ \mathcal{L} $ is incoherent and that the empty set is not. The principle of \textit{Ex Falso Fixo Quodlibet} is a modification of \textit{Ex Falso Quodlibet} that restricts `explosion' to monotonic contexts only. The rationale for this restriction is that if a set of atomic sentences is non-monotonically incoherent, then adding additional sentences to it may make it coherent, and therefore we are not licensed to infer an arbitrary atom from it (the original set). Reflexivity is a standard property of consequence relations and non-monotonicity has already been explained. 
+
+The last property of the structure, however, is sure to surprise the reader. Nearly all consequence relations, including the standard non-monotonic ones, are transitive and include the Cut rule as a structural constraint. Nevertheless, as \textcite{Morgan2000} has demonstrated,  a deduction theorem (i.e. $\Gamma, A \nmc B \Longleftrightarrow \Gamma \nmc A \rightarrow B $) cannot hold for a non-monotonic, reflexive, and transitive consequence relation.  The provability of a deduction theorem is essential to our inferentialist approach to logical vocabulary, since it establishes that an object-language operator gives expression to, i.e. makes explicit, what would be given as a rule of inference in the meta-language, i.e. using `$ \nmc $'. We have already motivated the non-monotonic character of material inference above. So, we must choose between  reflexivity and transitivity. 
+
+There are some reasons to prefer a consequence relation that is reflexive but non-transitive. First, sets of explanatory statements often fail to license transitive inferences---e.g. the occurrence of the Big Bang does not explain why Adam ate the apple, even if there are true explanatory statements linking the Big Bang to event $E_1$, $ E_1 $ with $ E_2 $, and so on up to Adam's eating of the apple. Second, logicians of inferentialist and proof-theoretic persuasion have already explored systems in which Cut fails \citep{Ripley2011,Tennant2014}, whereas none seems inclined to pursue non-reflexive ones. Finally, Ulf Hlobil (\textbf{Cite}) defines a sequent calculus over structures with roughly the same properties as  $ \langle \mathcal{L}, \nmc \rangle $ that includes left- and right-rules for several logical operators and proves that they are conservative extensions of an atomic language like our $ \mathcal{L}_0 $. In subsequent work, we hope to build on this system and to develop calculi with rules for logical and explanatory vocabulary.
+
+
+\section{Compliance with Ethical Standards}
+The author declares no potential conflicts of interests with respect to the authorship and/or publication of this article. The author received no financial support for the research and/or authorship of this article.
+%\nocite{Sellars2007}
+
+\printbibliography
+%\jm{Manually add Brandom as editor to Sellars(2007)}
+%\bibliographystyle{chicago}
+%\bibliography{../../References/Explanation_Bib} 
+
+% % % % % % % % % % % % % % % % % % % % % % % For submission use bib below and paste bibitems % % % % % % % % % % % % % % % % %
+%\begin{thebibliography}{19}
+%\providecommand{\natexlab}[1]{#1}
+%\providecommand{\url}[1]{{#1}}
+%\providecommand{\urlprefix}{URL }
+%\expandafter\ifx\csname urlstyle\endcsname\relax
+%  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+%  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+%  \urlstyle{rm}\Url}\fi
+%\providecommand{\eprint}[2][]{\url{#2}}
+%
+%
+%
+%\end{thebibliography}
+
+\end{document}
