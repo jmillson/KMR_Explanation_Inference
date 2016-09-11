@@ -817,6 +817,7 @@
       \strng{fullhash}{b2a4a4a701ca2ba421e841760fa4b70c}
       \field{sortinit}{M}
       \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{1}
       \field{labelyear}{2014}
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
@@ -824,6 +825,79 @@
       \field{subtitle}{Assertions, Queries, and the Normative Structure of Minimally Discursive Practices}
       \field{title}{How to Ask a Question in the Space of Reasons}
       \field{type}{phdthesis}
+      \field{year}{2014}
+    \endentry
+    \entry{Millson2014a}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=b2a4a4a701ca2ba421e841760fa4b70c}{%
+           family={Millson},
+           family_i={M\bibinitperiod},
+           given={Jared},
+           given_i={J\bibinitperiod}}}%
+      }
+      \name{editor}{9}{}{%
+        {{hash=19ffe1ffd3227a73fd91e51c68788449}{%
+           family={Bishop},
+           family_i={B\bibinitperiod},
+           given={Mark},
+           given_i={M\bibinitperiod}}}%
+        {{hash=30f4f61fa51a7daf6fd1be7c218dd1f0}{%
+           family={Devlin},
+           family_i={D\bibinitperiod},
+           given={Kate},
+           given_i={K\bibinitperiod}}}%
+        {{hash=3f25523b76d738faf1f7697f2a3ee3a8}{%
+           family={Erden},
+           family_i={E\bibinitperiod},
+           given={Yasemin\bibnamedelima J.},
+           given_i={Y\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3327f74253be5819b88db4166c0070c1}{%
+           family={Kibble},
+           family_i={K\bibinitperiod},
+           given={Rodger},
+           given_i={R\bibinitperiod}}}%
+        {{hash=efb07638371c22a30c40c1f79bc5d52f}{%
+           family={McGregor},
+           family_i={M\bibinitperiod},
+           given={Stephen},
+           given_i={S\bibinitperiod}}}%
+        {{hash=f7e6a17cfba5716423761d2e762d35c2}{%
+           family={al-Rifaie},
+           family_i={R\bibinitperiod},
+           given={Mohammad\bibnamedelima Majid},
+           given_i={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0f8b44db96f0051ceb98a264428f2aff}{%
+           family={Martin},
+           family_i={M\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+        {{hash=71f82ff82dbc3b25b7ea9d24d83d4f2b}{%
+           family={Moreno},
+           family_i={M\bibinitperiod},
+           given={Monica},
+           given_i={M\bibinitperiod}}}%
+        {{hash=6a1276e696813b69503ec324a84edfdd}{%
+           family={Rainey},
+           family_i={R\bibinitperiod},
+           given={Stephen},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Goldsmiths College, UK}%
+      }
+      \strng{namehash}{b2a4a4a701ca2ba421e841760fa4b70c}
+      \strng{fullhash}{b2a4a4a701ca2ba421e841760fa4b70c}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{2}
+      \field{labelyear}{2014}
+      \field{labelmonth}{04}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Society for the Study of Artificial Intelligence and the Simulation of Behavior, AISB'50}
+      \field{month}{04}
+      \field{title}{Queries and Assertions in Minimally Discursive Practice}
       \field{year}{2014}
     \endentry
     \entry{Mitchell2003}{book}{}
@@ -1052,7 +1126,6 @@
       \field{datelabelsource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{0791445119 (hc. alk. paper) 0791445127 (pbk. alk. paper)}
       \field{title}{Woodcutters and Witchcraft: Rationality and Interpretive Change in the Social Sciences}
       \field{type}{Book}
       \field{year}{2000}
@@ -1078,20 +1151,6 @@
            family_i={H\bibinitperiod},
            given={Jaakko},
            given_i={J\bibinitperiod}}}%
-      }
-      \name{editora}{1}{}{%
-        {{hash=257a1bb9e271078512e6dc9debe5d424}{%
-           family={Hintikka},
-           family_i={H\bibinitperiod},
-           given={Jaakko},
-           given_i={J\bibinitperiod}}}%
-      }
-      \name{editorb}{1}{}{%
-        {{hash=d3600d0a706c811467551118558a4ba4}{%
-           family={Butts},
-           family_i={B\bibinitperiod},
-           given={Robert},
-           given_i={R\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {Dordrecht-Holland}%
@@ -1333,7 +1392,6 @@
       \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
       \field{labelyear}{2007}
       \field{datelabelsource}{}
-      \true{crossrefsource}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{In the Space of Reasons : Selected Essays of Wilfrid Sellars}

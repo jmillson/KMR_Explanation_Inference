@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 SEP 2016 21:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 SEP 2016 12:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2725,13 +2725,13 @@ Package logreq Info: Writing requests to 'Explan_Assym-biblatex.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22891 strings out of 493014
- 411267 string characters out of 6133351
- 893587 words of memory out of 5000000
- 25866 multiletter control sequences out of 15000+600000
+ 22895 strings out of 493014
+ 411385 string characters out of 6133351
+ 893600 words of memory out of 5000000
+ 25869 multiletter control sequences out of 15000+600000
  74201 words of font info for 172 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,15n,57p,1973b,1415s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,15n,57p,1973b,1413s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{/
 usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol7.pfb></usr/local/texliv
@@ -2745,10 +2745,10 @@ ist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
 ype1/urw/symbol/usyr.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/ti
 mes/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Explan_Assym-biblatex.pdf (20 pages, 202722 bytes).
+Output written on Explan_Assym-biblatex.pdf (20 pages, 202952 bytes).
 PDF statistics:
- 432 PDF objects out of 1000 (max. 8388607)
- 394 compressed objects within 4 object streams
- 120 named destinations out of 1000 (max. 500000)
+ 434 PDF objects out of 1000 (max. 8388607)
+ 396 compressed objects within 4 object streams
+ 121 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
