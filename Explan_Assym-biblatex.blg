@@ -1,21 +1,21 @@
 [0] Config.pm:343> INFO - This is Biber 2.5
 [0] Config.pm:346> INFO - Logfile is 'Explan_Assym-biblatex.blg'
-[49] biber-darwin:290> INFO - === Mon Sep  5, 2016, 11:25:39
-[71] Biber.pm:351> INFO - Reading 'Explan_Assym-biblatex.bcf'
-[197] Biber.pm:776> INFO - Found 54 citekeys in bib section 0
-[213] Biber.pm:3493> INFO - Processing section 0
-[228] Biber.pm:3657> INFO - Looking for bibtex format file 'KMR_Master.bib' for section 0
-[259] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
-[292] bibtex.pm:1048> INFO - Found BibTeX data source 'KMR_Master.bib'
-[375] Utils.pm:149> WARN - ISBN '0791445119 (hc. alk. paper) 0791445127 (pbk. alk. paper)' in entry 'Risjord2000' is invalid - run biber with '--validate_datamodel' for details.
-[498] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[498] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[498] Biber.pm:3306> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
-[499] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
-[591] bbl.pm:526> INFO - Writing 'Explan_Assym-biblatex.bbl' with encoding 'ascii'
-[596] Utils.pm:149> WARN - The entry 'Hlobil2016' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[600] Utils.pm:149> WARN - The entry 'Rice2015' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[604] Utils.pm:149> WARN - The entry 'Suarez2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[605] Utils.pm:149> WARN - The entry 'Suarez2003' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[606] bbl.pm:619> INFO - Output to Explan_Assym-biblatex.bbl
-[606] Biber.pm:108> INFO - WARNINGS: 5
+[40] biber-MSWIN32:290> INFO - === 
+[67] Biber.pm:351> INFO - Reading 'Explan_Assym-biblatex.bcf'
+[193] Biber.pm:776> INFO - Found 54 citekeys in bib section 0
+[210] Biber.pm:3493> INFO - Processing section 0
+[233] Biber.pm:3657> INFO - Looking for bibtex format file 'KMR_Master.bib' for section 0
+[276] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[315] bibtex.pm:1048> INFO - Found BibTeX data source 'KMR_Master.bib'
+[403] Utils.pm:149> WARN - ISBN '0791445119 (hc. alk. paper) 0791445127 (pbk. alk. paper)' in entry 'Risjord2000' is invalid - run biber with '--validate_datamodel' for details.
+[529] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[530] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[530] Biber.pm:3306> INFO - Sorting list 'nty/global/' of type 'entry' with scheme 'nty' and locale 'en-US'
+[530] Biber.pm:3310> INFO - No sort tailoring available for locale 'en-US'
+[620] bbl.pm:526> INFO - Writing 'Explan_Assym-biblatex.bbl' with encoding 'ascii'
+[626] Utils.pm:149> WARN - The entry 'Hlobil2016' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[631] Utils.pm:149> WARN - The entry 'Rice2015' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[636] Utils.pm:149> WARN - The entry 'Suarez2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[637] Utils.pm:149> WARN - The entry 'Suarez2003' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[638] bbl.pm:619> INFO - Output to Explan_Assym-biblatex.bbl
+[639] Biber.pm:108> INFO - WARNINGS: 5

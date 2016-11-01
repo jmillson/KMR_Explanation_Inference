@@ -1,0 +1,280 @@
+\documentclass{article}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+%\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{pgf}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage{soul}
+\usepackage[autostyle]{csquotes}
+\usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
+
+%\usepackage{fonttable}
+
+\addbibresource{KMR_Master.bib}
+
+
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA}{U}{MnSymbolA}{m}{n}
+\DeclareMathSymbol{\twoheaduparrow}{\mathop}{MnSyA}{25}
+\DeclareMathSymbol{\twoheadrightarrow}{\mathop}{MnSyA}{24}
+
+\makeatletter
+
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+% % % % % % % % % % % % % % % Internal Commands NMC% % % % % % % % % % % % %
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+
+\newcommand{\uuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt .6pt 0pt 0pt}{$\uparrow$}}
+}
+\newcommand{\tuuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt 1pt 0pt 0pt}{$\scriptscriptstyle\uparrow$}}
+}
+\newcommand{\muparrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .65pt 0pt 0pt}{$\scriptstyle\uparrow$}}
+}
+\newcommand{\Duparrow}{% 
+	\raisebox{.2ex}{\clipbox{0pt .15pt 0pt 0pt}{$\Uparrow$}}
+}
+\newcommand{\thuarrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .8pt 0pt 0pt}{$\twoheaduparrow$}}
+}
+
+% % % % % COMMANDS FOR NON-MONOTONIC CONSEQUENCES % % % % % % % % %
+\newcommand{\nms}{%
+	\mathbin{\mathpalette\@nms\expandafter}
+}
+\newcommand{\@nms}{\mid\joinrel\mkern-.5mu\sim}
+
+
+\newcommand{\nmc}{%
+	\mathbin{\mathpalette\nm@\expandafter}
+}
+\newcommand{\nm@}{\mid\joinrel\mkern-.5mu\sim\mkern-3mu}
+
+\newcommand{\qmc}[1]{\mathrel{
+		\mathchoice
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-13mu\tiny\uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow#1}}
+	}
+}
+
+\newcommand{\mqmc}{\mathrel{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\uuparrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow}}
+	}
+}
+
+\newcommand{\mrc}[1]{\mathbin{
+		\mathchoice
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Duparrow#1}\hspace{-.5mm}}
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Duparrow#1}\hspace{-.5mm}}
+		{\footnotesize\hspace{.5mm}\nms^{\mkern-13.5mu\fontsize{5.5}{0}\Duparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\Duparrow#1}}
+	}
+}
+
+\newcommand{\smc}{\mathbin{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\thuarrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\thuarrow}}
+	}
+}
+\newcommand{\nnmc}{\not\nmc}
+\newcommand{\nsmc}{\not\mkern-3mu\smc}
+\newcommand{\nmrc}{\not\mkern-3mu\mrc}
+\newcommand{\nmqmc}{\not\mkern1mu\mqmc}
+\newcommand{\nqmc}{\not\mkern1mu\qmc}
+
+\newcommand{\nme}{%
+	\mathbin{\mathpalette\@nme\expandafter}
+}
+\newcommand{\@nme}{{\mid\joinrel\mkern-.5mu\sim\mkern-2mu}_{e}\mkern3mu}
+
+
+%\newcommand{\nme}{\nms\mkern-7mu_{e}\mkern2mu}
+\newcommand{\qme}{{\qmc\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\mqme}{{\mqme\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\sme}{{\smc\mkern-2mu}_{e}\mkern3mu}
+
+% % % % % % % % % % %Commands for Materia Incoherence% % % % % % % % % % % %
+
+\newcommand{\bigperpp}{%
+	\mathop{\mathpalette\bigp@rpp\relax}%
+	\displaylimits
+}
+\newcommand{\bigp@rpp}[2]{%
+	\vcenter{
+		\m@th\hbox{\scalebox{\ifx#1\displaystyle1.3\else1.3\fi}{$#1\perp$}}
+	}%
+}
+\newcommand{\bigperp}{\raisemath{.5pt}{\bigperpp}}
+
+%% % % % % % Degree Command % % % % % % % % % % % % % % % % % % % %
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+ \newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+ \newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+ \newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+\makeatother
+
+
+
+
+
+%\renewcommand{\@cite}[1]{#1}
+%\usepackage[natbibapa]{apacite}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+%\hypersetup{
+%    colorlinks=false,
+%    pdfborder={0 0 0},
+%}
+
+
+\begin{document}
+\sloppy
+\title{}
+\date{}
+\raggedbottom
+
+\maketitle
+
+%\noindent\textbf{Context-Set}\\
+%\noindent $  \Pi \in \mathcal{L}   $\\
+
+
+\noindent\textbf{Quantified Material Consequence (QMC):}\label{QMC}
+\begin{equation}
+\Gamma, \varphi \qmc{W} \psi \Longleftrightarrow_{df}
+\begin{cases}\nonumber
+1.\,\, W\subseteq\mathcal{P}(\mathcal{L}) & $ and $ \\[3pt] 
+2.\,\, \forall\Delta\in W(\Gamma, \varphi,  \Delta \nmc \psi ) 
+\end{cases}
+\end{equation}
+
+\noindent\textbf{Modally Robust Consequence (MRC):}\label{MRC}
+\begin{equation}
+\Gamma, \varphi \mrc{W} \psi \Longleftrightarrow_{df}
+\begin{cases}\nonumber
+1.\,\, \Gamma, \varphi \qmc{W} \psi& $ and $ \\[3pt] 
+2.\,\, \forall W'(\Gamma, \varphi \qmc{W'} \psi \Longrightarrow W' \subseteq W)  & $ and $\\[3pt] 
+%3.\,\, \nqmc[]{\Gamma}{B}{W} & $ and $\\[3pt]  
+3.\,\, \forall\Delta(\Gamma, \varphi, \Delta \mqmc \bigperp \Longrightarrow \Delta \not\in W)
+
+\end{cases}
+\end{equation}
+
+
+
+
+
+\noindent\textbf{Sturdy  Consequence (SC):}\label{SC}
+\begin{equation}
+	\Gamma, \,\varphi \smc \psi \Longrightarrow
+	\begin{cases}\nonumber 
+		1.\,\, \Gamma, \, \varphi \mrc{W} \psi & $ where $ \varphi \neq \psi $, and $ \\[3pt] 
+		2.\,\, \forall \vartheta\,(\Gamma, \vartheta \mrc{W'} \psi \Longrightarrow W\not\subset W' ) & $ where $ \psi \neq \vartheta  \\[3pt] 
+	\end{cases}
+\end{equation}
+
+\noindent\textbf{Sturdy  Consequence (SC): [Sets]}\label{SCset}
+\begin{equation}
+\Gamma, \, \Sigma \smc \varphi \Longrightarrow
+\begin{cases}\nonumber 
+1.\,\, \Gamma, \, \Sigma \mrc{W} \varphi & $ where $ \varphi \not\in \Sigma $, and $ \\[3pt] 
+2.\,\, \forall \Theta\,(\Gamma, \Theta \mrc{W'} \varphi \Longrightarrow W\not\subset W' ) & $ where $ \varphi\not\in \Theta  \\[3pt] 
+\end{cases}
+\end{equation}
+$\sigma \in \Sigma$
+
+\vspace{2cm}
+\begin{prooftree}
+	\def\fCenter{\ \nme\ }
+	\AxiomC{$ \Gamma,\, \Sigma \sme \varphi $}
+	\RightLabel{\hspace{5mm}  EER}
+	\UnaryInf$\Gamma \fCenter \Sigma \mathbin{\twoheadrightarrow}\varphi$
+\end{prooftree}
+
+\begin{prooftree}
+	\def\fCenter{\ \nme \ }
+	\AxiomC{$\Gamma \fCenter \Sigma \twoheadrightarrow \varphi$}
+	\RightLabel{\hspace{5mm}  EES}
+	\UnaryInf$\Gamma, \,\Sigma \fCenter \varphi $
+\end{prooftree}
+
+\begin{prooftree}
+	\def\fCenter{\ \nme\ }
+	\AxiomC{$ \Gamma, \,\Sigma\sme \varphi$}
+	\AxiomC{$\Gamma \fCenter \hspace{-1ex}  B $}
+	\RightLabel{\hspace{5mm}  EEL}
+	\BinaryInf$\Gamma, \varphi, \Sigma \twoheadrightarrow \varphi\fCenter \hspace{-1ex}  \Sigma$
+\end{prooftree}
+
+
+\printbibliography
+
+
+\end{document}

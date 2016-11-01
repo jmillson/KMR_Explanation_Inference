@@ -1,0 +1,687 @@
+\documentclass{article}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+%\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{pgf}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage{soul}
+\usepackage[autostyle]{csquotes}
+\usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
+
+%\usepackage{fonttable}
+
+\addbibresource{KMR_Master.bib}
+
+
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA}{U}{MnSymbolA}{m}{n}
+\DeclareMathSymbol{\twoheaduparrow}{\mathop}{MnSyA}{25}
+\DeclareMathSymbol{\twoheadrightarrow}{\mathop}{MnSyA}{24}
+
+\makeatletter
+
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+% % % % % % % % % % % % % % % Internal Commands NMC% % % % % % % % % % % % %
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+
+\newcommand{\uuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt .6pt 0pt 0pt}{$\uparrow$}}
+}
+\newcommand{\tuuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt 1pt 0pt 0pt}{$\scriptscriptstyle\uparrow$}}
+}
+\newcommand{\muparrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .65pt 0pt 0pt}{$\scriptstyle\uparrow$}}
+}
+\newcommand{\Uuparrow}{% 
+	\raisebox{.2ex}{\clipbox{0pt .15pt 0pt 0pt}{$\Uparrow$}}
+}
+\newcommand{\thuarrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .8pt 0pt 0pt}{$\twoheaduparrow$}}
+}
+
+% % % % % COMMANDS FOR NON-MONOTONIC CONSEQUENCES % % % % % % % % %
+\newcommand{\nms}{%
+	\mathbin{\mathpalette\@nms\expandafter}
+}
+\newcommand{\@nms}{\mid\joinrel\mkern-.5mu\sim}
+
+
+\newcommand{\nmc}{%
+	\mathbin{\mathpalette\nm@\expandafter}
+}
+\newcommand{\nm@}{\mid\joinrel\mkern-.5mu\sim\mkern-3mu}
+
+\newcommand{\qmc}[1]{\mathrel{
+		\mathchoice
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-13mu\tiny\uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow#1}}
+	}
+}
+
+\newcommand{\mqmc}{\mathrel{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\uuparrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow}}
+	}
+}
+
+\newcommand{\mrc}[1]{\mathbin{
+		\mathchoice
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\footnotesize\hspace{.5mm}\nms^{\mkern-13.5mu\fontsize{5.5}{0}\Uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\Uuparrow#1}}
+	}
+}
+
+\newcommand{\smc}{\mathbin{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\thuarrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\thuarrow}}
+	}
+}
+\newcommand{\nnmc}{\not\nmc}
+\newcommand{\nsmc}{\not\mkern-3mu\smc}
+\newcommand{\nmrc}{\not\mkern-3mu\mrc}
+\newcommand{\nmqmc}{\not\mkern1mu\mqmc}
+\newcommand{\nqmc}{\not\mkern1mu\qmc}
+
+\newcommand{\nme}{%
+	\mathbin{\mathpalette\@nme\expandafter}
+}
+\newcommand{\@nme}{{\mid\joinrel\mkern-.5mu\sim\mkern-2mu}_{e}\mkern3mu}
+
+
+%\newcommand{\nme}{\nms\mkern-7mu_{e}\mkern2mu}
+\newcommand{\qme}{{\qmc\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\mqme}{{\mqme\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\sme}{{\smc\mkern-2mu}_{e}\mkern3mu}
+
+% % % % % % % % % % %Commands for Materia Incoherence% % % % % % % % % % % %
+
+\newcommand{\bigperpp}{%
+	\mathop{\mathpalette\bigp@rpp\relax}%
+	\displaylimits
+}
+\newcommand{\bigp@rpp}[2]{%
+	\vcenter{
+		\m@th\hbox{\scalebox{\ifx#1\displaystyle1.3\else1.3\fi}{$#1\perp$}}
+	}%
+}
+\newcommand{\bigperp}{\raisemath{.5pt}{\bigperpp}}
+
+%% % % % % % Degree Command % % % % % % % % % % % % % % % % % % % %
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+ \newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+ \newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+ \newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+\makeatother
+
+
+
+
+
+%\renewcommand{\@cite}[1]{#1}
+%\usepackage[natbibapa]{apacite}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+%\hypersetup{
+%    colorlinks=false,
+%    pdfborder={0 0 0},
+%}
+
+
+\begin{document}
+\sloppy
+\title{Notes on Normative Pragmatics}
+
+
+\raggedbottom
+
+\maketitle
+
+\section{Clips from \citep{Millson2014a}}
+
+Introducing queries with the illocutionary force (though not the logical complexity) associated with interrogative utterances of the form ``How do you know that \emph{p}?'' into the DSK model is a complicated business. First, there is the problem that questions do not  stand in obviously inferential relations to one another in the way that the contents of declaratives do.\footnote{Even if it can be shown, as \textcite{Wisniewski1995} has, that a model-theoretic semantics for declaratives can represent relations of implication among interrogatives---what he calls \textit{erotetic} implication, from the Greek \textit{er\H{o}t\'{e}sis}, meaning `that which pertains to questions'---it remains doubtful that there are \textit{material} erotetic inferences of the sort Brandom's account demands. The chief difficulty is that even the simplest questions, polar questions, can only be expressed in languages that contain negation. Thus, inferential relations among even polar questions appear to be unavailable to minimally discursive agents.} This problem is not nearly as daunting as it first appears. The notion of `inference' with which Brandom's model operates is quite liberal. Deferring to the authority of an interlocutor, issuing observation reports, even acting intentionally are all performances that get analyzed in terms of dispositions to adopt normative attitudes, and are, thus, the exercise of broadly inferential capacities. So long as normative statuses and attitudes can be coherently associated with queries, their content ought to be explicable within an extended inferentialist framework. Indeed, the question-answer relation looks custom-made for representation in normative-pragmatic terms.
+
+Second, there is the problem of assigning normative statuses to RSQs. One way to do so would be to take the querier as imputing a particular commitment to the queried agent, namely, a commitment to defeasibly license the querier to (re)assert \emph{p} herself. Such a commitment can be called \emph{apokritic}---from the Greek verb \textit{apokrino}, which means `to give an answer' or `to reply to a question'. An apokritic commitment obliges the addressee to answer the speaker's question. In the case considered here, answering the question is just a matter of justifying the claim that \emph{p}.
+
+Third, there is the issue of accounting for the second-personal character of these acts---the pragmatic force of queries that directs it at a particular individual, `\emph{you}'. To tackle this problem, we can introduce a third deontic attitude, in addition to those of acknowledging and attributing normative statuses. This new attitude, call it \emph{addressing}, makes a demand upon its addressee to recognize her new status. \textcite{Kukla2009} propose this sort of analysis of second-personal addresses, according to which the demand for recognition is `inescapable'---no matter what subsequent performances an addressee undertakes, they will either have the significance of acknowledging the demand or rejecting it; there is no way to passively ignore it. Such an attitude may not be as foreign to DSK as first appears. \textcite{Wanderer} argues that assertions are in fact second-personal addresses, since they bind ``asserter and assertee in a normative nexus that, among other things, precludes the possibility of ignoring the address and allows the latter to defer to the former if challenged to do so.'' Treating addressing as a kind of deontic attitude on the level of acknowledging and attributing allows us to make sense of this claim. In asserting that \emph{p}, an agent addresses entitlement to \emph{p} to others, calling upon them to reassert \emph{p} on her authority.
+
+Where part of the normative significance of assertions is captured by the address of assertional \emph{entitlement}, the pragmatic force of queries can be understand as involving an address of \emph{commitment}, namely apokritic commitment. Addressing a commitment to another player would thus be quite different from attributing one, since in the latter case, there is no \emph{prima facie} deficiency incurred by ignoring an attributed status. Furthermore, if queries require the speaker to address an \emph{apokritic} commitment to another player, and if apokritic commitments associated with queries like ``How do you know that \emph{p}?'' are demands for justification, then such queries easily satisfy the essential structural role of challenges in DSK.
+
+\section{Clips from \citep{Millson2014} Ch.5}
+To grasp the contrast between attitudes of attribution and those of
+addressing, lets see how it applies to normative-perspectival structure
+of assertions developed in Brandom's scorekeeping model and developed
+by Wanderer's analysis of second-person speech acts. According to
+Brandom, undertaking an assertional commitment is doing something
+that makes it appropriate for others to attribute it. As I reiterated
+above, undertaking a commitment can be achieved without an overt acknowledgment
+of the commitment, if, for instance, it is undertaken consequentially.
+Even when one acknowledges a commitment, and thereby performs in a
+way appropriate to one's attributed status, this acknowledgment need
+not involve a \emph{recognition} of that attribution. I can successfully
+take my friend to be committed to some claim which she subsequently
+acknowledges by overtly asserting it, though she does not do so \emph{because}
+I take her to be committed to it; she may be totally ignorant of my
+attribution to her. In MDPs, attributions are only ever made implicitly
+and so can not demand that agents recognize them. Agents become aware
+of an attributed commitment, if they do at all, either when they undertake
+a commitment incompatible with it or when they fail to demonstrate entitlement
+in the face of a challenge. In ordinary discourse, we are permitted
+to ignore implicit attributions; in MDPs, agents are largely \emph{ignorant}
+of them. Indeed, one of Brandom's central claims in \emph{Making It
+Explicit} is that the perspectival structure of interpretation can
+be understood in terms of the potential discrepancy between attributed
+and acknowledged statuses. This discrepancy is a \emph{feature} of
+discursive practices, not a \emph{defect} of their participants. Even
+when agents' behavior fails to accord with the statuses attributed
+to them, that failure is neither directed at anyone---there is no
+obligation to anyone---nor does it count as a \emph{rejection} of
+the attribution. Thus, there is no temptation to think that assertional
+commitments are \emph{addressed} to others. They are \emph{attributed}.
+
+What, then, are we to make of Wanderer's scorekeeping account of assertions
+as second-person addresses? The answer is that it is not assertional
+commitments which are addressed to others but rather \emph{entitlement}
+to them. When a scorekeeper acknowledges an assertional commitment,
+she takes her interlocutors to be entitled to acknowledge it as well.
+From her perspective, anyone who comes into contact with her assertion
+is thereby authorized to re-assert its content. This communicative
+inheritance of entitlement depends upon the normative relationship
+forged between speaker and audience. In acknowledging an assertional
+commitment, the speaker \emph{addresses} its entitlement to her interlocutors,
+calling upon them to recognize this address. 
+
+Recognizing the address of an assertional entitlement does not require
+the addressee to overtly re-assert claims to which she is communicatively
+licensed---deferring or being disposed to defer justificatory responsibility
+to the speaker---although doing so is perhaps the paradigmatic way
+of appropriately responding to an assertional address. Rather, recognition
+is offered by implicitly acknowledging one's communicative entitlement
+to the addressed claim. Acknowledging assertional commitments in MDPs
+is an overt affair, but acknowledging \emph{entitlements} to claims
+is something one \emph{does} simply by not challenging them. So long
+as an interlocutor does not challenge the speaker, she counts as recognizing
+the speaker's default entitlement and hence her \emph{own} communicative
+entitlement. Whatever the hearers and over-hearers of an assertion
+do subsequently, their acts will either count as (implicitly) acknowledging
+their own entitlement to re-asset its content or as a rejection
+of the speaker's (and their) right to make it. There is no way to
+passively ignore the address of assertional entitlement.
+
+Furthermore, if I acknowledge an assertional commitment that is incompatible
+with one that you have acknowledged, I thereby do something that violates
+the normative relationship established in your address. My incompatible
+assertion is a violation addressed from me to you. Likewise, if you fail to adequately defend your claims to which you have addressed
+entitlement (to me), then you have failed \emph{me}. The normative
+structure of assertional entitlement thus exhibits the telltale reciprocity
+of the addressing attitude.
+
+The scorekeeping interpretation of assertings I am offering develops
+Brandom's original version and explicitly locates their second-personal
+dimension among the complex of deontic attitudes that institute them.
+On my account, a successful speech of act of asserting requires the
+speaker to acknowledge an assertional commitment and to address its
+entitlement to others. In order to take or treat another as asserting
+a claim, scorekeepers must \emph{attribute} assertional commitment
+to the speaker and \emph{recognize} the latter's address either by
+implicitly acknowledging entitlement to re-assert her claim or by
+challenging it. 
+
+Now that the attitude of addressing has been added to the set of attitude-types
+available to participants in MDPs, I will proceed to make the case
+for the inclusion of two new commitments, which are together necessary
+for representing the pragmatic force typically associated with ISQs.
+Once this has been done, I will utilize the concept of addressing
+to explain the attitudes speaker's adopt toward these new commitments
+(and entitlements) so as to institute performances with the force
+of queries. As we shall see, addressing is central to the structure
+of minimally inquisitive practices.
+
+\subsection{Erotetic and Apokritic Commitments}
+
+Since I am assuming that the scorekeeping practices into which queries
+are to be introduced are just those that confer assertional significance
+on performances---even if, following my diagnosis of justificatory
+stalemate, those practices \emph{by themselves} will fail to institute
+such significance---the only type of queries that will be available
+to their participants will be information-seeking queries (ISQs),
+i.e. queries that seek to update of a speaker's assertional score.
+Given this restriction, we can now ask the crucial question: what
+is the pragmatic force of queries, i.e. ISQs, according to
+the deontic scorekeeping model of MDPs? In this subsection, I propose
+an analysis of this structure that involves the acknowledgment and
+attribution of two new normative statuses, both of which can be understand
+as varieties of discursive commitment.
+
+Recall from the previous analysis that queries impose upon their addressee's
+a commitment to license an update of the speaker's normative status.
+In the case of ISQs, discharging this commitment requires the addressee
+to entitle the querier to make some assertion from among a set of
+alternatives. Call this responsibility that an addressee incurs as
+a consequence of being queried \textsc{apokritic commitment}. In being
+queried regarding some set of assertional commitments, Q, I become
+apokritically committed to Q. This means that I am responsible for
+licensing others to undertake some assertional commitment from Q.
+Loosely speaking, I am responsible for answering the question. I discharge
+this commitment whenever I succeed in entitling others to one of the
+members of Q, that is, when I `give' them an answer.
+
+How does one speaker license another to make an assertion in the deontic
+scorekeeping model? We have already seen the answer: A scorekeeper
+authorizes others to undertake those assertional commitments whose
+entitlement she addresses to them in acknowledging those commitments
+herself, i.e. asserting the claims herself. This public authorization
+of re-assertion is secured by the speaker's having undertaken a commitment
+to justify her claims if challenged. Challenges to subsequent re-assertions
+can be `passed along' to the original asserter by deferrals. This
+communicative inheritance of commitment depends upon the social recognition
+of \emph{default entitlement}. It is only in virtue of the fact that
+a querier takes my claims to have entitlement by default that I can
+entitle her to my claims \emph{merely} by making them. Thus, one way,
+perhaps the paradigmatic way of licensing a scorekeeper to undertake
+an assertional commitment is to acknowledge the assertional commitment
+oneself. 
+
+Of course, a speaker can pick up entitlement to an assertion through
+a combination of communicative and (strictly) inferential means. If
+I assert \textit{p} and, according to your score book, \textit{p} entitles one to \textit{q},
+then I have in effect entitled you to assert \textit{q}. This combination of
+assertional licensing mechanisms suggests that the distinction between
+direct and indirect answers to a question is irrelevant to the discharge
+of apokritic commitments. If we think of the direct answers to a question the set of assertional commitments associated with
+an ISQ, then an indirect answer to an ISQ is just an assertion which,
+together with certain collateral commitments, entitles one to infer
+a direct answer, i.e. a member of that set. Thus, indirect answers
+are every bit as appropriate to the discharge of apokritic commitments
+as direct answers are. As promised above, the austerity of the scorekeeping
+account has depopulated the space of possible responses to queriers,
+in this case, by obviating the distinction between direct and indirect
+answers.
+
+Another oblique way to discharge an apokritic commitment would be
+to draw the scorekeeper's attention to some feature of her environment
+to which she has a non-inferential disposition to respond by undertaking
+the assertional commitment in question. For example, I can satisfy
+your query regarding the whereabouts of the TV remote by lifting up
+the couch cushion. Such a performance fulfills my apokritic responsibility
+without my having to assert anything. In scorekeeping terms, `giving
+an answer' to a query is just a matter of entitling others to undertake
+an assertional commitment from among the set of alternatives. 
+
+When I am queried \emph{by} someone, I take on an apokritic commitment.
+I am responsible for providing an answer, though not in the sense
+that would require me to perform any particular speech act. However,
+apokritic commitment does not exhaust the normative significance of
+queries. There is, I contend, another sort of responsibility involved
+in asking a question, one that was not represented in the account
+of queries that I developed in terms of Lance and Kukla's normative-functionalist
+pragmatics. The missing responsibility is incurred by the querier
+herself. To query is to seek out an answer. In searching for something,
+we commit ourselves, even if only tentatively, to there being something
+to find. When we ask questions, we typically take them to have answers.
+It is an oddity for someone to pursue a question she admits to be
+unanswerable. Roughly, we can say that in performing a query an agent
+commits herself to its answerability.
+
+What does it mean to commit oneself to the answerability of a question?
+If the scorekeeping analog to an answer is any member of the query's
+set of assertional commitments, then a commitment to the answerability
+of a question is a commitment to undertake an assertional commitment
+from among the set of alternatives. But commitment to the answerability
+of question is not simply a commitment to obtain \emph{some} answer.
+Rather, it is a commitment to obtain \emph{the} answer, that is, the
+\emph{correct} answer. A correct answer is just an assertional commitment
+belonging to the set of alternatives to which one is \emph{entitled}.
+Thus, the responsibility that a querier undertakes has the scorekeeping
+significance of a commitment to acknowledge an assertional commitment
+(from among the query's set of alternatives) to which one is entitled.
+Call this a querier's \textsc{erotetic commitment}.
+
+The responsibility to assert or believe something for which one has
+warrant may seem to capture a type of epistemic responsibility to
+which we are subject independently of any questions we ask. But strictly
+speaking this is not the case. Were we responsible for believing everything
+we are warranted in believing, even if only by our own lights, all
+of us would be found epistemically deficient. That alone is not a
+reason to think we are nonetheless responsible for having such beliefs,
+at least implicitly. There is a scorekeeping analog to the notion
+of implicit or ideal belief. Scorekeepers are held responsible for
+believing the consequences that follow from their overtly acknowledged
+commitments (i.e. their explicit beliefs) according to what others
+take those consequences to be. These are the commitments attributed
+to speakers by others. Being responsible for one's attributed commitments
+captures the ideal or implicit sense of `belief' according to which
+we `believe' all the logical consequences of our explicit beliefs.
+But note that even this sort of epistemic responsibility does not
+require speakers to overtly acknowledge consequential commitments.
+It only precludes us from acknowledging a commitment while denying
+one of its consequences. Retracting the original commitment is thus
+a perfectly acceptable way of fulfilling this responsibility. Finally,
+however we conceive it, epistemic warrant obviously extends far beyond
+logical consequence. It's absurd to think that we are responsible
+for believing, even implicitly or ideally, everything for which we
+have, say sufficient inductive grounds. It is no coincidence that
+Brandom offers the status of \emph{entitlement} as an analog to epistemic
+warrant: we are \emph{permitted} to believe that for which we have
+warrant, but we are not obliged to do so.
+
+While it makes no sense to say we are responsible for believing \emph{everything}
+we are entitled to belief, it does make sense to say that we are responsible
+for believing \emph{some} things we are entitled to believe. Lance
+and Kukla mark this distinction by claiming that we are responsible
+for knowing those truths that \emph{matter} to `us'. The scorekeeping
+model can accommodate this restricted sense of epistemic responsibility
+even while repudiating the I-We view of discursive sociality in which
+it is couched, namely, the `us'. Erotetic commitment is precisely
+the mechanism by which it does so. When we ask questions we express,
+\emph{inter alia}, an interest in their answers. The answers to my
+questions \emph{matter} to \emph{me}. I am in some sense deficient
+when I ask a question and, having been provided with its (correct)
+answer, fail to accept it. I might of course have beliefs that contradict
+the answer, but then there is another sort of epistemic responsibility
+that kicks in, namely, the responsibility to resolve incompatible
+commitments. In asking a question, I stake out a discursive territory
+and claim responsibility for believing whatever I am warranted to
+believe within it. Erotetic responsibility is thus a kind of \emph{local}
+epistemic responsibility. Scorekeepers institute this propriety by
+taking a querier to acknowledge an erotetic commitment to Q, that
+is, a responsibility to acknowledge an assertional commitment from
+(among the alternatives in) Q to which she is entitled.
+
+Erotetic and apokritic commitments represent the normative consequences
+that attach to quering and queried agents, respectively. While apokritic
+commitment was expressible in the terms laid out by Lance and Kukla's
+normative-functionalist framework, erotetic commitment was not. The
+latter more closely resembles the justificatory responsibility incurred
+by asserters in that it is added to the speaker's scorecard. As the
+account develops, the relationship between assertional and inquisitive
+responsibilities will be further articulated. Before we are in a position
+to do so, however, we need to examine the sorts of deontic attitudes
+whose adoption characterizes the pragmatic force of queries.
+
+
+
+
+\subsection{The Complex Act of Querying}
+
+In addition to the set of statuses and attitudes that agents can embody
+and adopt in Brandom's scorekeeping model of asserting, I have added
+two new types of commitment (erotetic and apokritic) and one new type
+of attitude (addressing). With this augmented conceptual tool kit,
+I now propose to represent the pragmatic force typically associated
+with queries, specifically ISQs. The following claim redeems the promise
+embodied in the title of this work: How to ask a question in the space
+of reasons.
+\begin{itemize}
+\item [{\emph{Query}:}] To perform a query regarding some set of alternatives,
+Q, a scorekeeper must (1) acknowledge an erotetic commitment to Q,
+or (2) address an apokritic commitment to Q (to others).
+\end{itemize}
+
+The sense of `or' in \emph{Query} is inclusive; scorekeepers may
+both undertake an erotetic commitment to Q and address the corresponding
+apokritic commitment to others. In fact, the pragmatic force \emph{typically}
+associated with queries is precisely of this sort. Typically, when
+one agent queries another, she adopts two deontic attitudes and affects
+two changes in the deontic scores: on one hand, she acknowledges an
+erotetic commitment (herself), and on the other, she addresses an
+apokritic commitment to others.
+
+Having the concept of addressing at our disposal is essential to understanding
+the normative effect that queries typically have on those to whom
+they are directed. In querying you, I call upon you to recognize my
+address of apokritic commitment. Paradigmatically, such recognition
+is given when the addressee discharges her apokritic commitment by
+licensing me to undertake a commitment to a member of the set of alternatives,
+that is, by `giving' me the correct answer. In addressing a question
+to you, I treat you not only as bound by a norm but also as bound
+\emph{to} \emph{me}. You are responsible \emph{to me} for giving a
+correct answer. You may, of course, not have the correct answer to
+give. In this case, merely acknowledging the apokritic commitment
+I have addressed to you, even if you do not discharge it, will qualify
+as recognizing my address. This `acknowledgment-without-discharge'
+is the scorekeeping effect wrought by those admissions of ignorance
+which, as we witnessed in the last chapter, can sometimes provide
+queries with appropriate uptake, though, strictly speaking, minimally
+inquisitive agents do not have the expressive resources to \emph{say}
+that they don't know something. I develop this latter point in greater
+detail below.
+
+Scorekeepers can reject or challenge addresses in several ways. The
+address of assertional entitlement can be rejected by disavowing the
+corresponding commitment or by acknowledge a commitment that is incompatible
+with it. In the case of apokritic commitments, it is also possible
+to resist address. In addition to certain non-complaint admissions
+of ignorance, one way to reject an address of apokritic responsibility
+is to disavow every member of the set of alternatives `presented'
+by the query. In the previous chapter I offered a scorekeeping analog
+to the semanticist's notion of a question's presuppositions---namely,
+all those commitments that are the committive-consequences of every
+member of the set of alternatives. Since in disavowing some claim
+I also disavow any other claims of which the first is a committive-consequence,
+one way to reject the address of an apokritic commitment to Q is to
+disavow some committive-consequence of every member of Q. Note that
+the same rejection can be achieved by undertaking a commitment to
+any claim \emph{incompatible} with every member of the set of alternatives.
+The practical significance of either move is to treat the query (to
+which one is subject) as unanswerable and to repudiate the attempt
+to hold one accountable for answering it.
+
+What critically distinguishes this model of querying from the one
+developed in the last chapter is that the act of acknowledging a responsibility
+oneself (which was entirely ignored in the previous account) and that
+of imputing a responsibility to another are \emph{separable}, both
+in principle and in practice. It is possible, on the present account,
+for a speaker to acknowledge an erotetic commitment without attributing
+an apokritic commitment and \emph{vice versa}. Believe it or not,
+these scenarios correspond to queries that we encounter all the time
+in ordinary discourse. Instances in which we ask so-called \emph{self-addressed
+questions}, when we `wonder aloud', when we announce a project of
+inquiry, or simply \emph{pose} a question to our interlocutors can
+all be understood as acts in which we acknowledge an erotetic commitment
+without attributing a corresponding apokritic commitment. Conversely,
+when we ask so-called \emph{exam-questions} to which we \emph{already}
+have the answers or pursue \emph{interrogation-questions} to which
+we think there is \emph{no} correct answer, we can be seen as attributing
+apokritic commitments without acknowledging the corresponding erotetic
+commitment. The normative structure of these latter cases, i.e. interrogation-questions,
+will become particularly significant for the account of reason-seeking
+queries that follows. 
+
+The idea that the responsibilities associated with a speech act could
+detach from one another and associate with distinct performance-types
+is not incompatible with the scorekeeping model. Brandom's scorekeeping
+analysis of assertion, for instance, appeals to two distinct types
+of responsibility: ampliative and justificatory. While it is the intersection
+of these normative statuses that represents the pragmatic force of
+asserting, there is nothing, in principle, that precludes the possibility
+of performance-types that only institutes \emph{one} of the responsibilities.
+Such performances may even correspond to speech acts we encounter
+in ordinary discourse. For instance, undertaking an ampliative responsibility
+to extract the consequences of one's commitment without thereby undertaking
+a responsibility to demonstrate entitlement if challenged seems a
+reasonable characterization of the normative significance of \emph{conjecturing}.
+When I conjecture that \textit{p}, I am not required to produce a justification
+for \textit{p} if challenged, though I am required to undertake those commitments
+that follow from \textit{p}, at least, to take up the \emph{conjecturing} attitude
+toward them. Thus, the potential independence of responsibilities
+whose conjunction represents the normative significance of a particular
+speech act coheres with the deontic scorekeeping approach to discursive
+practices.
+
+The picture of queries that is emerging is one of a complex normative
+acts whose constituents are at least an acknowledgment of an erotetic
+commitment or an address of apokritic commitment, and typically both.
+We have already seen how the identification of addresses in deontic
+scorekeeping reveals the complexity of assertions. Asserting a claim
+requires a scorekeeper to both acknowledge an assertional commitment
+and to address its entitlement to others. In contrast to assertions,
+queries address a commitment rather than an entitlement to others.
+And unlike queries, assertions \emph{require} the speaker to acknowledge
+a commitment. The enriched version of deontic scorekeeping that I
+am presenting represents both queries and assertions as performances
+that include the adoption of two distinct attitudes regarding two
+distinct statuses and directed at (at least) two distinct participants.
+
+
+
+
+
+
+\subsection{Erotetic and Apokritic Entitlement}
+
+Scorekeeping practices that include queries must institute and administer
+two special types of responsibility: erotetic and apokritic. When
+an agent is erotetically responsible, she is obliged to recognize
+the entitlement of certain assertional commitments avowed by her interlocutors
+by undertaking those commitments herself, that is, by re-asserting
+their contents. An agent who is apokritically responsible, on the
+other hand, is obliged to entitle her interlocutors to undertake certain
+assertional commitments by undertaking (though not necessarily explicitly
+acknowledging) those commitments herself. The addressee is responsible
+for providing an assertional check, the querier is responsible for
+cashing it in.
+
+Ideally, when a speaker acknowledges an erotetic commitment to Q and
+addresses a corresponding apokritic commitment to her interlocutor,
+the latter is in a normative position to discharge his (apokritic)
+responsibilities, and when he does so, the speaker is thereby put
+in a position to discharge her own (erotetic responsibility). The
+entire erotetic-apokritic transaction is made possible by the communicative
+transferal of assertional entitlement. By making an assertion that
+answers her query, the addressee entitles the querier to re-assert
+his claim by permitting her to defer to his justificatory responsibility.
+This communicative inheritance of entitlement then detaches the querier's
+erotetic responsibility, thus \emph{obliging} her to re-assert (or
+believe) his claim.
+
+The entitlement one has to undertake an apokritic commitment to a
+set of alternative assertions and the entitlement one has to assert
+a member of that set are one and the same. We are authorized to take
+on the responsibility to answer an information-seeking question to
+the extent that we are authorized to make the assertion that answers
+that question. Thus, to treat an agent as entitled to an apokritic
+commitment to a set of alternatives, Q, is just to treat her as entitled
+to undertake some assertional commitment in Q. It is significant to
+note that this equivalency permits cases in which a scorekeeper takes
+a player to be entitled to an apokritic commitment but does not take
+her to be entitled to any \emph{particular} assertional commitment.
+In other words, we can and often do treat someone as having the correct
+answer to a question without knowing what that correct answer is (ourselves).
+
+Let's now turn to the type of circumstances that entitle one to an
+erotetic commitment. Minimally, one is entitled to take responsibility
+for a question's answerability if one is entitled to treat at least
+one member of the set of answers to that question as correct. But
+if a scorekeeper already has entitlement to an answer, then her question,
+so long as it is a genuinely information-seeking question, is trivial.
+Indeed, acknowledging an assertional commitment that answers an ISQ
+\emph{precludes} an agent from entitlement to the corresponding erotetic
+commitment. In other words, commitment to an assertion that discharges
+an erotetic commitment is \emph{incompatible} with that erotetic commitment.
+When an agent's scorecard indicates an assertional commitment to one
+of the members of Q and an erotetic commitment to Q, she is obliged
+to either retract her assertion or drop her question. The latter course
+of action is the typical result of an agent recognizing the correct
+answer to a question to which she is erotetically committed. 
+
+Another sort of erotetic incompatibility occurs when an agent is committed
+to any assertion that is (assertionally) incompatible with all or
+some of the assertions that comprise the set of alternatives to which
+she is erotetically committed. In this case, a scorekeeper would no
+longer be treating a set of alternatives as \emph{possible} answers,
+since some of her collateral commitments would preclude entitlement
+to (at least some of) its members. A scorekeeper whose scorecard indicates
+this sort of erotetic incompatibility is again obliged to retract
+either the incompatible assertion or the erotetic commitment. Since
+erotetic commitments are individuated in terms of the set of alternative
+assertions that constitute possible answers, a scorekeeper may respond
+to erotetic incompatibility that only bars her from endorsing \emph{some}
+possible answers by retracting her previous erotetic commitment and
+undertaking another whose set of alternatives does not include those
+precluded assertions. That is, she can drop her original question
+and ask a different one.
+
+Erotetic and apokritic responsibilities thus have conditions which
+authorize their undertaking just as justificatory and ampliative responsibilities
+have corresponding conditions of authorization. Likewise, agents can
+have entitlement to erotetic/apokritic commitments they do not undertake,
+without exhibiting normative deficiency. I can occupy a normative
+position that entitles me to ask a question or to make another responsible
+for answering it, without undertaking or addressing the erotetic and
+apokritic commitments, respectively. What is not permitted is that
+an agent ask questions or be asked questions and yet fail to acknowledge
+or provide answers to which she is entitled.
+
+
+
+\printbibliography
+
+
+\end{document}

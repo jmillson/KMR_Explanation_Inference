@@ -1,0 +1,282 @@
+\documentclass[11pt]{article} 
+\topmargin -15mm
+
+\textheight 24truecm   
+\textwidth 16truecm    
+\oddsidemargin 5mm
+\evensidemargin 5mm   
+\setlength\parskip{10pt}
+\pagestyle{empty}          
+
+\usepackage{gensymb}
+\usepackage{boxedminipage}
+\usepackage{amsfonts}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{t1enc}
+\usepackage{subfig}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{pgf}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage{soul}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[german,english,italian]{babel}
+
+\newcommand{\nc}{\,\mid\!\sim\,} 
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+	<-6> MnSymbolA5
+	<6-7> MnSymbolA6
+	<7-8> MnSymbolA7
+	<8-9> MnSymbolA8
+	<9-10> MnSymbolA9
+	<10-12> MnSymbolA10
+	<12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+	<-6> MnSymbolA-Bold5
+	<6-7> MnSymbolA-Bold6
+	<7-8> MnSymbolA-Bold7
+	<8-9> MnSymbolA-Bold8
+	<9-10> MnSymbolA-Bold9
+	<10-12> MnSymbolA-Bold10
+	<12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA}{U}{MnSymbolA}{m}{n}
+\DeclareMathSymbol{\twoheaduparrow}{\mathop}{MnSyA}{25}
+
+
+\makeatletter
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+% % % % % % % % % % % % % % % Internal Commands NMC% % % % % % % % % % % % %
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+
+\newcommand{\uuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt .6pt 0pt 0pt}{$\uparrow$}}
+}
+\newcommand{\tuuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt 1pt 0pt 0pt}{$\scriptscriptstyle\uparrow$}}
+}
+\newcommand{\muparrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .65pt 0pt 0pt}{$\scriptstyle\uparrow$}}
+}
+\newcommand{\Uuparrow}{% 
+	\raisebox{.2ex}{\clipbox{0pt .15pt 0pt 0pt}{$\Uparrow$}}
+}
+\newcommand{\thuarrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .8pt 0pt 0pt}{$\twoheaduparrow$}}
+}
+
+% % % % % COMMANDS FOR NON-MONOTONIC CONSEQUENCES % % % % % % % % %
+\newcommand{\nms}{%
+	\mathbin{\mathpalette\@nms\expandafter}
+}
+\newcommand{\@nms}{\mid\joinrel\mkern-.5mu\sim}
+
+
+\newcommand{\nmc}{%
+	\mathbin{\mathpalette\nm@\expandafter}
+}
+\newcommand{\nm@}{\mid\joinrel\mkern-.5mu\sim\mkern-3mu}
+
+\newcommand{\qmc}[1]{\mathrel{
+		\mathchoice
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-13mu\tiny\uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow#1}}
+	}
+}
+
+\newcommand{\mqmc}{\mathrel{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\uuparrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow}}
+	}
+}
+
+\newcommand{\mrc}[1]{\mathbin{
+		\mathchoice
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\footnotesize\hspace{.5mm}\nms^{\mkern-13.5mu\fontsize{5.5}{0}\Uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\Uuparrow#1}}
+	}
+}
+
+\newcommand{\smc}{\mathbin{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\thuarrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\thuarrow}}
+	}
+}
+\newcommand{\nnmc}{\not\nmc}
+\newcommand{\nsmc}{\not\mkern-3mu\smc}
+\newcommand{\nmrc}{\not\mkern-3mu\mrc}
+\newcommand{\nmqmc}{\not\mkern1mu\mqmc}
+\newcommand{\nqmc}{\not\mkern1mu\qmc}
+
+% % % % % % % % % % %Commands for Materia Incoherence% % % % % % % % % % % %
+
+\newcommand{\bigperpp}{%
+	\mathop{\mathpalette\bigp@rpp\relax}%
+	\displaylimits
+}
+\newcommand{\bigp@rpp}[2]{%
+	\vcenter{
+		\m@th\hbox{\scalebox{\ifx#1\displaystyle1.3\else1.3\fi}{$#1\perp$}}
+	}%
+}
+\newcommand{\bigperp}{\raisemath{.5pt}{\bigperpp}}
+
+
+
+\titleformat*{\section}{\normalfont\bfseries\filcenter}
+\titleformat*{\subsection}{\normalfont\itshape\filcenter}
+\titleformat*{\subsubsection}{\normalfont\bfseries}
+\titleformat*{\paragraph}{\normalfont\itshape}
+\titleformat*{\subparagraph}{\normalfont\bfseries}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Khalifa}
+\lhead{Explanatory Asymmetry and Inferential Practice}
+\rfoot{Page \thepage}
+\renewcommand{\baselinestretch}{0}
+\setlength{\parskip}{0em}
+\begin{document}
+\textit{Objectives}
+\begin{itemize}
+\item To propose (part of) a new, ``inferential practice” (IP) model of explanation.
+\item To show how the IP model solves the symmetry problem: that if $A$ explains $B$, then $B$ does not (usually) explain $A$.
+\end{itemize}
+
+\section{Theories of Explanation: A Potted History}
+\begin{enumerate}
+\item \textit{Causal-mechanical theories} hold that explanations are (or represent) causes and/or mechanisms (Salmon, Woodward, Strevens, MDC).
+\subitem They readily handle the symmetry problem
+\item \textit{Inferential theories} hold that explanations are inferences (Hempel, Friedman, Kitcher).
+\item \textit{Pragmatic theories} hold that explanations are speech-acts, paradigmatically answers to why-questions (Achinstein, van Fraassen). Both inferential and pragmatic models:
+\subitem Are broader than causal theories, and
+\subitem Tend to avoid/deflate modal concepts (Humean modesty).
+\end{enumerate}
+\textit{Goal}: to construct a hybrid inferential-pragmatic account that solves the symmetry problem while retaining breadth and Humean modesty.
+
+\section{The IP Model}
+$A$ explains $B$ iff (1) $A$ and $B$ are true, and (2) $B$ is a ``sturdy" consequence of $A$.
+
+\subsection{What is a sturdy consequence?}
+If the \textit{material} inference from $A$ to $B$ is sturdy, then :
+\begin{enumerate}
+	\item It is \textit{modally robust}, i.e. the inference from $A$ to $B$ remains good under some range of suppositions $W$ consistent with the premises. (We represent this as: $A \mrc{W} B$)
+	\item it is \textit{superlatively robust}, i.e. its range of suppositions is more inclusive than any other inference that could have the explanandum as conclusion.
+\end{enumerate}
+\textit{NB}: There is no causal requirement. License for optimism about preserving the breadth of earlier inferential and pragmatic theories. \newline
+\subsection{A toy example and motivation}
+Compare the following two inferences (potential explanations):
+\begin{itemize}
+\item \textit{John Jones.} No males who consume birth control pills become pregnant, John Jones is a male who consumes birth control pills $\mrc{W}$ John Jones does not become pregnant. 
+\item \textit{John Jones*.} No males become pregnant, John Jones is a male $\mrc{W*}$ John Jones does not become pregnant.
+\end{itemize}
+Since $W \subset W^*$, Jones' consuming birth control pills is not superlatively robust, and thus does not explain his non-pregnancy.
+\paragraph{Motivation:} Superlative robustness tracks with many aspects of scientific-explanatory practice, e.g. invariance/stability, controlled experimentation, Mill's Methods, etc. While these are typically associated with \textit{causal} explanation, the IP model provides a more general structure. So optimism remains.
+
+\subsection{What is a material inference?}
+\begin{itemize}
+	\item Traditional theories of inference are \textit{formalist}: inferences are good only insofar as they can be expressed as instances of a general valid/cogent inference pattern. 
+	\item \textit{Material} theories of inference hold that inferences are good in virtue of their non-logical (i.e. material) content.
+	\item As a result, many of our inferential commitments are left implicit when we make materially good inferences.
+	\item Some inferential materialists then argue that formal vocabulary's chief function is to make these commitments explicit. In other words, formal vocabulary plays an important \textit{expressive} function. 
+\end{itemize}
+\textit{Idea:} ``Explains" expresses a commitment to sturdily infer $B$ from $A$. Note that this is congenial to Humean modesty: explanatory vocabulary is simply a way of talking about our inferences; not about possible worlds. (\textit{Hope}: to extend this expressivist treatment to causal, mechanistic, unificationist, and other explanatory vocabulary. )
+
+\subsection{Whither material inference?}
+\begin{itemize}
+	\item \textit{Norton}: Every putatively formal theory of induction has counterexamples. Why? Because local facts (i.e. about material content) determine an inference's cogency. 
+	\subitem \textit{NB}: If explanations are inferences, they are almost certainly inductive/nonmonotonic.
+	\item \textit{Brandom}: Formally good inferences are: (a) materially good inferences that (b) cannot be turned into materially bad inferences by substituting material vocabulary for other material vocabulary in the premises and conclusions. So formally good inferences are naturally definable in terms of materially good inferences; the converse does not hold. So, material goodness is more basic than formal goodness.
+\end{itemize}
+
+\section{The Symmetry Problem}
+\subsection{What is the problem?}
+Let $\theta$ be the angle of incidence from the sun to the top of the tower; $H$, the tower's height, and $L$, the length of the tower's shadow. Then the following is an explanation of the shadow's length: \begin{equation}
+\tan \theta  = \frac{H}{L},\hspace{.5ex} \theta = 60^{\degree},\hspace{.5ex} H = 1,454\,\text{ft} \,\,\vdash\,\, L = 839.5\,\text{ft}
+\end{equation}
+However, inferential and pragmatic theories have had a hard time ruling out the following as an explanation of the tower's height:
+\begin{equation}
+\tan \theta  = \frac{H}{M},\hspace{.5ex} \theta = 60^{\degree},\hspace{.5ex}  L = 839.5\,\text{ft} \,\,\vdash\,\,  H = 1,454\,\text{ft}
+\end{equation}
+
+\subsection{A quick and dirty solution}
+While the shadow-to-tower inference is modally robust, it is not superlatively robust. Compare: \newline
+\begin{equation}
+\tan \theta  = \frac{H}{M},\hspace{.5ex} \theta = 60^{\degree},\hspace{.5ex}  L = 839.5\,\text{ft} \,\,\mrc{W}\,\,  H = 1,454\,\text{ft}
+\end{equation}
+with:
+\begin{equation}
+\text{The architect designed the tower to be 1,454 ft high} \,\,\mrc{W*}\,\,  H = 1,454\,\text{ft}
+\end{equation}
+Unlike the former, the latter inference will hold even if the tower is perfectly transparent and casts no shadow, if the surfaces around the tower are curved, etc. So $W \subset W^*$, and the shadow-to-tower inference is disqualified as an explanation.
+
+\subsection{Objection: Isn't the move from deductive to nonmonotonic inference ad hoc in this example?}
+\textit {Reply}: Only if we lose sight of how \textit{models} play a role in explanation. There are three interlocking kinds of inferences in this example:
+\begin{enumerate}
+	\item \textit{Model-to-model inferences.} These are purely mathematical calculations, without any physical interpretation. Here the inferences are deductive. However, because there is no interpretation, this is merely trigonometry, and not optics. So, when we're making these inferences, we shouldn't even \textit{purport} to be explaining the tower's height (or the shadow's length, for that matter.)
+	\item \textit{Model-to-target inferences.} These are inferences from the model to the target, i.e. interpretations of the model. Here the inferences are nonmonotonic, as idealizations and approximations are made, e.g. that the tower is at a perfect right angle with the ground. However, these are merely representations. Rarely will these inferences be sturdy, however, as the target-to-target inferences tend to be sturdier than model-to-target inferences. Hence, few (if any) model-to-target inferences will be explanatory.
+	\item \textit{Target-to-target inferences} Once we can map the model to the target, we can make inferences from one part of the target system (say the sun's angle and the tower's height) to another part of the target system (the shadow). These will be nonmonotonic, and when they are sturdy, they are explanations.
+\end{enumerate}
+So, the move to nonmonotonic inferences is not ad hoc. (Interesting diagnosis: Since many of the inferential and pragmatic approaches do not distinguish between these three kinds of inferences, they are susceptible to symmetry problems.)
+\end{document}

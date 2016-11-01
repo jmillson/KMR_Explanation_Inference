@@ -1,0 +1,286 @@
+\documentclass{article}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{natbib}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{turnstile}
+\usepackage{pgf}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{soul}
+\renewcommand{\makehor}[4]{
+%  {\ifthenelse{\equal{#1}{n}}{\hspace{#3}}{}
+%   \ifthenelse{\equal{#1}{s}}{\rule[-0.5#2]{#3}{#2}}{}
+%   \ifthenelse{\equal{#1}{d}}{\setlength{\lengthvar}{#2}
+%     \addtolength{\lengthvar}{0.5#4}
+%     \rule[-\lengthvar]{#3}{#2}
+%     \hspace{-#3}
+%     \rule[0.5#4]{#3}{#2}}{}
+%   \ifthenelse{\equal{#1}{t}}{\setlength{\lengthvar}{1.5#2}
+%     \addtolength{\lengthvar}{#4}
+%     \rule[-\lengthvar]{#3}{#2}
+%     \hspace{-#3}
+%     \rule[-0.5#2]{#3}{#2}
+%     \hspace{-#3}
+%     \setlength{\lengthvar}{0.5#2}
+%     \addtolength{\lengthvar}{#4}
+%     \rule[\lengthvar]{#3}{#2}}{}
+   \ifthenelse{\equal{#1}{w}}{% New wavy $\sim$ definition
+     \setbox0=\hbox{$\sim$}%
+     \raisebox{-.6ex}{\hspace*{-.ex}\adjustbox{width=#3,height=\height}{\clipbox{0.75 0 0 0}{\usebox0}}}}{}
+}
+
+
+  
+ \newcommand{\nc}{\turnstile{s}{w}{}{}{n}}
+ \newcommand{\nce}{\turnstile{s}{w}{e}{}{n}}
+
+\makeatletter
+\newcommand{\bigperp}{%
+  \mathop{\mathpalette\bigp@rp\relax}%
+  \displaylimits
+}
+\newcommand{\bigp@rp}[2]{%
+  \vcenter{
+    \m@th\hbox{\scalebox{\ifx#1\displaystyle2.1\else1.5\fi}{$#1\perp$}}
+  }%
+}
+\makeatother
+
+\DeclareSymbolFont{symbolsC}{U}{ntxsyc}{m}{n}
+\SetSymbolFont{symbolsC}{bold}{U}{ntxsyc}{n}{b}
+\DeclareMathSymbol{\multimapdotbothA}{\mathrel}{symbolsC}{23}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+\newcommand\pref[1]{(\ref{#1})}
+%\usepackage{calc}
+%\usepackage{covington}
+%\usepackage{diagbox}
+%\usepackage{fixltx2e}
+%\usepackage{tikz}
+%\usetikzlibrary{calc}
+
+%\newcommand{\hcancel}[5]{%
+%    \tikz[baseline=(tocancel.base)]{
+%        \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
+%        \draw[red] ($(tocancel.north west)$) -- ($(tocancel.south east)$);}}%
+
+%\DeclareFontEncoding{LGR}{}{}
+%\DeclareTextSymbol{\~}{LGR}{126}
+
+%\providecommand{\tabularnewline}{\\}
+%\newcommand*{\equationautorefname}[1]{\@gobble}
+\setcitestyle{aysep={}, notesep=:}
+
+%opening
+%\title{Nonmonotonic material inferences and best explanations}
+%\author{Jared Millson}
+\date{}
+\raggedbottom
+
+
+%\newcommand{\nc}{\turnstile{s}{w}{}{}{n}}
+%\newcommand{\nc}{\,\mid\!\sim\,}
+
+\begin{document}
+%\maketitle
+\setlength{\parindent}{1cm}
+\large
+\doublespacing
+%Tenative Outline:
+%\begin{itemize}
+%	\item[I.] Introduction
+%	\item [II.] Conditions of Adequacy for the Semantics of `Best Explains'
+%	\item [III.] Semantic Inferentialism and Logical Expressivism
+%	\item [IV.] Inferential Semantics of `Best Explains'
+%	\item [V.] Assessment/Future work 
+%\end{itemize}
+%
+%\textbf{Disclaimers}
+%\begin{itemize}
+%	\item The following material is intended primarily for Section III and IV., but it's really just an attempt to jump-start thinking about the paper.
+%	\item  I feel like I'm cleaving way too much to Brandom here and do not want the paper to presuppose too much familiarity with/acceptance of Brandom's project. 
+%\end{itemize}
+
+
+
+\section{Semantic Inferentialism and Logical Expressivism}
+
+
+Semantic inferentialism is a view about the meaning of linguistic expressions. Its central tenet is, roughly, that the meaning of a linguistic expression is settled by its inferential role, i.e., by what implies and is implied by sentences in which the expression occurs. Inferentialism (as we will hence forth refer to it) contrasts fundamentally with truth-conditional and model-theoretic views of linguistic meaning. The latter take \textit{truth}, \textit{truth-in-a-model}, \textit{denotation} or some other representational concept as primitive in order to explain the meaning of various expression-types. Inferentialism treats the concept of \textit{inference} rather than \textit{representation} as prior in the order of semantic explanation.
+
+Although it is meta-semantically primitive, \textit{inference} is nonetheless analyzable pragmatically as something that speakers \textit{do} with bits of language. Inferentialists see inference and assertion as two-sides of a game of giving and asking for reasons. In this game or practice, speakers are both players (making assertions and drawing inferences) and referees (keeping track of other's assertions and determining whether they are observing the rules of inference). From this normative-pragmatic standpoint, to assert something is to undertake a commitment---a commitment to endorse the inferential consequences of one's claim and to show that one is entitled to that claim if challenged by others. Inferences are correct (deductively valid) if commitment to the premises commits the speaker to the conclusion or (inductively good) if commitment and entitlement to the premises entitles the speaker to the conclusion. Speakers may also come to have incompatible commitments when one of their claims prohibits entitlement to another. Inferentialists thus understand inference and assertion in terms of the normative concepts of \textit{commitment} and \textit{entitlement}.
+	
+Logical expressivism is a view about the function of logical vocabulary, i.e. about what this vocabulary allows us to do. Its core tenet is, roughly, that logical vocabulary permits us to \textit{explicitly} endorse inferences by asserting logically complex sentences, whereas without logical vocabulary we could only undertake such commitments \textit{implicitly} by reasoning or arguing in certain ways. For instance, the conditional, $ P  \rightarrow  Q$, permits us to \textit{claim} that \textit{Q} follows from \textit{P} rather than simply inferring or being disposed to infer \textit{Q} from \textit{P}. Such an analysis does not purport to give \textit{the meaning} of the conditional, but rather to identify its expressive capacity. Following the approach of logical inferentialism, or \textit{proof-theoretic semantics} as it is often called, the meaning of a logical constant is settled by the set of good inferences in which it occurs---a set that is determined by the introduction and/or elimination rules for that constant.
+
+Logical expressivism may be explicated with the help of a distinction between two modes of discourse---in the object-language mode we purport to be talking about objects and their properties, and in the metalinguistic mode we give expression to the rules or norms that govern the use of the object-language. On the expressivist view, logical vocabulary includes all those object-language expressions for what would be given, in the metalanguage, as a rule of inference. Consider the deduction theorem for classical logic: $ P \vdash Q $ iff $ \vdash P \rightarrow Q $. While $ \rightarrow $ is a piece of the object-language, $ \vdash $ belongs to the metalanguage. The deduction theorem thus establishes that $ P \rightarrow Q $ is an object-language expression for what would be expressed meta-linguistically as a rule of inference: $ P \vdash Q $.
+
+Of course, the commitments made explicit by logical vocabulary need not be about the goodness of formal deductive inferences. Indeed, to avoid blatant circularity logical expressivism presupposes that there are inferences whose correctness is not determined by the meaning and arrangement of logical terms, i.e. by their `logical form'. Such inferences are \textit{material inferences} or \textit{material rules} of inference.  Since a formally valid inference can be defined as a material inference that remains good under substitution of material vocabulary, any bit of language that makes explicit a formal inferential commitment also makes explicit some material one. Thus, logical expressivism holds that logical vocabulary can be introduced into any language governed by material rules of inference (and incompatibility) and that the expressions introduced allow speakers to form sentences that make explicit facts about those rules.
+
+In this sense, a vocabulary is `logical' just in case it codifies the rules of inference that users of the original, unextended language (merely) follow, i.e. the rules implicit in their linguistic practice.  So, we should not be misled by its name---logical expressivism is a position that may be applied to vocabularies well beyond those traditionally considered `logical.' And when so applied, the position lends considerable weight to the inferentialist cause: expressions that might appear to represent the world can instead be understood as giving expression to the rules of inference that govern the use of sentences in the language.  
+
+
+%Of course, the contrast between formal and material inferences only makes sense relative to a specified formal vocabulary. An inference that is \textit{material} with respect to first-order predicate logic may well be \textit{formal} with respect to classical propositional logic. \footnote{ This would be the case if, to give just one reason, the use of singular terms makes explicit the endorsement of classes of inferences among complex sentences in classical propositional logic where one of constituent sentences in the premise is substituted for another in the conclusion. The idea here is that commitment to classes of inferences whose conclusions and premises are symmetrically inferable represents an implicit commitment to the co-extensionality of the terms in the substituted sentences. See Brandom (1994, 370-384).}
+
+
+\section{The Semantics of \textit{Best Explains}}
+We now apply inferentialism and logical expressivism to explanatory vocabulary and show how the expression \textit{best explains} allows speakers to make explicit their endorsement of certain patterns of material inference. The inferences with which we are concerned are entitlement-preserving material analogs to inductive inferences, broadly construed. Such inferences are distinctly non-monotonic. Ordinary scientific practice is replete with such inferences---e.g. ``The liquid is acidic. So, it will turn blue litmus paper red.'' A good material inference of this sort might turn bad if additional premises or auxiliary hypotheses are added (e.g. ``Chlorine gas is present.'')\footnote{Chlorine gas bleaches damp litmus paper.}, and likewise, a bad inference might be made good by adding the right premises. It is our contention that the \textit{best explains} locution makes explicit a neatly circumscribed subset of these material inductive inferences. 
+
+We begin with a finite language $ \mathcal{L}_{0} $ devoid of logical vocabulary. Let $ p, p_1, p_2, $ etc. stand for atomic sentences, $ \Gamma, \Delta $ for sets of atomic sentences, and $ W, W',W'' $ for sets of sets of atomic sentences. We reserve the uppercase Latin letters, $ A, B, C, D $ for formulas, atomic  or otherwise. In order to represent material incoherence, we extend $ \mathcal{L}_0 $ to include the constant $ \bigperp $, i.e. $ \mathcal{L} $ = $ \mathcal{L}_0 \,\bigcup \,\{\bigperp\}$. We further stipulate that $ \bigperp $ can neither appear to the left of the turnstile nor be embedded, i.e. $ {\nc} \subseteq \mathcal{P}(\mathcal{L}_0) \times \mathcal{L} $. We can now define $ \nc $ as the relation over $ \mathcal{L} $ such that $  \Gamma\nc p $ iff  $\Gamma$ materially implies $ p $, and $\Gamma\nc \bigperp $ iff $ \Gamma $ is materially incoherent. 
+
+In keeping with the normative-pragmatic conception of inferences, we read  $ \Gamma, A \nc B  $ as stating that anyone who is committed and entitled to A in context $ \Gamma $ is entitled to B. Similarly, we read  $\Gamma, A, B \nc \bigperp $ as stating that commitment and entitlement to A in context $ \Gamma $ precludes entitlement to B in context $ \Gamma $ and vice versa. Note that the comma is to be read as set-union with flanking individual formulae being read as in set brackets; e.g. ``$ A $'' on the left means ``$ \{ A\} $''. 
+
+
+We now have in place an object language $ \mathcal{L} $ (an extension of  $ \mathcal{L}_0 $ that includes $ \bigperp $) and a meta-language that consists of $ \nc $. Next, we use a meta-theoretical conditional, $ \Rightarrow $, to formulate the properties of the structure $ \langle \mathcal{L}, \nc \rangle  $ as follows:\footnote{We restrict these claims to finite premise sets.}
+
+\begin{enumerate}
+	\item $  \mathcal{L}_0\nc\bigperp$
+	\item $ \varnothing\not\nc\bigperp $
+	\item  $ \forall p, \forall\Delta\subseteq\mathcal{L}_0(\Gamma, \Delta \nc\bigperp \Rightarrow \Gamma\nc p) $ (Ex Falso Fixo Quodlibet)
+	\item $\forall \Gamma\subseteq\mathcal{L}_0 (\Delta \in \Gamma \Rightarrow \Gamma\nc \Delta)$ (Reflexivity)
+	\item $\forall\Delta\subseteq\mathcal{L}(\Gamma\nc A \not\Rightarrow \Gamma, \Delta \nc A)$ (Non-monotonicity)
+	\item $(\Gamma\nc A $ and $ \Gamma, A \nc B ) \not\Rightarrow \Gamma \nc B$ (Non-transitivity)
+\end{enumerate}
+
+The first two properties state, respectively, that the totality of $ \mathcal{L} $ is incoherent and that the empty set is not. The principle of \textit{Ex Falso Fixo Quodlibet} is a modification of \textit{Ex Falso Quodlibet} that restricts `explosion' to monotonic contexts only. The rationale for this restriction is that if a set of atomic sentences is non-monotonically incoherent, then adding additional sentences to it may make it coherent, and therefore we are not licensed to infer an arbitrary atom from it (the original set). Reflexivity is a standard constraint on consequence relations and non-monotonicity has already been explained. 
+
+The last property of the structure, however, is sure to surprise the reader. Nearly all consequence relations, including the standard non-monotonic ones, are transitive and include the Cut rule as a structural constraint. Nevertheless, as Morgan(2000) has demonstrated, it is simply not possible to prove a deduction theorem for a non-monotonic, reflexive, and transitive consequence relation. We have already motivated the non-monotonic character of material inference. Likewise, a deduction theorem is crucial to the logical expressivist project since, as noted about, it establishes that an object-language operator gives expression to what would be given as a rule of inference in the meta-language, i.e. using `$ \nc $'. So, we must choose between  reflexivity and transitivity. 
+
+Given our goal of providing a logical expressivist treatment of explanatory vocabulary, there are some reasons to prefer a consequence relation that is reflexive but non-transitive. First, sets of explanatory statements often fail to license transitive inferences---e.g. the occurrence of the Big Bang does not explain why Adam ate the apple, even if there are true explanatory statements linking the Big Bang to event $E_1$, $ E_1 $ with $ E_2 $, and so on up to Adam's eating of the apple. Second, while an unrestricted reflexive consequence relation made explicit by the \textit{best explains} operator entails that a statement is the best explanation of itself, this unwanted result can be avoided by principled restrictions on the `scope' of the (quantified) consequence relation (see below). In contrast, it is more difficult to a restrict transitivity in a manner that it is not ad hoc. Third, logicians of the inferentialist and proof-theoretic approach have have already begun to explore systems in which Cut fails, whereas none seems inclined to pursue non-reflexive ones. Finally, reflexivity just seems to be a more ubiquitous feature of ordinary material inferences than transitivity does.
+
+With the structure $ \langle  \mathcal{L}, \nc \rangle  $ in place, we may now engage our meta-theory to identify those material inferences implicit the practice of $ \mathcal{L} $-speakers that are made explicit by explanatory vocabulary. As an abuse of terminology, we will call these target inferences \textit{explanatory}, though they are rules for the use of expressions in $\mathcal{L} $, which lacks explanatory vocabulary. We begin with the insight that even though explanatory inferences are non-monotonic, they must exhibit \textit{a range of subjunctive robustness}. An agent treats a material inference as having a certain range of subjunctive robustness when she can discriminate between those merely hypothetical circumstances in which the inference would remain good and those in which it would not. These ranges can be made explicit by endorsing subjunctive conditionals of the form `If P were the case, then Q would be the case, even if R were the case,' or, `If P were the case, then Q would be the case, unless S were the case.' Explanatory inferences persist in what we may think of as `islands of monotonicity'---they remain good under some hypothetical conditions, but not others. 
+
+On our view, explanatory inferences are distinguished from other types of locally monotonic material inferences by two characteristics. First, the (non-contextual) premises of explanatory inferences imply their conclusion with greater subjunctive robustness than any other premises that materially imply that conclusion (in the same context). In other words, the maximum range of subjunctive conditions that can hold without defeating an explanatory inference is greater than that of any other material inference that has the same conclusion. Call this characteristic \textit{Superlative Robustness}. \color{red}Second, anyone who is committed to something incompatible with the premises of an explanatory inference is thereby entitled to something incompatible with the conclusion. The premises of explanatory inferences are `difference makers' in the sense that if the content of the latter were different, the content of the conclusion would be different as well.  Call this the \textit{Difference Maker} characteristic. Add Detachment, IBE as characteristic \color{black}
+
+Our first step toward introducing explanatory inferences into our meta-language is to represent the local monotonicity of material inferences. We do so by quantifying over our material consequence relation, $ \nc $. (For all of the following meta-theoretical claims, we assume that all inferences are made in some finite, non-empty context of collateral commitments, i.e. $ \Gamma \neq \emptyset $.)
+
+	\begin{description}
+		\item[Quantified Material Consequence (QMC):]
+		\begin{equation}
+				      {\Gamma, A \nc}^{\uparrow W} B \Leftrightarrow_{def} 
+				      \begin{cases}\nonumber
+				        1.\,\, W\subseteq\mathcal{P}(\mathcal{L}) & $ and $ \\
+						2.\,\, \forall\Delta\in W(\Gamma, A,  \Delta \nc B ) 
+						\end{cases}
+		\end{equation}
+		%${\Gamma, A \nc}^{\uparrow W} B \Leftrightarrow_{def}  W\subseteq\mathcal{P}(\mathcal{L}) $ and $ \forall\Delta\in W(\Gamma, A,  \Delta \nc B )$
+	
+	\end{description}  
+	
+With this definition we now have a handy way of talking about sets of inferences. Note that since $ \emptyset \in W $, the second condition includes $ \Gamma, A \nc B $. Call this the \textit{base inference} of the set of inferences. Sets of inferences are delimited by the set of sets of sentences of $ \mathcal{L} $ whose members may be added to the premises without impugning the base inference. The resulting set thus contains $ |W| $ many inferences,  and when $ W = \mathcal{P}(\mathcal{L}) $, the consequence relation in $ {\Gamma, A \nc}^{\uparrow W} B $ is globally monotonic.\footnote{The reason for circumscribing these sets of inferences by subsets of $ \mathcal{P}(\mathcal{L}) $ is that atomic sentences that would, by themselves materially defeat an inference if added to the premises, need not defeat that inference if they are add along with other atomic sentences.} Equivalently, we may think of $ {\Gamma, A \nc}^{\uparrow W} B $ as saying that the (base) inference from $ A $ to $ B $ \textit{would} remain materially good for an agent in context $ \Gamma $ even if she \textit{were} to undertake sets of collateral commitments from $ W $. For ease of exposition, we will often refer to $W$ as a set of \textit{subjunctive conditions}.
+
+Now that we have a way of representing local monotonicity, we need a way to depict the \textit{maximum range of subjunctive robustness} that a base inference exhibits. Giving expression to such maximum ranges in our meta-language enables us to compare base inferences in terms of the scope of their robustness, i.e. the `size' of their island of monotonicity.
+
+	\begin{description}
+		\item[Subjunctively Robust Consequence (SRC):]
+		  \begin{equation}
+		      {\Gamma, A \nc}^{\Uparrow W}B \Leftrightarrow_{def} 
+		      \begin{cases}\nonumber
+		        1.\,\, {\Gamma, A \nc}^{\uparrow W} B & $ and $ \\
+				2.\,\, \forall W'({\Gamma, A \nc}^{\uparrow W'}B \Rightarrow W' \subseteq W)  & $ and $\\ 
+				3.\,\, {\Gamma \not\nc}^{\uparrow W} B & $ and $\\ 
+		        4.\,\, \forall\Delta({\Gamma, A, \Delta \nc}^{\uparrow \mathcal{P}(\mathcal{L})} \bigperp \Rightarrow \Delta \not\in W)
+
+				\end{cases}
+		  \end{equation}
+
+	\end{description}
+
+
+The first condition of SRC tells us that the base inference $ \Gamma, A \nc B $ would be licensed if any of the members of  $W$ were to be added to its premise-set, but the second condition says that $W$ contains \textit{all} those sets of sentences whose addition would not defeat the inference. The last condition  ensures that the conclusion does not simply follow from the context alone, in the scope of $W$. \color{red} SRC4!!!   \color{black}      When the consequence relation $ {\nc}^{\Uparrow W} $ holds, we say that the base inference is subjunctively robust \textit{up to} $ W $. 
+
+With SRC, we now have the means by which to compare the ranges of subjunctive robustness of material inferences that share the same conclusion. This means that we can identify those premises that materially imply a specified conclusion with the greatest range of subjunctive robustness, thereby capturing the \textit{Superlative Robustness} characteristic of explanatory inferences set out above. In order to represent \textit{Difference Making}, however, we need a way to specify the sets of sentences that are incompatible with a particular sentence, $A$, in a particular context, $\Gamma$,  under a set of subjunctive conditions, $W$. For this, we have SRIS.
+
+\begin{description}
+	\item[Subjunctively Robust Incompatibility Set (SRIS):]
+	
+	 $ D \in \Delta^\frac{W}{\Gamma, A}   \Leftrightarrow_{def} \,\,\,{\Gamma, A, D \nc}^{\uparrow W}\bigperp $.
+
+\end{description}
+
+The set $ \Delta^\frac{W}{\Gamma, A}  $ contains all those formulas that are incompatible with $A$ in context $ \Gamma $ and that would continue to produce materially incoherence were any of the members of $W$ added to it. This definition provides the resources with which to express \textit{Difference Making}. We do so in the third condition of following definition.
+
+\begin{description}
+	\item[Greatest Subjectively Robust Consequence (GSRC):]
+		\begin{equation}
+		     {\Gamma, A \nc}^{\twoheaduparrow} B  \Leftrightarrow_{def}  
+			    \begin{cases}\nonumber
+			    	1.\,\, {\Gamma, A\nc}^{\Uparrow W} B & $ and $ \\
+		    		2.\,\, \forall C(C \neq B)\,({\Gamma, C\nc}^{\Uparrow W'} B \Rightarrow W'\subseteq W ) & $ and $ \\
+		    		3.\,\, (\forall D_{A} \in \Delta^\frac{W}{\Gamma, A}) (\exists!D_{B} \in \Delta^\frac{W}{\Gamma, B})({\Gamma, D_{A} \nc}^{\uparrow W} D_{B})
+		    	\end{cases}
+		\end{equation}
+
+\end{description}
+
+The GSRC relation is our meta-language expression for explanatory inference. The first condition says that the base inference is subjunctively robust up to $W$. The second condition tells us that $W$ is the largest set of subjunctive conditions under which any sentence from $\mathcal{L}$ materially implies $B$, excluding $B$ itself. For this reason $W $ need not appear on the left-side of the definition. If we think of $ A $ as providing the best explanation of $ B $ and of $ C $ as any less-than-best explanation, then the second condition says that the best explanation is stable under more subjunctive conditions than any of its suboptimal competitors. \color{red} NEW GSRC3!!! The third condition informs us that there is some claim incompatible with $A$ such that if it were to replace $A$ in the premises, then it would materially imply a claim incompatible with $B$, under the subjunctive conditions in $W$. Since the negation of a sentence can be construed (in an extended language) in terms of quantification over the set of sentences incompatible with that sentence, the third condition entails that if $A$ were not the case, $B$ would not be the case. But from this condition it also follows that there are some sentences incompatible with $A$ and with $B$, respectively, whose substitution for the latter would preserve the subjunctively robust material inference.  Now link this to the expression of functional relationships \`{a} la Woodward.\color{black}
+%This formal representation of the \textit{Difference Making} characteristic may appear odd, since it 
+
+
+
+\vspace{1cm}
+*******Under Construction***************
+
+We show how this structure can be extended to one with a language $ \mathcal{L}_e $ that contains an expression for \textit{best explains}, namely `$ \rhd $' and construct a consequence relation, `$ \nce $' by means of a sequent calculus that takes material implications in $ \mathcal{L} $ as axioms. We call this calculus \textbf{EL} for ``Explanatory Logic''. Let $ \mathcal{L}_0^\rhd = \mathcal{L}_0 \cup \{\rhd\} $ and $ \mathcal{L}_e = \mathcal{L}_0^\rhd \cup \{\bigperp\} $. We read the formula $ A \rhd B $ as ``$ A $ best explains $ B $'' or as ``$ A $ is the best explanation of $ B $''. We will now give the axioms and rules for the sequent calculus \textbf{EL} that extends the material consequence relation and its explanatory variant to  $ \nce \subseteq \mathcal{P}(\mathcal{L}_0^\rhd) \times \mathcal{L}_e$.
+
+\begin{description}
+	%\item[\underline{Axiom 1}] $ {\Gamma, A \nc}^{[\uparrow, \Uparrow,\twoheaduparrow]} B  \Rightarrow {\Gamma, A \nce}^{[\uparrow, \Uparrow,\twoheaduparrow]} B  $
+	\item[\underline{Axiom 1}] If $ \Gamma, A \nc B  $ then $ \Gamma, A \nce B  $ is an axiom.
+	%\item[\underline{Axiom 2}] If $ {\Gamma, A \nc}^{\uparrow W} B  $ then $ {\Gamma, A \nce}^{\uparrow W} B  $ is an axiom.
+	%\item[\underline{Axiom 3}] If $ {\Gamma, A \nc}^{\Uparrow W}B  $ then ${\Gamma, A \nce}^{\Uparrow W}B  $ is an axiom.
+	\item[\underline{Axiom 2}] If $ {\Gamma, A \nc}^{\twoheaduparrow} B  $ then $ {\Gamma, A \nce}^{\twoheaduparrow} B $ is an axiom.
+\end{description}
+
+The rules for \textbf{EL} are as follows:
+
+\begin{prooftree}
+\def\fCenter{\ \nce\ }
+\AxiomC{${\Gamma, A \nce}^{\twoheaduparrow} B $}
+\RightLabel{\hspace{5mm}  BER}
+\UnaryInf$\Gamma \fCenter \hspace{-1ex} A \rhd B$
+\end{prooftree}
+
+\begin{prooftree}
+\def\fCenter{\ \nce\ }
+\AxiomC{$\Gamma \fCenter \hspace{-1ex} A \rhd B$}
+\RightLabel{\hspace{5mm}  BES}
+\UnaryInf$\Gamma, A \fCenter^{\hspace{-1ex}\twoheaduparrow} \hspace{1ex} B $
+\end{prooftree}
+
+\begin{prooftree}
+\def\fCenter{\ \nce\ }
+\AxiomC{${\Gamma, A \nce}^{\twoheaduparrow} B $}
+\AxiomC{$\Gamma \fCenter \hspace{-1ex}  B $}
+\RightLabel{\hspace{5mm}  BEL}
+\BinaryInf$\Gamma, B, A \rhd B\fCenter \hspace{-1ex}  A$
+\end{prooftree}
+
+As meta-theoretical constructions, these rules determine the rules of inference expressible in the metalanguage. They are, in that sense, meta-rules governing inferential commitments. BER says that if an agent in context $\Gamma$ is entitled to $ B $ as the GSRC of her commitment to $A$, then she is entitled to $ A \rhd B $ in the absence of a commitment to $A$. BES is a simplification rule that gives the inverse of BER. Notice that in BER, the consequence relation in the conclusion-sequent is subjunctively weaker than it is in the premise, while the opposite is true of BES. 
+
+
+%The rules BER and BEL give the right and left rules for the connective $\rhd$, respectively. Right rules in sequent calculus correspond to introduction rules in natural deduction and left rules to elimination rules. BER and BEL determine the total set of inferences in $\mathcal{L}_e$ in which $ \rhd $ occurs, and so, according to inferentialism, they settle the meaning of $ \rhd $. BES is a simplifying rule, which, together with BER, entails that ${\Gamma, A \nce}^{\twoheaduparrow} B \Leftrightarrow {\Gamma \nce} A \rhd B $. Admittedly, this is not a standard deduction theorem, but it is an instance what can be called a \textit{generalized deduction theorem}. \color{red} Explain generalized deduction theorem.\color{black} 
+
+%The syntax for the language without $\bigperp$  is quite simple:
+
+%\begin{description}
+%\item[Syntax of $  \mathcal{L}_0^\rhd  $:] $ \,\,\phi \, ::=\,\, p\,\, | \,\, \phi \rhd \phi $
+%\end{description}
+
+
+\end{document}

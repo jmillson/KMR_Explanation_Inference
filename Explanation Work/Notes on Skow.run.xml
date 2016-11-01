@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Explan_Assym-biblatex.bcf</file>
+      <file>"Notes on Skow".bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>Explan_Assym-biblatex.bbl</file>
+      <file>"Notes on Skow".bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -56,7 +56,6 @@
       <file>blx-natbib.def</file>
       <file>chicago-authordate.bbx</file>
       <file>chicago-authordate.cbx</file>
-      <file>chicago-dates-common.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>
@@ -65,22 +64,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>Explan_Assym-biblatex</infile>
+      <infile>"Notes on Skow"</infile>
     </cmdline>
     <input>
-      <file>Explan_Assym-biblatex.bcf</file>
+      <file>"Notes on Skow".bcf</file>
     </input>
     <output>
-      <file>Explan_Assym-biblatex.bbl</file>
+      <file>"Notes on Skow".bbl</file>
     </output>
     <provides type="dynamic">
-      <file>Explan_Assym-biblatex.bbl</file>
+      <file>"Notes on Skow".bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Explan_Assym-biblatex.bcf</file>
-    </requires>
-    <requires type="editable">
-      <file>KMR_Master.bib</file>
+      <file>"Notes on Skow".bcf</file>
     </requires>
   </external>
 </requests>
