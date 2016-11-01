@@ -75,7 +75,7 @@
 
 \makeatletter
 
-
+\usetikzlibrary{shapes}
 \usetikzlibrary{fit,shapes.misc}
 
 \newcommand\marktopleft[1]{%
@@ -272,46 +272,63 @@
 Let $X, Y, Z$ stand for sets of sets of sentences.
 
 \section{Commitment Space}
-We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. We can think of this language as constituting the space of possible commitments that speakers can undertake. 
+%We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. We can think of this language as constituting the space of possible commitments that speakers can undertake. Depending on the sentence, these commitments may be doxastic (beliefs) or practical (intentions).
 
-Consider the set of all possible commitments a speaker of a particular language can undertake. We can think of this space of possible commitments, or \textit{commitment space}, as a set of \textit{maximally coherent sets of sentences }$ $ belonging to  $\mathcal{L}_e $ (MCSS).
+%With the commitment space, speakers collect commitment scores, sets of sentences to which they are committed and to which they take themselves to be entitled.
+
+%\begin{itemize}
+%	\item Commitment space is a space where commitments of various flavors can be undertaken: doxastic and practical.
+%	\item Sets of commitments can be shared across discourse participants. When that is the case, then the set of commitments represents a conversation context.
+%\end{itemize}
+
+%Particular sentences of $ \mathcal{L}_e $ can be evaluated on such a logical space by determining of which maximally coherent sets of sentences they are members.
+%[Introduce commitment notion of assertion. ``Brandom has referred to this aspect of the normative force of assertion as an asserter’s ampliative responsibility to extract the consequences of each of her
+%commitments in the context of the collateral premises provided by the rest of her
+%commitments'' (Brandom 2009, 36-7.).]
+
+
+We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. 
+
+Now, consider the set of all possible commitments a speaker of a particular language can undertake. Depending on the sentence, these commitments may be assertional or practical (i.e. commitments to perform some action). We can think of this space of possible commitments, or \textit{commitment space}, as a set, $ Z $, of \textit{maximally coherent sets of sentences }$ $ belonging to  $\mathcal{L}_e $ (MCSs).\fnmark{Zsubset} Equivalently, we can think of the points of this space as MCSs. Formally, we define MCSs as follows:
+
+\fntext{Zsubset}{Naturally, the commitment space is a proper subset of the power set of the language, i.e. $ Z\subset \mathcal{P}(\mathcal{L}_e) $.}
 
 \begin{definition}
 	\item A set of sentences, $\Delta$, is maximally materially coherent \textit{iff} $ \Delta $ is materially coherent and there is no proper superset of $ \Delta $ which is materially coherent, i.e. $ \Delta \not\nmc \bigperp $ and $ \Delta \subset \Theta \Longrightarrow \Theta \nmc \bigperp $.
 \end{definition}
 
-%Particular sentences of $ \mathcal{L}_e $ can be evaluated on such a logical space by determining of which maximally coherent sets of sentences they are members. 
-[Introduce commitment notion of assertion. ``Brandom has referred to this aspect of the normative force of assertion as an asserter’s ampliative responsibility to extract the consequences of each of her
-commitments in the context of the collateral premises provided by the rest of her
-commitments'' (Brandom 2009, 36-7.).]
 
-When a speaker asserts a sentence, $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those MCSS that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is allowed to make. More precisely, a speaker is capable of making subsequent assertions which contradict her previous ones, but she is not \textit{entitled} to do so. (Of course, a speaker may very well retract an assertion and thereby re-open those previously impermissible commitments).
+When a speaker asserts a sentence $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those sentences that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is permitted to undertake. Only those sentences that belong to MCSs with which $A$ is compatible are considered `live options', i.e. permissible commitments.
 
-Commitment to a set of sentences, $ \Gamma $, is treated as a set of commitments to the members of $ \Gamma $. As such, $ \Gamma $ delimits commitment space by narrowing the range of permissible commitments to those sentences which belong to MCSS that include $ \Gamma $. In the picture below, the rectangle represents commitment space and the oval represents a speaker's set of commitments.
+When a speaker asserts a sentence, $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those MCSS that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is allowed to make. More precisely, a speaker is capable of making subsequent assertions which contradict her previous ones, but she is not \textit{entitled} to do so. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments).
+
+Commitment to a set of sentences, $ \Gamma $, is treated as a set of commitments to the members of $ \Gamma $. As such, $ \Gamma $ delimits commitment space by narrowing the range of permissible commitments to those sentences which belong to MCSs that include $ \Gamma $ as a subset. In the picture below, the rectangle represents commitment space and the oval represents a speaker's set of commitments, $ \Gamma $. 
 
 \begin{center}
 	
 
 \begin{tikzpicture}
 
-\draw[] (0,0)rectangle (9,5);
-\draw[thick] (5,2.5) ellipse (3 and 2);
 
+\draw[] (0,0)rectangle (9,4);
+%\draw[thick] (5,2.5) ellipse (3 and 2);
+\node[xshift=4cm,yshift=2cm,draw,ellipse,text width=3cm] 
+  {\vspace{.5mm}{\Huge $$ \Gamma $$}\vspace{.5mm}};
 \end{tikzpicture}
 
 \end{center}
 
-\begin{itemize}
-	\item Commitment space is a space where commitments of various flavors can be undertaken: doxastic and practical.
-	\item Sets of commitments can be shared across discourse participants. When that is the case, then the set of commitments represents a conversation context.
-\end{itemize}
+We refer to the set of commitments undertaken by a speaker as her \textit{commitment score} and to the set of commitments shared by the participants of a conversation as the \textit{conversational context} or simply the \textit{context}. (We seem to be assuming perfect transparency of participants commitment scores as well as mutual knowledge. This assumption deserves some discussion).
 
-While assertions serve to exclude portions of the commitment space, queries partition the space of possible commitments....
+
+
+While assertions serve to exclude portions of the commitment space, when a speaker asks a question or \textit{queries} she \textit{partitions} the space of possible commitments. To query is to divide up the commitment space into mutually exclusive sets of MCSs to which each possible answer belongs. 
+%The force of a query is to call upon one's interlocutors to determine which areas (cells of the partition) of commitment space 
 
 A partition of a set $ Z $ is a set of non-empty subsets of $ Z $ such that the union of those subsets equals $ Z $ and no two of these subsets overlap.
 
 \begin{definition}
-\item $ X $ is partition of $ Z $ \textit{iff} $ \forall\Delta \in X: \Delta \neq \emptyset$ and $ \bigcup\limits_{\Delta \in X}=  Z$ and $ \forall X \forall Y \in X: X \cap Y = \emptyset \,\vee\, X = Y $.
+\item $ X $ is partition of $ Z $ \textit{iff} $ \forall\Delta \in X: \Delta \neq \emptyset$,$ \bigcup\limits_{\Delta \in X}=  Z$ and $ \forall X \forall Y \in Z: X \cap Y = \emptyset \,\vee\, X = Y $.
 \end{definition}
 
 

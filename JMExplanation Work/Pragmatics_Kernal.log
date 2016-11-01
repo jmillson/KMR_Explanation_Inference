@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.12)  1 NOV 2016 10:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.8.12)  1 NOV 2016 11:40
 entering extended mode
 **./Pragmatics_Kernal.tex
 (Pragmatics_Kernal.tex
@@ -918,9 +918,19 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 50.
 \symMnSyA=\mathgroup8
 
 (C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
-z\libraries\tikzlibraryfit.code.tex
-File: tikzlibraryfit.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.5)
+z\libraries\tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
 )
+
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\
+pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
+))
 (C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
 z\libraries\tikzlibraryshapes.misc.code.tex
 File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
@@ -929,6 +939,60 @@ File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 pgflibraryshapes.misc.code.tex
 File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.5)
 ))
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\
+pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
+))
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\
+pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+))
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibraryshapes.callouts.code.tex
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\
+pgflibraryshapes.callouts.code.tex))
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\
+pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+
+\pgfnodepartlowerbox=\box48
+\pgfnodeparttwobox=\box49
+\pgfnodepartthreebox=\box50
+\pgfnodepartfourbox=\box51
+\pgfnodeparttwentybox=\box52
+\pgfnodepartnineteenbox=\box53
+\pgfnodeparteighteenbox=\box54
+\pgfnodepartseventeenbox=\box55
+\pgfnodepartsixteenbox=\box56
+\pgfnodepartfifteenbox=\box57
+\pgfnodepartfourteenbox=\box58
+\pgfnodepartthirteenbox=\box59
+\pgfnodeparttwelvebox=\box60
+\pgfnodepartelevenbox=\box61
+\pgfnodeparttenbox=\box62
+\pgfnodepartninebox=\box63
+\pgfnodeparteightbox=\box64
+\pgfnodepartsevenbox=\box65
+\pgfnodepartsixbox=\box66
+\pgfnodepartfivebox=\box67
+)))
+(C:\Users\jmillson\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tik
+z\libraries\tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.5)
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\refcount.sty"
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 )
@@ -1113,7 +1177,7 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count335
 \scratchdimen=\dimen262
-\scratchbox=\box48
+\scratchbox=\box68
 \nofMPsegments=\count336
 \nofMParguments=\count337
 \everyMPshowfont=\toks50
@@ -1147,7 +1211,7 @@ Package biblatex Info: ... file 'Pragmatics_Kernal.bbl' found.
  (Pragmatics_Kernal.bbl)
 Package biblatex Info: Reference section=0 on input line 233.
 Package biblatex Info: Reference segment=0 on input line 233.
-\AtBeginShipoutBox=\box49
+\AtBeginShipoutBox=\box69
 Package hyperref Info: Link coloring OFF on input line 233.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
@@ -1465,57 +1529,56 @@ LaTeX Font Warning: Command \tiny invalid in math mode on input line 268.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 274.
 
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 275.
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 290.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 275.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 290.
 
 
 
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 275.
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 290.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 275.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 290.
 
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 27
-5.
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 29
+0.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 275.
-
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 275.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 275.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 290.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 275.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 290.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 290.
 
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 27
-5.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 275.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 275.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 290.
 
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 275.
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 29
+0.
 
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 290.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 290.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 290.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 294.
 [1
 
 {C:/Users/jmillson/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}pdfTeX war
@@ -1524,204 +1587,206 @@ ning (ext4): destination with the same identifier (name{equation.0.1}) has been
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.289 
+l.302 
       pdfTeX warning (ext4): destination with the same identifier (name{equatio
 n.0.1}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.289 
+l.302 
       ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 305.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 316.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 316.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 342.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 305.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 342.
 
 [2]
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 341.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 358.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 341.
-
-
-
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 34
-1.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 341.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 341.
-
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 341.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
-
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 358.
 
 
 
 LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 35
-0.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 350.
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 350.
+8.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 358.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 358.
 
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 350.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 358.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
-
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
 
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 35
-0.
-
-
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 350.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
 
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 350.
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 36
+7.
 
 
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
 
 
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
-
-
-
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
 
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 35
-0.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
 
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 350.
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 36
+7.
 
 
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
 
 
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
-
-
-
-LaTeX Font Warning: Command \normalsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 367.
 
 
 
-LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 35
-0.
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 350.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
 
 
 
-LaTeX Font Warning: Command \tiny invalid in math mode on input line 350.
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 367.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
+
+
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 36
+7.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 367.
+
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
+
+
+
+LaTeX Font Warning: Command \normalsize invalid in math mode on input line 367.
+
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
+
+
+
+LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 36
+7.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 367.
+
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 367.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 363--373
+Underfull \hbox (badness 10000) in paragraph at lines 380--390
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 379--390
+Underfull \hbox (badness 10000) in paragraph at lines 396--407
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 398--409
+Underfull \hbox (badness 10000) in paragraph at lines 415--426
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--418
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--430
+Underfull \hbox (badness 10000) in paragraph at lines 437--447
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 448--458
+Underfull \hbox (badness 10000) in paragraph at lines 465--475
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--474
+Underfull \hbox (badness 10000) in paragraph at lines 481--491
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
 
 
-LaTeX Warning: Empty bibliography on input line 529.
+LaTeX Warning: Empty bibliography on input line 546.
 
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 532.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 532.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 549.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 549.
  (Pragmatics_Kernal.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 532.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 532.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 549.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 549.
 Package rerunfilecheck Info: File `Pragmatics_Kernal.out' has not changed.
 (rerunfilecheck)             Checksum: 89C307D23995378DE6084C1B5E60B187;429.
 
@@ -1734,13 +1799,13 @@ Package logreq Info: Writing requests to 'Pragmatics_Kernal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25091 strings out of 493335
- 466637 string characters out of 3136671
- 961697 words of memory out of 3000000
- 28113 multiletter control sequences out of 15000+200000
- 58160 words of font info for 135 fonts, out of 3000000 for 9000
+ 26834 strings out of 493335
+ 517307 string characters out of 3136671
+ 1038593 words of memory out of 3000000
+ 29806 multiletter control sequences out of 15000+200000
+ 78523 words of font info for 185 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,16n,56p,1144b,785s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,16n,67p,1144b,785s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/jmillson/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/mnsymbol/MnSymb
 olA.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/
 Users/jmillson/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/mnsymbol/MnSymbol1
@@ -1754,9 +1819,9 @@ r10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy1
 Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Pragmatics_Kernal.pdf (7 pages, 153491 bytes).
+Output written on Pragmatics_Kernal.pdf (7 pages, 153912 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
+ 118 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
