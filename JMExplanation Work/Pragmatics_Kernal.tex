@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{mathptmx}
+%\usepackage{mathptmx}
 \usepackage{stmaryrd}
 \usepackage{enumitem}
 \usepackage{times}
@@ -293,13 +293,15 @@ Let $X, Y, Z$ stand for sets of sets of sentences.
 %\end{definition}
 %When a speaker asserts a sentence, $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those MCSS that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is allowed to make. More precisely, a speaker is capable of making subsequent assertions which contradict her previous ones, but she is not \textit{entitled} to do so. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments).
 
-We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. \jm{Does this need to extended to include $ \neg $ and $ \wedge $?}
+%set of sets of sentences compatible with $ \Gamma $, i.e. $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $. 
 
-Now, consider the set of all the possible sets of commitments a speaker of a particular language can undertake. Depending on the sentence, these commitments may be assertional or practical (i.e. commitments to perform some action). We can think of this space of possible commitments, or \textit{commitment space}, as the power set of $ \mathcal{L}_e $, i.e. $\mathcal{P}(\mathcal{L}_e) $. 
+We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. \jm{Does this need to be extended to include $ \neg $ and $ \wedge $?}
 
-When a speaker asserts a sentence $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those sentences that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is permitted to undertake. Only those sentences with which $A$ is compatible are considered `live options' for future commitment. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments). In this sense, we can think of an assertional commitment to $A$ as carving out a portion of commitment space consisting of those sets of sentences compatible with $A$. 
+Now, consider the set of all the possible sets of commitments a speaker of a particular language can undertake. Depending on the sentence, these commitments may be assertional or practical (i.e. commitments to perform some action). We can think of this space of possible commitments as the power set of $ \mathcal{L}_e $, i.e. $\mathcal{P}(\mathcal{L}_e) $. If we help ourselves to the metaphor of linguistic practice as a kind of game, then this space of possible commitments is the \textit{game board}. The set of commitments that a speaker has actually undertaken at any point in the game is her \textit{commitment score} at that time. Speaker's commitment scores are represented by the set of sentences to which she has undertaken commitment, e.g. $ \Gamma $.
 
-Commitment to a set of sentences, $ \Gamma $, is treated as a set of commitments to the members of $ \Gamma $. As in the case of assertional commitment to a single sentence, commitment to $\Gamma$ has the effect of prohibiting the speaker from commitment to those sets of sentences incompatible with $ \Gamma $. In the picture below, the rectangle represents commitment space and the oval represents the set of sets of sentences compatible with $ \Gamma $, i.e. $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $. 
+When a speaker asserts a sentence she makes a certain sort of move in the game. If she asserts $ A $, then she undertakes a commitment that, \textit{inter alia}, prohibits her from asserting those sentences that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is permitted to undertake. Only those sentences with which $A$ is compatible are considered `live options' for future commitment. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments). In this sense, we can think of an assertional commitment to $A$ as carving out a portion of the game board consisting of those sets of sentences compatible with $A$. Since it is with this part of the game board that a speaker's entitled commitments are to be found, we call it a speaker's \textit{entitlement space}. Since every assertion a speaker makes alters her entitlement space, and since her total set of commitments is her commitment score, we can say that a speaker's commitment score determines her entitlement space.
+
+We can represent the concepts \textit{game board}, \textit{commitment score}, and \textit{entitlement space} graphically in the following manner.  In the picture below, the rectangle represents the game board and the oval represents the entitlement space for a speaker whose commitment score consists of a single assertional commitment to \textit{A}.  
 
 \begin{center}
 	
@@ -308,8 +310,8 @@ Commitment to a set of sentences, $ \Gamma $, is treated as a set of commitments
 
 %
 \draw[] (0,0)rectangle (8,3);
-\draw[thick] (4,1.5) ellipse (1.5 and 1);
-\draw  (4,1.5) node[]{$ \forall \Delta (A, \Delta \not\nmc \bigperp ) $};
+\draw[thick] (4,1.5) ellipse (2.5 and 1.3);
+\draw  (4,1.5) node[]{$ \{\Delta\in\mathcal{L}_e  : A, \Delta \not\nmc \bigperp\} $};
 %\tikzstyle{oval} = {ellipse,draw,text width=3cm,align=center}
 %\node[xshift=4cm,yshift=2cm,draw,ellipse,text width=3cm,align=center]{{\Large $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $}};
 
@@ -317,19 +319,20 @@ Commitment to a set of sentences, $ \Gamma $, is treated as a set of commitments
 
 \end{center}
 
-\jm{We refer to the set of commitments undertaken by a speaker as her \textit{commitment score} and to the set of commitments shared by the participants of a conversation as the \textit{conversational context} or simply the \textit{context}. (We seem to be assuming perfect transparency of participants commitment scores as well as mutual knowledge. This assumption deserves some discussion)}.
+
+\jm{ \textit{The intersection of the entitlement spaces of all conversational participants constitutes the deontic common ground.} We refer to the set of commitments undertaken by a speaker as her \textit{commitment score} and to the set of commitments shared by the participants of a conversation as the \textit{conversational context} or simply the \textit{context}. (We seem to be assuming perfect transparency of participants commitment scores as well as mutual knowledge. This assumption deserves some discussion)}.
 
 
 
 While assertions serve to exclude portions of the commitment space, when a speaker asks a question or \textit{queries} she \textit{partitions} the space of possible commitments. A partition of a set $ Z $ is a set of non-empty subsets of $ Z $ such that the union of those subsets equals $ Z $ and no two of these subsets overlap.
 
 \begin{definition}
-\item $ X $ is partition of $ Z $ \textit{iff} $ \forall\Delta \in X: \Delta \neq \emptyset$,$ \bigcup\limits_{\Delta \in X}=  Z$ and $ \forall X \forall Y \in Z: X \cap Y = \emptyset \,\vee\, X = Y $.
+\item $ X $ is partition of $ Z $ \textit{iff} $ \forall\Delta \in X: \Delta \neq \emptyset$,$ \bigcup\limits_{\Delta \in X}=  Z$ and $ \forall \Delta \forall \Theta \in X: \Delta \cap \Theta \neq \emptyset \,\Rightarrow\, \Delta = \Theta $.
 \end{definition}
 
-To query is to divide up the commitment space into mutually exclusive sets of sets of sentences and to call upon one's interlocutor's to entitle one to exclude all but one of these sets. In other words, the goal of a query is to determine where one's entitlements lies, which portion of commitment space contains those sentences to which a speaker might be entitled. 
+To query is to divide up the game board into mutually exclusive sets of sets of sentences and to call upon one's interlocutor's to entitle one to exclude all but one of these sets. In other words, the goal of a query is to determine where one's entitlements lies, which portion of the game board contains those sentences to which a speaker might be entitled. 
 
-To illustrate the effect that queries have on commitment space, we introduce an operator, \textit{?}, that takes sets of sentences as arguments. The partition of commitment space induced by the formula $ ?\{A\} $ is represented in the following picture:
+To illustrate the effect that queries have on commitment space, we introduce an operator, ?, that takes sets of sentences as arguments. The partition of commitment space induced by the formula $ ?\{A\} $ is represented in the following picture:
 
 \begin{center}
 	

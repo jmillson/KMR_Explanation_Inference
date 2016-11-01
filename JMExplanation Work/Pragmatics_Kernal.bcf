@@ -261,9 +261,6 @@
     <bcf:option datatype="string">citereset</bcf:option>
     <bcf:option datatype="string">backrefstyle</bcf:option>
     <bcf:option datatype="string">arxiv</bcf:option>
-    <bcf:option datatype="string">journalabbrev</bcf:option>
-    <bcf:option datatype="string">ptitleaddon</bcf:option>
-    <bcf:option datatype="string">ctitleaddon</bcf:option>
     <bcf:option datatype="boolean">useafterword</bcf:option>
     <bcf:option datatype="boolean">useannotator</bcf:option>
     <bcf:option datatype="boolean">useauthor</bcf:option>
@@ -328,7 +325,6 @@
     <bcf:option datatype="boolean">avdate</bcf:option>
     <bcf:option datatype="boolean">cmsdate</bcf:option>
     <bcf:option datatype="boolean">cmsorigdate</bcf:option>
-    <bcf:option datatype="boolean">genallnames</bcf:option>
     <bcf:option datatype="boolean">annotation</bcf:option>
     <bcf:option datatype="boolean">cmslos</bcf:option>
     <bcf:option datatype="boolean">noibid</bcf:option>
@@ -340,8 +336,6 @@
     <bcf:option datatype="boolean">shorthandfull</bcf:option>
     <bcf:option datatype="boolean">longcrossref</bcf:option>
     <bcf:option datatype="boolean">booklongxref</bcf:option>
-    <bcf:option datatype="boolean">xrefurl</bcf:option>
-    <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">isbn</bcf:option>
     <bcf:option datatype="boolean">url</bcf:option>
     <bcf:option datatype="boolean">doi</bcf:option>
@@ -425,9 +419,6 @@
     <bcf:option datatype="string">noinherit</bcf:option>
     <bcf:option datatype="string">sortnamekeyscheme</bcf:option>
     <bcf:option datatype="string">presort</bcf:option>
-    <bcf:option datatype="string">journalabbrev</bcf:option>
-    <bcf:option datatype="string">ptitleaddon</bcf:option>
-    <bcf:option datatype="string">ctitleaddon</bcf:option>
     <bcf:option datatype="boolean">useafterword</bcf:option>
     <bcf:option datatype="boolean">useannotator</bcf:option>
     <bcf:option datatype="boolean">useauthor</bcf:option>
@@ -456,13 +447,10 @@
     <bcf:option datatype="boolean">skiplab</bcf:option>
     <bcf:option datatype="boolean">dataonly</bcf:option>
     <bcf:option datatype="boolean">cmsdate</bcf:option>
-    <bcf:option datatype="boolean">genallnames</bcf:option>
     <bcf:option datatype="boolean">usecompiler</bcf:option>
     <bcf:option datatype="boolean">juniorcomma</bcf:option>
     <bcf:option datatype="boolean">longcrossref</bcf:option>
     <bcf:option datatype="boolean">booklongxref</bcf:option>
-    <bcf:option datatype="boolean">xrefurl</bcf:option>
-    <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">isbn</bcf:option>
     <bcf:option datatype="boolean">doi</bcf:option>
     <bcf:option datatype="boolean">url</bcf:option>
@@ -505,13 +493,6 @@
   </bcf:datafieldset>
   <!-- SOURCEMAP -->
   <bcf:sourcemap>
-    <bcf:maps datatype="bibtex" level="style">
-      <bcf:map>
-        <bcf:per_type>periodical</bcf:per_type>
-        <bcf:map_step map_field_source="shorttitle" map_final="1"/>
-        <bcf:map_step map_field_set="shortjournal" map_origfieldval="1"/>
-      </bcf:map>
-    </bcf:maps>
     <bcf:maps datatype="bibtex" level="driver">
       <bcf:map>
         <bcf:map_step map_field_set="day" map_null="1"/>
@@ -795,14 +776,6 @@
       <bcf:field source="sortyear" skip="true"/>
       <bcf:field source="sortname" skip="true"/>
       <bcf:field source="sorttitle" skip="true"/>
-      <bcf:field source="sorttitle" skip="true"/>
-      <bcf:field source="urlyear" skip="true"/>
-      <bcf:field source="urlmonth" skip="true"/>
-      <bcf:field source="urlday" skip="true"/>
-      <bcf:field source="doi" skip="true"/>
-      <bcf:field source="eprint" skip="true"/>
-      <bcf:field source="eprinttype" skip="true"/>
-      <bcf:field source="url" skip="true"/>
     </bcf:inherit>
     <bcf:inherit>
       <bcf:type_pair source="mvbook" target="*"/>
