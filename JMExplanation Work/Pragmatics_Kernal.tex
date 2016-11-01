@@ -286,50 +286,124 @@ Let $X, Y, Z$ stand for sets of sets of sentences.
 %commitments in the context of the collateral premises provided by the rest of her
 %commitments'' (Brandom 2009, 36-7.).]
 
+%a set, $ Z $, of \textit{maximally coherent sets of sentences }$ $ belonging to  $\mathcal{L}_e $ (MCSs).\fnmark{Zsubset} Equivalently, we can think of the points of this space as MCSs. Formally, we define MCSs as follows:
+%\fntext{Zsubset}{Naturally, the commitment space is a proper subset of the power set of the language, i.e. $ Z\subset \mathcal{P}(\mathcal{L}_e) $.}
+%\begin{definition}
+%	\item A set of sentences, $\Delta$, is maximally materially coherent \textit{iff} $ \Delta $ is materially coherent and there is no proper superset of $ \Delta $ which is materially coherent, i.e. $ \Delta \not\nmc \bigperp $ and $ \Delta \subset \Theta \Longrightarrow \Theta \nmc \bigperp $.
+%\end{definition}
+%When a speaker asserts a sentence, $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those MCSS that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is allowed to make. More precisely, a speaker is capable of making subsequent assertions which contradict her previous ones, but she is not \textit{entitled} to do so. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments).
 
-We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. 
+We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. \jm{Does this need to extended to include $ \neg $ and $ \wedge $?}
 
-Now, consider the set of all possible commitments a speaker of a particular language can undertake. Depending on the sentence, these commitments may be assertional or practical (i.e. commitments to perform some action). We can think of this space of possible commitments, or \textit{commitment space}, as a set, $ Z $, of \textit{maximally coherent sets of sentences }$ $ belonging to  $\mathcal{L}_e $ (MCSs).\fnmark{Zsubset} Equivalently, we can think of the points of this space as MCSs. Formally, we define MCSs as follows:
+Now, consider the set of all the possible sets of commitments a speaker of a particular language can undertake. Depending on the sentence, these commitments may be assertional or practical (i.e. commitments to perform some action). We can think of this space of possible commitments, or \textit{commitment space}, as the power set of $ \mathcal{L}_e $, i.e. $\mathcal{P}(\mathcal{L}_e) $. 
 
-\fntext{Zsubset}{Naturally, the commitment space is a proper subset of the power set of the language, i.e. $ Z\subset \mathcal{P}(\mathcal{L}_e) $.}
+When a speaker asserts a sentence $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those sentences that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is permitted to undertake. Only those sentences with which $A$ is compatible are considered `live options' for future commitment. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments). In this sense, we can think of an assertional commitment to $A$ as carving out a portion of commitment space consisting of those sets of sentences compatible with $A$. 
 
-\begin{definition}
-	\item A set of sentences, $\Delta$, is maximally materially coherent \textit{iff} $ \Delta $ is materially coherent and there is no proper superset of $ \Delta $ which is materially coherent, i.e. $ \Delta \not\nmc \bigperp $ and $ \Delta \subset \Theta \Longrightarrow \Theta \nmc \bigperp $.
-\end{definition}
-
-
-When a speaker asserts a sentence $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those sentences that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is permitted to undertake. Only those sentences that belong to MCSs with which $A$ is compatible are considered `live options', i.e. permissible commitments.
-
-When a speaker asserts a sentence, $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those MCSS that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is allowed to make. More precisely, a speaker is capable of making subsequent assertions which contradict her previous ones, but she is not \textit{entitled} to do so. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments).
-
-Commitment to a set of sentences, $ \Gamma $, is treated as a set of commitments to the members of $ \Gamma $. As such, $ \Gamma $ delimits commitment space by narrowing the range of permissible commitments to those sentences which belong to MCSs that include $ \Gamma $ as a subset. In the picture below, the rectangle represents commitment space and the oval represents a speaker's set of commitments, $ \Gamma $. 
+Commitment to a set of sentences, $ \Gamma $, is treated as a set of commitments to the members of $ \Gamma $. As in the case of assertional commitment to a single sentence, commitment to $\Gamma$ has the effect of prohibiting the speaker from commitment to those sets of sentences incompatible with $ \Gamma $. In the picture below, the rectangle represents commitment space and the oval represents the set of sets of sentences compatible with $ \Gamma $, i.e. $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $. 
 
 \begin{center}
 	
 
 \begin{tikzpicture}
 
+%
+\draw[] (0,0)rectangle (8,3);
+\draw[thick] (4,1.5) ellipse (1.5 and 1);
+\draw  (4,1.5) node[]{$ \forall \Delta (A, \Delta \not\nmc \bigperp ) $};
+%\tikzstyle{oval} = {ellipse,draw,text width=3cm,align=center}
+%\node[xshift=4cm,yshift=2cm,draw,ellipse,text width=3cm,align=center]{{\Large $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $}};
 
-\draw[] (0,0)rectangle (9,4);
-%\draw[thick] (5,2.5) ellipse (3 and 2);
-\node[xshift=4cm,yshift=2cm,draw,ellipse,text width=3cm] 
-  {\vspace{.5mm}{\Huge $$ \Gamma $$}\vspace{.5mm}};
 \end{tikzpicture}
 
 \end{center}
 
-We refer to the set of commitments undertaken by a speaker as her \textit{commitment score} and to the set of commitments shared by the participants of a conversation as the \textit{conversational context} or simply the \textit{context}. (We seem to be assuming perfect transparency of participants commitment scores as well as mutual knowledge. This assumption deserves some discussion).
+\jm{We refer to the set of commitments undertaken by a speaker as her \textit{commitment score} and to the set of commitments shared by the participants of a conversation as the \textit{conversational context} or simply the \textit{context}. (We seem to be assuming perfect transparency of participants commitment scores as well as mutual knowledge. This assumption deserves some discussion)}.
 
 
 
-While assertions serve to exclude portions of the commitment space, when a speaker asks a question or \textit{queries} she \textit{partitions} the space of possible commitments. To query is to divide up the commitment space into mutually exclusive sets of MCSs to which each possible answer belongs. 
-%The force of a query is to call upon one's interlocutors to determine which areas (cells of the partition) of commitment space 
-
-A partition of a set $ Z $ is a set of non-empty subsets of $ Z $ such that the union of those subsets equals $ Z $ and no two of these subsets overlap.
+While assertions serve to exclude portions of the commitment space, when a speaker asks a question or \textit{queries} she \textit{partitions} the space of possible commitments. A partition of a set $ Z $ is a set of non-empty subsets of $ Z $ such that the union of those subsets equals $ Z $ and no two of these subsets overlap.
 
 \begin{definition}
 \item $ X $ is partition of $ Z $ \textit{iff} $ \forall\Delta \in X: \Delta \neq \emptyset$,$ \bigcup\limits_{\Delta \in X}=  Z$ and $ \forall X \forall Y \in Z: X \cap Y = \emptyset \,\vee\, X = Y $.
 \end{definition}
+
+To query is to divide up the commitment space into mutually exclusive sets of sets of sentences and to call upon one's interlocutor's to entitle one to exclude all but one of these sets. In other words, the goal of a query is to determine where one's entitlements lies, which portion of commitment space contains those sentences to which a speaker might be entitled. 
+
+To illustrate the effect that queries have on commitment space, we introduce an operator, \textit{?}, that takes sets of sentences as arguments. The partition of commitment space induced by the formula $ ?\{A\} $ is represented in the following picture:
+
+\begin{center}
+	
+
+\begin{tikzpicture}
+
+%
+%\node[draw,rectangle,text width=3cm,align=center]{};
+\draw[] (0,0)rectangle (4,3);
+\draw  (2,1.5) node[]{$ \{\Delta : A, \Delta \not\nmc \bigperp\} $};
+\draw[] (4,0)rectangle (8,3);
+\draw  (6,1.5) node[]{$ \{\Delta : A, \Delta \nmc \bigperp\} $};
+%\draw[thick] (5,2.5) ellipse (3 and 2);
+%\tikzstyle{oval} = {ellipse,draw,text width=3cm,align=center}
+%\node[xshift=4cm,yshift=2cm,draw,ellipse,text width=3cm,align=center]{{\Large $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $}};
+
+\end{tikzpicture}
+
+\end{center}
+
+Likewise, the following picture represents the partition of commitment space induced by the question $ ?\{A,B\} $:
+
+
+
+\begin{center}
+\renewcommand{\arraystretch}{4}
+\begin{tabular}{|c|c|}
+\hline 
+ $ \{\Delta : A, \Delta \not\nmc \bigperp\} \,\,\bigcap\,\, \{\Delta : B, \Delta \not\nmc \bigperp\} $ & $ \{\Delta : A, \Delta \nmc \bigperp\}  \,\,\bigcap\,\, \{\Delta : B, \Delta \not\nmc \bigperp\} $  \\ 
+\hline 
+$ \{\Delta : A, \Delta \not\nmc \bigperp\} \,\,\bigcap\,\, \{\Delta : B, \Delta \nmc \bigperp\} $ & $ \{\Delta : A, \Delta \nmc \bigperp\}  \,\,\bigcap\,\, \{\Delta: B, \Delta \nmc \bigperp\} $  \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+
+
+
+
+%\begin{center}
+%\renewcommand{\arraystretch}{4}
+%\begin{tabular}{|c|c|}
+%\hline 
+% $ \forall \Delta (A, \Delta \not\nmc \bigperp ) \,\,\bigcap\,\, \forall \Delta (B, \Delta \not\nmc \bigperp ) $ & $ \forall \Delta (A, \Delta \nmc \bigperp )  \,\,\bigcap\,\, \forall \Delta (B, \Delta \not\nmc \bigperp ) $  \\ 
+%\hline 
+%$ \forall \Delta (A, \Delta \not\nmc \bigperp )  \,\,\bigcap\,\, \forall \Delta (B, \Delta \nmc \bigperp ) $ & $ \forall \Delta (A, \Delta \nmc \bigperp )  \,\,\bigcap\,\, \forall \Delta (B, \Delta \nmc \bigperp ) $  \\ 
+%\hline 
+%\end{tabular} 
+%\end{center}
+
+%%
+%\begin{tabular}{|c|c|}
+%\hline 
+%$ \forall \Delta (A, \Delta \not\nmc \bigperp ) $ and $ \forall \Delta (B, \Delta \not\nmc \bigperp ) $ & $ \forall \Delta (A, \Delta \nmc \bigperp ) $ and $ \forall \Delta (B, \Delta \not\nmc \bigperp ) $
+%\hline 
+%$ \forall \Delta (A, \Delta \not\nmc \bigperp ) $ and $ \forall \Delta (B, \Delta \nmc \bigperp ) $ & $ \forall \Delta (A, \Delta \nmc \bigperp ) $ and $ \forall \Delta (B, \Delta \nmc \bigperp ) $ \\ 
+%\hline 
+%\end{tabular} 
+%%\renewcommand{\arraystretch}{4}
+%\begin{tabular}{|c|c|}
+%\hline 
+%$ \forall \Delta (A, \Delta \not\nmc \bigperp ) $ & $ \forall \Delta (A, \Delta \nmc \bigperp ) $ 
+% 
+%$ \forall \Delta (B, \Delta \not\nmc \bigperp ) $ & $ \forall \Delta (B, \Delta \not\nmc \bigperp ) $
+%\hline 
+%$ \forall \Delta (A, \Delta \not\nmc \bigperp ) $ & $ \forall \Delta (A, \Delta \nmc \bigperp ) $ \\ 
+%$ \forall \Delta (B, \Delta \nmc \bigperp ) $ & $ \forall \Delta (B, \Delta \nmc \bigperp ) $
+%\hline 
+%\end{tabular} 
+
+
+%The force of a query is to call upon one's interlocutors to determine which areas (cells of the partition) of commitment space 
+
+
 
 
 
