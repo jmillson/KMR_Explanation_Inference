@@ -239,69 +239,23 @@
 \maketitle
 
 
-\noindent\textbf{Quantified Material Consequence (QMC):}\label{QMC}
-\begin{equation}
-	\Gamma, A \qmc{W} B \Longleftrightarrow_{df}
-	\begin{cases}\nonumber
-		1.\,\, W\subseteq\mathcal{P}(\mathcal{L}) & $ and $ \\[3pt] 
-		2.\,\, \forall\Delta\in W(\Gamma, A,  \Delta \nmc B ) 
-	\end{cases}
-\end{equation}
 
-\noindent\textbf{Modally Robust Consequence (MRC):}\label{MRC}
-\begin{equation}
-	\Gamma, A \mrc{W} B \Longleftrightarrow_{df}
-	\begin{cases}\nonumber
-		1.\,\, \Gamma, A \qmc{W} B& $ and $ \\[3pt] 
-		2.\,\, \forall W'(\Gamma, A \qmc{W'} B \Longrightarrow W' \subseteq W)  & $ and $\\[3pt] 
-		%3.\,\, \nqmc[]{\Gamma}{B}{W} & $ and $\\[3pt]  
-		3.\,\, \forall\Delta(\Gamma, A, \Delta \mqmc \bigperp \Longrightarrow \Delta \not\in W)
-		
-	\end{cases}
-\end{equation}
-
-\noindent\textbf{Sturdy  Consequence (SC): [Sets]}\label{SCset}
-\begin{equation}
-\Gamma, \, \Sigma \smc B \Longrightarrow
-\begin{cases}\nonumber 
-1.\,\, \Gamma, \, \Sigma \mrc{W} B & $ where $ B \not\in \Sigma $, and $ \\[3pt] 
-2.\,\, \forall \Theta\,(\Gamma, \Theta \mrc{W'} B \Longrightarrow W\not\subset W' ) & $ where $ B\not\in \Theta  \\[3pt] 
-\end{cases}
-\end{equation}
 
 Let $X, Y, Z$ stand for sets of sets of sentences.
 
-\section{Commitment Space}
-%We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. We can think of this language as constituting the space of possible commitments that speakers can undertake. Depending on the sentence, these commitments may be doxastic (beliefs) or practical (intentions).
+\section{The Game}
 
-%With the commitment space, speakers collect commitment scores, sets of sentences to which they are committed and to which they take themselves to be entitled.
+We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. \jm{Does this need to be extended to include $ \neg $ and $ \wedge $? \textbf{Let's see how much we can get away with by pushing connectives into the set-theoretic meta-language.}}
 
-%\begin{itemize}
-%	\item Commitment space is a space where commitments of various flavors can be undertaken: doxastic and practical.
-%	\item Sets of commitments can be shared across discourse participants. When that is the case, then the set of commitments represents a conversation context.
-%\end{itemize}
+The fundamental thing that speakers do with the sentences of $ \mathcal{L}_e $ is undertake commitments. These commitments come in three flavors: Assertional, Practical, and Erotetic. \jm{Give a brief rundown of these. Do we need aprokritic? Do we need to expand $ \mathcal{L}_e $ to include  a ? operator on sets? What about a ! operator for practical commitments?} In addition to these types of commitment, there are five key concepts that constitute our pragmatic framework: \textit{game board}, \textit{commitment position}, \textit{entitlement space}, \textit{commitment context} and \textit{context space}.
 
-%Particular sentences of $ \mathcal{L}_e $ can be evaluated on such a logical space by determining of which maximally coherent sets of sentences they are members.
-%[Introduce commitment notion of assertion. ``Brandom has referred to this aspect of the normative force of assertion as an asserter’s ampliative responsibility to extract the consequences of each of her
-%commitments in the context of the collateral premises provided by the rest of her
-%commitments'' (Brandom 2009, 36-7.).]
+A speaker's total set of commitments at any time is her \textit{commitment position}, or simply, her \textit{position}. The set of all possible positions that any speaker can occupy is the \textit{conversational game board.} We can quite naturally identify the game board with the power set of $ \mathcal{L}_e $, i.e. $\mathcal{P}(\mathcal{L}_e) $. Notice that doing so entails that some of the positions that speakers can occupy are incoherent, since $\mathcal{P}(\mathcal{L}_e)$ includes incoherent sets. This is not as undesirable a consequence as may initially appear; speakers do, after all, find themselves having made incompatible claims.\fnmark{ContrastPW}  Of course, speakers are not \textit{entitled} to occupy such positions. This brings us to our third key concept.
 
-%a set, $ Z $, of \textit{maximally coherent sets of sentences }$ $ belonging to  $\mathcal{L}_e $ (MCSs).\fnmark{Zsubset} Equivalently, we can think of the points of this space as MCSs. Formally, we define MCSs as follows:
-%\fntext{Zsubset}{Naturally, the commitment space is a proper subset of the power set of the language, i.e. $ Z\subset \mathcal{P}(\mathcal{L}_e) $.}
-%\begin{definition}
-%	\item A set of sentences, $\Delta$, is maximally materially coherent \textit{iff} $ \Delta $ is materially coherent and there is no proper superset of $ \Delta $ which is materially coherent, i.e. $ \Delta \not\nmc \bigperp $ and $ \Delta \subset \Theta \Longrightarrow \Theta \nmc \bigperp $.
-%\end{definition}
-%When a speaker asserts a sentence, $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those MCSS that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is allowed to make. More precisely, a speaker is capable of making subsequent assertions which contradict her previous ones, but she is not \textit{entitled} to do so. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments).
+\fntext{ContrastPW}{The inclusion of incoherent sets is just one of the many reasons why we should not identify commitment positions with possible worlds. According to what Lewis calls \textit{linguistic ersatzism} possible worlds identified with maximally consistent sets of sentences. As elements of $\mathcal{P}(\mathcal{L}_e) $, commitment positions are neither necessarily maximal nor necessarily coherent.}
 
-%set of sets of sentences compatible with $ \Gamma $, i.e. $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $. 
+When a speaker asserts a sentence she makes a certain sort of move in the game. If she asserts $ A $, then she undertakes a commitment that, \textit{inter alia}, prohibits her from asserting those sentences that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is permitted to undertake---i.e. there are positions that she is no longer permitted to occupy. Only those sets of sentences with which $A$ is compatible are considered `live options'. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments). In this sense, we can think of an assertional commitment to $A$ as carving out a portion of the game board consisting of those positions that are now \textit{accessible} to the speaker. Since it is within this part of the game board that a speaker's \textit{entitled} commitments are to be found, we call it a speaker's \textit{entitlement space}. It is important to remember that a speaker's entitlement space not contain only those sets of possible commitments to which she \textit{is} entitled. Rather, this space represents all those sets of commitments to which she \textit{may} be entitled. Since every assertion a speaker makes alters her entitlement space, and since her total set of commitments is her commitment position, we can say that a speaker's commitment position determines her entitlement space.
 
-We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. \jm{Does this need to be extended to include $ \neg $ and $ \wedge $?}
-
-Now, consider the set of all the possible sets of commitments a speaker of a particular language can undertake. Depending on the sentence, these commitments may be assertional or practical (i.e. commitments to perform some action). We can think of this space of possible commitments as the power set of $ \mathcal{L}_e $, i.e. $\mathcal{P}(\mathcal{L}_e) $. If we help ourselves to the metaphor of linguistic practice as a kind of game, then this space of possible commitments is the \textit{game board}. The set of commitments that a speaker has actually undertaken at any point in the game is her \textit{commitment score} at that time. Speaker's commitment scores are represented by the set of sentences to which she has undertaken commitment, e.g. $ \Gamma $.
-
-When a speaker asserts a sentence she makes a certain sort of move in the game. If she asserts $ A $, then she undertakes a commitment that, \textit{inter alia}, prohibits her from asserting those sentences that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is permitted to undertake. Only those sentences with which $A$ is compatible are considered `live options' for future commitment. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments). In this sense, we can think of an assertional commitment to $A$ as carving out a portion of the game board consisting of those sets of sentences compatible with $A$. Since it is with this part of the game board that a speaker's entitled commitments are to be found, we call it a speaker's \textit{entitlement space}. Since every assertion a speaker makes alters her entitlement space, and since her total set of commitments is her commitment score, we can say that a speaker's commitment score determines her entitlement space.
-
-We can represent the concepts \textit{game board}, \textit{commitment score}, and \textit{entitlement space} graphically in the following manner.  In the picture below, the rectangle represents the game board and the oval represents the entitlement space for a speaker whose commitment score consists of a single assertional commitment to \textit{A}.  
+We can represent the concepts \textit{game board}, \textit{commitment position}, and \textit{entitlement space} graphically in the following manner.  In the picture below, the rectangle represents the game board and the oval represents the entitlement space for a speaker whose commitment position consists of a single assertional commitment to \textit{A}.  
 
 \begin{center}
 	
@@ -311,7 +265,7 @@ We can represent the concepts \textit{game board}, \textit{commitment score}, an
 %
 \draw[] (0,0)rectangle (8,3);
 \draw[thick] (4,1.5) ellipse (2.5 and 1.3);
-\draw  (4,1.5) node[]{$ \{\Delta\in\mathcal{L}_e  : A, \Delta \not\nmc \bigperp\} $};
+\draw  (4,1.5) node[]{$ \{\Delta\in\mathcal{L}_e  : A, \Delta \nnmc \bigperp\} $};
 %\tikzstyle{oval} = {ellipse,draw,text width=3cm,align=center}
 %\node[xshift=4cm,yshift=2cm,draw,ellipse,text width=3cm,align=center]{{\Large $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $}};
 
@@ -319,20 +273,20 @@ We can represent the concepts \textit{game board}, \textit{commitment score}, an
 
 \end{center}
 
-
-\jm{ \textit{The intersection of the entitlement spaces of all conversational participants constitutes the deontic common ground.} We refer to the set of commitments undertaken by a speaker as her \textit{commitment score} and to the set of commitments shared by the participants of a conversation as the \textit{conversational context} or simply the \textit{context}. (We seem to be assuming perfect transparency of participants commitment scores as well as mutual knowledge. This assumption deserves some discussion)}.
-
+The last two concepts in our pragmatic framework are those of \textit{commitment context} and \textit{context space}. The former is simply the set of commitments shared by all conversational participants. The latter is simply the set of positions that all participants in the conversation---all `players'---take to be accessible. While the commitment context is the intersection of the commitment positions of the participants, the context space is the intersection of their entitlement spaces. Just as entitlement spaces are determined by commitment positions, the context space is determined by commitment context. The graphical representations of commitment context and context space will simply be specified versions of those for commitment position and entitlement space.
 
 
-While assertions serve to exclude portions of the commitment space, when a speaker asks a question or \textit{queries} she \textit{partitions} the space of possible commitments. A partition of a set $ Z $ is a set of non-empty subsets of $ Z $ such that the union of those subsets equals $ Z $ and no two of these subsets overlap.
+\section{Queries}
+
+While asserting a sentence serves to exclude portions of the game board, asking a question or \textit{querying} \textit{partitions} the space of possible commitments. A partition of a set $ Z $ is a set of non-empty subsets of $ Z $ such that the union of those subsets equals $ Z $ and no two of these subsets overlap. Here is the formal definition of a partition:
 
 \begin{definition}
-\item $ X $ is partition of $ Z $ \textit{iff} $ \forall\Delta \in X: \Delta \neq \emptyset$,$ \bigcup\limits_{\Delta \in X}=  Z$ and $ \forall \Delta \forall \Theta \in X: \Delta \cap \Theta \neq \emptyset \,\Rightarrow\, \Delta = \Theta $.
+\item $ X $ is partition of $ Z $ \textit{iff} $ \forall\Delta \in X: \Delta \neq \emptyset$ and $ \bigcup\limits_{\Delta \in X}=  Z$ and $ \forall \Delta \forall \Theta \in X: \Delta \cap \Theta \neq \emptyset \,\Rightarrow\, \Delta = \Theta $.
 \end{definition}
 
-To query is to divide up the game board into mutually exclusive sets of sets of sentences and to call upon one's interlocutor's to entitle one to exclude all but one of these sets. In other words, the goal of a query is to determine where one's entitlements lies, which portion of the game board contains those sentences to which a speaker might be entitled. 
+To query is to divide up the game board into mutually exclusive entitlement spaces---i.e. sets of sets of sentences--- and to solicit others' help in trying to determine in which of those spaces the speaker's entitlements actually lie. In other words, the goal of a query is to determine where one's entitlements lie, which portion of the game board contains those sentences to which a speaker might be entitled. 
 
-To illustrate the effect that queries have on commitment space, we introduce an operator, ?, that takes sets of sentences as arguments. The partition of commitment space induced by the formula $ ?\{A\} $ is represented in the following picture:
+To illustrate the effect that queries have on commitment space, we introduce an operator, ?, that takes sets of sentences as arguments. The partition of commitment space induced by the formula $ ?\{A\} $ is represented in the following picture: (To reduce clutter, we heretofore omit reference to $ \mathcal{L}_e $ and $\mathcal{P}(\mathcal{L}_e) $.)
 
 \begin{center}
 	
@@ -412,7 +366,7 @@ $ \{\Delta : A, \Delta \not\nmc \bigperp\} \,\,\bigcap\,\, \{\Delta : B, \Delta 
 
 
 
-\vspace{3cm}
+\newpage
 
 \section{Desiderata for a Pragmatics of Explanation:}
 \begin{itemize}
@@ -586,6 +540,37 @@ But in most conversational contexts, we answer why questions by giving only a pa
 ******Gamma weeds out alternative explanations by restricting the sets of suppositions that may be added to the material inferences. This follows from MR3*****
 
 
+\vspace{1cm}
+
+\noindent\textbf{Quantified Material Consequence (QMC):}\label{QMC}
+\begin{equation}
+	\Gamma, A \qmc{W} B \Longleftrightarrow_{df}
+	\begin{cases}\nonumber
+		1.\,\, W\subseteq\mathcal{P}(\mathcal{L}) & $ and $ \\[3pt] 
+		2.\,\, \forall\Delta\in W(\Gamma, A,  \Delta \nmc B ) 
+	\end{cases}
+\end{equation}
+
+\noindent\textbf{Modally Robust Consequence (MRC):}\label{MRC}
+\begin{equation}
+	\Gamma, A \mrc{W} B \Longleftrightarrow_{df}
+	\begin{cases}\nonumber
+		1.\,\, \Gamma, A \qmc{W} B& $ and $ \\[3pt] 
+		2.\,\, \forall W'(\Gamma, A \qmc{W'} B \Longrightarrow W' \subseteq W)  & $ and $\\[3pt] 
+		%3.\,\, \nqmc[]{\Gamma}{B}{W} & $ and $\\[3pt]  
+		3.\,\, \forall\Delta(\Gamma, A, \Delta \mqmc \bigperp \Longrightarrow \Delta \not\in W)
+		
+	\end{cases}
+\end{equation}
+
+\noindent\textbf{Sturdy  Consequence (SC): [Sets]}\label{SCset}
+\begin{equation}
+\Gamma, \, \Sigma \smc B \Longrightarrow
+\begin{cases}\nonumber 
+1.\,\, \Gamma, \, \Sigma \mrc{W} B & $ where $ B \not\in \Sigma $, and $ \\[3pt] 
+2.\,\, \forall \Theta\,(\Gamma, \Theta \mrc{W'} B \Longrightarrow W\not\subset W' ) & $ where $ B\not\in \Theta  \\[3pt] 
+\end{cases}
+\end{equation}
 
 
 
@@ -593,30 +578,34 @@ But in most conversational contexts, we answer why questions by giving only a pa
 
 
 
+%SECTION 1 SCRAPS
+%We start with a language, $ \mathcal{L}_e $, conceived as a set consisting of an incoherence constant ($ \bigperp $), atomic sentences, and sentences formed with a connective for non-factive, complete, immediate explanation ($ \ee $). We have already defined material ($ \nmc $), modally robust ($ \mrc{W} $), and sturdy consequence relations ($ \smc $) over this language. We can think of this language as constituting the space of possible commitments that speakers can undertake. Depending on the sentence, these commitments may be doxastic (beliefs) or practical (intentions).
 
+%With the commitment space, speakers collect commitment scores, sets of sentences to which they are committed and to which they take themselves to be entitled.
 
+%\begin{itemize}
+%	\item Commitment space is a space where commitments of various flavors can be undertaken: doxastic and practical.
+%	\item Sets of commitments can be shared across discourse participants. When that is the case, then the set of commitments represents a conversation context.
+%\end{itemize}
 
-%\noindent\textbf{Context-Set}\\
-%\noindent $  \Pi \in \mathcal{L}   $\\
+%Particular sentences of $ \mathcal{L}_e $ can be evaluated on such a logical space by determining of which maximally coherent sets of sentences they are members.
+%[Introduce commitment notion of assertion. ``Brandom has referred to this aspect of the normative force of assertion as an asserter’s ampliative responsibility to extract the consequences of each of her
+%commitments in the context of the collateral premises provided by the rest of her
+%commitments'' (Brandom 2009, 36-7.).]
 
+%a set, $ Z $, of \textit{maximally coherent sets of sentences }$ $ belonging to  $\mathcal{L}_e $ (MCSs).\fnmark{Zsubset} Equivalently, we can think of the points of this space as MCSs. Formally, we define MCSs as follows:
+%\fntext{Zsubset}{Naturally, the commitment space is a proper subset of the power set of the language, i.e. $ Z\subset \mathcal{P}(\mathcal{L}_e) $.}
+%\begin{definition}
+%	\item A set of sentences, $\Delta$, is maximally materially coherent \textit{iff} $ \Delta $ is materially coherent and there is no proper superset of $ \Delta $ which is materially coherent, i.e. $ \Delta \not\nmc \bigperp $ and $ \Delta \subset \Theta \Longrightarrow \Theta \nmc \bigperp $.
+%\end{definition}
+%When a speaker asserts a sentence, $ A $ of $ \mathcal{L}_e $ she undertakes a commitment that prohibits her from asserting those MCSS that are incompatible with $ A $. In this sense, asserting $ A $ has the effect of circumscribing the range of future commitments that a speaker is allowed to make. More precisely, a speaker is capable of making subsequent assertions which contradict her previous ones, but she is not \textit{entitled} to do so. (Of course, a speaker may very well retract an assertion and thereby make available those previously impermissible commitments).
 
-%\noindent\textbf{Sturdy  Consequence (SC):}\label{SC}
-%\begin{equation}
-%	\Gamma, \,A \smc B \Longrightarrow
-%	\begin{cases}\nonumber 
-%		1.\,\, \Gamma, \, A \mrc{W} B & $ where $ A \neq B $, and $ \\[3pt] 
-%		2.\,\, \forall C\,(\Gamma, C \mrc{W'} B \Longrightarrow W\not\subset W' ) & $ where $ B\neq C  \\[3pt] 
-%	\end{cases}
-%\end{equation}
-%
-%\noindent\textbf{Sturdy  Consequence (SC): [Sets]}\label{SCset}
-%\begin{equation}
-%\Gamma, \, \Sigma \smc B \Longrightarrow
-%\begin{cases}\nonumber 
-%1.\,\, \Gamma, \, \Sigma \mrc{W} B & $ where $ B \not\in \Sigma $, and $ \\[3pt] 
-%2.\,\, \forall \Theta\,(\Gamma, \Theta \mrc{W'} B \Longrightarrow W\not\subset W' ) & $ where $ B\not\in \Theta  \\[3pt] 
-%\end{cases}
-%\end{equation}
+%set of sets of sentences compatible with $ \Gamma $, i.e. $ \forall \Delta (\Gamma, \Delta \not\nmc \bigperp ) $. 
+%Now, consider the set of all the possible sets of commitments a speaker of a particular language can undertake. Depending on the sentence, these commitments may be assertional or practical (i.e. commitments to perform some action).
+%If we help ourselves to the metaphor of linguistic practice as a kind of game, then this space of possible commitments is the \textit{game board}. The set of commitments that a speaker has actually undertaken at any point in the game is her \textit{commitment score} at that time. Speaker's commitment scores are represented by the set of sentences to which she has undertaken commitment, e.g. $ \Gamma $.
+
+%\jm{ \textit{The intersection of the entitlement spaces of all conversational participants constitutes the deontic common ground.} We refer to the set of commitments undertaken by a speaker as her \textit{commitment score} and to the set of commitments shared by the participants of a conversation as the \textit{conversational context} or simply the \textit{context}. (We seem to be assuming perfect transparency of participants commitment scores as well as mutual knowledge. This assumption deserves some discussion)}.
+
 
 
 
