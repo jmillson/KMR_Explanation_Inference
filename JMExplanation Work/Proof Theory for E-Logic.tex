@@ -168,7 +168,7 @@
 		{\scriptsize\nms^{\mkern-10mu\tiny\thuarrow}}
 	}
 }
-\newcommand{\nnmc}{\not\nmc}
+\newcommand{\nnmc}{\not\mkern-4mu\nmc}
 \newcommand{\nsmc}{\not\mkern-3mu\smc}
 \newcommand{\nmrc}{\not\mkern-3mu\mrc}
 \newcommand{\nmqmc}{\not\mkern1mu\mqmc}
@@ -183,7 +183,7 @@
 %\newcommand{\nme}{\nms\mkern-7mu_{e}\mkern2mu}
 \newcommand{\qme}{{\qmc\mkern-2mu}_{e}\mkern3mu}
 \newcommand{\mqme}{{\mqme\mkern-2mu}_{e}\mkern3mu}
-\newcommand{\sme}{{mkern-2mu}_{e}\mkern3mu}
+\newcommand{\sme}{{\smc\mkern-2mu}_{e}\mkern3mu}
 
 % % % % % % % % % % %Commands for Material Incoherence% % % % % % % % % % % %
 
@@ -232,40 +232,99 @@
 
 \begin{document}
 \sloppy
-\title{Pragmatics of Explanation}
+\raggedbottom
+\title{\vspace{-3cm}Proof Theoretic Semantics for Questions}
 
 \raggedbottom
 
 \maketitle
 
+In addition to $ \mathcal{L}_e $, we construct another language, called $ \mathcal{L}_Q $ which has two categories of well-formed expressions: \textit{d-wffs} and \textit{e-wffs}, that is, claims and questions. (For simplicity, we drop the '\textit{e}' notation from our turnstile.) The syntax of $ \mathcal{L}_Q $ is just that of $ \mathcal{L}_e $ plus the following: ?, \{, \}, and the comma. D-wffs are just sentences of $ \mathcal{L}_e $.  E-wffs, on the other hand, are expressions of the following form:  $ ?\{A_1,\ldots, A_n\}  $ where $ n > 1 $ and $A_1\ldots A_n  $ are pairwise syntactically distinct d-wffs of $ \mathcal{L}_e $. If $ ?\{A_1,\ldots, A_n\} $ is a question, then each of the d-wffs $ A_1\ldots A_n $ is a possible direct answer to the question, and these are the only possible direct answers. Not that any question in $ \mathcal{L}_Q $ has at least two possible direct answers and that the set of those answers is always finite. We must stress that e-wffs are NOT sets of d-wffs, but rather singular expressions of a strictly defined form. We can paraphrase e-wffs as aksing \textit{Which of the following claims am I entitled to: $ A_1,\ldots, A_n $? }.
 
+%e.g. $ ?\{A, B\} \neq \{B, A\} $.
+
+
+Here are possible rules for e-wffs:
+
+\vspace{.3cm}
+
+\centering\textbf{Right rule for $ ?\{A_1,\ldots, A_n\} $}
+\begin{prooftree}
+\def\fCenter{\ \nmc\ }
+\AxiomC{$ \Gamma,\, A_1\nmc B \ldots \Gamma,\, A_n\nmc B $\hspace{-.7cm}}
+\RightLabel{\hspace{5mm}  where $ \Gamma, B \nnmc A_1 \ldots \Gamma, B \nnmc A_n $}
+\UnaryInf $\Gamma,\, B \fCenter ?\{A_1,\ldots, A_n\} $
+\end{prooftree}
+
+\vspace{.3cm}
+
+\centering\textbf{Possible left rule for $ ?\{A_1,\ldots, A_n\} $}
+\begin{prooftree}
+\def\fCenter{\ \nmc \ }
+\AxiomC{\hspace{-2.5cm}$\Gamma \nmc A_i$}
+\RightLabel{\hspace{5mm}  where $ 1 \leq i \leq n $}
+\UnaryInf$\Gamma, \,?\{A_1,\ldots, A_n\} \fCenter \bigperp $
+\end{prooftree}
+
+%\centering\textbf{Possible left rule for $ ?\{A_1,\ldots, A_n\} $}
+%\begin{prooftree}
+%\def\fCenter{\ \nmc \ }
+%\AxiomC{\hspace{-.1cm}$\Gamma \nmc A_i$}
+%\AxiomC{\hspace{-.1cm}$\Gamma,\,A_i \nmc B$}
+%\RightLabel{\hspace{5mm}  where $ 1 \leq i \leq n $}
+%\BinaryInf$\Gamma, \,?\{A_1,\ldots, A_n\} \fCenter B $
+%\end{prooftree}
+\vspace{.5cm}
+
+\textbf{(Negative) Partial Answer}
+
+\begin{prooftree}
+\def\fCenter{\ \nmc\ }
+\AxiomC{$ \Gamma, \,B,\,A_i \nmc \bigperp$}
+\RightLabel{\hspace{5mm}  where $ n > 2 $ and $ 1 \leq i \leq n $}
+\UnaryInf$\Gamma, \,B,\,?\{A_1,\ldots, A_n\} \fCenter ?\{A_1,\ldots, A_{n-1}\} $
+\end{prooftree}
+
+\flushleft
+\vspace{.5cm}
+We can give the semantics for a non-factive why-question, \textit{Why B?}, as follows: $$ ?\{A_1\ee B,\ldots, A_{n}\ee B\} $$
+Once $ \mathcal{L}_e $ is extended to include traditional logical operators, we can give the semantics for \textit{factive} why questions, e.g. \textit{Why B?}, as follows:
+
+$$ ?\{(A_1\ee B)\wedge B,\ldots, (A_{n}\ee B)\wedge B\} $$
+
+Notice that once one has an answer to this question, one is entitled to the explanans.
+
+
+
+
+\vspace{10cm}
 
 \begin{prooftree}
 \def\fCenter{\ \nme\ }
-\AxiomC{$ \Gamma,\, \ushort{A} \sme B $}
+\AxiomC{$ \Gamma,\, A\, \sme B $\hspace{-.3cm}}
 \RightLabel{\hspace{5mm}  EER}
-\UnaryInf$\Gamma \fCenter \ushort{A} \mathbin{\ee}B$
+\UnaryInf$\Gamma \fCenter A \mathbin{\ee} B$
 \end{prooftree}
 
 \begin{prooftree}
-\def\fCenter{\ \nme \ }
-\AxiomC{$\Gamma \fCenter \ushort{A} \ee B$}
+\def\fCenter{\ \sme \ }
+\AxiomC{\hspace{-.8cm}$\Gamma \nme A \ee B$}
 \RightLabel{\hspace{5mm}  EES}
-\UnaryInf$\Gamma, \,\ushort{A} \fCenter B $
+\UnaryInf$\Gamma, \,A \, \fCenter B $
 \end{prooftree}
 
 \begin{prooftree}
 \def\fCenter{\ \nme\ }
-\AxiomC{$ \Gamma, \,\ushort{A} \sme B$}
+\AxiomC{$ \Gamma, \,A \sme B$}
 \AxiomC{$\Gamma \fCenter \hspace{-1ex}  B $}
 \RightLabel{\hspace{5mm}  EEL}
-\BinaryInf$\Gamma, B, \ushort{A} \ee B\fCenter \hspace{-1ex}  A$
+\BinaryInf$\Gamma, B, A \ee B\fCenter \hspace{-1ex}  A$
 \end{prooftree}
 
 
 
 
-
+\flushleft
 
 \noindent\textbf{Quantified Material Consequence (QMC):}\label{QMC}
 \begin{equation}
@@ -287,6 +346,8 @@
 		
 	\end{cases}
 \end{equation}
+
+
 
 \noindent\textbf{Sturdy  Consequence (SC): [Sets]}\label{SCset}
 \begin{equation}
