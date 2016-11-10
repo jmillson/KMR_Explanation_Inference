@@ -1,0 +1,291 @@
+\documentclass{article}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+%\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{mathptmx}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{pgf}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage{soul}
+\usepackage[autostyle]{csquotes}
+\usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
+
+%\usepackage{fonttable}
+
+\addbibresource{KMR_Master.bib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA}{U}{MnSymbolA}{m}{n}
+\DeclareMathSymbol{\twoheaduparrow}{\mathop}{MnSyA}{25}
+\DeclareMathSymbol{\twoheadrightarrow}{\mathop}{MnSyA}{24}
+
+\makeatletter
+
+\usetikzlibrary{shapes}
+\usetikzlibrary{fit,shapes.misc}
+
+\newcommand\marktopleft[1]{%
+	\tikz[overlay,remember picture] 
+	\node (marker-#1-a) at (3cm, 1mm) {};%
+}
+\newcommand\markbottomright[1]{%
+	\tikz[overlay,remember picture] 
+	\node (marker-#1-b) at (-3cm,7mm) {};%
+	\tikz[overlay,remember picture,thick,inner sep=3pt]
+	\node[draw,rounded rectangle,fit=(marker-#1-a.center) (marker-#1-b.center)] {};%
+}
+
+
+
+
+
+\newcommand{\ee}{\twoheadrightarrow}
+
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+% % % % % % % % % % % % % % % Internal Commands NMC% % % % % % % % % % % % %
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+
+\newcommand{\uuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt .6pt 0pt 0pt}{$\uparrow$}}
+}
+\newcommand{\tuuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt 1pt 0pt 0pt}{$\scriptscriptstyle\uparrow$}}
+}
+\newcommand{\muparrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .65pt 0pt 0pt}{$\scriptstyle\uparrow$}}
+}
+\newcommand{\Uuparrow}{% 
+	\raisebox{.2ex}{\clipbox{0pt .15pt 0pt 0pt}{$\Uparrow$}}
+}
+\newcommand{\thuarrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .8pt 0pt 0pt}{$\twoheaduparrow$}}
+}
+
+% % % % % COMMANDS FOR NON-MONOTONIC CONSEQUENCES % % % % % % % % %
+\newcommand{\nms}{%
+	\mathbin{\mathpalette\@nms\expandafter}
+}
+\newcommand{\@nms}{\mid\joinrel\mkern-.5mu\sim}
+
+
+\newcommand{\nmc}{%
+	\mathbin{\mathpalette\nm@\expandafter}
+}
+\newcommand{\nm@}{\mid\joinrel\mkern-.5mu\sim\mkern-3mu}
+
+\newcommand{\qmc}[1]{\mathrel{
+		\mathchoice
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-13mu\tiny\uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow#1}}
+	}
+}
+
+\newcommand{\mqmc}{\mathrel{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\uuparrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow}}
+	}
+}
+
+\newcommand{\mrc}[1]{\mathbin{
+		\mathchoice
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\footnotesize\hspace{.5mm}\nms^{\mkern-13.5mu\fontsize{5.5}{0}\Uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\Uuparrow#1}}
+	}
+}
+
+\newcommand{\smc}{\mathbin{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\thuarrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\thuarrow}}
+	}
+}
+\newcommand{\nnmc}{\not\mkern-4mu\nmc}
+\newcommand{\nsmc}{\not\mkern-3mu\smc}
+\newcommand{\nmrc}{\not\mkern-3mu\mrc}
+\newcommand{\nmqmc}{\not\mkern1mu\mqmc}
+\newcommand{\nqmc}{\not\mkern1mu\qmc}
+
+\newcommand{\nme}{%
+	\mathbin{\mathpalette\@nme\expandafter}
+}
+\newcommand{\@nme}{{\mid\joinrel\mkern-.5mu\sim\mkern-2mu}_{e}\mkern3mu}
+
+
+%\newcommand{\nme}{\nms\mkern-7mu_{e}\mkern2mu}
+\newcommand{\qme}{{\qmc\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\mqme}{{\mqme\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\sme}{{\smc\mkern-2mu}_{e}\mkern3mu}
+
+% % % % % % % % % % %Commands for Material Incoherence% % % % % % % % % % % %
+
+\newcommand{\bigperpp}{%
+	\mathop{\mathpalette\bigp@rpp\relax}%
+	\displaylimits
+}
+\newcommand{\bigp@rpp}[2]{%
+	\vcenter{
+		\m@th\hbox{\scalebox{\ifx#1\displaystyle1.15\else1.15\fi}{$#1\perp$}}
+	}%
+}
+\newcommand{\bigperp}{\raisemath{.5pt}{\bigperpp}}
+
+%% % % % % % Degree Command % % % % % % % % % % % % % % % % % % % %
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+ \newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+ \newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+ \newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+
+\makeatother
+
+
+
+
+
+%\renewcommand{\@cite}[1]{#1}
+%\usepackage[natbibapa]{apacite}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+%\hypersetup{
+%    colorlinks=false,
+%    pdfborder={0 0 0},
+%}
+
+
+\begin{document}
+\sloppy
+\raggedbottom
+\title{\vspace{-3cm}Proof Theoretic Semantics for Questions}
+
+\raggedbottom
+
+\maketitle
+
+{\Large Note: \textbf{Let's not forget to change SC2 and replace ``superlative robustness''.}}
+\vspace{3mm}
+
+\noindent\textbf{Sturdy  Consequence (SC): [Sets]}\label{SCset}
+\begin{equation}
+\Gamma, \, A \smc B \Longrightarrow
+\begin{cases}\nonumber 
+1.\,\, \Gamma, \, A \mrc{W} B & $ where $ B \not\in A $, and $ \\[3pt] 
+2.\,\, \forall C\,(\Gamma, C \mrc{W'} B \Longrightarrow W\not\subset W' ) & $ where $ B\not\in C  \\[3pt] 
+\end{cases}
+\end{equation}
+
+\noindent \label{eq:MRC_ballsforward}\textbf{Normal Billiards}\hspace{8mm}\begin{minipage}[t]{.8\textwidth}
+	$\hspace{.5ex}\mathsf{Velocity\ Law},\hspace{.5ex} V_{1A} = 1\,\text{m/s},\hspace{.5ex} V_{2A} = .6\,\text{m/s} \mrc{W''} V_{2B} = .8\,\text{m/s}$
+\end{minipage}\\ 
+
+\noindent \label{eq:MRC_ballsbackwards}\textbf{Backwards Billiards}\hspace{8mm}\begin{minipage}[t]{.8\textwidth}
+	$\hspace{.5ex} \mathsf{Velocity\ Law},\hspace{.5ex} V_{2B} = .6\,\text{m/s},\hspace{.5ex} V_{2A} = .8\,\text{m/s} \mrc{W} V_{1A} = 1\,\text{m/s}$
+\end{minipage}\\ 
+
+\noindent \label{eq:MRC_defeater}\textbf{Billiards Defeater}\hspace{6mm}\begin{minipage}[t]{.8\textwidth}
+	$\hspace{.5ex} \mathsf{Velocity\ Law},\hspace{.5ex} V_{0C} = 1.17 \,\text{m/s},\hspace{.5ex} V_{1C} = 0.6\,\text{m/s} \mrc{W'}\, V_{1A} = 1\,\text{m/s}$
+\end{minipage}\\ 
+
+[Insert the following just after our reply to the first objection in the current \textbf{Objections and Replies} section]
+
+A second objection challenges our solution from the other direction---arguing that the pseudo-explanations in the symmetry examples are in fact sturdy inferences. Recall that in order for a modally robust inference to be sturdy its island of monotonicity must not be included in any other island. Consider now the supposition that just before it would have collided with ball B, ball A spontaneously explodes and that the force of the explosion propels ball B at precisely .8 m/s. This supposition is clearly not compatible with the premise of \hyperref[eq:MRC_ballsforward]{\textbf{Normal Billiards}} that $ V_{1A} = 1 $ m/s, \jm{(assuming that t=1 covers the span just up to the point of collision?)} and hence it cannot belong to $W$. However, the supposition is perfectly consistent with the premise of \hyperref[eq:MRC_ballsbackwards]{\textbf{Backwards Billiards}} that  $ V_{2B} = .8 $ m/s. This means that we have a supposition that belongs to $W'$ but not to $W$ and therefore that $ W' \not\subset W $. Since our investigation of \hyperref[eq:MRC_defeater]{\textbf{Billiards Defeater}} revealed a supposition in $W$  that is not in $W'$, we now seem forced to conclude that \hyperref[eq:MRC_ballsbackwards]{\textbf{Backwards Billiards}} is just as much a sturdy inference as \hyperref[eq:MRC_ballsforward]{\textbf{Normal Billiards}} is---assuming that there is no alternative inference whose island includes bother $W$ and $W'$.
+
+While
+
+
+
+\vspace{10cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\printbibliography
+
+
+\end{document}
