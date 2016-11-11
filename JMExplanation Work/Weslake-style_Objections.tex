@@ -233,14 +233,33 @@
 \begin{document}
 \sloppy
 \raggedbottom
-\title{\vspace{-3cm}Proof Theoretic Semantics for Questions}
+\title{\vspace{-3cm}}
 
 \raggedbottom
 
 \maketitle
 
-{\Large Note: \textbf{Let's not forget to change SC2 and replace ``superlative robustness''.}}
+{\large Note: \textbf{Let's not forget to change SC2 and replace ``superlative robustness''.}}
 \vspace{3mm}
+
+
+
+
+[Insert the following just after our reply to the first objection in the current \textbf{Objections and Replies} section]
+
+A second objection challenges our solution from the other direction---arguing that the pseudo-explanations in the symmetry examples are in fact sturdy inferences. Recall that in order for a modally robust inference to be sturdy its island of monotonicity must not be included in any other island. Consider now the supposition that just before it would have collided with ball B, ball A spontaneously explodes and that the force of the explosion propels ball B at precisely .8 m/s. This supposition is clearly not compatible with the premise of \hyperref[eq:MRC_ballsforward]{\textbf{Normal Billiards}} that $ V_{1A} = 1 $ m/s, \jm{(assuming that t=1 covers the span just up to the point of collision? See Issues below.)} and hence it cannot belong to $W$. However, the supposition is perfectly consistent with the premise of \hyperref[eq:MRC_ballsbackwards]{\textbf{Backwards Billiards}} that  $ V_{2B} = .8 $ m/s and may be added to it without defeating the inference. This means that we have a supposition that belongs to $W'$ but not to $W$ and therefore that $ W' \not\subset W $. Since our investigation of \hyperref[eq:MRC_defeater]{\textbf{Billiards Defeater}} revealed a supposition in $W$  that is not in $W'$, we now seem forced to conclude that \hyperref[eq:MRC_ballsbackwards]{\textbf{Backwards Billiards}} is just as much a sturdy inference as \hyperref[eq:MRC_ballsforward]{\textbf{Normal Billiards}} is---assuming that there is no alternative inference whose island includes both $W$ and $W'$.
+
+Powerful though this objection may seem, the argument behind it ignores an important constraint upon the suppositions that comprise an inference's island of monotonicity. While the example above points out a supposition incompatible with the  explanans yet compatible with its symmetrical counterpart, this is not sufficient to ensure that it is a member of the latter's island. Rather, a supposition is included in an island only if it is compatible with \textit{all} the premises in a modally robust inference, and as we have noted, such inferences contain a non-empty set of contextual premises, represented by $ \Gamma $.  This set includes...\jm{So here is the place to describe the sorts of information that belong in $ \Gamma $. I'm still not sure what the best way to characterize these is, so I'd like one of you to take a stab.}
+	
+\jm{\textbf{Issues:}  I'm not thrilled with the example above, mostly because the supposition blatantly contradicts our set-up of the symmetry example (p .2) where we say ``Consider a
+simple system consisting of two billiard balls, A and B, on a standard billiards table. A moves across the table and \textit{collides} with B, which was not moving." In the example above, A never actually collides with B. But here's a thought: what if after we give this setup on p.12, we explain that these pieces of information must belong to $ \Gamma $? Then, it becomes obvious (too obvious?) that the supposition in question is banned from both $W$ and $W'$. }
+
+
+
+\vspace{1cm}
+
+
+{\large The following are for reference only:}\\
 
 \noindent\textbf{Sturdy  Consequence (SC): [Sets]}\label{SCset}
 \begin{equation}
@@ -262,19 +281,6 @@
 \noindent \label{eq:MRC_defeater}\textbf{Billiards Defeater}\hspace{6mm}\begin{minipage}[t]{.8\textwidth}
 	$\hspace{.5ex} \mathsf{Velocity\ Law},\hspace{.5ex} V_{0C} = 1.17 \,\text{m/s},\hspace{.5ex} V_{1C} = 0.6\,\text{m/s} \mrc{W'}\, V_{1A} = 1\,\text{m/s}$
 \end{minipage}\\ 
-
-[Insert the following just after our reply to the first objection in the current \textbf{Objections and Replies} section]
-
-A second objection challenges our solution from the other direction---arguing that the pseudo-explanations in the symmetry examples are in fact sturdy inferences. Recall that in order for a modally robust inference to be sturdy its island of monotonicity must not be included in any other island. Consider now the supposition that just before it would have collided with ball B, ball A spontaneously explodes and that the force of the explosion propels ball B at precisely .8 m/s. This supposition is clearly not compatible with the premise of \hyperref[eq:MRC_ballsforward]{\textbf{Normal Billiards}} that $ V_{1A} = 1 $ m/s, \jm{(assuming that t=1 covers the span just up to the point of collision?)} and hence it cannot belong to $W$. However, the supposition is perfectly consistent with the premise of \hyperref[eq:MRC_ballsbackwards]{\textbf{Backwards Billiards}} that  $ V_{2B} = .8 $ m/s. This means that we have a supposition that belongs to $W'$ but not to $W$ and therefore that $ W' \not\subset W $. Since our investigation of \hyperref[eq:MRC_defeater]{\textbf{Billiards Defeater}} revealed a supposition in $W$  that is not in $W'$, we now seem forced to conclude that \hyperref[eq:MRC_ballsbackwards]{\textbf{Backwards Billiards}} is just as much a sturdy inference as \hyperref[eq:MRC_ballsforward]{\textbf{Normal Billiards}} is---assuming that there is no alternative inference whose island includes bother $W$ and $W'$.
-
-While
-
-
-
-\vspace{10cm}
-
-
-
 
 
 
