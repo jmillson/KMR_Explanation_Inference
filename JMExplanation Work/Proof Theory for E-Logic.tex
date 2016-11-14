@@ -239,6 +239,8 @@
 
 \maketitle
 
+\section{Interrogatives in NM-SS}
+
 In addition to $ \mathcal{L}_e $, we construct another language, called $ \mathcal{L}_Q $ which has two categories of well-formed expressions: \textit{d-wffs} and \textit{e-wffs}, that is, claims and questions. (For simplicity, we drop the '\textit{e}' notation from our turnstile.) The syntax of $ \mathcal{L}_Q $ is just that of $ \mathcal{L}_e $ plus the following: ?, \{, \}, and the comma. D-wffs are just sentences of $ \mathcal{L}_e $.  E-wffs, on the other hand, are expressions of the following form:  $ ?\{A_1,\ldots, A_n\}  $ where $ n > 1 $ and $A_1\ldots A_n  $ are pairwise syntactically distinct d-wffs of $ \mathcal{L}_e $. If $ ?\{A_1,\ldots, A_n\} $ is a question, then each of the d-wffs $ A_1\ldots A_n $ is a possible direct answer to the question, and these are the only possible direct answers. Not that any question in $ \mathcal{L}_Q $ has at least two possible direct answers and that the set of those answers is always finite. We must stress that e-wffs are NOT sets of d-wffs, but rather singular expressions of a strictly defined form. We can paraphrase e-wffs as aksing \textit{Which of the following claims am I entitled to: $ A_1,\ldots, A_n $? }.
 
 %e.g. $ ?\{A, B\} \neq \{B, A\} $.
@@ -280,9 +282,8 @@ Here are possible rules for e-wffs:
 
 \begin{prooftree}
 \def\fCenter{\ \nmc\ }
-\AxiomC{$ \Gamma, \,B,\,A_i \nmc \bigperp$}
-\RightLabel{\hspace{5mm}  where $ n > 2 $ and $ 1 \leq i \leq n $}
-\UnaryInf$\Gamma, \,B,\,?\{A_1,\ldots, A_n\} \fCenter ?\{A_1,\ldots, A_{n-1}\} $
+\AxiomC{$ \hspace{-1.5cm} \Gamma, \,B \nmc \bigperp$}
+\UnaryInf$\Gamma,\,?\{A_1,\ldots, A_n, B\} \fCenter ?\{A_1,\ldots, A_{n}\} $
 \end{prooftree}
 
 \flushleft
