@@ -3,7 +3,7 @@
 %\documentclass[smallextended]{svjour3}       % onecolumn (second format)
 %\documentclass[twocolumn]{svjour3}          % twocolumn
 %
-\usepackage{geometry}
+\usepackage[top=2cm,bottom=2cm,left=3cm,right=3cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -278,16 +278,18 @@ Here are the axioms and rules for $\mathsf{LK}^\alpha_\mathcal{S} $:
 Axioms
 \vspace{.5cm}
 
-$
+
 \begin{prooftree}
 	\Hypo{}
 	\Infer1[$ log.\,\,ax.$]{ \cdot\mid p\sststile{\mathcal{S}(p)}{} p}
 \end{prooftree}
-\hspace{2cm}
+
+\vspace{.5cm}
+
 \begin{prooftree}
 	\Hypo{}
-	\Infer1[where $i\neq k$\,,\,$j\neq m$ and $0 \leq j, m\quad\quad\quad mat.\,\,ax. $]{ \cdot\mid  p_i,\ldots,p_j \sststile{\mathbf{S}}{} p_k,\ldots,p_m }
-\end{prooftree}$
+	\Infer1[where $\{p_i,\ldots,p_j\} \cap \{p_k,\ldots,p_m\} = 0,\,\, j,m\geq0$ $ \quad\quad mat.\,\,ax. $]{ \cdot\mid  p_i,\ldots,p_j \sststile{\mathbf{S}}{} p_k,\ldots,p_m }
+\end{prooftree}
 
 
 
@@ -427,7 +429,7 @@ The operator $ \lfloor \cdot \rfloor $ denotes a function that takes control-set
 $$ \lfloor\mathbf{S}\rfloor  =_{df} \mathbf{S} \cup \mathbb{S}. $$
 
 \begin{remark}
-Note that applying $ \lfloor \cdot \rfloor $ to a control-set $ \mathbf{S} $ when it is attached to one sequent will yield a different output than if it is applied to the same control-set  attached to a different sequent, i.e. eventhough $\mathbf{S} = \mathbf{T}$, if $\Gamma\sststile{\lfloor\mathbf{S}\rfloor}{} \Delta \,\,\text{and}\,\, \Gamma'\sststile{\lfloor\mathbf{T}\rfloor}{} \Delta'$ and either $\Gamma\neq \Gamma' $ or $\Delta\neq\Delta'$, then $\lfloor\mathbf{S}\rfloor \neq \lfloor\mathbf{T}\rfloor$.
+Note that applying $ \lfloor \cdot \rfloor $ to a control-set $ \mathbf{S} $ when it is attached to one sequent will yield a different output than if it is applied to the same control-set  attached to a different sequent, i.e. even though $\mathbf{S} = \mathbf{T}$, if $\Gamma\sststile{\lfloor\mathbf{S}\rfloor}{} \Delta \,\,\text{and}\,\, \Gamma'\sststile{\lfloor\mathbf{T}\rfloor}{} \Delta'$ and either $\Gamma\neq \Gamma' $ or $\Delta\neq\Delta'$, then $\lfloor\mathbf{S}\rfloor \neq \lfloor\mathbf{T}\rfloor$.
 \end{remark}
 
 \end{definition}
@@ -532,7 +534,7 @@ A sequent is said to be sturdy only if its subclassical control-set does not inc
 Since the competitors for sturdiness are provable sequents, we know that they will include sequents whose control sets have been maximally expanded via iterated applications of the $ \sigma $ rule so as to include \textit{any and all inference defeaters.} 
 \end{remark}
 
-\newpage
+
 
 We now extend the system $ \mathsf{LK}^\alpha_\mathcal{S} $ by adding to it the following axioms and rules. The result we call $ \mathsf{LK}^\rhd_\mathcal{\lfloor S \rfloor} $.  
 
@@ -543,7 +545,7 @@ We now extend the system $ \mathsf{LK}^\alpha_\mathcal{S} $ by adding to it the 
 
 \begin{prooftree}
 \Hypo{}
-\Infer1[where $i\neq k$\,,\,$j\neq m$ and $0 < j, m\quad\quad\quad sturdy\,\,ax. $]{ \Sigma\mid  p_i,\ldots,p_j \sststile{\mathbf{\lfloor S \rfloor}}{\rhd} p_k,\ldots,p_m }
+\Infer1[where $\{p_i,\ldots,p_j\} \cap \{p_k,\ldots,p_m\} = 0,\,\, j,m>0\quad\quad sturdy\,\,ax. $]{ \Sigma\mid  p_i,\ldots,p_j \sststile{\mathbf{\lfloor S \rfloor}}{\rhd} p_k,\ldots,p_m }
 \end{prooftree}
 
 \vspace{.5cm}
@@ -588,7 +590,7 @@ Look closely and you'll see that $\rhd\vdash $ is IBE!
 \end{remark}
 
 \begin{remark}
- The left and right rules for $ \rhd $ make possible an application of the cut-rule that is not eliminate. I'm still seeing what can be done about this.
+ The left and right rules for $ \rhd $ make possible an application of the cut-rule that is not eliminable. I'm still seeing what can be done about this.
 \end{remark}
 %$\begin{prooftree}
 %\Hypo{\Sigma\mid\Gamma, A\sststile{\lfloor\mathbf{S}\rfloor}{\rhd} B, \Delta}
