@@ -8281,4 +8281,39 @@
   keywords  = {Epistem_Expl},
 }
 
+@Online{Braunstein2014,
+  author  = {Daniel R. Braunstein and Ken Woolums},
+  title   = {The Home Run Derby Myth},
+  year    = {2014},
+  date    = {2014-07-14},
+  url     = {https://fivethirtyeight.com/datalab/the-home-run-derby-myth},
+  urldate = {2017-03-18},
+}
+
+@Article{Walsh2015,
+  author  = {Walsh, D. M.},
+  title   = {Variance, Invariance and Statistical Explanation},
+  journal = {Erkenntnis},
+  year    = {2015},
+  volume  = {80},
+  number  = {3},
+  pages   = {469--489},
+  doi     = {10.1007/s10670-014-9680-3},
+  url     = {http://dx.doi.org/10.1007/s10670-014-9680-3},
+}
+
+@Article{Reutlinger2017,
+  author  = {Reutlinger, Alexander},
+  title   = {Explanation beyond causation? New directions in the philosophy of scientific explanation},
+  journal = {Philosophy Compass},
+  year    = {2017},
+  volume  = {12},
+  number  = {2},
+  pages   = {e12395--n/a},
+  note    = {e12395 PHCO-0972.R1},
+  issn    = {1747-9991},
+  doi     = {10.1111/phc3.12395},
+  url     = {http://dx.doi.org/10.1111/phc3.12395},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
