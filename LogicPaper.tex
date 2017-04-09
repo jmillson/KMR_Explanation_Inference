@@ -1,0 +1,1139 @@
+\documentclass{article}                  
+\usepackage[top=2cm,bottom=2cm,left=3cm,right=3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{turnstile}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{pgf}
+\usepackage{pgfkeys}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{cancel}
+\usepackage{ebproof}
+\usepackage{float}
+\usepackage[autostyle]{csquotes}
+\usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
+
+%\usepackage{fonttable}
+\addbibresource{../References/KMR_Master4.4.17.bib}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+\makeatletter
+
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+% % % % % % % % % % %Command Black QED Box% % % % % % % % % % % %
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+%%%%%%%%%%%%%Amsthm Environments%%%%%%%%%%%%%%%%%
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem{fact}{Fact}
+
+
+%%%%%%%%%%%%%Giant Math Symbols%%%%%%%%%%%%%%%%%
+\newcommand{\vast}{\bBigg@{4}}
+\newcommand{\Vast}{\bBigg@{5}}
+
+
+
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+\newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+\newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+\newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+\makeatother
+
+
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+%\hypersetup{
+%    colorlinks=false,
+%    pdfborder={0 0 0},
+%}
+
+\begin{document}
+\sloppy
+\title{Inferentialist Expressivism for Explanatory Vocabulary
+%\thanks{Grants or other notes
+%about the article that should go on the front page should be
+%placed here. General acknowledgments should be placed at the end of the article.}
+}
+
+\large
+\raggedbottom
+
+\maketitle
+
+\jm{I'm using the following convention: `Theorem' is reserved for the main results of the paper; `Lemma' is used for claims that are needed in proofs of Theorems; and `Proposition' is reserved for claims that are important but not the main results.}
+
+\textbf{Outline}
+\textit{Thesis:} By treating explanation as a form of inference, we given an inferentialist-expressivist account of explanatory vocabulary that specifies the conditions under which IBE is a reliable form of ampliative inference.
+\section{Introduction}
+By treating explanation as a form of inference, we give an inferentialist-expressivist account of explanatory vocabulary that specifies the conditions under which IBE is a reliable form of ampliative inference.
+\section{Motivation}
+Depending on your philosophical interests, an inferentialist-expressivist approach to explanation may have different attractions. To that end, we offer customized advertisements to inferentialists and to philosophers of science. Ideally, we hope that you are motivated by both sets of considerations!
+\subsection{For the Inferentialists}
+For those with broad sympathies to inferentialist-expressivism, there are three main attractions to treating explanatory vocabulary in a manner akin to traditional semantic vocabulary. First, despite the fact that a sizable chunk of our inferential lives traffic in the inductive, surprisingly little work has been done to develop an inferentialist-expressivist approach to inductive vocabulary. Rather, the paradigmatic texts in inferentialist-expressivism focus on deductive vocabulary. There is a potential goldmine that is largely unexplored: probabilistic, statistical, and (of course) explanatory vocabularies might be glittering with unclaimed inferentialist-expressivist riches.
+
+While few inferentialist have reflected upon the nature of inductive and explanatory vocabulary, those that have offer some tantalizing insights. The grandfather of inferentialism, Wilfrid \textcite{Sellars1954,Sellars1963}, saw the scientific activities of describing and explaining the world as \textit{the} meaning-conferring practices of empirical vocabulary.  In other words, it is their role in the game of giving and asking for \textit{explanations} that determines the content of our empirical concepts. Moreover, Sellars thought that it was the business of lawlike statements or \textit{nomologicals}, as he called them, to make explicit the material inferences that underwrite this practice. 
+
+In his most recent work, \textcite{Brandom2015} has spelled out Sellars' view in great detail, but his earlier work also offered reflections on induction. \textcite{Brandom1994,Brandom2008} claims that material inferences come in two flavors---those that preserve commitment and which are analogs to deduction, and those that preserve entitlement and are analogs to induction. Motivating this distinction is the idea that entitlement-preserving inferences are akin to inductive inferences insofar as they permit or license rather than oblige an agent to believe or assert the conclusion. Our work here represents the first attempt to develop this view of material-inductive inferences in a systematic fashion.
+
+Finally, as a species of expressivism, such an approach would highlight---and settle---certain metaphysical debts that have been overlooked in the explanation literature. The dominant philosophical accounts of scientific explanation hold that explanations represent various kinds of ``dependency" relationships---paradigmatically causal ones \parencite{Lewis1986,Salmon1984,Strevens2008,Woodward2003}. More provocatively, we might say that these dependency relationships are truthmakers for their respective explanations. Yet, virtually all of these dependency relationships are modally-loaded concepts. This, in turn, begets standard ``placement problems," especially about how modal objects and properties fit within a naturalistically respectable ontology \parencite{Price2011}. Anti-descriptivism---shared by expressivists of all stripes---would appear to be one way of tidying up the ontological backdrop of the scientific explanation literature. Closely related, by ``inferentializing" IBE, inferential-expressivists rob those who partake in a broader array of metaphysical extravagances of one of their most powerful gateway drugs. Various kinds of realism (mathematical, modal, etc.) are frequently justified in virtue of their ability to explain otherwise ``miraculous" facts. If the view we are suggesting is correct, then explanatory claims can fit within a larger inferentialist-expressivist framework, which tends towards deflationism. Furthermore, there would be a sense in which explanation is just not the right tool for justifying substantive metaphysical claims: why would we ever think that certain things exist (at least in any non-deflationary way) on the basis of what we can do with an expressive device? \kk{This might be a bit too strong; rein me in here.} \jm{I think this is ok, but then again, I'm a bad judge of \"{u}ber-deflationary claims.}
+
+\begin{itemize}
+
+	\item Explanatory role of reasons (Sellars @ Explanatory Coherence). Space of reasons includes explanatory arguments. Hat-tip to IBE.
+	\item General expressivist motivations.
+
+\end{itemize}
+
+
+\subsection{For the Philosophers of Science}
+For philosophers of science, an inferentialist-expressivist account of explanation promises three kinds of attractions. First, many of the previous section's selling points will be tantalizing to those philosophers of science with metaphysical proclivities that overlap with expressivists'---i.e. that tend towards the austere.
+
+Second, going back as far as Hempel, many theorists of explanation have endorsed a view that we call \textit{Explanation As Inference} (EAI). On this view, explanations are a kind of inference. \fnmark{Disambiguation} Hempel famously analyzed certain explanation statements in terms of sound deductive arguments whose premises contain at least one law of nature. Likewise, Kitcher's unificationist account treats explanations as arguments belonging to a class of formal derivations circumscribed by semantic constraints on substitutions---so-called `filling instructions.' However, EAI has faced many searching counterexamples \parencite{Salmon1989}. Elsewhere, we identify the source of these problems: earlier proponents of EAI have marshaled the wrong consequence relations. The current paper offers a precise account of these consequence relations \parencite{Khalifaforthcomingc}. By itself, this would simply be a technical modification (albeit significant) to an otherwise-correct account of explanation. However, the current paper also suggests a second (and deeper) way in which inferentialist-expressivism can further the cause of EAI: its earlier proponents of EAI saw explanations as \textit{reducible} to or \textit{explicated} by a class of arguments, yet, if our approach is correct, then  there are \textit{prima facie} reasons to think that the proper relationship os that of \textit{expression}. In other words, the tight connection that has already been established between explanations and inferences by earlier EAI'ers may be readily exploited and profitably recast by expressivists.  
+
+\fntext{Disambiguation}{We introduce EAI to distinguish it from IBE, and from the broader sense in which we offer an inferentialist semantics of ``best explains."}
+
+A final attraction of approaching explanation as we do is the prospect of identifying the conditions wherein IBE is reliable. The spectrum of positions on this particular topic is overwhelming, with some theorists voicing skepticism about the probity of IBE \parencite{Laudan1981,Stanford2006,Fraassen1989}, others claiming it is reliable because it tracks with a more fundamental form of inference \parencite{Day1994,Rappaport1996,Khalifaforthcominga} (add \textbf{Nortonms,Roche201?}), and still others claiming that IBE is both reliable and fundamental \parencite{Harman1965,Harman1986,Lycan1988,Poston2014}. These disagreements have always had an air of intractability because IBE has not been stated with adequate precision. By clarifying the relationship between explanation and inference, as is demanded by an inferentialist semantics, we thereby shed some light on when it is licit to infer the best explanation.
+
+
+\begin{itemize}
+	\item Heir to Hempelian explanation (see other papers)
+	\item Ascertaining when IBE is reliable
+	\item IBE as inference-first and explanation-second.
+\end{itemize}
+
+\section{Inferentialism, Expressivism, and Inferentialist Expressivism}
+If there are two positions that unite the work of Wilfrid Sellars, Robert Brandom, and Jaroslav Peregrin, then they are undoubtedly \textit{inferentialism} and \textit{expressivism}. \jm{This was just a line to jump-start my thinking. Help me think of a better way to start the paper off. I can see the paper starting off with a programmatic statement of the thesis followed by this discussion of expressivism.} \kk{we'll get back to this once we have something more complete. I think that will help with programmatic statements.}
+
+Roughly put, \textit{inferentialism} is the view that the meaning of a linguistic expression is determined by its inferential role, that is, by what follows from it and/or by what it follows from.\fnmark{And/or} In this sense, inferentialism stands in opposition to the traditional approaches to semantic analysis which take the meaning of linguistic expressions to be functions of their representational purport and success. For instance, inferentialism holds that the meaning of logical constants is determined first and foremost by the rules governing their introduction and/or their elimination, rather than by the function of constituent truth-values. More ambitiously, inferentialism may be applied to the analysis of ordinary empirical vocabulary, in which case, the notion of \textit{inference} is expanded to include not only proper transitions among assertions but also those to and from non-verbal behavior. 
+
+\fntext{And/or}{We formulate the position of inferentialism using the explicitly inclusive `and/or' in order to represent as approaches that identify meaning-constitutive rules with those for introduction \parencite{Prawitz2006}, elimination \parencite{Dummett1991,Prawitz2007}, or both \parencite{Brandom1994,Brandom2008}.}
+
+Indeed, in order to successfully explicate the meaning of any vocabulary inferentialism needs to provide some account of what qualifies as an inference. The account favored by Sellars, Brandom, and Peregrin treats inferences (as well as assertions) as theoretical posits sufficient for describing the behavior of agents playing a `game of giving and asking for reasons.' Such a practice involves the acquisition, maintenance, and discharge of normative statuses. These statuses comprise various kinds of \textit{commitments} and \textit{entitlements}. Thus, for example, in making an assertion, a speaker entitles others to reassert her claim and commits herself, \textit{inter alia}, to providing reasons for it when it is challenged. \textit{Inference} is the theoretical concept that enables us to describe this practice---e.g. when acknowledging one assertional commitment commits a speaker to undertake another, we may say that the second claim \textit{follows} from the first.
+
+Unlike inferentialism, \textit{expressivism}, in the sense that describes the positions of these thinkers, is not a thesis about linguistic meaning. Rather, it is a claim about the role or function of some vocabulary, about what this vocabulary permits speakers to \textit{do}. Broadly construed, expressivism about some vocabulary \textit{X} holds that the function of \textit{X} is not to describe or represent features of the world, but rather to express something or to make something explicit that would otherwise remain implicit, tacit, or latent. On this broad construal, deflationists about truth count as expressivists, for they treat the function of the truth predicate as enabling us to express \textit{generalizations} that would otherwise require knowledge we might lack or repetition we might rather do without \parencite[104-5]{Horwich1999}. Likewise, \textcite{Thomasson2013} has argued that the role of metaphysical modal vocabulary is to make explicit constitutive semantic rules and to do so in a prescriptive manner while employing the indicative mood. On a narrower conception of expressivism, neither generalizations nor rules are expressed. Rather, our \textit{attitudes} are expressed. Thus, moral expressivists treat the function of ethical discourse as expressing \textit{evaluative attitudes} rather than as tracking moral facts or properties \parencite{Blackburn1993,Gibbard2003}. Similarly, Brandom's  logical expressivism holds that the function of logical vocabulary is to make explicit our \textit{endorsement} of various patterns of inference  rather than to represent features of a `logical realm' \parencite{Brandom1994,Brandom2000,Brandom2008}. Of course, even the ``non-attitudinal'' expressivists can be recast so that their target vocabulary expresses an attitude---an \textit{endorsement} of a generalization, a \textit{prescription} of how to use certain words.
+
+Whether narrow or broad, an expressivist treatment of a vocabulary's function need not be wedded to an inferentialist account of its meaning. Nonetheless, the two approaches have a natural affinity. Both eschew traditional programs in the study of language that, by taking the word-world relation as fundamental, privilege representational concepts and descriptive functions. More importantly, certain benefits accrue to the theorist who holds both positions for the same target. An inferentialist account of the meaning of vocabulary \textit{X} may, indeed, \textit{should}, go some way toward explaining why \textit{X} has the peculiar expressive function that it does. For instance, the introduction and elimination rules for the conditional in classical logic permit the derivation of the Deduction Theorem ($A \vdash B \Leftrightarrow\,\, \vdash A \rightarrow B $) which can be thought of as articulating the expressive function of the conditional---the theorem says that an object-language operator gives expression to or makes explicit what would otherwise be given as a rule of inference in the meta-language. Finally, the example of the conditional also illustrates the way in which inferentialism supports a particular brand of expressivism, one distinguished by the claim that the expressive role of the target vocabulary is to make explicit speakers' \textit{commitments to inferences}. 
+
+It is this variant of expressivism, which we will call \textit{inferentialist expressivism}, that Peregrin and Brandom apply to traditional logical operators and that the latter extends to semantic, modal, and representational vocabulary. Indeed, this same approach can be detected in Sellars' assertion that statements of natural law express commitments to patterns of inference among empirical claims. The inferentialist-expressivist approach to these various vocabularies stands as both an invitation to others to expand its application and as a paradigm of how to proceed in such an endeavor. In this paper, we pursue just such an expansion, aiming to provide an inferentialist-expressivist treatment of \textit{explanatory vocabulary}. 
+
+Our first task is to develop a base logic that formalizes the inferences expressed by explanatory vocabulary. For convenience, we refer to these inferences as \textit{explanatory arguments}. To make good on the expressivist promise, the logic of explanatory arguments must exhibit the salient properties of explanatory vocabulary. As we shall see, this is a tall order and consequently much our argumentative energy is spent demonstrating that the inferences in our base logic have just those properties they would need if they were explicitly endorsed by the use of explanatory claims. 
+
+Our next task is to show that the object-language of this logic can be extended to include a connective that makes (commitment to) explanatory arguments explicit. To do so, we must provide rules for the this connectives' introduction and elimination. Since one of our goals is to show that the meaning of explanatory vocabulary is partly constituted by the role it plays in IBE, one of the rules for this connective must be a recognizable form of IBE. From these rules, it should be possible to establish a deduction theorem. However, since the logic of explanatory arguments contains two distinct classes of consequence relations, we will not be able to establish the traditional version of this theorem. Instead, we will show that the use of the explanatory connective in one class of consequence relations codifies a rule in the other. Since this captures the expressivist purport of the classical deduction theorem, we dub this a \textit{quasi-deduction theorem}.\fnmark{gen_deduct} 
+
+Finally, we must defend our explanatory connective against charges, such as that leveled by \textcite{Prior1960}, that it trivializes a consequence relation and thus fails to be meaningful. In response to this worry, most inferentialists follow \textcite{Belnap1962} and say that the rules by which we introduce a new bit of logical vocabulary must extend the consequence relation we start with in a conservative manner. This means that an inference that does not contain the new connective holds in the extended consequence relation if and only if it already held in the unextended one. Since there is a cut-elimination theorem for our base logic, the easiest way to establish the conservativity of our extension is to show that all proofs that use cut in the extension can be reduced to proofs which do not. In other words, we will demonstrate that the cut-elimination theorem holds in our extended logic.
+
+
+\fntext{gen_deduct}{Our quasi-deduction theorem can be thought of as an instance of what XXXX calls a ``Generalized Deduction Theorem''.}
+
+
+
+\section{Explanatory Vocabulary}
+
+To start, let us specify our target. We aim to show that the role that a particular class of expressions plays in a language is that of enabling speakers to express their commitment to certain inferences, rather than to describe features of the world. The class we have in mind includes those expressions which are given in English as ``That\ldots (best, possibly, actually) explains why\ldots,'' and its nominalization ``That\ldots is the (best, possible, actual) explanation of why\ldots,'' where the ellipses are filled by declarative sentences. As with most complex locutions in natural language, the analysis of these expressions faces challenges ranging from issues of polysemy to the ``non-intersective'' behavior of the adjectival predicates. While we certainly wish to see the insights of inferentialist-expressivism brought to bear in the analysis of natural languages, we do not intend to pursue such an ambitious undertaking. Instead, we aim to capture at least part of the notion of \textit{best explanation}. Unfortunately, even here, there is ambiguity. For instance, ``\textit{A} explains \textit{B}" is typically factive. On a simple reading, then ``\textit{A} best explains \textit{B}" is also factive. After all, it is natural to think of our best explanations as a proper subset of the totality of actual explanations. However, our chief aim is to capture the meaning of ``\textit{A} best explains \textit{B}"  as it functions as a major premise in the pattern of inference dubbed ``Inference to the Best Explanation" (IBE). In its simplest rendition, IBE takes the following form:
+
+\begin{itemize}[itemsep=.01mm]\centering
+	\item[]\textit{A} best explains why \textit{B}
+	\item[]\underline{\textit{B}\hspace{2.9cm}}
+	\item[$\therefore $]\textit{A}$ \quad\quad\quad\quad\quad\quad $
+\end{itemize}
+
+As IBE's foremost defender, Peter Lipton argues that to treat  ``\textit{A} best explains \textit{B}" as factive or ``actual" in this case is ``like a dessert recipe that says start with a souffl\'e." \parencite[58]{Lipton2004}. For this reason, Lipton suggests that the best explanation ought to be construed as the best \textit{potential} explanation.\fnmark{Lovely} Following a common convention in the literature on scientific explanation, let us stipulate that ``\textit{A} potentially explains \textit{B}" requires neither ``\textit{A}" nor ``\textit{B}" to be true. Then our claim is that ``\textit{A} best explains \textit{B}" is not factive, but must still provide good inductive grounds for detaching the explanans, \textit{A}, when the explanandum, \textit{B}, obtains.
+
+\fntext{Lovely}{Lipton also argues that IBE should construe the best explanation as the ``loveliest" explanation, and then vaguely describes ``loveliness" as a combination of various ``theoretical virtues," such as simplicity, scope, fit with background belief, etc. While our view does appeal to some superlative---what we call ``sturdiness"---it appears to be something quite different than this. A detailed comparison of loveliness and sturdiness exceeds the scope of the current paper.} 
+
+In addition to being non-factive, the sense of \textit{best explanation} that we aim to represent is \textit{immediate} and \textit{exhaustive}. We say that $ A $ is an immediate explanation of $ B $ so long as it does not explain $ B $ merely by explaining something else, $ C $, which in turn explains $ B $. In other words, the explanations we have in mind are not transitive. By ``exhaustive,'' we mean that nothing needs to be added to $A$ in order for it to explain $B$. The target of our account is thus expressed by the locution ``\dots is the loveliest potential, immediate, exhaustive explanation of why \dots''. To avoid having to repeat this phrase, we will henceforth speak of \textit{best explanations} or simply \textit{explanations}. 
+
+
+ \jm{I just built non-transitivity into our target. This seems cleaner to me. Now it's no longer a property we have to justify.}
+
+%Arguably any vocabulary could be the target of an inferentialist-expressivist analysis. Why should we think that such an account of explanatory vocabulary is likely to be fruitful? There are at least four \textit{prima facie} reasons to think so. 
+%
+%
+%
+%While these reasons speak in favor of the idea that explanatory claims serve to make explicit inferential commitments, there is also motivation for a concomitant inferential semantics. This leads to our fourth and final motivation for ``inferentializing" the ``best explains" locution. The most straightforward inferentialism would be one that identified introduction and elimination rules for the `(best, possibly, actually) explains why' locution(s). Following the example of the Deduction Theorem, a plausible introduction rule for ``A explains why B'' would simply be the existence of an `explanatory' proof of B on the basis of A. But what could possible provide conditions for the elimination of such an expression? 
+%
+%IBE provides a tempting answer. Ever since its identification by Charles S. Peirce, epistemologists, philosophers of science, and more recently, computer scientists, have sought to articulate the features of that reasoning which (apparently) leads us from explanandum to explanans, or from observables to hypotheses. In the form presented above, IBE certainly \textit{looks} like a typical elimination rule for the locution ``best explains why''---analogous to the way \textit{Modus Ponens} serves as the elimination rule for the conditional. Indeed, in the AI literature where abductive reasoning has been the site of numerous formal exercises, it not uncommon to see the inference referred to as \textit{backwards} or \textit{reverse Modus Ponens}. (We will return to this point in the next section.)  At the very least, the recognition of IBE as a legitimate, though perhaps not fundamental, rule of inference provides the inferentialist treatment of explanatory vocabulary with a plausible interpretant.  
+%
+%The extant scholarship on explanation thus exhibits at least four sources of motivation for an inferentialist-expressivist account of explanatory vocabulary: a tradition of analysis suspicious of the idea that explanatory relations are or represent worldly relationships, a similar suspicion about the kinds of substantive metaphysics that are frequently justified via IBE, several accounts of explanation that conceive of it in terms of inference, and, finally, a recognizable pattern of non-deductive inference in which explanatory claims appear to play a crucial role. In the next section we clear the ground for an inferentialist-expressivist account by determining what types of inferences could be made explicit by explanatory vocabulary.
+%
+%\textbf{Road-map paragraph}
+
+\section{Properties of Explanatory Arguments}
+
+If, \textit{ex hypothesi}, explanatory expressions \textit{do} serve to make explicit certain inferential commitments, the first question that arises is, what kinds of inferences are being made explicit? Let us call these target phenomena \textit{explanatory arguments}. Our question then becomes: what are the properties of explanatory arguments that distinguish them from other inferences? We can certainly reconstruct a Hempelian answer to this question. For Hempel, (certain) explanatory arguments are just inferences with true premises that include at least one lawlike statement. However, given the notorious difficulties that plagued Hempel's deductive-nomological account, we should resist cleaving too closely to this model. Instead, we propose to work backwards from scientific practice concerning the appropriate use of explanatory expressions and the general inferential relationships they exhibit. In other words, we proceed from the assumption that the properties of explanatory arguments may be read off of the behavior of explanatory practices.
+
+
+Explanatory arguments exhibit six distinctive properties. First, they are \textit{defeasible}---an argument can cease to be explanatory when new information is added to its premises. For instance, while the claim that ``The liquid's acidity explains why the blue litmus paper turned red,''  may constitute a good explanation, strengthening the explanans can easily produce a bad one: ``The liquid's acidity and the presence of chlorine gas explains why the blue litmus paper turned red.'' In this case, the additional information is incompatible with the explanandum. In other cases, however, what is added to an explanans undercuts the explanatory relation itself. For instance, that the match was struck may explain why the match lit, but if it is discovered that match was damp, then the striking no longer, by itself, explains why it lit (perhaps the match was dried before it was struck). In both sorts of cases, we say that explanatory arguments in question are defeated. Since classical deductive inferences are monontonic---i.e. the premises of a valid inference can be arbitrarily expanded and the resulting inference is also valid---capturing the defeasibility of explanatory arguments cannot be done within a strictly deductive system.
+
+Second, explanatory arguments are \textit{minimal} in the sense that all of their premises are needed to infer their conclusion. More precisely, minimality insists that (M1) no proper subset of the premises of an explanatory argument are explanatory (of the same explanandum), (M2) nor any set comprised of conjunctions of members of a proper subset of the premises, (M3) nor any set comprised of disjunctions of two or more members of a subset of the premises . For example, if the set of sentences $ \{A, B, C\} $ is a minimal explanatory argument for $ D $, then none of the following are explanatory arguments for $ D $:  $ \{A, B\} $, $ \{A\wedge B\} $, $ \{B\wedge C\} $, $ \{A \vee B \}$, $ \{A\vee (B \vee C) \} $. In general, minimality prohibits the addition of irrelevant information to explanatory arguments. For example, if the liquid's acidity explains why the litmus paper turns red, then it does not follow that the liquid's acidity \textit{and its potability} explains why the litmus paper turned red, even if the liquid is in fact potable. The minimality of explanatory arguments is thus another reason why they cannot be modeled by deductive, i.e. monotonic inferences. 
+
+Third, since contradictions do not explain, explanatory arguments must have consistent premises. Classically valid arguments adhere to the principle of \textit{ex contradictione quodlibet} (\textsf{ECQ})---i.e. $ A, \neg A \vdash B $ for any arbitrary $ B $---meaning that any argument with inconsistent premises is classically valid. Logical systems that renounce \textsf{ECQ} are called either paraconsistent or premise-consistent.  Paraconsistent systems are able to represent reasoning that is \textit{tolerant} of inconsistency and that may, in some cases, even validate contradictions. By contrast, a \textit{premise-consistent} logic aims, in the opposite direction, to represent reasoning that is \textit{intolerant} of inconsistency. Since contradictions never explain, explanatory arguments are premise-consistent, not paraconsistent. Excluding theorems with contradictory premises, however, comes at the cost of logical strength. In our system, for example, disjunctive syllogism is not a theorem, so it can only be retained as a rule. Finally, note that premise consistency describes yet another form of nonmonotonic behavior.
+
+%requires far more robust constraints than those needed to secure paraconsistency. The trick, however, is to do so without losing the intuitively acceptable classical theorems, since it is not, at this point, clear that these should be excluded from the class of explanatory arguments. Unfortunately, even paraconsistent systems sacrifice the validity of either \textit{disjunctive syllogism} or \textit{disjunction introduction}. As we shall see, our system is able to secure premise-consistency while preserving most classically valid inferences by keeping track of whether an inference is (classically) valid, on one hand, and whether it is defeated, on the other. We can then use the mechanism that encodes the defeat-status of an inference to track premise consistency as well. \jm{Some of this should probably go into a footnote.}
+
+Fourth, explanatory arguments are \textit{irreflexive}.\fnmark{nonrefl} For instance, ``the litmus paper turned red because it turned it red" is not an explanation. More generally, no explanatory arguments should be of the form $A \vdash A$. Even partial self-explanations seem unacceptable; $ A \wedge B \vdash A$ and its ilk should also be prohibited from qualifying as explanatory arguments. Like \textsf{ECQ}, reflexivity partly defines the consequence relation of classical logic. However, while many logics abandon \textsf{ECQ}, few logics  abandon the principle of reflexivity, let alone try to preserve the property of irreflexivity.\fnmark{irreflexlog} One particular difficulty arises from the fact that irreflexive logics cannot easily recover Modus Ponens (\textsf{MP}), yet many explanations require Modus Ponens. Our irreflexive system preserves Modus Ponens.
+
+\fntext{nonrefl}{While a \textit{non-reflexive} system would be one in which the principle of reflexivity fails, perhaps only on occasion, an \textit{irreflexive} system is one in which no interface of reflexivity holds.}
+
+\fntext{irreflexlog}{ While there have been some logics in which reflexivity fails, irreflexivity holds in very few. Notable exceptions include input-output logics, logics of grounding, and quantum logics.}
+
+%Fifth, explanatory arguments often fail to license transitive inferences---they are \textit{non-transitive}. For instance, the occurrence of the Big Bang does not explain why Adam ate the apple, even if there are explanatory arguments linking the Big Bang to event $E_1$, $ E_1 $ to $ E_2 $, and so on up to Adam's eating of the apple. As with the first three properties, realizing non-transitivity means abandoning a defining characteristic of classical consequence relations.\fnmark{nontranslog} In contrast with the demand for irreflexivity, we want to preserve those cases when chained explanations are legitimate without making transitivity a global feature of the system.\fnmark{in-non-trans} \kk{Maybe we can say a bit more about when we want transitivity and when we don't?}
+
+%\fntext{in-non-trans}{This is why we describe the desired property as \textit{non-transitivity} rather than \textit{intransitivity.}}
+
+\fntext{nontranslog}{ Logicians of inferentialist and proof-theoretic persuasion have already explored systems in which transitivity fails \citep{Ripley2011,Tennant2014, Hlobil2016}, }
+
+Fifth, explanations are \textit{stable}, which philosophers of science have analyzed in different ways \citep{Hempel1965,Lange2009,Mitchell2003,Skyrms1980,Woodward2003}. In its most general form, $X$ is said to be stable if $X$ remains unchanged as other conditions $C$ change. For instance, suppose that a patient's rash is explained by a particular bacterial infection, though an alternative potential explanation is that the rash is caused by an allergic reaction. The explanation is stable insofar as she would have a rash regardless of whether she had had an allergic reaction. Typically, the fundamental bearers of stability are taken to be laws or generalizations. By contrast, as inferentialists, we take explanatory arguments to be the fundamental bearers of stability. In what follows, we develop a distinctively inferentialist brand of stability that we call ``sturdiness." 
+
+We baptize as \textit{non-trivial} those defeasible inferences that are premise-consistent and irreflexive. Sturdiness is then a comparative property among non-trivial inferences. A non-trivial inference is sturdy just in case it succeeds when all other non-trivial inferences that share its conclusion fail, where by `failure' we mean \textit{defeat} and by `success', the absence of failure. More precisely, the failure we have in mind is that which obtains when the premises of an inference are false. Since  premise-consistent inferences do not hold when their premises are false, a sturdy inference is one that remains undefeated when the premises of its competitors---i.e. those non-trivial inferences that share its conclusion---are false. It should be clear from what has been said thus far that representing sturdiness requires us to treat premise-\textit{inconsistency} as a form of defeat. As we shall see, our formalism enables us to do just this.
+
+Sixth, explanations are \textit{detachable}. If the bacterial infection is the best explanation of the rash, then we may conclude that the patient has a bacterial infection. By detaching the explanans, we may make further predictions, design interventions, and construct new models. This is the animating idea behind Inference to the Best Explanation. A consequence relation that captures explanation must thereby underwrite abduction. 
+
+\jm{Transition}
+
+\section{The Logic of Explanatory Arguments and IBE}
+
+In this section, we develop sequent calculi for explanatory arguments and the vocabulary that makes them explicit. We begin by introducing our base logic  $ \mathsf{LEA}$, defined over the standard propositional language, $ \mathcal{L} $. $ \mathsf{LEA}$ is composed of two parts. The first part, $ \mathsf{LK^\Theta}$, is based on a variant of Gentzen's sequent calculus for classical logic that was proposed by \textcite{Piazza2015} with the aim of representing nonmonotonicity in terms of an inference's context-sensitivity. Although we have altered most of the definitions, terminology, and rules with which \textcite{Piazza2015} introduced their calculus, we retain the key technical features of $ \mathsf{LK}^{\mathcal{S}}$ and inherit their proof of the cut-elimination theorem. Our modifications are intended, on one hand, to represent a concept of \textit{defeat} more appropriate to the behavior of explanations, and, on the other, to extend the axioms of the system to non-logical, material inferences. The second part of the base system, $ \mathsf{LE^\RHD}$ introduces an additional class of sequents and rules that govern their interaction with those of $ \mathsf{LK^\Theta}$, including a rule for abduction or IBE. Finally, we describe a system $ \mathsf{LEA^+}$ defined over  $ \mathcal{L}_{\RHD} $ that extends $ \mathcal{L} $ to include an object-language connective, $ \RHD $, that makes commitments to explanatory arguments explicit. 
+
+The need for a base logic that includes two consequence relations stems from the following observation:  If the function of locutions like \textit{best explains why} is to express commitment to explanatory arguments, and if IBE is a legitimate rule of inference, then IBE cannot itself be an explanatory argument. Here is the support for this claim. Suppose that the locution \textit{A best explains why B} does make explicit a commitment to an explanatory argument.  Now suppose (for \textit{reductio}) that IBE is also an explanatory argument. From these suppositions it follows that the \textit{best-explains-why}-connective expresses an explanatory argument from $B$ to $A$, since this is the only way for there to be a good explanatory argument with the form of IBE: $A$ \textit{best explains why} $B$, $B$ $/\therefore A$. But it also follows that such an inference can itself be made explicit by the \textit{best-explains-why}-connective, thereby yielding the sentence \textit{[($A$ best explains why $B$) $ \wedge $ $B$] best explains why $A$}. In so far as sentences of this form are even intelligible, it is far from obvious that they \textit{claim} what an application of IBE \textit{shows}. Thus, we should not conclude that IBE is an explanatory argument. Rather, IBE is one sort of inference and that made explicit by explanatory vocabulary is another.\fnmark{revMP} This means that any logical system designed to represent both explanatory arguments and IBE must appeal to two distinct consequence relations.
+
+\fntext{revMP}{Treatments of abduction in the computer science literature have long recognized this point, if only implicitly, insofar as they have viewed abduction as a form of (restricted) deduction in reverse.}
+
+In recognition of this point, $ \mathsf{LEA}$ contains two consequence relations, or, more precisely, two \textit{classes} of consequence relations, for as we shall see the system contains infinitely many consequence relations. The class whose rules are given by $ \mathsf{LK^\Theta}$ is intended to represent those sets of inferences to which both IBE and \textit{candidate} explanatory arguments belong. The class of consequence relations introduced by $ \mathsf{LE}^\RHD$ and denoted by $ \sststile{}{\RHD} $ is supposed to capture the behavior of explanatory arguments themselves. The chief results of this section are (1) that the theorems of $ \mathsf{LEA}$ constructed with $ \sststile{}{\RHD} $ exhibit all of the properties associated with explanatory arguments (Theorem \ref{properties}), (2) that $ \mathsf{LEA}$ can be extended ($\mathsf{LEA^+}$) to include an object-language expression for making explicit commitments to explanatory arguments (Theorem \ref{quasideduct}), and (3) that this extension is conservative (Corollary \ref{conserv_ext}).  
+
+
+%$ \mathsf{LEA} = \mathsf{LK^\Theta} \cup  \mathsf{LE^\RHD}$
+
+In what follows, we assume a propositional language, $ \mathcal{L} $, for classical logic, that consists of a countably infinite set of atomic sentences $At = \{p_1, \ldots,p_n , q_1, \ldots, q_n\}$, the binary connectives $\wedge$ and $ \vee,$ and the unary connective $\neg$. Let $A, B, C, D $ range over formulas; let $ \Gamma, \Delta, \Sigma, \Theta $ range over sets of formulas; let $ \mathbf{S}, \mathbf{T}, \mathbf{U} $ range over sets of sets of formulas, and let $ X, Y, Z $ range over sets of atoms. 
+
+We begin by employing the standard sequent notations---e.g. $\Gamma, A \vdash B, \Delta $. Formulas on the left side of the turnstile are called the \textit{antecedent}; on the right side they are called the \textit{succedent}. Commas in the antecedent are read `conjunctively' and those on the right are read `disjunctively'. The formula with the connective in a rule is the \textit{principal} formula of that rule, and its components in the premises are the \textit{active} formulas. 
+%The Greek letters denote possible additional assumptions that are not active in a rule; they are called the \textit{side} formulas.
+
+The sequents in our calculi depart from the standard form in two respects: just below our turnstile we add a set of formulas, $\Theta $, called a \textit{defeater set} and to the far left of the turnstile we add another, $\Sigma $, called a \textit{background set}.
+
+$$ \Sigma\mid\Gamma\sststile{\Theta}{}\Delta $$
+
+Defeater sets contain information whose addition to the premises would defeat the inference represented by the sequent.  Roughly put, a sequent is defeated whenever its antecedent or background set contains a formula that is logically equivalent to a subset of the defeater set. Thus, as the name suggests, defeater sets are sets of inference-defeaters.  
+
+As noted, we adopt and modify the sequents and rules of the calculus $\mathsf{LK}^\mathcal{S} $ developed by \textcite{Piazza2015}. The general idea captured by this calculus is that any application of the rules along a derivation ought to preserve not only the validity, but also the defeat-status of sequents. In our system, $ \mathsf{LEA} $, this means that for any derivation tree, $\pi$, constructed by recursive applications of the rules (excluding $cut$), the following holds: if a defeated sequent occurs in a branch of $\pi$, then all sequents below it are also defeated. By tracking the defeat of sequents, our proof theory can identify if and when a line of defeasible reasoning goes astray. 
+
+
+
+%Furthermore, by manipulating the constraints on defeater sets, our calculus allows us to represent reasoning patterns that are not only nonmonotonic, but also premise-consistent, and even, as we shall demonstrate with the exposition of $ \mathsf{LE^\RHD}$, irreflexive
+
+We interpret background sets as consisting of information that is available to a reasoner when she draws an inference, but which does not serve as a premise and from which the conclusion is not said to follow. Having such a device in our formalism enables us to capture an important aspect of defeasibility, namely, that the introduction of new information may jeopardize prior inferential commitments even when that information does not serve as fodder for new inferences in its own right. These sets also serve a technical role in our system since they often expand in the course of a derivation, picking up traces of those formulas shifted by the rules from the left to the right side of the turnstile. (See $\neg\vdash$ in Figure 1). It is this latter feature which permits the implementation of a Gentzen-style normalization procedure and proof of cut-elimination. Indeed, by keeping a \textit{record}, so to speak, of formulas that have moved from the antecedent in a premise to the succedent of a conclusion, background sets ensure that all the sequents in a cut-free derivation are undefeated just in case its end-sequent is undefeated.\fnmark{Piazza-Repos} 
+
+\fntext{Piazza-Repos}{In \textcite{Piazza2015} what we call background sets are simply referred to as \textit{repositories} and while they play the same technical role, they are not provided with an substantive interpretation.}
+
+Because the provability of any sequent in $ \mathsf{LEA} $ depends, in part, upon the contents of its defeater set, there is not one or two but $ \mathcal{P}(\mathcal{L}) $-many consequence relations represented by the calculi. Some are classical, i.e. $ \Theta = \emptyset $; many are non-monotonic, i.e. $ \Theta \neq \emptyset $; others defy even the most ubiquitous structural properties, such as reflexivity, i.e. $ \Delta \subseteq \Theta $. By specifying the contents of defeater sets, the rules of our calculi are able to exploit this panoply so as to home in on the class of consequence relations that bears precisely those properties we associate with explanatory arguments.
+
+
+
+Before delving into the details of the system, we offer an informal gloss on our defeasible sequents. As noted, we follow \textcite{Piazza2015} to the extent that proofs in $ \mathsf{LEA} $ preserve both validity and undefeatedness. However, since the rules in our calculi, and those of $ \mathsf{LE}^\RHD $ in particular, are not deductive, it cannot be deductive `validity' that is preserved. Instead, we follow \textcite{Brandom2008} and treat the sequents that belong to a proof as inferences that preserve \textit{entitlement}. In keeping with this view, we offer the following reading of the defeasible sequent above: \textit{Anyone entitled to (every member of) $ \Gamma $ is entitled to (at least one member of) $ \Delta $, given the background of $ \Sigma $}.
+
+%and the compatibility of $ \Sigma\cup\Gamma $ with $ \Theta $
+\jm{Issues with normative pragmatics interpretations of multiple succedent sequents.}
+
+\jm{transition}
+
+
+%Similarly, a sequent such as $ \Sigma\mid\Gamma\sststile{\Theta}{}\Delta $, which belongs to $ \mathsf{LE^\RHD}$, represents an explanatory argument and is to be read as follows: \textit{Anyone entitled to $ \Gamma $ is entitled to $ \Delta $, given the background of $ \Sigma $}. 
+\vspace{3mm}
+
+\begin{definition}[Defeater sets, Background sets, Defeasible Sequents]
+	Defeater sets are sets of formulas that defeat an inference (see below). Background sets are sets of formulas that represent the background knowledge of the inference.	
+	A defeasible sequent is a standard sequent with  a \textit{background set}, $ \Sigma $, and a \textit{defeater set}, $ \Theta $, attached:\fnmark{Piazza-Control_Sets}
+	$$ \Sigma\mid\Gamma\sststile{\Theta}{}\Delta $$
+	When no background sets have been specified (i.e. $\Sigma = \emptyset$) we write:
+	$$ \cdot\mid\Gamma\sststile{\Theta}{}\Delta$$ 
+	
+\end{definition}
+
+\fntext{Piazza-Control_Sets}{ In general, the respective roles played by  \textit{control sets}, \textit{compatibility}, and \textit{soundness} in Piazza and Pulcini's $\mathsf{LK}^\mathcal{S} $ are played by \textit{defeater sets}, (our notion of) \textit{compatibility}, and \textit{undefeatedness} in our system. The crucial difference between the two approaches is that while in  \textcite{Piazza2015}, the occurrence of a disjunctive formula in the antecedent would render the sequent defeated (resp. unsound) if either of the disjuncts occurred in the sequent's defeater set (resp. control set), in our system, the sequent would only be defeated if both disjuncts were present in the defeater set. We believe that the latter property captures a more intuitive, less cautious conception of defeat. Unfortunately, this conception of defeat could only be purchased at the cost of attaching a \textit{proviso} to $ \vee\vdash $ that restricts the rule's application to sequents whose active formulas are compatible with their respective defeater sets. On balance, we were willing to trade the elegance of the rules for the more accurate portrayal of defeat. In order to realize this conception in our definitions, we found it necessary to deploy substantially different operations and have re-named the resultant concepts so as to avoid confusion.  With this said, Definition \ref{proof} and Lemma \ref{compatrel} are taken over from \textcite{Piazza2015} with very little modification.}
+
+In order to state the conditions under which a defeasible sequent is defeated, we must introduce some preliminary concepts.
+
+
+\begin{definition}[$ \mathcal{D}$-Rules]\label{drules}
+	Let $ \mathcal{D}$ be the following set of rules:
+	
+	\begin{itemize}
+		\item[$ \mathcal{D}_{\wedge} $:] $ A \in \mathcal{L} \Rightarrow A \wedge B \in \mathcal{L}  $
+		\item[$ \mathcal{D}_{\vee}$:] $A \in \mathcal{L} \text{\,and\,} B \in \mathcal{L}  \Leftrightarrow A \vee B  \in \mathcal{L}  $
+		\item[$ \mathcal{D}_\neg$:] $A  \in \mathcal{L} \Leftrightarrow \neg\neg A \in \mathcal{L} $
+		\item[$ \mathcal{D}_{\neg\vee\wedge} $:]  $\neg A \vee \neg B \in \mathcal{L}  \Leftrightarrow \neg (A \wedge B) \in \mathcal{L}  $
+		\item[$ \mathcal{D}_{\neg\wedge\vee} $:]  $\neg A \wedge \neg B \in \mathcal{L}  \Leftrightarrow \neg (A \vee B) \in \mathcal{L}  $
+	\end{itemize}
+\end{definition}
+
+
+%\begin{itemize}
+%\item[$ \mathcal{D}_- $:]  $ A \in \Theta \Rightarrow A \in \mathcal{D}(\Theta) $
+%\item[$ \mathcal{D}_\neg$:] $A \in \mathcal{D}(\Theta) \Rightarrow \neg\neg A \in \mathcal{D}(\Theta)  $
+%\item[$ \mathcal{D}_\wedge $:] $A \in \mathcal{D}(\Theta) \Rightarrow A \wedge B \in \mathcal{D}(\Theta) \text{\,and\,} B \wedge A \in \mathcal{D}(\Theta)  $
+%\item[$ \mathcal{D}_\vee $:] $A \in \mathcal{D}(\Theta) \text{\,and\,} B \in \mathcal{D}(\Theta) \Rightarrow A \vee B \in \mathcal{D}(\Theta) \text{\,and\,} B \vee A \in \mathcal{D}(\Theta)   $
+%\end{itemize}
+
+
+These rules ought to be rather familiar. $ \mathcal{D}_\neg$ is the principle of Double Negation and $ \mathcal{D}_{\neg\vee\wedge}/\mathcal{D}_{\neg\wedge\vee} $ are  \textit{de Morgan's Laws}. Read left to right, $ \mathcal{D}_\vee $ is Conjunction Introduction with $ \wedge $ substituted for $ \vee $ and similarly, $ \mathcal{D}_\wedge $ is just Disjunction Introduction with the converse substitution. The motivation for these substitutions as well as the peculiar lack of a biconditional in $ \mathcal{D}_\wedge $ will become clear in a moment. 
+
+
+\begin{definition}[\,\,$ \mathcal{D}(\Theta) $\,\,]\label{dclosure}
+	Let $ \mathcal{D}(\Theta)$ be the closure of $ \Theta $ under the $ \mathcal{D}$-rules as well as the commutativity, associativity, and distributivity of conjunction and disjunction, respectively.
+\end{definition}
+
+
+\begin{definition}[Compatibility]\label{compat}
+	A set of formulas, $\Gamma$, is said to be compatible with a defeater set, $\Theta $, just in case the conjunction of the members of $\Gamma$ is not included in $\mathcal{D}(\Theta)$. We use `$\succsim$' to symbolize compatibility.
+ $$\Gamma \succsim \Theta \text{\,\,iff\,\,}  \bigwedge\Gamma \not\in \mathcal{D}(\Theta) $$
+
+	
+	\vspace{2mm}
+	
+	\begin{example}
+		$ \{ p_1 \vee q_1,  \neg p_2, p_3 \wedge q_2 \} \succsim \{ p_1 , p_2, \neg p_3 \vee \neg q_1\} $
+	\end{example}
+	
+	\begin{example}
+		$ \{ \neg (p_1 \vee q_1),  \neg\neg\neg p_2, \neg p_3 \wedge q_2 \} \succsim \{ p_1 \wedge p_2 , p_3 , \neg q_2 \} $
+	\end{example}
+	
+	\begin{example}
+		$ \{ \neg p_1 \vee q_1,  \neg p_2, \neg p_3 \wedge q_2 \} \not\succsim \{ q_2 \} $
+	\end{example}
+	
+	\begin{example}
+		$ \{ \neg (p_1 \vee q_1),  \neg\neg\neg p_2, \neg p_3 \wedge q_2 \} \not\succsim \{ \neg p _1 , \neg p_2 \} $
+	\end{example}
+	
+\end{definition}
+
+\begin{remark}
+	For any set of formulas $ \Gamma $, $ \Gamma \succsim \emptyset $.
+\end{remark}
+
+
+\begin{definition}[Defeat]\label{defeat}
+	A defeasible sequent, $ \Sigma\mid\Gamma \sststile{\Theta}{} \Delta $, is said to be \textit{undefeated} whenever $ \Sigma\cup\Gamma\succsim\Theta$ and \text{defeated} otherwise.
+\end{definition}
+
+The $ \mathcal{D}$-Rules are designed to generate closed sets of formulas whose occurrence in the antecedent defeats the sequent to which the defeater set is attached. Since a formula of the form $ A\wedge B $ defeats an inference just in case one or more of its constituents belongs to the defeater set,  $ \mathcal{D}_{\wedge} $ is constructed so that a set closed under it will contain all those conjunctions for which at least one member of the original set, $ \Theta $, is a conjunct. Conversely, if the defeater set contains a conjunction but neither of its conjuncts, then we know that the two formulas \textit{together} defeat the sequent but not whether either formula by itself would be sufficient for defeat. (The need for defeat to occur when both conjuncts appear on their own in the antecedent is handled by the conjunctive formulation of \textit{compatibility}.) Thus, unlike the other $ \mathcal{D} $-rules, $ \mathcal{D}_{\wedge} $ only permits the construction of more complex formulas---hence the absence of a biconditional in its formulation. 
+
+In contrast, a disjunctive formula defeats an inference only when both of the disjuncts occur in its defeater set.  The $ \mathcal{D}_{\vee}$-rule captures this intuition---read left-to-right---by constructing disjunctions when both disjuncts are present in the defeater set. Conversely, a disjunction in a defeater set means that the presence of either disjunct in the antecedent will defeat the sequent. Thus, the $ \mathcal{D}_{\vee}$-rule is formulated---from right-to-left--- so that a disjunction in the $ \mathcal{D}$-closure of a defeater set will contain both disjuncts. The result of comparing the antecedent (and background set) with the closure of the defeater set under the $ \mathcal{D}$-Rules is a definition of compatibility that underwrites an intuitive conception of defeat. We illustrate the nature of compatibility with the following lemma.
+
+\begin{lemma}\label{compatrel}
+	
+	\begin{enumerate}
+		\item If $ \Gamma \cup \Delta \succsim \Theta$ and $ \Lambda \subset \Theta $, then $ \Delta \succsim \Lambda$.
+		\item $ \Gamma \cup \{A \wedge B\} \succsim \Theta $ \,\, iff\,\,  $ \Gamma \cup \{A, B\} \succsim \Theta $
+		\item $ \Gamma \cup \{A \vee B\} \succsim \Theta $ \,\, iff\,\,  $ \Gamma \cup \{A\} \succsim \Theta $ \,or\, $ \Gamma \cup \{B\} \succsim \Theta$
+		\item $ \Gamma \cup \{\neg\neg A\} \succsim \Theta $ \,\,iff\,\,  $ \Gamma \cup \{A\} \succsim \Theta $
+	\end{enumerate}
+	
+	\begin{proof}
+		For the first sub-theorem, suppose for \textit{reductio} that $ \Delta \not\succsim \Lambda$. It would then follow that $ \bigwedge\Delta \in \mathcal{D}(\Lambda) $. But then, by hypothesis, $ \bigwedge\Delta \in \mathcal{D}(\Theta) $ and thus, against our assumption, $ \Gamma \cup \Delta \not\succsim \Theta $.  The remaining sub-theorems follow directly from Definitions \ref{drules}, \ref{dclosure}, and \ref{compat}.
+	\end{proof}
+	
+\end{lemma}
+
+\subsection{$ \mathsf{LK^\Theta}$}
+Our notions of compatibility and defeat enable us to capture premise-consistency and defeasibility.  To demonstrate this, we invite the reader to consider the rules for $ \mathsf{LK^\Theta}$ in Figure \ref{LK-}. These rules are designed to generate trees that preserve validity \textit{downward} and undefeatedness \textit{upward}. The most natural way to read the rules is bottom-up as follows: ``If [the conclusion sequent] is undefeated, then so is/are [the premise sequent/s].'' Alternatively, the rules may be read top-down as permitting the conclusion, given the premises, so long as the former is not defeated. On either reading, the rules are formulated to ensure that a cut-free derivation whose end-sequent is undefeated will contain only undefeated sequents throughout. This property is important both for the establishment of cut-eliminability and, more primitively, for the fact that proofs in a nonmonotonic system should not contain defeated sequents.
+
+\begin{definition}[Proof, Paraproof]\label{proof}
+	For a rooted, finitely branching tree $ \pi $ whose nodes are sequents of $ \mathsf{LK^\Theta}$ ($\mathsf{LEA}$), and which is recursively built up from axioms by means of the rules of $ \mathsf{LK^\Theta}$ ($\mathsf{LEA}$), if each sequent in $ \pi $ is undefeated, then $ \pi $ is said to be a proof of $ \mathsf{LK^\Theta}$  ($\mathsf{LEA}$), \,otherwise $ \pi $ is called a paraproof.
+\end{definition}
+
+The axioms of $ \mathsf{LK^\Theta}$ come in two varieties. \textit{Logical axioms} are the familiar `initial sequents' of $ \mathsf{LK} $ to which defeater sets are attached. \textit{Proper axioms}, on the other hand, are sequents composed of nonempty, non-overlapping sets of atoms on the left and right of the turnstile.\fnmark{propax} These axioms are intended to represent the non-logical, material inferences that figure in various types of scientific reasoning. Since such inferences are often the products of concrete empirical inquiries, we insist that they be introduced with non-empty \textit{background sets} of (possibly complex) formulas that reflect the epistemic context of their use. 
+
+\fntext{propax}{It is well-known that the addition of non-tautological axioms to the system of classical logic will lead to inconsistency if those axioms are taken to be closed under universal substitution (\textsf{US}). Even if closure under \textsf{US} is abandoned for proper axioms, their addition to a sequent system such as \textsf{LK}, threatens the cut-elimination theorem. Fortunately, \textcite{Piazza2016} have shown how to generate non-logical axiomatic extensions of classical propositional logic that admit cut elimination. While such extensions are obviously not complete---they are \textit{post-compete}---axioms can be formulated so as to preserve consistency. The trick to doing so is to ensure that the empty sequent does belong to the set of proper axioms (See Theorem 3.7 in \textcite{Piazza2016}). Our proper axioms have been formulated in conformity with this constraint.}  
+
+
+\begin{figure}[!htbp]
+	\caption{Rules for $\mathsf{LK}^\Theta $}\label{LK-}
+	
+	\vspace{.5cm}
+	\textbf{Logical Axioms}
+	\vspace{.5cm}
+	
+	
+	$ \begin{prooftree}
+	\Hypo{}
+	\Infer1[$ log.\,\,ax.$]{ \cdot\mid p\sststile{\Theta}{} p}
+	\end{prooftree} $
+	\vspace{.5cm}
+	
+	
+	\textbf{Proper Axioms}
+	\vspace{.5cm}
+	
+	\begin{prooftree}
+		\Hypo{}
+		\Infer1[\,\, $\Sigma, X, Y$ are nonempty; $ X\cap Y =\emptyset $ \quad\quad \textit{prop.\,\,ax}.]{ \Sigma\mid  X \sststile{\Theta}{} Y }
+	\end{prooftree}
+	
+	
+	\vspace{.75cm}
+	\textbf{Cut Rule}
+	\vspace{.5cm}
+	
+	\begin{prooftree}
+		\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{}A,\Delta}
+		\Hypo{\Sigma'\mid\Gamma', A\sststile{\Psi}{}\Delta'}
+		\Infer2[$cut$]{ \Sigma',\Sigma\mid\Gamma',\Gamma\sststile{\Theta\cup\Psi}{}\Delta,\Delta'}
+	\end{prooftree}
+	
+	
+	\vspace{.75cm}
+	\textbf{Structural Rules}
+	\vspace{.5cm}
+	
+	$
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{}\Delta}
+	\Infer1[ $ \mathsf{LW} $ ]{ \Sigma\mid\Gamma, A\sststile{\Theta}{}\Delta}
+	\end{prooftree}
+	\hspace{6.2cm}
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{}\Delta}
+	\Infer1[ $ \mathsf{RW} $ ]{ \Sigma\mid\Gamma\sststile{\Theta}{}\Delta, A}
+	\end{prooftree}
+	$
+	
+	\vspace{.5cm}
+	
+	
+	$\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{}\Delta}
+	\Infer1[ $ \mathsf{DE} $ ]{ \Sigma\mid\Gamma\sststile{\Theta\cup\Psi}{}\Delta}
+	\end{prooftree}
+	\hspace{6.2cm}
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{}\Delta}
+	\Infer1[ $ \mathsf{BE} $ ]{ \Sigma, A\mid\Gamma\sststile{\Theta}{}\Delta}
+	\end{prooftree}
+	$
+	
+	\vspace{.75cm}
+	\textbf{Logical Rules}
+	\vspace{.5cm}
+	
+	
+	$\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma,A,B\sststile{\Theta}{}\Delta}
+	\Infer1[$\wedge\vdash$]{ \Sigma\mid\Gamma,A\wedge B\sststile{\Theta}{}\Delta}
+	\end{prooftree}
+	$ \hspace{5.2cm} $
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{}A,\Delta}
+	\Hypo{\Sigma'\mid\Gamma'\sststile{\Psi}{}B,\Delta'}
+	\Infer2[$\vdash\wedge$]{ \Sigma',\Sigma\mid\Gamma',\Gamma\sststile{\Theta\cup \Psi}{}A\wedge B,\Delta,\Delta'}
+	\end{prooftree}$
+	
+	
+	\vspace{.75cm}
+	
+	$\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma,A\sststile{\Theta}{}\Delta}
+	\Hypo{\Sigma'\mid\Gamma',B\sststile{\Psi}{}\Delta'}
+	\Infer2[$\vee\vdash^\dag$]{ \Sigma',\Sigma\mid\Gamma',\Gamma, A\vee B\sststile{\Theta\cup\Psi}{}\Delta,\Delta'}
+	\end{prooftree}
+	$ \hspace{2.8cm} $
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{}A,B,\Delta}
+	\Infer1[$\vdash\vee$]{ \Sigma\mid\Gamma\sststile{\Theta}{}A\vee B,\Delta}
+	\end{prooftree}$
+	
+	\vspace{.75cm}
+	
+	$\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{}A,\Delta}
+	\Infer1[$\neg\vdash$]{ \Sigma\mid\Gamma,\neg A\sststile{\Theta}{}\Delta}
+	\end{prooftree}$
+	\hspace{5.7cm}
+	$\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma,A\sststile{\Theta}{}\Delta}
+	\Infer1[$\vdash\neg$]{ \Sigma,A\mid\Gamma\sststile{\Theta}{}\neg A, \Delta}
+	\end{prooftree}$
+	
+	\vspace{.5cm}
+	
+	\dag\,\, Provided that $ \{A\} \succsim \Theta $  and $ \{B\} \succsim \Psi $.
+	
+\end{figure}
+
+
+
+In order to avoid having defeated axioms---i.e. non-starters---we must place certain constraints on the defeater sets of initial sequents.
+
+\begin{definition}[Constraints on Defeater Sets for Axioms]\label{conondefsetax}
+	If  $ \cdot\mid p \sststile{\Theta}{} p$ is a logical axiom and $ \Sigma\mid X \sststile{\Psi}{} Y $ is a proper axiom, then
+	
+	\begin{itemize}
+		\item[(i)]    $\Theta$ and $\Psi$ are sets of literals.
+		\item[(ii)]    $p \not\in \Theta$ and $\forall p \in X (p \not\in \Psi)$
+		\item [(iii)] $ \Sigma \cap \Psi = \emptyset $
+	\end{itemize}
+\end{definition}
+
+The first constraint restricts the defeater sets of axioms to a low level of formula complexity in order to limit the lacuna that occurs when a conjunction but neither of its conjuncts belongs to a defeater set. The second ensures that initial sequents are not defeated by their antecedents and, in the case of logical axioms, that equivalence among atoms is preserved. While this move protects reflexivity in $ \mathsf{LK^\Theta}$, the rules of $ \mathsf{LE}^\RHD$ will prevent this property from being transfered to properly explanatory arguments. Finally, the third constraint prevents proper axioms from being defeated by their initial background sets.
+
+Before demonstrating that these constraints allow us to produce a nonmonotonic system with premise-consistent theorems, we pause to explain some of the more exotic features of $ \mathsf{LK^\Theta}$. First, note that, with the exception of \textsf{DE}, single-premise rules have no effect on defeater sets, whereas, all the two-premise rules yield defeater sets in the conclusion that are the union of those in the premises. This fact guarantees that no information about potential defeaters is lost along a derivation. 
+
+\begin{proposition}\label{defeatpreserv}
+	
+	\textbf{A.}
+	If $ \pi $ is a tree whose root is $ \Sigma\mid \Gamma \sststile{\Theta'}{}  \Delta $ and $\cdot\mid p \sststile{\Theta}{} p$ occurs in the leaves of $ \pi $ and $ A \in \Theta $, then $ A \in \Theta' $.
+	
+	\textbf{B.}
+	If $ \pi $ is a tree whose root is $ \Sigma\mid \Gamma \sststile{\Theta'}{}  \Delta $ and $ \Sigma\mid X \sststile{\Theta}{} Y $ occurs in the leaves of $ \pi $ and $ A \in \Theta $, then $ A \in \Theta' $.
+	
+	
+	\begin{proof}
+		Follows directly from the rules of $ \mathsf{LK^\Theta}$.
+	\end{proof}
+\end{proposition}
+
+Exempting \textsc{DE} from this requirement is justified by the idea that reasoners ought to be able to add new, extra-logical information about defeaters to their arguments as it becomes available. The  \textsc{DE} rule (which stands for \textit{Defeater Expansion}) allows one to do so as long as it does not defeat the sequent in question.
+
+Second, all of the rules either transfer or combine background sets from premises to conclusions, except for \text{BE} and $ \vdash\neg $. The former (whose name abbreviates \textit{Background Expansion}) permits the addition of arbitrary formulas to a sequent's background set. At one level, this rule simply captures the way new contextual information is added in the course of scientific reasoning. But at a deeper level, it attempts to represent the way reasoners might \textit{probe} the defeasibility of an inference by discharging it in different contexts. In this sense, \textsf{BE} codifies certain patterns of \textit{experimental} reasoning.
+
+On the other hand $ \vdash\neg $ adds the (active) antecedent of the premise to the background set of the conclusion. This behavior is of a piece with the explanation given for background sets above---they act as a kind of \textit{record} of those formulas that have been shifted from the left to the right of a turnstile.\fnmark{backsetcut} An informal interpretation of the rule (read upwards) can be given as follows: if one is entitled to $ \neg A $ while $ A $ is in one's background set of entitlements, then one is entitled to whatever follows from $ A $ once it has been removed from that background set and entitlement to its negation has been renounced. The formulation of $ \vdash\neg $ in this manner is critical to the upwards preservation of undefeatedness in cut-free proofs. 
+
+\fntext{backsetcut}{By this same reasoning, the $ cut $ rule also ought to add the active formula in its premises to the background set of the conclusion. However, the $ cut  $ rule is exempted on the grounds that such a rule is just a statement about the conditions under which information may be \textit{removed} from a proof.}
+
+\begin{proposition}\label{upundefeat}
+	Any cut-free paraproof in $\mathsf{LK^\Theta}$ is a proof if and only if its end-sequent is undefeated, i.e. undefeatedness is preserved upwards in cut-free proofs.
+	
+	\begin{proof}
+		For all of the rules except $ \vee\vdash $, the undefeatedness of the premises follows directly from that of the conclusion by way of Lemma \ref{compatrel}.1, \ref{compatrel}.2 or \ref{compatrel}.4. In the case of $ \vee\vdash $, it follows from Lemma \ref{compatrel}.3 that it would be possible for the conclusion to be undefeated while exactly one of the premises is defeated. This possibility, however, is blocked by the proviso (\dag) that restricts the rule's application to sequents whose active formulas are compatible with their respective defeater sets.
+	\end{proof}
+\end{proposition}
+
+The preservation of undefeatedness in cut-free proofs is, in turn, critical to cut-elimination because by permuting cut upwards in derivations, the normalization procedure occasionally turns proofs into paraproofs.\fnmark{cut_paraproof} Proposition \ref{upundefeat}, however, ensures that for any such paraproof, there is a cut-free proof of its end-sequent.
+
+\fntext{cut_paraproof}{See \textcite[19]{Piazza2015} for an example.}
+
+\begin{lemma}\label{cutelim}
+	Any sequent that is provable in $ \mathsf{LK^\Theta}$ has a cut-free proof.
+	
+	\begin{proof}
+		As noted above, the similarity between our $ \mathsf{LK^\Theta}$ and Piazza et al.'s  $ \mathsf{LK}^{\mathcal{S}}$ enables us to inherit the latter's cut-elimination theorem. We refrain from presenting the proof of the theorem here, but the interested reader is invited to see \textcite{Piazza2015} Theorem 19. 
+	\end{proof}	
+\end{lemma}
+
+
+
+
+
+
+
+
+% First, we demonstrate that the sequents of $ \mathsf{LK^\Theta}$  behave nonmonotonically with respect to the contents of their defeater sets.
+%
+%\begin{proposition}\label{nonmono}
+%		For any formula $ A $ and sets of formulas $ \Sigma, \Gamma $, and $ \Delta $, if $ \Sigma\mid \Gamma \sststile{\Theta}{}  \Delta $ is a theorem of $ \mathsf{LK^\Theta}$ and $ A \in \mathcal{D}(\Theta) $, then the sequent $ \Sigma\mid \Gamma, A \sststile{\Theta}{}  \Delta $ is not a theorem of $ \mathsf{LK^\Theta}$.
+%	
+%	\begin{proof}
+%		From Definitions \ref{defeat} and \ref{proof}.
+%	\end{proof}
+%\end{proposition}
+
+\subsection{$ \mathsf{LE^\RHD}$ and $ \mathsf{LEA}$}
+
+
+With the rules for $ \mathsf{LK^\Theta}$ now in place, we can turn to the other part of our base system,  $ \mathsf{LE^\RHD}$, where we introduce a class of consequence relations, denoted by $ \sststile{\Theta}{\RHD} $, that represents explanatory arguments. We will call sequents constructed with this turnstile $ \RHD$-sequents. Before discussing the rules for this system, we need a few preliminary concepts.
+
+\begin{definition}[$ \neg{(\Gamma)}  $]\label{nsetfunct}
+	Let $ \neg{(\Gamma)} $ stand for the following operation:
+	
+	$$ \neg{(\Gamma)}   =_{df} \{\neg A : A \in \Gamma \} $$
+	
+	The operation easily extends to sets of sets:
+	
+	$$ \neg{(\mathbf{S})}   =_{df}  \{\neg (\Gamma) : \Gamma\in\mathbf{S} \} $$
+	
+%The operation easily extends to sets of sets, but to reduce clutter, we will abuse our notation and define negation over a set of sets as the set-union of the negations of all members of the set:
+		
+%$$ \neg{(\mathbf{S})}   =_{df} \bigcup \{\neg (\Gamma) : \Gamma\in\mathbf{S} \} $$
+\end{definition}
+
+
+\begin{definition}[$ \overline{\Gamma}  $]\label{tildefunct}
+	Let $ \overline{\Gamma}  $ stand for the following set function:
+	
+	$$ \overline{\Gamma}   =_{df} \neg(\Gamma) \cup \{ A\wedge\neg A : A \in \mathcal{L} \}$$
+	
+\end{definition}
+
+By definition, $\mathcal{D}(\overline{\Gamma})$ contains all of the contradictory formulas in $\mathcal{L}$. This set function will thus be instrumental to securing premise-consistency for $\RHD$-sequents.
+
+%\begin{definition}[$ \mathbf{S}^{\Delta}  $]\label{Deltaset}
+%	Let  $ \mathbf{S}^\Delta $ stand for the following set:
+%	
+%	$$   \mathbf{S}^\Delta =_{df} \bigcup\{\Sigma_i \mid\Omega_i \mid \Omega_i \sststile{\Psi_i}{} \Delta  \} \text{\,where\,} i \in \mathbb{N}$$
+%
+%\end{definition}
+
+
+\begin{definition}[Competitor Set, $ \mathbf{S}^{\Delta}  $]\label{competitor_set}
+	Let  $ \mathbf{S}^{\Delta}  $ stand for the following set:
+	
+	$$   \mathbf{S}^{\Delta}  =_{df} \{\Omega_i : \Sigma_i \mid \Omega_i \sststile{\Psi_i\cup\overline{\Omega}_i \cup \Delta}{\mathsf{LK}^\Theta} \Delta  \}$$
+	
+	where $i \in \mathbb{N} $ and $\mathsf{LK}^\Theta$ above a turnstile indicates that the sequent is a theorem of $\mathsf{LK}^\Theta$.
+	
+\end{definition}
+
+Despite its complex appearance, $\mathbf{S}^{\Delta}$ is nothing more than the set containing the antecedents of all those nontrivial (i.e. premise-consistent and irreflexive) theorems of $\mathsf{LK}^\Theta$ that have $\Delta$ as its conclusion. For ease of reference, the definition indexes background sets and defeater sets by the antecedents of the relevant sequent. This definition is crucial to securing sturdiness.
+
+\begin{definition}[Disjunction Deletion, $ \lfloor \mathbf{S} \rfloor $]\label{disjsub}
+	
+	
+	
+	
+	
+	$$ \lfloor\mathbf{S}\rfloor =_{df} \{ \Delta\backslash\{A \vee B\} : \Delta \in \mathbf{S} \text{\,\,and\,} A \in\bigcup\mathbf{S} \} $$
+	
+	
+\end{definition}
+
+The set denoted by $ \lfloor\mathbf{S} \rfloor $ is the result of deleting from the members of $ \mathbf{S} $ any disjunction one of whose disjuncts belongs to a member of $ \mathbf{S} $. 
+
+
+\begin{definition}[$ \Delta\bbslash\Gamma  $]\label{bbslash}
+	
+	\begin{equation}
+	\Delta\bbslash\Gamma =_{df}
+	\begin{cases}\nonumber
+	\Delta   & \text{if}\,\, \Delta \subseteq \Gamma \\[3pt] 
+	\Delta\backslash\Gamma & \text{otherwise}  \\[3pt] 
+	\end{cases}
+	\end{equation}
+	
+	We extend the definition to sets of sets as follows:
+	
+	$$ \mathbf{S}\bbslash\Gamma =_{df} \{\Delta\bbslash\Gamma : \Delta \in \mathbf{S}  \} $$
+	
+	
+\end{definition}
+
+The set denoted by $ \mathbf{S}\bbslash\Gamma $ consists of those members of $ \mathbf{S} $ that are subsets of $ \Gamma $ and the set-complements relative to $ \Gamma $ of those members that are not subsets of $ \Gamma $. As we shall see, Definitions \ref{disjsub} and \ref{bbslash} are needed to secure minimality.
+
+
+
+
+%The set function $ \overline{\Gamma}$ transforms the negation of each element of $ \Gamma $  into its DNF and yields a set of the disjuncts. The output of this function is a set of literals and/or conjunctions of literals. As we shall see, this set function is instrumental to ensuring that $ \RHD$-sequents have consistent antecedents. 
+
+We will now consider the rules for $ \mathsf{LE^\RHD}$, presented in Figure \ref{LK-RHD}. Since the structural rules for $ \mathsf{LE}^\RHD $ are just the \textsf{DE} and \textsf{BE} rules, \textit{modulo} the $ \RHD $ turnstile, we begin with what we have called the \textit{Mixed Rules}. These are both the most unusual---as they contain two different types consequence relations---and the most important for the purposes of representing explanatory arguments.
+
+\begin{figure}[!ht]
+	\caption{Rules for $ \mathsf{LE}^\RHD $}\label{LK-RHD}
+	
+	\vspace{.5cm}
+	\textbf{Structural Rules}
+	\vspace{.5cm}
+	
+	$
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{\RHD}\Delta}
+	\Infer1[ $\mathsf{DE}^{\RHD} $ ]{ \Sigma\mid\Gamma\sststile{\Theta\cup\Psi}{\RHD}\Delta}
+	\end{prooftree}
+	$
+	\hspace{5.1cm}
+	$
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{\RHD}\Delta}
+	\Infer1[ $\mathsf{BE}^{\RHD} $ ]{ \Sigma, A\mid\Gamma\sststile{\Theta}{\RHD}\Delta}
+	\end{prooftree}
+	$
+	
+	\vspace{.75cm}
+	\textbf{Mixed Rules}
+	\vspace{.5cm}
+	
+	%Sturdiness
+	$ 
+	\begin{prooftree}
+	
+	\Hypo{ \bigcup\neg(\lfloor\mathbf{S}^\Delta\rfloor \bbslash\Gamma),\,\Sigma \mid\Gamma \sststile{\Theta\cup \overline{\Gamma}  \cup\Delta}{}\Delta}
+	\Infer1[$\, sturdy^{\,\ddag}$]{  \Sigma \mid\Gamma\sststile{\Theta\cup\overline{\Gamma}  \cup\Delta}{\RHD}\Delta}
+	\end{prooftree}
+	$
+	\hspace{2cm}
+	$
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD} \Delta}
+	\Hypo{\Sigma'\mid\Gamma'\sststile{\Psi\cup\overline{\Gamma'}\cup \Delta}{} \Delta}
+	\Infer2[ $abduct.$ ]{ \Sigma',\Sigma, A\mid\Gamma', \Gamma\sststile{\Theta\cup \Psi\cup\overline{\Gamma'}\cup \Delta}{}A}
+	\end{prooftree}
+	$
+	%\hspace{2.5cm}
+	%$
+	%\begin{prooftree}
+	%\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{\RHD}\Delta}
+	%\Infer1[ $ \mathsf{EA} $ ]{ \Sigma\mid\Gamma\sststile{\Theta}{}\Delta}
+	%\end{prooftree}
+	%$
+	
+	\vspace{.75cm}
+	\textbf{Logical Rules}
+	\vspace{.5cm}
+	
+	$ \begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma,A,B\sststile{\Theta}{\RHD}\Delta}
+	\Infer1[$\wedge\vdash^{\RHD}$]{ \Sigma\mid\Gamma,A\wedge B\sststile{\Theta}{\RHD}\Delta}
+	\end{prooftree}
+	$ \hspace{4.3cm} $
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\Theta}{\RHD}A,\Delta}
+	\Hypo{\Sigma'\mid\Gamma\sststile{\Psi}{\RHD}B,\Delta}
+	\Infer2[$\vdash^\RHD\wedge$]{ \Sigma',\Sigma\mid\Gamma\sststile{\Theta \cup \Psi}{\RHD}A\wedge B,\Delta}
+	\end{prooftree}$
+	
+	\vspace{.75cm}
+	
+	\ddag \,\,Provided that (i) all sets are nonempty, (ii) $\Sigma \subseteq \Sigma_i $, (iii) $\Gamma\cap\Sigma_i  = \emptyset, $ (iv) $\, \Omega_i \cap \Sigma = \emptyset$.
+	
+	\vspace{.3cm}
+	
+	$ \star $ \,\,Provided that  $ \Gamma\cap\Gamma'\cap\{A\}  = \emptyset. $
+	
+\end{figure}
+
+
+As mentioned above, \textit{sturdiness} is our proposal for how to understand the property of \textit{stability} associated with explanations. In slogan form, inferences are sturdy just in case they succeed where all others fail. To say that one inference succeeds when another fails, we can imagine the following procedure:
+\begin{description}
+	\setlength\itemsep{.2cm}
+	\item[Step 1:]   Line up all of the nontrivial inferences that have the explanandum, $B$, as their conclusion. For each of these inferences, all other nontrivial inferences leading to $B$ are its ``competitors."
+	
+	\item[Step 2:] For each $A$ that has $B$ as a nontrivial consequence, suppose that all of $A$'s competitors' premises are false.
+	
+	\item[Step 3:] If the falsehood of any of these competitors defeats the inference from $A$ to $B$, then the latter is not sturdy; otherwise, it is sturdy.
+\end{description}
+
+Our \textit{sturdy} rule aims to formalize this procedure. The first step is represented by the fact that the succedent of the premise is $ \Delta $ and its background set includes a set obtained from $\mathbf{S}^\Delta $. The second step is captured by the fact that $ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma)$ appears in the background set of the premise. Roughly put, this set contains the negations of all the antecedents of nontrivial inferences whose succedent is $ \Delta $, with the caveat that the members of $ \Gamma $ are removed from any antecedent that is a superset of $ \Gamma $. Finally, the third step is reached when the premise sequent carries down into the conclusion where it appears with the explanatory-argument-denoting turnstile, i.e. $ \sststile{}{\RHD} $. 
+
+By restricting premise sequents to those whose defeater sets contain $ \overline{\Gamma} $--- where $ \Gamma $ is the antecedent---the \textit{sturdy} rule ensures that the antecedents of $ \RHD $-sequents are consistent and thereby enables these sequents to represent premise-consistent inferences.
+
+\begin{lemma}\label{inconsist}
+	The sequent $ \Sigma\mid \Gamma, A, \neg A \sststile{\Theta}{\RHD}  \Delta $ is not a theorem of $ \mathsf{LEA}$.
+	
+	\begin{proof}
+		Suppose for \textit{reductio} that $ \Sigma\mid \Gamma, A, \neg A \sststile{\Theta}{\RHD} \Delta $ is a theorem and hence is undefeated. It must be derived via an application of \textit{sturdy} whose premise, if we omit the background set, is $\Gamma, A, \neg A \sststile{\Theta\cup\overline{\{A, \neg A\}}\cup\Delta}{} \Delta $. By Definition \ref{tildefunct}, $\bigwedge\{A, \neg A \}\in \mathcal{D}(\overline{\{A, \neg A\}})$, since $ A \wedge \neg A \in  \{ B\wedge\neg B : B \in \mathcal{L} \}$. Thus, \textit{contra} our supposition,  $ \Sigma\mid \Gamma, A, \neg A \sststile{\Theta}{\RHD} \Delta $ is defeated.
+	\end{proof}
+\end{lemma}
+
+
+
+\begin{lemma}\label{contradict}
+	The sequent $ \Sigma\mid \Gamma, A \wedge \neg A \sststile{\Theta}{\RHD}  \Delta $ is not a theorem of $ \mathsf{LEA}$.
+	
+	\begin{proof} 
+		Same as for Lemma \ref{inconsist}.
+	\end{proof}
+	
+\end{lemma}
+
+
+
+
+The \textit{sturdy} rule also prevents $ \RHD $-sequents from being reflexive. It does so by restricting the defeater sets of premise sequents to those which contain the succedent. We can now show that both partial and complete self-explanations will be prohibited from $ \mathsf{LE}^\RHD$ .
+
+\begin{lemma}\label{irrefl}
+	
+	The sequent $ \Sigma\mid \Gamma, A \sststile{\Theta}{\RHD}  A, \Delta $ is not a theorem of $ \mathsf{LEA}$.
+	
+	\begin{proof}
+		Suppose for \textit{reductio} that $ \Sigma\mid \Gamma, A \sststile{\Theta}{\RHD}  A, \Delta $ is a theorem and hence is undefeated. It must be derived via an application of \textit{sturdy} whose premise, if we omit the background set, is $ \Gamma, A \sststile{\Theta\cup\{A\}\cup\Delta}{}  A, \Delta $. But, since (by Definition \ref{dclosure}) $ \bigwedge(\Gamma\cup\{A\}) \in \mathcal{D}(A) $, this sequent is defeated, contradicting our supposition.  
+	\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{part_irreflex}
+	
+	The sequent $ \Sigma\mid \Gamma, A \wedge B \sststile{\Theta}{\RHD}  A, \Delta $ is not a theorem of $ \mathsf{LEA}$.
+	
+	\begin{proof}
+		Same as for Lemma \ref{irrefl}.
+	\end{proof}
+\end{lemma}
+
+Furthermore, neither premise-consistency, nor irreflexivity prevent instances of \textsf{MP} from standing as candidates for explanatory arguments, i.e. as premises of \textit{sturdy}. For the remaining proofs, we omit arbitrary background sets (i.e. $ \Sigma $) whenever possible.
+
+%We demonstrate this by showing that a variant of \textsf{MP} with literals remains undefeated when its succedent is added to its defeater set.
+
+\begin{proposition}
+	If the sequent $ \Sigma\mid A, \neg A \vee B \sststile{\Theta}{}  B $ is a theorem of $ \mathsf{LEA}$, then so is $ \Sigma\mid A, \neg A \vee B \sststile{\Theta\cup\overline{\{ A, \neg A \vee B  \}}\cup\{B\}}{}  B $.
+	
+	\begin{proof}
+		Suppose for \textit{reductio} that there is no proof $ \pi $ of $  A, \neg A \vee B \sststile{\Theta\cup\overline{\{ A, \neg A \vee B  \}}\cup\{B\}}{}  B $ from $ A, \neg A \vee B \sststile{\Theta}{}  B $. It follows that either $ \pi $ is not a paraproof or $ A, \neg A \vee B \sststile{\Theta\cup\overline{\{ A, \neg A \vee B  \}}\cup\{B\}}{}  B $ is defeated. But $  A, \neg A \vee B \sststile{\Theta\cup\overline{\{ A, \neg A \vee B  \}}\cup\{B\}}{}  B $ follows from $  A, \neg A \vee B \sststile{\Theta}{}  B $ by a single application of $ \mathsf{DE} $, and thus $ \pi $ is at least a paraproof. If $  A, \neg A \vee B \sststile{\Theta\cup\overline{\{ A, \neg A \vee B  \}}\cup\{B\}}{}  B $ is defeated, then $ \bigwedge \{A, \neg A \vee B\} \in \mathcal{D}(\Theta\cup\overline{\{ A, \neg A \vee B  \}}\cup\{B\})$. But  $ A \wedge (\neg A \vee B) \not\in \mathcal{D}(\{B\})$, and by Definition \ref{dclosure} and \ref{tildefunct} it follows that $ A \wedge (\neg A \vee B) \not\in \mathcal{D}(\overline{\{ A, \neg A \vee B  \}})$. Therefore, it must be the case that $ A \wedge (\neg A \vee B) \in\mathcal{D}(\Theta)$. But by hypothesis $  A, \neg A \vee B \sststile{\Theta}{}  B $ is undefeated. Thus, \textit{contra} our supposition, there is a proof of $ A, \neg A \vee B \sststile{\Theta\cup\overline{\{ A, \neg A \vee B  \}}\cup\{B\}}{}  B $.
+	\end{proof}
+\end{proposition}
+
+\vspace{2mm}
+
+Less obvious than the achievement of irreflexivity is the fact that \textit{sturdy} also ensures that $ \RHD$-sequents are minimal in the sense articulated above by conditions (M1)--(M3).
+
+%More precisely, suppose that the set of sentences $ \Gamma $ constitutes an explanatory argument for $ B $. $ \Gamma $ is said to be \textit{minimal} just in case (i.) no proper subset $ \Gamma' $ of $ \Gamma $ (i.e. $ \Gamma' \subset \Gamma $) is an explanatory argument for $ B $ and (ii.) no set comprised merely of conjunctions of the members of a proper subset (i.e. $ \Gamma'' \subseteq\Gamma'' $ such that for some $ \{A, B\} \subseteq\Gamma'$,\, $ A\wedge B \in \Gamma''$ ) is an explanatory argument for $ B $.
+
+
+
+
+
+\begin{lemma}\label{Minim}
+	If the sequent $ \Sigma\mid \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then  $ \Sigma\mid \Gamma \sststile{\Theta}{\RHD} \Delta $ is not.
+	
+	\begin{proof}
+		We proceed by proving the contrapositive. Suppose for conditional proof that $ \Gamma\sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$. It follows from \textit{sturdy} that $ \Gamma\sststile{\Theta}{} \Delta $ is a theorem and from Definition \ref{competitor_set} that $ \Gamma \in \lfloor \mathbf{S}^\Delta \rfloor$. Next suppose for \textit{reductio} that $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is also a theorem. From \textit{sturdy} it follows that $\bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma\cup \{A\})\mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma\cup \{A\} }\cup\Delta}{}\Delta$ is a theorem. Since $ \Gamma \subseteq \Gamma\cup\{A\} $, it follows from Definition \ref{competitor_set} and \ref{bbslash} that $ \neg(\Gamma) \subset \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma\cup \{A\}) $. But from Definition \ref{dclosure} it follows that $ \bigwedge\neg(\Gamma) \in \mathcal{D}(\overline{\Gamma\cup\{A\}}) $, so, according to Definition \ref{compat} $\bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma\cup \{A\})\mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma\cup \{A\} }\cup\Delta}{}\Delta$ is defeated, contradicting our supposition. Thus, if  $ \Gamma\sststile{\Theta}{\RHD} \Delta $ is a theorem, then $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is not. It follows by contraposition and double negation that if the sequent $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then  $ \Gamma \sststile{\Theta}{\RHD} \Delta $ is not.
+	\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{Minimand}
+	If the sequent $ \Sigma\mid A, B, C \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then  $ \Sigma\mid B\wedge C \sststile{\Theta}{\RHD} \Delta $ is not.
+	
+	\begin{proof}
+		It suffices to show that  $ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash B\wedge C), \Sigma\mid B\wedge C \sststile{\Theta}{\RHD} \Delta $ is defeated when $\{A, B, C\} \in \lfloor \mathbf{S}^\Delta \rfloor$. First note that $ \bigwedge\neg(\{A,B,C\})= \neg A \wedge \neg B \wedge \neg C $ and that $ \neg B \vee \neg C \in \mathcal{D}(\overline{B\wedge C}) $ and thus, by the $ \mathcal{D}_\vee $-rule,  $ \{\neg B, \neg C\} \subset \mathcal{D}(\overline{B\wedge C}) $. It  follows by the $ \mathcal{D}_\wedge $-rule that $ \neg A \wedge \neg B \wedge \neg C \in \mathcal{D}(\overline{B\wedge C}) $, and thus $ \bigwedge\neg(\{\{A,B,C\}\}) \in \mathcal{D}(\overline{B\wedge C}) $. The rest of the proof mirrors that of Lemma \ref{Minim} and is left as an exercise for the reader.
+	\end{proof}
+\end{lemma}
+
+\begin{lemma}\label{disjmin1}
+	If the sequents $ \Sigma' \mid A \sststile{\Theta'}{} \Delta $ and $ \Sigma''\mid B \sststile{\Theta''}{} \Delta $ are theorems of $ \mathsf{LEA}$ then $\, \Sigma \mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is not. 
+	
+	\begin{proof}
+		Suppose for \textit{reductio} that $ \Sigma, \mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is a theorem. It follows by hypothesis and \textit{sturdy} that $ \Sigma, \bigcup\neg(\{\{A, B\}\}\bbslash\{ A\vee B \})\mid A \vee B \sststile{\Theta\cup\overline{A \vee B}\cup\Delta}{} \Delta $ is a theorem. $ \{\{A, B\}\}\bbslash\{ A\vee B \} = \{\{A, B\}\} $ and by Definition \ref{nsetfunct}, $ \bigcup\neg({\{\{A, B\}\}}) = \{\neg A, \neg B \} $. Since $ \bigwedge \{\neg A, \neg B\} = \neg A \wedge \neg B $, we test for compatibility by determining whether $ \neg A \wedge \neg B \in \mathcal{D}(\overline{\{A \vee B \}})$. The latter is indeed obtained by Definitions \ref{dclosure} and \ref{tildefunct}. It follows that $ \Sigma, \neg(\{\{A, B\}\}\bbslash\{ A\vee B \})\mid A \vee B \sststile{\Theta\cup\overline{A \vee B}\cup\Delta}{} \Delta $ is defeated and thus that $ \Sigma\mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is not a theorem.
+	\end{proof}
+\end{lemma}
+
+\begin{remark}
+	The consequent of Lemma \ref{disjmin1} also holds under the hypothesis that $ \Sigma' \mid A, B \sststile{\Theta'}{} \Delta $ is a theorem.
+\end{remark}
+
+Lemma \ref{disjmin1} holds that a disjunctive candidate is never sturdy when it must compete against both of its disjuncts. Unfortunately, without a special constraint, disjunctive competitors would also block their disjuncts from obtaining sturdiness. 
+
+\begin{fact}
+	$ \bigcup\neg(\{\{A \vee B\}\} \bbslash \{A\}) \in \mathcal{D}(\neg A) $.
+	
+	\begin{proof}
+		It suffices to show that $ \bigcup\neg(\{\{A \vee B\}\} \bbslash \{A\}) = \{\neg A \wedge \neg B\} $ and $ \neg A \wedge \neg B \in \mathcal{D}(\neg A).$
+	\end{proof}
+	
+\end{fact}
+
+In order to prevent this unwanted result, we deploy Disjunction Deletion (Definition \ref{disjsub}) in  the formulation of \textit{sturdy}. Thus, as the following theorem states, a candidate explanans is never forced to compete against a set that contains its disjunction with an arbitrary formula.
+
+\begin{proposition}\label{disjmin2}
+	If the sequent $\bigcup\neg(\lfloor\mathbf{S}^\Delta\rfloor \bbslash\Gamma\cup\{A\}),\,\Sigma \mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma\cup\{A\}} \cup\Delta}{}\Delta$ is the premise in an application of \textit{sturdy}, then $ A \vee B \not\in \bigcup \{\lfloor\mathbf{S}^\Delta\rfloor \bbslash\Gamma\cup\{A\}\} $ for any formula $ B $.
+	
+	\begin{proof}
+		It suffices to note that according to Definition \ref{disjsub}, if $ A \in \bigcup\mathbf{S}^\Delta $, then $ A \vee B \not\in \bigcup\lfloor\mathbf{S}^\Delta\rfloor  $ for any arbitrary formula $ B $.
+		
+	\end{proof}
+	
+\end{proposition}
+
+The provisos on \textit{sturdy} are intended to prevent applications of the rule in cases where there is no genuine comparison between a candidate explanans and its competitors---e.g. if a candidate explanans were to be smuggled into the background set of a competitor $(\Gamma \subseteq \Sigma_i)$ or vice versa $(\Omega_i \subseteq \Sigma)$. Similarly, the requirement that the background set of the candidate explanans form a subset of those of its competitors $(\Sigma\subseteq \Sigma_i)$ provides a common set of assumptions against which comparisons can be made.  Thus, these provisos provide a level playing field on which candidate explanans may compete for sturdiness.
+
+In combination with Definition \ref{competitor_set}, this last constraint enables the set of competitors to be culled. For instance, one can prevent an antecedent, $ \Omega_i $, from belonging to $ \mathbf{S}^\Delta $ by constructing a background set for the candidate that includes information that defeats the inference from $ \Omega_i $ to $ \Delta $. This procedure of culling the competitor set describes how a reasoner goes about holding certain pieces of information (e.g. actual causes) ``fixed''.
+
+
+We turn now to the \textit{abduct.} rule. As the name suggests, this rule is intended to capture the \textit{detachability} of the premises of explanatory arguments. Roughly put, \textit{abduct.} says that if $ \Gamma, A $ is an explanatory argument for $ \Delta $, and $ \Delta $ is the non-trivial consequence of $ \Gamma' $, then together, $ \Gamma $ and $ \Gamma' $ license the inference to $ A $. Since $ A $ only forms part of the explanatory argument for $ \Delta $, we ought to read \textit{abduct.} as licensing the detachment of a \textit{partial} explanation of $ \Delta $. The formulation of the rule thus makes detachability a manifest property of $ \RHD $-sequents. 
+
+There are, however, some peculiarities to the rule that deserve discussion. First, the explanandum ($ \Delta $) disappears from the conclusion, leaving only the partial explanans. This feature accords with our desire to present IBE in the strongest form possible. If IBE only licensed inferences to best explanations \textit{or} their explananda, it's legitimacy would hardily have roused debate---though its utility might have. Unfortunately, the absence of the explananda in the succedent of \textit{abduct.}'s conclusion means that information is lost in any derivation that contains an application of the rule. The effect, like that of proofs that employ cut, is the failure of analyticity---i.e. some derivations will contain formulas that are not subformulas of those in the end-sequent. The loss of the subformula property is not all that surprising given the standard characterization of IBE as a form of ampliative inference. We are reassured by the fact that despite this loss, the cut-elimination theorem holds for $ \mathsf{LEA} $ (Theorem \ref{cutelimabduct}).
+
+Second, the defeater set attached to the second premise indicates that the inference that entitles us to the explanandum must be non-trivial. This restriction is justified on the grounds that a tautology should never count as evidence for an explanandum's obtaining.  Third, the proviso on \textit{abduct.} prevents the antecedents of the premises from overlapping. This constraint follows from the idea that abductive inferences are only licensed when one has evidence for the explanandum that is independent of the explanans. Note that this means that the second premise of \textit{abduct.} will contain a sequent whose antecedent may have `competed' with the explanans for sturdiness. This is as it should be, since the competitors include not only potential explanations, but also non-explanatory, evidential inferences. \jm{Should I elaborate on this?} Finally, in addition to appearing in the succedent of the conclusion, the (partial) explanans also appears in the background set. This feature is consistent with our understanding of these sets as keeping track of formulas that have shifted from the left to the right of the turnstile.
+
+
+
+%remaining rules of $ \mathsf{LE}^\RHD $ are relatively straightforward. $ \mathsf{EA} $ simply codifies the fact that $ \RHD $-sequents entail their counterparts in  $\mathsf{LK^\Theta}  $, while the
+
+The logical rules of $ \mathsf{LE}^\RHD $ are just the left and right rules for conjunction in $\mathsf{LK^\Theta}$, \textit{modulo} $ \RHD$-sequents. We have chosen to restrict the logical operations permitted on $ \RHD$-sequents to these out of an abundance of caution. To our ears, inferences from conjunctive explanantia and to conjunctive explananda sound far more natural than those involving disjunctive or negated explanatia/explananda. \jm{Should we say more?}
+
+Now that we have in place its constituent systems, let us reflect on the global properties of  $ \mathsf{LEA}$. Perhaps most striking is the absence of classical structural rules for $ \RHD$-sequents. Neither weakening nor cut is permitted. If the antecedents of $ \RHD $-sequents could be arbitrarily weakened, then the minimality condition, which \textit{sturdy} secures, would be compromised. Right weakening, on the other hand, does not directly conflict with the properties of explanatory arguments; rather, we deny it because the weakening of explananda by arbitrary disjuncts appears to us as both unnatural and unreasonable. Finally, the absence of cut follows from the fact that our target vocabulary is that which expresses the notion of \textit{immediate} explanation.
+
+\begin{proposition}\label{nontrans}
+	It is possible that $ \Sigma\mid\Gamma\sststile{\Theta}{\RHD} A, \Delta $ and $ \Sigma'\mid\Gamma', A\sststile{\Psi}{\RHD} \Delta' $ are theorems of $ \mathsf{LEA}$, but $ \Sigma',\Sigma\mid\Gamma',\Gamma\sststile{\Theta\cup\Psi}{}\Delta,\Delta' $ is not.
+	
+	\begin{proof}
+		Follows from the fact that there is no cut rule for $ \RHD$-sequents.
+	\end{proof}
+	
+\end{proposition}
+
+
+While there is no $ cut_\RHD$ rule, proofs in $ \mathsf{LEA}$ contain an application of $cut $ that was not available in $\mathsf{LK}^\Theta$, namely, one where the cut formula appears in the succedent that follows the application of $ abduct $.  Fortunately, the cut-elimination theorem can be extended to cover these cases.
+
+\begin{theorem}\label{cutelimabduct}
+	Any sequent which is provable in $ \mathsf{LEA}$ has a cut-free proof.
+	
+	\begin{proof}
+		Lemma \ref{cutelim} gives us cut-elimination for the proofs in $ \mathsf{LK^\Theta}$. The following reduction covers the one application of cut that appears in proofs of $ \mathsf{LEA}$ that does not appear in proofs of $ \mathsf{LK^\Theta}$.
+		
+		$$
+		\begin{prooftree}
+		\Hypo{ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma),\,\Sigma \mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma}  \cup\Delta}{}\Delta}
+		\Infer1[$\, sturdy$]{ \Sigma \mid\Gamma, A\sststile{\Theta\cup\overline{\Gamma}  \cup\Delta}{\RHD}\Delta}
+		\Hypo{\pi}
+		\Ellipsis{}{\Sigma''\mid\Gamma''\sststile{\Psi\cup\overline{\Gamma''}\cup \Delta}{} \Delta}
+		\Infer2[$ abduct. $]{ \Sigma'',\Sigma, A\mid\Gamma'', \Gamma\sststile{\Theta\cup\overline{\Gamma}\cup\Delta\cup\Psi\cup\overline{\Gamma''}}{}A}
+		\Hypo{\Sigma \mid\Gamma,A \sststile{\Theta}{}\Delta}
+		\Infer2[$ cut $]{ \Sigma'',\Sigma, A\mid\Gamma'', \Gamma\sststile{\Theta\cup\overline{\Gamma}\cup\Delta\cup\Psi\cup\overline{\Gamma''}}{} \Delta}
+		\end{prooftree}
+		$$
+		
+		$$\downarrow $$
+		
+		$$
+		\begin{prooftree}
+		
+		\Hypo{\pi}
+		\Ellipsis{}{\Sigma \mid\Gamma''\sststile{\Psi}{}\Delta}
+		\Infer1[$ \mathsf{LW} $]{\Sigma\mid\Gamma'', \Gamma\sststile{\Psi}{} \Delta }
+		\Infer1[$ \mathsf{BE} $]{\Sigma, A\mid\Gamma'', \Gamma\sststile{\Psi}{} \Delta }
+		\Infer1[$ \mathsf{BE} $]{\Sigma'',\Sigma, A\mid\Gamma'', \Gamma\sststile{\Psi}{} \Delta }
+		\Infer1[$ \mathsf{DE} $]{\Sigma'',\Sigma, A\mid\Gamma'', \Gamma\sststile{\Delta\cup\Psi}{} \Delta}
+		\Infer1[$ \mathsf{DE} $]{\Sigma'',\Sigma, A\mid\Gamma'', \Gamma\sststile{\overline{\Gamma}\cup\Delta\cup\Psi}{} \Delta }
+		\Infer1[$ \mathsf{DE} $]{\Sigma'',\Sigma, A\mid\Gamma'', \Gamma\sststile{\Theta\cup\overline{\Gamma}\cup\Delta\cup \Psi}{} \Delta}
+		\Infer1[$ \mathsf{DE} $]{ \Sigma'',\Sigma, A\mid\Gamma'', \Gamma\sststile{\Theta\cup\overline{\Gamma}\cup\Delta\cup\Psi\cup\overline{\Gamma''}}{} \Delta}
+		\end{prooftree}
+		$$
+		
+	\end{proof}
+	
+\end{theorem}
+
+There are two facts about the proof of Theorem \ref{cutelimabduct} that are of particular significance. First, in contrast with standard normalization procedures for \textsf{LK}, the normalized proof above does not permute the application of cut upwards. Indeed, there is no application of cut whatsoever. Thus, unlike the normalization that secures cut-elimination in $ \mathsf{LK^\Theta}$, there is no need here to guarantee cut-free proofs of the end-sequents of cut-laden paraproofs. The relaxation of this demand is a welcome result, not least because the \textit{sturdy}-rule fails to preserve undefeatedness upwards. (We discuss this point in the conclusion). 
+
+Second, there are no $ \RHD$-sequents in the normalized proof. While applications of cut in cut-free calculi always involve a `detour' through unnecessary steps, in this case the application of $ cut $ to the conclusion of $ abduct. $ renders the prior application of the $ sturdy $-rule, and hence the deployment of the $ \RHD$-subsystem, particularly gratuitous. Since the normalized proof is a non-branching tree whose leaf is a non-trivial inference---indeed the very inference whose role in $ abduct. $ is to provide non-explanatory evidence that the `explanandum' obtains---we have in the reduced proof an instance of reasoning that proceeds through explanatory arguments with no epistemic gain. \jm{Are there broader implications that could drawn out here?}
+
+Finally, we can now see that the theorems of $ \mathsf{LEA}$ constructed with $ \sststile{}{\RHD} $ exhibit all of the properties associated with explanatory arguments.
+
+\begin{theorem}\label{properties}
+	The $ \RHD$-sequents that are theorems of $ \mathsf{LEA} $ are (1) defeasible, (2) minimal, (3) premise-consistent, (4) irreflexive, (5) sturdy, and (6) detachable.
+	
+	\begin{proof}
+		\begin{itemize}
+			\item[(1)] Defeasibility follows from Definition \ref{defeat}.
+			\item[(2)] Minimality follows from Lemmas \ref{Minim}, \ref{Minimand}, and \ref{disjmin1}.
+			\item[(3)] Premise-consistency follows from Lemma \ref{inconsist} and Corollary \ref{contradict}.
+			\item[(4)] Irreflexivity follows from Lemma \ref{irrefl} and Corollary \ref{part_irreflex}.
+			\item[(5)] Sturdiness follows from the \textit{sturdy} rule.
+			\item[(6)] Detachability follows from the \textit{abduct.} rule.
+		\end{itemize}
+	\end{proof}
+	
+	
+\end{theorem}
+
+\subsection{The extension $ \mathsf{LEA^+}$}
+
+
+We shall now demonstrate how the system $ \mathsf{LEA}$ and the language $ \mathcal{L} $ over which it is defined may be extended to include an object-language expression for \textit{best explains why}. We begin with the syntax of the extended language $ \mathcal{L}_\RHD $.
+
+\begin{definition}[Syntax of $ \mathcal{L}_\RHD $ ]
+\begin{equation}\nonumber
+\begin{split}
+	& (1)\,\, \text{If}\,\,  A \in \mathcal{L}  \,\,\text{then}\,\,  A \in \mathcal{L}_\RHD .\\
+ & (2) \,\,\text{If}\,\,  A, B \in \mathcal{L} \,\,\text{then}\,\, A \RHD B \in \mathcal{L}_\RHD\\
+\end{split}
+\end{equation}
+\end{definition}
+
+The expressions `$A \RHD B$' is intended to be read as `$ A $ \textit{best explains why} $ B$.' Note that the syntactic definition for $ \RHD $ is not recursive with respect to $ \mathcal{L}_\RHD $. Consequently, the operator $ \RHD $ is non-iterative.  We impose this syntactic constraint on the grounds that the ``\dots best explains why\ldots" locution does not appear to iterate in natural languages---at least not in English. 
+
+The rules in Figure 3 define the calculus $ \mathsf{LEA^+}$ over $ \mathcal{L}_\RHD $. While the rules of $ \mathsf{LK}^\Theta $ apply to all the formulas in $ \mathcal{L}_\RHD $, the rules for $ \mathsf{LE}^\RHD $ are restricted to the fragment $ \mathcal{L}\cap\mathcal{L}_\RHD $. This restriction is intended to prevent the generation of ill-formed formulas along a derivation, e.g. $ A \RHD (B \RHD C) $. 
+
+As promised, the extension $ \mathsf{LEA^+}$ provides introduction (right) and elimination (left) rules for the \textit{best-explains-why} operator, i.e. $\RHD $. The $ \RHD\vdash $ rule ought to be familiar---it is essentially the $ abduct. $ rule with the abducible formula joined to a member of the succedent of the second premise (i.e. $ B $) by the $ \RHD $-connective and appended to the antecedent of the conclusion. In fact, the $ \RHD\vdash $ rule is derivable from $ abduct. $ and $ \mathsf{LW} $. %It therefore qualifies as a derivable rule in $ \mathsf{LEA^+} $ and thus  does not add any theorems to the system.
+
+
+\begin{proposition}
+
+$ \RHD\vdash $ is a derivable rule in $ \mathsf{LEA}^+ $.
+
+	\begin{proof}
+		$$
+		\begin{prooftree}
+		 	\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD} \Delta}
+			\Hypo{\Sigma'\mid\Gamma'\sststile{\Psi\cup\overline{\Gamma'}\cup \Delta}{} \Delta}
+			\Infer2[ $abduct.$ ]{ \Sigma',\Sigma, A\mid\Gamma', \Gamma\sststile{\Theta\cup \Psi\cup\overline{\Gamma'}\cup \Delta}{}A}
+			\Infer1[\textsf{LW}]{ \Sigma',\Sigma, A\mid\Gamma',\Gamma, A \RHD 		B\sststile{\Theta\cup\Psi\cup\overline{\Gamma'}\cup \Delta}{} A}
+		\end{prooftree}
+		$$
+	\end{proof}
+
+\end{proposition}
+
+\jm{Is this proposition worth having?}
+
+The $\vdash\RHD$ rule, on the other hand, represents something quite novel. While it resembles the right rule for $ \to $ in \textsf{LK}, it is distinguished by two features. First, the active formula in the antecedent of the premise occurs in the background set of the conclusion. This peculiarity is justified by the need to preserve undefeatedness upwards, much in the way that $ \neg\vdash $ does. Second, while the premise is a $ \RHD $-sequent, the conclusion is not. This feature captures the sense in which formulas whose main operator is $ \RHD $ are \textit{explicitly} explanatory claims. As such, these claims can enter into reasoning patterns that do not consist in the making of explanatory arguments, and thus they belong to the class of sequents whose turnstile is unadorned by $ \RHD $.
+
+We are now in a position to make good on our promise to provide an expressivist treatment of explanatory vocabulary. Since the deduction theorem serves as the model for logical expressivist theses, it is incumbent upon us to show that a similar theorem holds in $ \mathsf{LEA^+}$. In order to do so, we must prove the invertibility of $ \vdash\RHD $. As we noted above, the fact that latter invokes two distinct classes of consequence relations means that, upon proof of invertibility, the resultant theorem will say something different. Namely, that an expression used in one logic (that of the unadorned turnstile, $ \sststile{\Theta}{} $\,) encodes the rules of another logic (\,$\sststile{\Theta}{\RHD}$\,). To distinguish this claim from the standard deduction theorem, we refer to it as a \textit{quasi-deduction theorem}.
+
+\begin{theorem}[Quasi-Deduction Theorem]\label{quasideduct}
+	
+	$\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta $\, is provable in \, $ \mathsf{LEA^+}$\, if and only if \,$  \Sigma, A\mid\Gamma\sststile{\Theta}{} A \RHD B, \Delta  $ is.
+	
+	\begin{proof}
+		($ \Rightarrow$) Follows from $ \vdash\RHD $.
+		
+		($ \Leftarrow $) By induction on proof-height. 
+		\textbf{Base Case:} If $ \Sigma, A\mid\Gamma\sststile{\Theta}{} A \RHD B, \Delta  $ is an axiom, then, since $ A \RHD B $ is not atomic, $\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta $ would have to be an axiom. However, there are no axioms with $ \RHD $-sequents. Rather, all such sequents are derived via \textit{sturdy}. Thus, $\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta $ follows by \textit{sturdy}. 
+		
+		\textbf{Inductive Step:} Assume inversion up to height \textit{n} and let $ \Sigma, A\mid\Gamma\sststile{\Theta}{} A \RHD B, \Delta  $ be the root of a proof of height \textit{n+1}. There are two cases:
+		
+		Case 1: If $  A \RHD B $ is not principal in the last rule, it has one or two premises, $ \Sigma', [A]\mid\Gamma'\sststile{\Theta}{} A \RHD B, \Delta'  $ and $ \Sigma'', [A]\mid\Gamma''\sststile{\Theta}{} A \RHD B, \Delta''  $ of derivation height $ \leq n $, where $ [A] $ indicates that $ A $ is in at least one of the premises (if there are two). By inductive hypothesis $\Sigma'\mid\Gamma', A\sststile{\Theta}{\RHD}B,\Delta' $ and $\Sigma''\mid\Gamma'', A\sststile{\Theta}{\RHD}B,\Delta'' $ are obtained by a proof of height $ n $. Now apply the last rule to obtain $\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta $ with a proof of height $ \leq n+1 $.
+		
+		Case 2: If $  A \RHD B$ is principal in the last rule, the premise $\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta $ has a proof of height $ \leq n $.
+	\end{proof}
+	
+	
+\end{theorem}
+
+
+\begin{figure}[!t]\label{LKSRHD}
+	\caption{Rules of $ \mathsf{LEA}^+ $.}
+	
+	
+	\vspace{.3cm}
+	The rules of $ \mathsf{LK}^\Theta $ apply to all the formulas in $ \mathcal{L}_\RHD $.
+	
+	\vspace{2mm}
+	
+	The rules of $ \mathsf{LE}^\RHD $ apply to all those formulas in the fragment $ \mathcal{L}\cap\mathcal{L}_\RHD $.
+	
+	\vspace{.5cm}
+	\textbf{Rules for $\RHD$}
+	\vspace{5mm}
+	
+	$
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD} B, \Delta}
+	\Hypo{\Sigma'\mid\Gamma'\sststile{\Psi\cup\overline{\Gamma'}\cup \Delta}{} B, \Delta}
+	\Infer2[$\RHD\vdash^*$]{ \Sigma',\Sigma, A\mid\Gamma',\Gamma, A \RHD B\sststile{\Theta\cup\Psi\cup\overline{\Gamma'}\cup \Delta}{} A}
+	\end{prooftree}$
+	\hspace{2cm}
+	$\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta}
+	\Infer1[$\vdash\RHD$]{ \Sigma, A\mid\Gamma\sststile{\Theta}{} A \RHD B, \Delta}
+	\end{prooftree}$
+	\vspace{5mm}
+	
+	*\,\, Provided that  $ \Gamma\cap\Gamma'\cap\{A\} = \emptyset. $
+\end{figure}
+
+
+
+\jm{Discuss quasi-deduction theorem and show how it captures the spirit of logical expressivism.}
+
+
+We can now show that $ \mathsf{LEA^+}$ is a conservative extension of $ \mathsf{LEA}$. First, we prove that the cut elimination theorem holds for $ \mathsf{LEA}^+ $.
+
+
+\begin{theorem}\label{cutelimLEA+}
+	Any sequent provable in $ \mathsf{LEA^+}$ has a cut-free proof.
+	
+	\begin{proof}
+		Since Theorem \ref{cutelim}  establishes cut elimination for  $ \mathsf{LEA} $, we need to show that every application of cut that occurs in proofs of $ \mathsf{LEA^+}$ but not in proofs of $ \mathsf{LEA}$ is eliminable. There is only one such application, namely, that which cuts the formula $ A \RHD B $ from the conclusions of $ \RHD\vdash $ and $ \vdash\RHD $. The following reduction covers this application.
+		
+		
+		$$
+		\begin{prooftree}
+		\Hypo{\pi_1}
+		\Ellipsis{}{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD} B, \Delta}
+		\Hypo{\pi_2}
+		\Ellipsis{}{\Sigma'\mid\Gamma'\sststile{\Psi\cup\overline{\Gamma'}\cup \Delta}{} B, \Delta}
+		\Infer2[$\RHD\vdash$]{ \Sigma',\Sigma, A\mid\Gamma',\Gamma, A \RHD B\sststile{\Theta\cup\Psi\cup\overline{\Gamma'}\cup \Delta}{} A}
+		\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta}
+		\Infer1[$\vdash\RHD$]{ \Sigma, A\mid\Gamma\sststile{\Theta}{} A \RHD B, \Delta}
+		\Infer2[$ cut $]{ \Sigma',\Sigma, A\mid\Gamma', \Gamma\sststile{\Theta\cup\Psi\cup\overline{\Gamma'}\cup \Delta}{} A, \Delta}	
+		\end{prooftree}
+		$$
+		
+		$$\downarrow $$
+		
+		$$
+		\begin{prooftree}
+		\Hypo{\pi_1}
+		\Ellipsis{}{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD} B, \Delta}
+		\Hypo{\pi_2}
+		\Ellipsis{}{\Sigma'\mid\Gamma'\sststile{\Psi\cup\overline{\Gamma'}\cup \Delta}{} B, \Delta}
+		\Infer2[$ abduct. $]{ \Sigma',\Sigma, A\mid\Gamma', \Gamma\sststile{\Theta\cup\Psi\cup\overline{\Gamma'}\cup \Delta}{} A}	
+		\Infer1[$ \mathsf{RW} $] { \Sigma',\Sigma, A\mid\Gamma', \Gamma\sststile{\Theta\cup\Psi\cup\overline{\Gamma'}\cup \Delta}{} A, \Delta}
+		\end{prooftree}
+		$$
+		
+	\end{proof}
+	
+\end{theorem}
+
+The conservativity of $ \mathsf{LEA}^+ $ follows immediately from cut's eliminability.
+\begin{corollary}\label{conserv_ext}
+	Every theorem in $ \mathsf{LEA}^+ $ that only contains formulas from $ \mathcal{L} $ is a theorem of $ \mathsf{LEA} $.
+	
+	\begin{proof}
+		Since $ \RHD\vdash $ and $ \vdash\RHD $ are the only rules in $ \mathsf{LEA}^+$ that are not in $ \mathsf{LEA} $, the only source of new theorems formulated in $ \mathcal{L} $ are those derived via an application of cut to the conclusions of these two rules. It follows from Theorem \ref{cutelimLEA+} that this application of cut is eliminable. 
+	\end{proof}
+	
+\end{corollary}
+
+
+\section{Conclusion}
+
+In this paper, we have argued that there is a viable inferentialist-expressivist treatment of explanatory vocabulary. More specifically, we have shown how explanatory arguments and IBE can be represented by a sequent calculus and how that calculus can be conservatively extended to a language that contains explicitly explanatory expressions. We conclude by discussing some of the peculiarities and limitations of the current approach as well as the prospects for future work.
+
+Since our calculi are constructed on the basis of $ \mathsf{LK} $,  our defeasible sequents represent relations among sets of formulas, while our connectives are operations on formulas. In $ \mathsf{LK}$ this discrepancy between the relata of consequence relations and the relata of connectives is completely natural. However, because our $ \RHD $-sequents are intended to capture an exhaustive relation---namely, the relation of loveliest potential \textit{exhaustive} immediate explanation---the fact that the $ \RHD $ connective only holds among formulas might threaten a change in meaning.
+
+ Fortunately, this concern is easily allayed. What $ \vdash\RHD $ says is that if $ \Gamma, A $ is the best \textit{exhaustive} immediate explanation of $ B $, then $ A $ is the best \textit{exhaustive} immediate explanation of $ B $ \textit{given (all of)} $ \Gamma$. This reading of the rule corresponds nicely to the pragmatics of explanation. We are rarely in search of \textit{complete} explanations. Rather, our inquires aim at \textit{the} (best) explanation of some phenomena. The latter may be thought of as a \textit{selection} from the former.  To proffer a \textit{selected} explanation is to put forth one claim as an explanans while \textit{assuming} that the remaining components of an exhaustive explanation hold. For instance,  to explain why George ordered the chocolate cake, we might appeal to a stable preference---e.g. ``Chocolate cake is George's favorite dessert.'' But the sufficiency of this explanation rests on a number of assumptions---for instance, that a preference for chocolate cake would lead someone to choose chocolate over carrot cake. Our formalism does justice to this fact:  someone entitled to an exhaustive explanatory argument is entitled to claim that some element of the premises  ($ A$) is the best explanation of the conclusion ($ B $), so long as one is entitled to the remaining premises ($ \Gamma $). In fact, our insistence that defeasible sequents be paired with background sets ($ \Sigma $) supports the view that even the propriety of exhaustive explanatory arguments depends upon what background assumptions are in play.
+ 
+ Of course, what makes one selected explanation acceptable in practice as opposed to another is no doubt in part a function of speaker interests. Consequently, a satisfactory theory of best explanations must account for the role that the practical commitments of speakers (i.e. plans, projects, preferences, interests) play in determining \textit{which} components of an exhaustive explanation can serve as the best explanation. To do so, the theory must provide a means for conceptualizing the pragmatics of explanation. 
+
+\textbf{Wish List}
+\begin{enumerate}
+	\item Our calculi provide opportunities for the formalization of different target vocabularies. For instance, while our aim was to offer an expresssivist treatment of immediate explanation, there is no reason to think that a similar treatment of \textit{mediate} explanation is unavailable. Such an account would need to permit a version of cut in $ \mathsf{LEA} $. Adding the cut rule fro $\mathsf{LK}^\Theta $ would mean that transitivity can fail when one of the sequents with the cut formula is defeated. IS this just the sort of non-transitivity we want?
+	\item Unlike many nonmonotonic logics, cautious montonicity does not hold in $ \mathsf{LEA} $. How would we include this rule? Would we want to? Think about Ulf's line on this: CM says that you can always add implicit content \textit{explicitly} to the premises.
+	\item What additional logical rules should be included in $ \mathsf{LE}^\RHD $?
+	\item How to represent probabilistic inferences? Treat defeater sets as things that would bring the inference below a threshold probability.
+\end{enumerate}
+
+
+
+
+
+
+ \printbibliography
+\end{document}

@@ -268,11 +268,11 @@ A sturdy inference must not only be modally robust; it must be superlatively sta
 \Gamma, \,A \smc B \Longrightarrow
 \begin{cases}\nonumber 
 1.\,\, \Gamma, \, A \mrc{W} B & $ where $ A \neq B $, and $ \\[3pt] 
-2.\,\, \forall C\,(\Gamma, C \mrc{W'} B \Longrightarrow W'\subseteq W ) & $ where $ B\neq C  \\[3pt] 
+2.\,\, \forall C\,(\Gamma, C \mrc{W'} B \Longrightarrow W \not\subset W' ) & $ where $ B\neq C  \\[3pt] 
 \end{cases}
 \end{equation}
 
-The first condition states that sturdy inferences are modally robust, with the proviso that their non-contextual premises are distinct from their conclusions. This ensures that unlike other material inferences, sturdy inferences are not reflexive. The second condition of \hyperref[SC]{\textbf{SC}} says that a sturdy inference must be modally robust up to some $W$ such that $W$ includes all those suppositions under which any sentence from $\mathcal{L}$ materially implies $B$, excluding $B$ itself. Since a sturdy inference's island of monotonicity encompasses all other islands from which the conclusion can be drawn, there is no further need to compare sets of suppositions, and thus the turnstile for the sturdy consequence relation may omit `$W$'.
+The first condition states that sturdy inferences are modally robust, with the proviso that their non-contextual premises are distinct from their conclusions. This ensures that unlike other material inferences, sturdy inferences are not reflexive. The second condition of \hyperref[SC]{\textbf{SC}} says that a sturdy inference must be modally robust up to some $W$ such that $W$ is not included in any other set of suppositions under which any sentence from $\mathcal{L}$ materially implies $B$, excluding $B$ itself. Since a sturdy inference's island of monotonicity is not encompassed by any other island from which the conclusion can be drawn, there is no further need to compare sets of suppositions, and thus the turnstile for the sturdy consequence relation may omit `$W$'.
 
 
 \section{Sequent Calculus for Sturdy Inferences}\label{sec:SeqCal}

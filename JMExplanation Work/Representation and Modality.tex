@@ -1,0 +1,160 @@
+\documentclass{article}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{natbib}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{turnstile}
+\usepackage{pgf}
+\usepackage{adjustbox}% http://ctan.org/pkg/adjustbox
+\usepackage{xcolor}
+\usepackage{soul}
+\renewcommand{\makehor}[4]{
+%  {\ifthenelse{\equal{#1}{n}}{\hspace{#3}}{}
+%   \ifthenelse{\equal{#1}{s}}{\rule[-0.5#2]{#3}{#2}}{}
+%   \ifthenelse{\equal{#1}{d}}{\setlength{\lengthvar}{#2}
+%     \addtolength{\lengthvar}{0.5#4}
+%     \rule[-\lengthvar]{#3}{#2}
+%     \hspace{-#3}
+%     \rule[0.5#4]{#3}{#2}}{}
+%   \ifthenelse{\equal{#1}{t}}{\setlength{\lengthvar}{1.5#2}
+%     \addtolength{\lengthvar}{#4}
+%     \rule[-\lengthvar]{#3}{#2}
+%     \hspace{-#3}
+%     \rule[-0.5#2]{#3}{#2}
+%     \hspace{-#3}
+%     \setlength{\lengthvar}{0.5#2}
+%     \addtolength{\lengthvar}{#4}
+%     \rule[\lengthvar]{#3}{#2}}{}
+   \ifthenelse{\equal{#1}{w}}{% New wavy $\sim$ definition
+     \setbox0=\hbox{$\sim$}%
+     \raisebox{-.6ex}{\hspace*{-.ex}\adjustbox{width=#3,height=\height}{\clipbox{0.75 0 0 0}{\usebox0}}}}{}
+}
+
+%\renewcommand{\makever}[4]
+%	{\ifthenelse{\equal{#3}{}}{.75#3}{}
+%
+%	}
+
+
+  
+ \newcommand{\nc}{\turnstile{s}{w}{}{}{n}}
+
+\makeatletter
+\newcommand{\bigperp}{%
+  \mathop{\mathpalette\bigp@rp\relax}%
+  \displaylimits
+}
+\newcommand{\bigp@rp}[2]{%
+  \vcenter{
+    \m@th\hbox{\scalebox{\ifx#1\displaystyle2.1\else1.5\fi}{$#1\perp$}}
+  }%
+}
+\makeatother
+
+\DeclareSymbolFont{symbolsC}{U}{ntxsyc}{m}{n}
+\SetSymbolFont{symbolsC}{bold}{U}{ntxsyc}{n}{b}
+\DeclareMathSymbol{\multimapdotbothA}{\mathrel}{symbolsC}{23}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+\newcommand\pref[1]{(\ref{#1})}
+%\usepackage{calc}
+%\usepackage{covington}
+%\usepackage{diagbox}
+%\usepackage{fixltx2e}
+%\usepackage{tikz}
+%\usetikzlibrary{calc}
+
+%\newcommand{\hcancel}[5]{%
+%    \tikz[baseline=(tocancel.base)]{
+%        \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
+%        \draw[red] ($(tocancel.north west)$) -- ($(tocancel.south east)$);}}%
+
+%\DeclareFontEncoding{LGR}{}{}
+%\DeclareTextSymbol{\~}{LGR}{126}
+
+%\providecommand{\tabularnewline}{\\}
+%\newcommand*{\equationautorefname}[1]{\@gobble}
+\setcitestyle{aysep={}, notesep=:}
+
+%opening
+%\title{Nonmonotonic material inferences and best explanations}
+%\author{Jared Millson}
+\date{}
+\raggedbottom
+
+
+%\newcommand{\nc}{\turnstile{s}{w}{}{}{n}}
+%\newcommand{\nc}{\,\mid\!\sim\,}
+
+\begin{document}
+%\maketitle
+\setlength{\parindent}{1cm}
+\large
+\doublespacing
+%Tenative Outline:
+%\begin{itemize}
+%	\item[I.] Introduction
+%	\item [II.] Conditions of Adequacy for the Semantics of `Best Explains'
+%	\item [III.] Semantic Inferentialism and Logical Expressivism
+%	\item [IV.] Inferential Semantics of `Best Explains'
+%	\item [V.] Assessment/Future work 
+%\end{itemize}
+%
+%\textbf{Disclaimers}
+%\begin{itemize}
+%	\item The following material is intended primarily for Section III and IV., but it's really just an attempt to jump-start thinking about the paper.
+%	\item  I feel like I'm cleaving way too much to Brandom here and do not want the paper to presuppose too much familiarity with/acceptance of Brandom's project. 
+%\end{itemize}
+
+\section{Explanation and Representation}
+
+The positivist origins of contemporary philosophy of science viewed explanation with suspicion. Explanation, it was thought, was the gateway drug for pernicious metaphysics. Hempel's deductive-nomological (DN) model provided rehabilitation: explanation was made respectable again when it could be couched in a logical language and moored to empirically testable statements.
+
+Contemporary work in philosophy of science has let go of these positivist anxieties. In light of the DN Model's failures, virtually everyone working on explanation seems to assume that counterfactuals and other modalities play a prominent role in explanation. Yet more than a few would blush if it were recommended that we follow Lewis (and Leibniz!) in adopting modal realism. Indeed, more than a few would also blush at the contemporary alternatives to modal realism (actualism, Meinongianism, etc.) The reason for this is straightforward: virtually all of these positions go well beyond the reach of scientific practice to make claims about the nature of (modal) reality. Call this the the \textit{Supernaturalist Threat}.
+
+To reap the benefits of introducing modal vocabulary into our theories of explanation while avoiding the Supernaturalist Threat, we need our philosophical accounts of representation to dovetail with our philosophical accounts of explanation. How is it that we can represent possibilities, necessities, and the like without undertaking commitments to possible worlds and other extra-scientific extravagances?
+
+
+
+\newpage
+\section{Modal Kant-Sellars Thesis and Explanatory Vocabulary}
+
+ [Basic Intro to Semantic Inferentialism and Logical Expressivism]
+
+In MIE, Brandom articulates three types of relations that hold among the deontic statuses of commitment entitlement. These relations form the pragmatic basis for his semantic inferentialism. They are as follows:
+
+\begin{itemize}
+	\item{Committive Consequence}: If S is committed to \textit{p}, then S is committed to \textit{q}.
+	\item{Permissive Consequence}: If S is committed and entitled to \textit{p}, then S is (\emph{prima facie}) entitled to \textit{q}.
+	\item{Incompatibility}: If S is committed to \textit{p}, then S is not entitled to \textit{q}.
+\end{itemize}
+
+
+The first two consequence relations can be thought of as codifying scorekeeping moves that preserve in the conclusion (at least some of) the normative proprieties present in the premises. Thus, the committive relation preserves commitment and the permissive preserves entitlement (though not commitment). Brandom has claimed that these are material-inferential versions of deductive and inductive inference, respectively. Incompatibility relations, while not status-preserving, may yet represent consequence relations in so far as what follows from commitment is the withholding of entitlement. 
+
+As we have seen, Brandom's inferentialism holds that the meaning of non-logical vocabulary is fixed by the material inferences in which it figures and the meaning of logical vocabulary is fixed by the material inferences that the latter make explicit or express. But since material inferences come in two varieties, it not clear which of of these are meaning-constitutive. When it comes to the meaning of non-logical vocabulary in general, the answer is, unsurprisingly, both! But in the case of ordinary empirical vocabulary, Brandom avers that the ability to discriminate among entitlement-preserving inferences is indispensable. Such inferences are essentially nonmonotonic. That is, a good permissive material inference may be turned into a bad one when new claims are added to the premise-set. This may occur, for instance, when an agent acknowledges commitments that are incompatible with the conclusion of an entitlement-preserving inference.
+
+The meaning-constitutive role that nonmonotonic material inferences play with respect to empirical vocabulary is underwritten by what Brandom calls the \textit{Modal Kant-Sellars Thesis}. The thesis holds that (1) in using ordinary empirical descriptive (OED) vocabulary,  one already knows how to do everything one needs to know how to do in order to deploy alethic modal vocabulary and that (2) alethic modal vocabulary is sufficient to characterize or express those inferential practices that are necessary for deploying OED vocabulary. In other words, alethic modal vocabulary makes explicit the sorts of inferences that agents must be able to make in order to count as using OED vocabulary. These inferences do not simply exhibit nonmonotonicity, for its far from clear how alethic modal terms could be well-suited to make just any defeasible inference explicit, especially when terms like `normally' seem to do a far better job of signaling defeasibility. In addition to being nonmonotonic, the material inferences in question must also exhibit \textit{a range of subjunctive robustness}. An agent treats a material inference as having having a certain range of subjunctive robustness when she can discriminate between those merely hypothetical circumstances in which the inference would remain good and those in which it would not. These ranges can be made explicit by endorsing subjunctive conditionals of the form `If P were the case, then Q would be the case, even if R were the case,' or, `If P were the case, then Q would be the case, unless S were the case.' Since subjunctive conditionals are a species of alethic modal vocabulary, definable in terms of the more familiar alethic modals of necessity and possibility, it makes sense that the inferences they make explicit are not merely nonmonotonic. Rather they those nonmonotonic inferences which remain good under certain hypothetical conditions, but not others.
+
+For Sellars, the idea that mastery of OED vocabulary presupposes the ability to endorse and disavow inferences which could be expressed by alethic modal vocabulary is of a piece with the notion that the descriptive use of language presupposes its explanatory use. In order to qualify as describing rather than merely labeling objects, an agent must treat her descriptive claims as explaining and standing in need of explanations. Explanatory relations thus serve to fix, at least in part, the meaning of ordinary empirical, descriptive vocabulary. Moreover, modal `lawlike' statements play a crucial role in making such explanatory relations explicit.
+
+The Kant-Sellars Thesis represents a bold repudiation of the fundamental assumptions at work in logical positivism and empiricism, and while we are quite sympathetic to it, we do not intend to yoke our semantic treatment of explanatory vocabulary to its fate. Instead, we aim to develop the insight hit upon by Sellars and Brandom, yet explored by neither, that the essential discursive role of explanatory vocabulary is to make explicit subjunctively robust, nonmonotonic material inferences. While this position puts explanatory vocabulary in a similar relationship to OED vocabulary that the Kant-Sellars Thesis grants to the language of alethic modality, we do not claim, as the latter does, that the inferential practices made explicit by explanatory vocabulary are necessary for the use OED vocabulary. On this issue we remain agnostic. We hold that explanatory vocabulary is sufficient to characterize inferential practices that we engage in when we deploy OED vocabulary, but we take no stand on whether those practices are necessary or sufficient for the deployment of OED vocabulary itself.
+
+
+\end{document}

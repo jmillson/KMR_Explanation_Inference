@@ -1,0 +1,222 @@
+\documentclass{article}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+%\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathptmx}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{pgf}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage{soul}
+\usepackage[autostyle]{csquotes}
+\usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
+
+%\usepackage{fonttable}
+
+\addbibresource{KMR_Master.bib}
+
+
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA}{U}{MnSymbolA}{m}{n}
+\DeclareMathSymbol{\twoheaduparrow}{\mathop}{MnSyA}{25}
+\DeclareMathSymbol{\twoheadrightarrow}{\mathop}{MnSyA}{24}
+
+\makeatletter
+
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+% % % % % % % % % % % % % % % Internal Commands NMC% % % % % % % % % % % % %
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+
+\newcommand{\uuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt .6pt 0pt 0pt}{$\uparrow$}}
+}
+\newcommand{\tuuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt 1pt 0pt 0pt}{$\scriptscriptstyle\uparrow$}}
+}
+\newcommand{\muparrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .65pt 0pt 0pt}{$\scriptstyle\uparrow$}}
+}
+\newcommand{\Uuparrow}{% 
+	\raisebox{.2ex}{\clipbox{0pt .15pt 0pt 0pt}{$\Uparrow$}}
+}
+\newcommand{\thuarrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .8pt 0pt 0pt}{$\twoheaduparrow$}}
+}
+
+% % % % % COMMANDS FOR NON-MONOTONIC CONSEQUENCES % % % % % % % % %
+\newcommand{\nms}{%
+	\mathbin{\mathpalette\@nms\expandafter}
+}
+\newcommand{\@nms}{\mid\joinrel\mkern-.5mu\sim}
+
+
+\newcommand{\nmc}{%
+	\mathbin{\mathpalette\nm@\expandafter}
+}
+\newcommand{\nm@}{\mid\joinrel\mkern-.5mu\sim\mkern-3mu}
+
+\newcommand{\qmc}[1]{\mathrel{
+		\mathchoice
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-13mu\tiny\uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow#1}}
+	}
+}
+
+\newcommand{\mqmc}{\mathrel{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\uuparrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow}}
+	}
+}
+
+\newcommand{\mrc}[1]{\mathbin{
+		\mathchoice
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\footnotesize\hspace{.5mm}\nms^{\mkern-13.5mu\fontsize{5.5}{0}\Uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\Uuparrow#1}}
+	}
+}
+
+\newcommand{\smc}{\mathbin{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\thuarrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\thuarrow}}
+	}
+}
+\newcommand{\nnmc}{\not\nmc}
+\newcommand{\nsmc}{\not\mkern-3mu\smc}
+\newcommand{\nmrc}{\not\mkern-3mu\mrc}
+\newcommand{\nmqmc}{\not\mkern1mu\mqmc}
+\newcommand{\nqmc}{\not\mkern1mu\qmc}
+
+\newcommand{\nme}{%
+	\mathbin{\mathpalette\@nme\expandafter}
+}
+\newcommand{\@nme}{{\mid\joinrel\mkern-.5mu\sim\mkern-2mu}_{e}\mkern3mu}
+
+
+%\newcommand{\nme}{\nms\mkern-7mu_{e}\mkern2mu}
+\newcommand{\qme}{{\qmc\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\mqme}{{\mqme\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\sme}{{\smc\mkern-2mu}_{e}\mkern3mu}
+
+% % % % % % % % % % %Commands for Materia Incoherence% % % % % % % % % % % %
+
+\newcommand{\bigperpp}{%
+	\mathop{\mathpalette\bigp@rpp\relax}%
+	\displaylimits
+}
+\newcommand{\bigp@rpp}[2]{%
+	\vcenter{
+		\m@th\hbox{\scalebox{\ifx#1\displaystyle1.3\else1.3\fi}{$#1\perp$}}
+	}%
+}
+\newcommand{\bigperp}{\raisemath{.5pt}{\bigperpp}}
+
+%% % % % % % Degree Command % % % % % % % % % % % % % % % % % % % %
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+ \newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+ \newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+ \newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+\makeatother
+
+
+
+
+
+%\renewcommand{\@cite}[1]{#1}
+%\usepackage[natbibapa]{apacite}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+%\hypersetup{
+%    colorlinks=false,
+%    pdfborder={0 0 0},
+%}
+
+
+\begin{document}
+\sloppy
+\title{Explanatory Asymmetry and Inferentialist Expressivism}
+
+
+\raggedbottom
+
+\maketitle
+
+
+
+Inference to the best explanation is a common inferential pattern in the sciences.  When a hypothesis is the best explanation of the available evidence, there is a strong reason to accept it.  We think that electrons exist because their existence explains a variety of electromagnetic and thermal phenomena.  Similarly, the best evidence for the theory of evolution is that it explains the fossil record.  Contemporary discussion concerns the status of inference to the best explanation (IBE).  Can it be reduced to other forms of ampliative inference or is it a fundamental form of inference in its own right?
+
+The status of IBE depends, at least in part, on an account of explanation.  Unfortunately, none of the extant theories of explanation provides the basis for IBE.  The views of explanation that link it closely to inference, such as Hempel’s deductive-nomological model, face daunting and unmet challenges.  Notoriously, they fail to capture the idea that, in general, if A explains B, then B does not explain A (the symmetry problem).  Causal accounts of explanation break the link between explanation and inference, and the pragmatic views are skeptical about IBE.
+ 
+We offer an alternative view: the essential discursive role of explanatory vocabulary is to make explicit subjunctively robust, nonmonotonic material inferences. Our guiding insight is that explanatory inferences are those materially correct inferences which remain good under more suppositions (typically expressed in the subjunctive mood) than any other correct inferences that share the same conclusion. Treating explanatory vocabulary as \textit{expressive} of these underlying material inferences permits us to analyze ``best explains'' in terms of the conditions under which the operator may be introduced and eliminated.  IBE emerges as the inference rule whereby we may detach entitlement to the explanandum from entitlement to the explanation.
+
+In this paper, we will sketch the central formal results of our project and the account of explanation made possible by them.  By way of showing the strength of the view, we will show how it resolves the symmetry problem.
+
+
+\nocite{Brandom1994,Brandom2008,Peregrin2014,Hlobil2016,Piazza2015,Lipton1991a,Hempel1965,Douven1999,Thagard1978,Bromberger1965,Kitcher1989,Fraassen1980,Woodward2003}
+
+\printbibliography
+
+
+\end{document}

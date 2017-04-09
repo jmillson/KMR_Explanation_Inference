@@ -1,0 +1,796 @@
+\RequirePackage{fix-cm}
+
+\documentclass[natbib]{svjour3}                     % onecolumn (standard format)
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[centertags]{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{turnstile}
+\usepackage{graphicx}
+\usepackage{latexsym}
+
+
+
+
+
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+	<-6> MnSymbolA5
+	<6-7> MnSymbolA6
+	<7-8> MnSymbolA7
+	<8-9> MnSymbolA8
+	<9-10> MnSymbolA9
+	<10-12> MnSymbolA10
+	<12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+	<-6> MnSymbolA-Bold5
+	<6-7> MnSymbolA-Bold6
+	<7-8> MnSymbolA-Bold7
+	<8-9> MnSymbolA-Bold8
+	<9-10> MnSymbolA-Bold9
+	<10-12> MnSymbolA-Bold10
+	<12-> MnSymbolA-Bold12}{}
+
+
+\makeatletter
+
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+\newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+\newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+\newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+\makeatother
+
+
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+%\hypersetup{
+%    colorlinks=false,
+%    pdfborder={0 0 0},
+%}
+
+\begin{document}
+	\large
+	\sloppy
+	\title{Inference, Explanation, and Asymmetry
+		%\thanks{Grants or other notes
+		%about the article that should go on the front page should be
+		%placed here. General acknowledgments should be placed at the end of the article.}
+	}
+
+%\subtitle{Do you have a subtitle?\\ If so, write it here}
+
+%\titlerunning{Short form of title}        % if too long for running head
+
+% % % % % % % % % Removed Identifying Info % % % % % % % % % % % %
+\author{}
+
+%\authorrunning{Short form of author list} % if too long for running head
+
+\institute{}
+
+\date{Received: date / Accepted: date}
+
+\raggedbottom
+
+\maketitle
+	
+	\raggedbottom
+	
+	\maketitle
+\begin{abstract}
+	Explanation is asymmetric: if A explains B, then B does not explain A. Traditionally, the asymmetry of explanation was thought to favor causal accounts of explanation over their rivals, such as those that take explanations to be inferences. In this paper, we first develop a new inferential approach to explanation, and argue that it outperforms causal approaches in accounting for the asymmetry of explanation. Explanation is asymmetric: if A explains B, then B does not explain A. Traditionally, the asymmetry of explanation was thought to favor causal accounts of explanation over their rivals, such as those that take explanations to be inferences. In this paper, we first develop a new inferential approach to explanation, and argue that it outperforms causal approaches in accounting for the asymmetry of explanation.
+\end{abstract}
+\section{Introduction}
+\label{sec:introduction}
+A surefire way to embarrass a theory of explanation is to show that it fails to respect the commonsense idea that explanation is an asymmetric relation. Give or take some rare exceptions, if $A$ explains $B$, then $B$ does not explain $A$. In the lore of philosophical accounts of explanation, the origin myth almost always includes reference to a flagpole and its shadow. 
+
+The symmetry problem serves as an expedient way to disqualify a position that we call \textit{Explanation-As-Inference} (hereafter: EAI). Bromberger \citeyearpar{Bromberger1965} used symmetry to critique Hempel's covering-law model of explanation. Kitcher's  \citep{Kitcher1989} unificationist theory purported to restore explanation's asymmetry, but he faced other, searching symmetry counterexamples \citep[see][]{Barnes1992}. By contrast, the symmetry problem has been a great advertisement for causal approaches to explanation. According to these views, explanation's asymmetry follows effortlessly in the wake of causation's asymmetry. Given the long shadow that the symmetry problem casts, it is no wonder that causal approaches to explanation seem to enjoy a privileged status in contemporary philosophy of science \citep{Strevens2008,Woodward2003}.
+
+Despite their prominence, causal theories of explanation face their own challenges with respect to the asymmetry of explanation. A growing body literature shows that some scientific explanations are noncausal \cite{Reutlinger2017}. While the mere existence of noncausal explanations challenge causal theories, they also raise a further, hitherto unnoticed, asymmetry problem. Noncausal explanations exhibit asymmetries. This suggests that the ultimate source of explanatory asymmetry may not be causal, and it undermines an important dialectical motivation for adopting a causal theory. Hence, the holy grail would be an analysis that accommodates causal and noncausal explanations, and accounts for the asymmetries of both.
+
+In this essay, we shall offer a new set of necessary conditions for explanation that provides a unifying framework for handling asymmetries. While we consider ourselves members of the EAI family, we make bold departures from our predecessors. Section \ref{sec:symm_problem} specifies the contours of the symmetry problem when both its causal and noncausal variants are taken on board. Section \ref{sec:model} then presents our new approach, which we call the \textit{defeasibility} model of explanation. Section \ref{sec:symm_solution} then shows how the defeasibility model solves some of these symmetry problems without adverting to causal concepts. Section \ref{sec:causal} then considers a tougher challenge to the defeasibility model, in which causal concepts must be invoked in order to capture the relevant asymmetries. We argue that even though causation figures prominently in solving this last class of symmetry problems, it does so in a way that supports, rather than diminishes, the thesis that inference is the ultimate locus of explanation.
+
+\section{The Symmetry Problem}
+\label{sec:symm_problem}
+ 
+Historically, the symmetry problem was a pitched as a challenge to Hempel's deductive-nomological (DN) model of explanation. The DN Model was one of three versions of Hempel's covering law theory, along with inductive-statistical (IS), and deductive-statistical (DS) explanations. In all three, the explanandum is inferred from premises that include at least one law of nature. A DN explanation of $E$ is a sound deductive argument of the form $C_1, \dots, C_k, L_1, \dots, L_r  \vdash E$, where $L_1, \dots, L_r$ are universal laws of nature and $C_1, \dots, C_k$ are initial conditions. All premises must be indispensable to the argument's validity. 
+
+While most discussions of the symmetry problem involve a flagpole and its shadow, Sylvain Bromberger's original example is somewhat more colorful:
+
+\begin{quote}
+	There is a point on Fifth Avenue, $M$ feet away from the base of the
+	Empire State Building, at which a ray of light coming from the tip of the
+	building makes an angle of $\theta$ degrees with a line to the base of the
+	building. From the laws of geometric optics, together with the ``antecedent''
+	condition that the distance is $M$ feet, the angle $\theta$ degrees, it is
+	possible to deduce that the Empire State Building has a height of $H$ feet.
+	Any high-school student could set up the deduction given actual
+	numerical values. By doing so, he would not, however, have explained
+	why the Empire State Building has a height of $H$ feet\ldots \citep[p.92]{Bromberger1966}.
+\end{quote}
+
+\noindent At the risk of belaboring what any high-school student could do, two inferences are involved in Bromberger's example:
+\begin{equation}
+\label{Classic_Tower}\tag{\textsc{Classic Tower}}
+	\hspace{-.3cm}\tan \theta  = \frac{H}{M},\hspace{.5ex} \theta = 60^{^\circ},\hspace{.5ex} H = 1,454\,\text{ft} \,\,\vdash\,\, M = 839.5\,\text{ft}
+\end{equation}
+
+\begin{equation}
+\label{Classic_Shadow}\tag{\textsc{Classic Shadow}}
+	\hspace{-.3cm}\tan \theta  = \frac{H}{M},\hspace{.5ex} \theta = 60^{^\circ},\hspace{.5ex}  M = 839.5\,\text{ft} \,\,\vdash\,\,  H = 1,454\,\text{ft}
+\end{equation}
+
+\noindent Since both inferences are deductions from a law and initial conditions, both count as explanations according to Hempel's criteria. But as Bromberger points out, only the first is plausibly an explanation.  The problem easily generalizes. Many physical laws are expressed by equations treating one variable as a function of others. These laws permit the value of any one variable to be deduced from the values of the others.  Like the building and its shadow, only some of these inferences are explanations.
+
+Subsequent proponents of EAI tried to rule out the asymmetries by further restricting the inferences that count as explanations. For instance, where Hempel required only that explanandum be validly deduced from the explanans, Kitcher's unificationist\fnmark{OtherUnif} model required that the explanandum be derived in a particular way. Each explanatory derivation is an instance of a more abstract argument pattern that specifies the kinds of premises and inferences rules that may be used to derive the explanandum. A \textit{systemization} of the corpus of accepted statements \textit{K} is any set of general argument patterns that derive some members of \textit{K }from others. Explanation consists of using instances of the ``best" systemization, \textit{E(K)}, as measured according to the following criteria:
+
+\fntext{OtherUnif}{Other unificationists who endorse EAI include \cite{Bangu2016,Friedman1974,Schurz1994,Schurz1999}. Space prohibits extensive discussion of their views on symmetry.} 
+
+\begin{enumerate}
+	\item \textit{Acceptability}: Each step of each instance of a general argument pattern in \textit{E(K)} must be deductively valid, and acceptable relative to \textit{K}.
+	\item \textit{Scope}: Unification increases in proportion to the size of the conclusion set of the number of acceptable instances of \textit{E(K)}.
+	\item \textit{Stringency}: Unification increases in proportion to the strictness of the argument patterns in \textit{E(K)}.
+	\item \textit{Number of patterns}: Unification decreases in proportion to the number of general argument patterns in E(K).
+\end{enumerate}
+
+Kitcher's view accounts for the asymmetry in Bromberger's example. Kitcher proposes that our present explanatory store contains an ``origin and development'' ($OD$) argument pattern, according to which spatial dimensions of any physical object are derived from its origin and subsequent physical changes. Kitcher then invites us to consider a ``shadow'' ($S$) argument pattern, wherein the spatial dimensions of physical objects are derived from the length of their shadows. \ref{Classic_Shadow} would be an instance of $S$. Simply adding $S$ to our explanatory store runs afoul of the fourth criterion of unification, above. Hence it will only be explanatory if it fares better along one of the other dimensions of unification. However, it appears that the acceptable conclusions that $S$ generates are a proper subset of those that $OD$ generates. Nor does $S$ appear any more stringent than $OD$. Hence, Kitcher's unificationism is not susceptible to shadowy symmetries because the non-explanatory inferences do not unify a scientific domain.  
+
+However, Eric Barnes' \cite{Barnes1992} version of the symmetry problem threatens Kitcher's version of EAI.  Barnes imagines a closed system of ``Newtonian particles.''  Given a complete description of this system at a time, the state of the system at any later time can be determined through Newton's laws.  Barnes argues that the deduction of future states of the system from the present state satisfies Kitcher's criteria for explanation.  Newtonian mechanics, after all, is a paradigm of scientific unification.  But Newton's laws also permit the deduction of past states from present states. So, since Newtonian mechanics fits Kitcher's criteria, both the forward and backward calculations must count as explanatory.  But clearly, retrodicting past states from the present does not count as an explanation.
+
+The most prominent diagnosis of explanatory asymmetries holds that inferences such as \ref{Classic_Tower} are explanatory because they track causal relationships, while the non-explanatory \ref{Classic_Shadow} does not. Since nothing in the form of inference marks a causal relationship, many causal theorists of explanation argue that the inferences are superfluous, or, at the very least, are subservient to the more basic explanatory task of tracking causes. On such a view, all explanations represent causal relationships, and explanation is asymmetrical because causes are. EAI appears to have hit a dead end. 
+
+We should be suspicious of any diagnosis that identifies the asymmetry of explanation with the asymmetry of causation. Begin with the observation that some explanations are noncausal. Consider, for example, this explanation: 
+
+\begin{quote}
+	The players selected for the [Home Run] Derby are typically among the best home-run producers of the first half, though they may not necessarily be among the best power hitters in baseball. Uncharacteristic performances help players get selected for the Home Run Derby, and the decline in their numbers in the second half is more likely to be due to natural regression than their participation in the event \citep{Braunstein2014}.
+	
+\end{quote}
+
+\noindent For those unfamiliar with baseball, the Home Run Derby invites the best home run hitters in baseball to show their skills in the middle of the season. Braunstein and Woolums are explaining why players selected for the derby tend to do worse in the second half of the season.  The fall-off in home run production is sometimes attributed to participation in the Derby itself; it might be something about the psychology of participation, or perhaps the Derby changes the player's swing.  Such \textit{causal} hypotheses, however, are generally not good explanations, according to  Braunstein and Woolums' analysis. They suggest that the players' slump in the second half of the season is regression toward the mean.  That is, if a series of performances are significantly above or below average, subsequent performances will be closer to the average.\fnmark{StatExpl}
+
+\fntext{StatExpl}{Both \cite{Lange2016} and \cite{Lipton2004} discuss regression to mean as an example of noncausal explanation. Lange provides further examples of ``really statistical" explanations in population genetics. For further examples, see \cite{Ariew2014,Walsh2015}.}
+
+Braunstein and Woolums' explanation exhibits an explanatory asymmetry.  To see it clearly, consider their explanation as applied to a particular player.  They discuss Chris Davis who, in the first half of the 2013 season, hit well above his average at this stage of his career. Braunstein and Woolums explain Davis' poorer second-half performance as regression toward the mean.  However, the converse is no explanation: the phenomenon of regression toward the mean is not explained by anything about Chris Davis' performance.  Since explaining Davis' second half slump in terms of expected values, standard deviations, and regression is clearly not causal, this explanatory asymmetry cannot be a causal asymmetry.  A failure of inferences to track causes is not the source of the explanatory asymmetry.
+
+It appears that there are a variety of explanatory asymmetries and they are susceptible to different kinds of solution. Some symmetry problems, such as Bromberger's, appear to be solvable by either inferential or causal means. Others, such as Barnes' example of the Newtonian particles, appear to favor causal approaches over EAI. Still others, such as the asymmetry involving regression towards the mean, appear to resist any causal analysis. Thus, contrary to the received wisdom, it is far from clear that causal accounts have gotten to the root of explanatory asymmetries. We take this opening as an opportunity to reenvision EAI. The net result will be one in which all three kinds of asymmetries can be seen to spring from a common inferential fountainhead.
+
+\section{The Defeasibility  Model of Explanation}
+\label{sec:model}
+Suppose, like us, that you are sympathetic to EAI, and want to solve these symmetry problems. Where did others go wrong? Earlier proponents of EAI focused almost exclusively on \textit{classical} logic and probability. Yet the classical consequence relation is especially permissive, allowing for inferences such as \textit{Ex Falso Quodlibet} and antecedent strengthening. Earlier propnents of EAI responded by excluding non-explanatory inferences. They imposed requirements such as soundness, syntactic and semantic constraints on laws, probability thresholds---not to mention Kitcher's appeals to acceptability, scope, stringency, and number of patterns. Instead, we will adopt a \textit{nonclassical} logic, which provides alternative consequence relations that behave much more like the explanatory relation.\fnmark{jarda}
+
+\fntext{jarda}{In AUTHOR CITATION, we develop a formal system that offers more precise characterizations of the ideas in this paper. The informal gloss of these ideas suffices for our current purposes.}
+
+A further hint for solving symmetry problems is found in Kitcher's solution to Bromberger's problem. Kitcher shows \textit{comparative} failings disqualify them as explanations. In particular, it seems as if the proper explanation of the tower's height---say an architect's design---will succeed where the shadow ``explanation" fails. Similarly, many \textit{causal} approaches to explanation hold that \ref{Classic_Shadow} is not explanatory because, when we hold the architect's design fixed, the tower's height would still be 1,454 feet, even if the shadow's length were not 839.5 feet. As we have seen, gaps remain in both approaches. This suggests that they may be deploying the wrong basis of comparison.
+
+By using nonclassical consequence relations, we provide a new way of explicating the insight that a proper explanation succeeds where its competitors fail. Roughly, our defeasibility model of explanation  holds that $A$ explains $B$ only if: 
+
+\begin{enumerate}
+	\item $A$ and $B$ are (approximately) true,
+	\item $B$ is a nontrivial consequence of $A$, and
+	\item the inference from $A$ to $B$ succeeds under conditions where all others fail.
+\end{enumerate}
+
+\noindent We will say that  inferences satisfying the last two conditions are ``sturdy.''  To provide a better sense of  the defeasibility model, we discuss each of the three conditions (Sections \ref{subsec:truth}, \ref{subsec:nontrivial}, and \ref{subsec:success}) in turn.
+
+Before doing so, two preliminary clarifications are in order. First,  in this paper, we only provide necessary conditions for ``$A$ explains $B$.'' Hence, our analysis is only partial. This will not matter in what follows, since we will have provided enough of an analysis to solve the symmetry problem within an EAI framework. In future work, we intend to complete this analysis. Second, for many explananda $B$, there are multiple propositions $A_1, \dots A_n$­ such that it is natural to say that $A_1$ explains $B$ and that $A_2$ explains $B$, etc., and that these explanantia are not in competition. While the arguments are outside of the scope of this essay, it is a consequence of our view that when $A$ explains $B$, $A$ is the exhaustive explanation, and that it encompasses $A_1, \dots A_n$.  The pragmatics of explanation permit an element of the exhaustive explanation, $A_i$, to be treated as ``the'' explanation of $B$. For ease of exposition, we will not enumerate all of the different components of an exhaustive explanation when we provide examples of sturdy inferences. What matters most for this paper is that our view entails that for any $A$ and $B$ that raises a symmetry problem (\textit{i.e.} such that $A$ explains $B$, but $B$ does not explain $A$), $B$ can be shown not to be part of a sturdy inference that has $A$ as its conclusion, and hence can be excluded from the exhaustive explanation of $A$.
+
+\subsection{Explanation and Truth}
+\label{subsec:truth}
+The  least remarkable of our requirements for explanation is that the explanans and explanandum must be \textit{true}.  This conforms to common usage, where a false proposition is not the actual explanation. Presumably, several alternative accounts of ``quality control" on the explanans and explanandum---\textit{e.g.} involving different theories of truth, or appealing to significantly different semantic or epistemic properties than truth---can be wedded to Conditions 2 and 3 (sturdiness), and still furnish similar solutions to the symmetry problem, so we will mostly take this requirement for granted in what follows.
+
+We have parenthetically added that the explananans and explanandum may be \textit{approximately} true. For many scientific explanations, the premises are known, strictly speaking, to be false \cite{Cartwright1983}. For instance, it would be miraculous if the Empire State Building stood at a \textit{perfect} $90^{^\circ}$ angle to 5\textsuperscript{th} Avenue, \textit{exactly} at $1,454$ feet, etc. Nonetheless, the building's height explains the shadow's length for roughly the reasons implied by \ref{Classic_Tower}. In Section \ref{subsec:nontrivial}, we actually show that approximation and defeasibility pair naturally with each other.
+
+\subsection{What is a Nontrivial Consequence?}
+\label{subsec:nontrivial}
+For our purposes, nontrivial consequences have three key features. Each of them maps on to properties of explanation. First, nontrivial inferences are \textit{irreflexive}. This accords with the idea that explanation is also an irreflexive relationship, e.g., that the shadow being $839.5$ feet long does not explain why it is $839.5$ feet long. 
+
+Second, nontrivial inferences are \textit{premise consistent}.  Since a contradiction explains nothing, the classically valid inference pattern  \textit{Ex Falso Quodlibet} (where a contradiction entails any proposition) cannot be an explanation.  As its name suggests, premise consistency requires that the premises of a nontrivial consequence must be consistent.   
+
+Third, nontrivial consequences are \textit{defeasible}. Defeasible consequence relations are disrupted when certain additional propositions---called \textit{defeaters}---are considered. Scientific explanations are replete with them. For instance, a person's disease explains her symptoms, but a person's disease in conjunction with her taking an effective treatment does not.  We will represent defeasible inferences this way:
+
+\begin{equation*}
+\label{eq:disease}  %\tag{\textsc{Disease}}
+	\begin{split}
+		& \text{The patient is infected with the \textit{Varicella zoster} virus} \\
+		\sststile{\Theta}{}\, & \text{The patient's skin is covered in red spots }
+	\end{split}
+\end{equation*}
+
+
+\noindent Here, ``$\,\sststile{\Theta}{}\,$" denotes a defeasible consequence relationship. ``$\,\Theta\,$'' denotes a set of defeaters, such as ``The patient has received effective treatment.'' A good defeasible inference of this sort will turn bad if members of $\Theta$ are true.\fnmark{defeat}
+
+\fntext{defeat}{Roughly put, an inference is defeated whenever its premises contain a sentence that is logically equivalent to a subset of the defeater set. Our precise definition of defeat departs from this characterization in some respects, only two of which are noteworthy. (1) a disjunction in the premises defeats an inference if both the disjuncts (or their logical equivalents) belong to the defeater set, while (2) a conjunction in the premises defeats the inference if at least one of the conjuncts (or their logical equivalents) belongs to the defeater set. Although we refrain from providing it here, all of our informal references to \textit{defeat} in the present text conform to the precise definition given in AUTHOR CITATION. }
+
+The turn to defeasible inference is an important departure from earlier proponents of EAI.  The consequence relation of classical logic is not defeasible in the sense articulated here.  If the sequent $A \vdash B$ is classically valid, no new information will disrupt the inference from $A$ to $B$.  By contrast, new data ought to be able to undermine any candidate for scientific explanation (at least in principle). Hence, if the explanatory relation is inferential, then it is almost certainly defeasible.
+
+One might object that at least some explanations are not defeasible.  In particular, explanations involving mathematically formulated physical laws walk and talk like classically valid inferences. Explanations in mathematized sciences, one might argue, are indefeasible through and through. This objection overlooks the way that modeling practices---such as idealization, abstraction, \textit{ceteris paribus} clauses, and approximation---``hide'' the defeasibility of explanation. Once this point is appreciated, treating explanations involving mathematically formulated laws as defeasible inferences is advantageous. Consider once again the approximations involved in the explanation of the shadow. If the building is too far from being perpendicular, the inference will not go through. This is the kind of \textit{ceteris paribus} consideration that the ``defeater set", $\Theta$, captures.  Moreover, the defeater set includes many other limitations on the model, such as that the law of geometric optics involves an idealization (light behaves as a ray) that breaks down under certain conditions (\textit{e.g.}, in quantum systems.)
+
+For these reasons, we will represent the inferences in Bromberger's example as:\\ 
+
+\begin{equation}
+\label{eq:tower_nm} \tag{\textsc{Tower}}
+\tan \theta  = \frac{H}{M},\hspace{.5ex} \theta = 60^{^\circ},\hspace{.5ex} H = 1,454\,\text{ft} \sststile{\Theta}{}\, M =  839.5\,\text{ft}
+\end{equation} 
+
+\begin{equation}
+\label{eq:shadow_nm}\tag{\textsc{Shadow}}
+\tan \theta  = \frac{H}{M},\hspace{.5ex} \theta =  60^{^\circ},\hspace{.5ex}  M =  839.5\,\text{ft} \sststile{\Theta'}{}\, H = 1,454\,\text{ft}
+\end{equation}
+
+
+\noindent    Hereafter, we assume that for \textit{us} to solve Bromberger's symmetry problem, we must show that \ref{eq:tower_nm} is explanatory, but \ref{eq:shadow_nm} is not. 
+
+\subsection{What Is Inferential Success And Failure?}
+\label{subsec:success}
+To solve the symmetry problem, we must introduce a new basis for comparing explanations. In slogan form, it is that only inferences that succeed where all others fail can be candidates for explanation. But what is meant by ``success" and ``failure" in such a slogan? The defeasibility of explanatory arguments provides an important clue. To say that one inference succeeds when another fails, we can imagine explanations being evaluated according to the following comparative procedure:\fnmark{procedure} 
+
+\begin{description}
+	\setlength\itemsep{.2cm}
+	\item[Step 1:]   Line up all of the nontrivial inferences that have the explanandum, $B$, as their conclusion. For each of these inferences, all other nontrivial inferences leading to $B$ are its ``competitors."
+	
+	\item[Step 2:] For each $A$ that has $B$ as a nontrivial consequence, suppose that all of $A$'s competitors' premises are false.
+	
+	\item[Step 3:] If the falsehood of any of these competitors defeats the inference from $A$ to $B$, then the latter is not sturdy; otherwise, it is sturdy.
+\end{description}
+
+\fntext{procedure}{To be clear: we are not claiming that explanations must be the products of this procedure. Indeed, we make no claims about the ``production'' of explanations whatsoever. Rather, this three-step process is simply a useful heuristic for the reader to identify the relevant inferential properties that distinguish explanations from other nontrivial inferences.}
+
+\noindent Failure is defeat under these conditions; success is the absence of failure.
+
+For example, assume that \ref{eq:tower_nm} is a correct explanation. Step 1 requires us to consider other ways of inferring the shadow's length. For instance, one competitor might be that there is a taller building behind the Empire State Building. This building is in line with the sun and casts the shadow. (Call this the \textsc{Taller Tower} explanation.) Step 2 then requires that we suppose the following: there is no such building casting a shadow. Step 3 then asks whether the claim that no taller building is casting the shadow defeats the claim that the Empire State Building is casting the shadow. But, of course, the absence of a taller tower will not disrupt the Empire State Building's ability to cast the shadow. Assuming that this could be done with all other competitors, \ref{eq:tower_nm} is sturdy.
+
+However, this raises an apparent problem. Suppose we flip the script, such that \ref{eq:tower_nm}'s premises are assumed to be false and considered as potential defeaters to \textsc{Taller Tower}. \ref{eq:tower_nm} does not defeat \textsc{Taller Tower}, since the shadow's height could still be inferred from the height of the taller building. Hence, \textsc{Taller Tower} is also sturdy. The sturdiness of both inferences is no cause for alarm. While it is sturdy, \textsc{Taller Tower} has false premises. Hence, it will not count as an explanation. Intuitively, it is merely a ``potential explanation." Furthermore, we can make our account of explanation more realistic by recruiting the idea that defeasible inference happens against a background of conditions that are held fixed. In effect, this background is the mirror image of a defeater, i.e. if $C$ is held fixed in the background, then $\neg C$ is a defeater. Hence, we are likely to hold the non-existence of this taller tower fixed in such a way that it is a ``dead option" as a potential explanation (or nontrivial inference) of the shadow's length. 
+
+As we shall argue in Section \ref{sec:symm_solution}, sturdiness is what distinguishes explanations from their symmetry-mongering counterparts. However, before doing so, we should explain why we take sturdiness to be a characteristic feature of the inferences that constitute explanations. First, the ideas underwriting sturdiness capture the comparative evaluation that characterizes much explanatory reasoning. A paradigmatic way of evaluating candidate explanations is to see whether the explanandum still holds when one of the competing explanantia is false while the other is true. For instance, to determine whether Chemical $X$ or Chemical $Y$ caused a reaction, we would hold all other conditions fixed. If the reaction occurred when $X$ was present and $Y$ was absent, but not \textit{vice versa}, then $X$ would be a better explanation of why the reaction occurred than $Y$. Upon iteration, we would then arrive at the best explanation. Indeed, reasoning such as this animates, \textit{inter alia}, controlled experiments, Mill's Method of Difference, and Lipton's \citeyearpar{Lipton2004} well-known approach to Inference to the Best Explanation. 
+
+Second, sturdiness is a form of ``stability" that many philosophers take to be a central feature of explanations. While different philosophical discussions of explanation and laws use different terminologies, in its most general form, $X$ is said to be stable if $X$ remains unchanged as other conditions $C$ change. Call $X$ the \textit{stability-bearer}, and $C$ the set of \textit{stability-conditions}. For instance, Hempel's stability-bearers are so-called ``lawlike generalizations," and his stability-conditions include spatiotemporal changes among other things. Similarly, Woodward's \cite{Woodward2003} notion of ``invariance" is a kind of stability, its bearer being generalizations and its conditions being various kinds of interventions.\fnmark{Sturdy}  Our brand of stability, sturdiness,  attaches first and foremost to \textit{inferences}, and its stability-conditions are, at root, \textit{competitors}. Our view is compatible with there being a derivative sense in which generalizations and laws are stability-bearers, and in which spatiotemporal changes and  interventions are stability-conditions.\fnmark{Woodward}
+
+For these reasons, sturdiness is the trademark feature of the defeasibility model. Sturdiness is tied to explanation in two ways: it dovetails with the ways in which scientists compare explanations, and it exhibits a kind of stability that is characteristic of good explanations.
+
+\fntext{Sturdy}{Other accounts of stability include \cite{Lange2009,Mitchell2003,Skyrms1980}.}
+\fntext{Woodward}{Indeed, while we will not argue for it here, Woodward's account of interventions can be seen as exhibiting the kind of inferential sturdiness we describe. Section \ref{sec:causal} provides some clues as to how this argument would proceed.}
+
+\section{Back to the Symmetry Problem}
+\label{sec:symm_solution}
+The defeasibility model's animating idea is that an explanation is a nontrivial inference that succeeds where its competitors fail. With this idea in hand, let us return to the symmetry problem. Our argument will proceed as follows:
+\begin{itemize}
+	\item[1.] An inference is an explanation only if it is sturdy.
+	\item[2.] The inferences that beget the symmetry problem are not sturdy.
+	\item[$\therefore$] The inferences that beget the symmetry problem are not explanations.
+\end{itemize}
+Section \ref{sec:model} motivates the first premise of this argument. The second premise is carrying most of the dialectical load, for our goal in this essay is to show how our version of EAI can resolve the symmetry problem(s). The remainder of this essay supports the second premise by applying our defeasibility model to each of the three symmetry problems discussed in Section \ref{sec:symm_problem}.  For each problem, we will briefly sketch how the correct explanation is a viable candidate for sturdiness, and show that the symmetry-mongering inference is not sturdy. In this section we address Bromberger's classic symmetry problem and the noncausal asymmetry problem, involving regression to the mean. Since it requires a more involved discussion, we postpone our solution to Barnes' symmetry problem until Section \ref{sec:causal}.
+
+\subsection{The Classic Symmetry Problem}
+\label{subsec:classic_symm}
+To show that the shadow's length does not explain the tower's height, we must find some alternative, nontrivial way of inferring the tower's height that succeeds where \ref{eq:shadow_nm} fails. One obvious candidate is:
+
+\begin{equation}
+\label{eq:design}\tag{\textsc{Design}}
+	\begin{split}
+	& \text{The Empire State Building was designed to be 1,454 feet } \\
+	\sststile{\Theta}{} \, & H = 1,454\,\text{ft}
+	\end{split}
+\end{equation}
+
+
+%\noindent \label{eq:shadow_nm}\textbf{Design}\hspace{10.25mm}\begin{minipage}[t]{.8\textwidth}
+%	$\hspace{.5ex}\text{The Empire State Building was designed to be 1,454 feet } \sststile{\Theta}{}\\H = 1,454\,\text{ft}$
+%\end{minipage}\\ 
+
+\noindent If the negated premises of just one would-be competitor defeat \ref{eq:shadow_nm}, then the latter is not sturdy. Hence, we can treat \ref{eq:design} and \ref{eq:shadow_nm} as the only nontrivial inferences that have the tower's height as their conclusion. Thus, for our purposes, Step 1 of 3 in our comparative procedure is complete. 
+
+Turning to Step 2, suppose that the Empire State Building was designed to be a different height.  That is, we suppose that the premise of \ref{eq:design} is false. Such a supposition defeats \ref{eq:shadow_nm} in two ways. First, a different design will imply that, when given the same angle of incidence ($\theta$), the shadow's length will be different (i.e. $M \neq 839.5$ feet). However, this contradicts one of \ref{eq:shadow_nm}'s premises, and, as discussed above, inconsistent premises are \textit{verboten}. Second, a different design implies that the height of the tower will be different (i.e. $H \neq 1,454$ feet), so when the different design is added to the premises, we do not get the desired conclusion---also a mark of defeat. Per Step 3, both of these considerations imply that \ref{eq:shadow_nm} is not sturdy. Hence, according to the defeasibility model, the shadow's length does not explain the tower's height. The symmetry is blocked.
+
+\subsection{Noncausal Explanatory Asymmetries}
+\label{subsec:noncausal_symm}
+As argued above, causal theories of explanation cannot do justice to the asymmetry of noncausal explanation. Hence, it will be a victory if the defeasibility model of explanation can outperform the causal theory on this front. Specifically, we will now show that our model captures the sturdiness of Braunstein and Woolums' explanation of Chris Davis' 2013 season, and that it rules out the converse as non-explanatory.
+
+In their discussion, Braunstein and Woolums measure a batter's  home run productivity with his home-run-per-fly-ball ratio (HR/FB). Using this statistic, they explain Chris Davis' second half performance in terms of regression toward the mean:
+
+\begin{equation}
+\label{eq:regression}\tag{\textsc{Regression}}
+	\begin{split}
+	& \text{Performance after the Home Run Derby (as measured by HR/FB)} \\
+	& \hspace{.5cm} \text{regresses toward the mean.} \\
+	& \text{Chris Davis' performance in the first half of 2013 (35.6 HR/FB)} \\
+	& \hspace{.5cm} \text{was well above his career average (22.3 HR/FB)} \\
+	\sststile{\Theta}{}\,\, & \text{Chris Davis' performance in the second half of 2013 (21.3 HR/FB)} \\
+	& \hspace{.5cm} \text{ was significantly worse than the first half.}
+	\end{split}
+\end{equation}
+
+
+\noindent As noted in Section \ref{sec:symm_problem}, noncausal explanations exhibit asymmetries. Suppose we turn Braunstein and Woolums's explanation on its head:   
+
+\begin{equation}
+\label{eq:performance}\tag{\textsc{Performance}}
+	\begin{split}
+	& \text{Chris Davis' performance in the second half of 2013 (21.3 HR/FB)} \\
+	& \hspace{.5cm} \text{was significantly worse than the first half.}  \\
+	& \text{Chris Davis' performance in the first half of 2013 (35.6 HR/FB)} \\
+	& \hspace{.5cm} \text{was well above his career average (22.3 HR/FB).} \\
+	\sststile{\Theta'}{}\,\,&\text{Performance after the Home Run Derby (as measured by HR/FB)} \\
+	& \hspace{.5cm} \text{regresses toward the mean.} 
+	\end{split}
+\end{equation}
+
+
+\noindent  Chris Davis' performance should not explain the regression phenomenon any more than the length of the shadow explains the tower.  Hence, we must show that \ref{eq:performance} is not a sturdy inference, and hence not an explanation.
+
+The competitor to \ref{eq:performance} would be the proof that probability distributions with certain features exhibit regression toward the mean, plus the fact that seasonal home run hitting (as measured by HR/FB) has those features. Changes in Chris Davis' batting would not be defeat such an argument.  On the other hand, the denial of this competitor's premise, e.g. the assertion that home run performance (HR/FB) does not regress toward the mean, would defeat \ref{eq:performance}.  Thus, \ref{eq:performance} is not sturdy. According to the defeasibility model, this means that it is not a candidate for explanation. Hence, our account of explanation blocks the problematic inference that gives rise to noncausal symmetries.
+
+Since it will prove useful below, let us also discuss why the correct explanation, \ref{eq:regression}, does not meet a similarly ignominious fate. This inference is nontrivial in the sense characterized by Section \ref{subsec:nontrivial}. It is irreflexive, premise consistent, and defeasible. To determine its sturdiness, we need to compare it with other inferences that have the same conclusion.  It so happens that Chris Davis broke a blister on his hand during the Home Run Derby, and some blamed this for his fall-off in performance.  So, one competitor to \ref{eq:regression} would then be:
+
+\begin{equation}
+\label{eq:blister}\tag{\textsc{Blister}}
+	\begin{split}
+	& \text{Chris Davis broke a blister during the Home Run Derby.} \\
+	\sststile{\Theta''}{}\,\, & \text{Chris Davis' performance in the second half of 2013 (21.3 HR/FB)} \\
+	& \hspace{.5cm} \text{was significantly worse than the first half.}
+	\end{split}
+\end{equation}
+
+
+\noindent The second step of the sturdiness test requires us to negate the premise of this argument. The third step is to determine whether negating the premise of \ref{eq:blister} defeats \ref{eq:regression}. Combined, this is to say that if Davis had not been mildly injured, his performance in the second half of the season still would have been significantly worse than it was in the first half.\fnmark{Confidence} This is plausible, because popping a blister is a relatively mild injury.  If the injury were more severe---say a broken hand---then it would be a defeater and \ref{eq:regression} would not be sturdy. Thus, under specific empirical conditions, \ref{eq:regression} is a good candidate for explanation.\fnmark{Iteration} Moreover, it clearly defeats \ref{eq:blister}, for if seasonal home run performance did not regress toward the mean, then the inference from Davis' mild injury to the significant fall-off in performance would not go through.
+
+\fntext{Confidence}{Admittedly, this gets a bit more complicated when we consider the actual numbers. Perhaps if Davis had not had a blister, his second-half HR/FB would still have been substantially lower than it was in first half, but not as low as 21.3. If this were the case, it would technically defeat the inference. This is remedied by changing the explanandum from having a specific value (21.3 HR/FB) to its having a range of values for his second-half HR/FB (\textit{e.g.} 24 HR/FB or fewer). Introducing ranges would also mirror the common statistical practice of using confidence intervals. We bracket this complexity for ease of exposition.}
+
+\fntext{Iteration}{In addition to the differential effects of regression towards the mean and Davis' blister on his hitting, \ref{eq:regression} is shown to be sturdy if and only if, for its remaining competitors, either \ref{eq:regression} is undefeated on the supposition that their premises are false, or these competitors are held fixed. Section \ref{sec:causal} discusses what it means to be ``held fixed" on the defeasibility model.}
+
+Note that \ref{eq:blister} is a causal explanation.  While the inference is not sturdy, there is certainly some causal relationship between the blister and Davis' second half performance.  It probably affected his batting to some degree, but we are supposing that the injury is too mild to account for all of the difference.  This illustrates an interesting result: inferences that do not track causes can sometimes trump inferences that do, and whether \ref{eq:blister} is superior to \ref{eq:regression} is an empirical matter. Hence, we have raised two problems with the causal approach to the symmetry problem. First, some explanatory asymmetries, such as the difference between \ref{eq:regression} and \ref{eq:performance}, do not appear to rest on causal facts. Second, under certain empirical conditions, some causal explanations, such as \ref{eq:blister}, are inferior to noncausal explanations. As we shall see, these two points will prove instrumental in drawing the appropriate lessons from our last and most challenging symmetry problem, to which we now turn.
+
+\section{Causation and Sturdy Inference}
+\label{sec:causal}
+Thus far, we have seen one explanatory asymmetry---involving the Empire State Building and its shadow---that \textit{need not} be construed as a causal asymmetry, and another---involving regression to mean---that \textit{should not} be construed as a causal asymmetry. However, there is a class of explanatory asymmetries where causation plays a starring role. Barnes' critique of Kitcher, briefly discussed in Section \ref{sec:symm_problem}, provides an exemplar of this kind of asymmetry. Our treatment of this species of asymmetry involves three main argumentative maneuvers. First (Section \ref{subsec:permit-prohibit}), we motivate the special challenge these examples pose for our view.  In particular, appeals to sturdiness without further appeal to causation end up being either too permissive (leaving the symmetry-mongering inference sturdy) or too prohibitive (leaving the correct explanation unsturdy). Then (Section \ref{subsec:causal-sturdy}), we show that appealing to causation delivers the correct verdicts as to which inferences ought to be sturdy. Finally, we argue that despite this appeal to causation, sturdiness is still the driving force behind the explanatory asymmetry (Section \ref{subsec:fundamental}).
+
+\subsection{Permissive and Prohibitive Sturdiness}
+\label{subsec:permit-prohibit}
+
+Let us begin by showing that, for some examples of explanatory asymmetry, avoiding causation raises certain problems. For example, conservation of kinetic energy entails that any moving particle $X$ that collides elastically with a resting particle $Y$ of equal mass will obey the following law:  
+
+\begin{equation} 
+\label{eq:newtonian}
+\tag{$ \mathsf{Vel.\,Law} $}
+(V_{1X})^{2} = (V_{2X})^{2} + (V_{2Y})^{2}
+\end{equation} 
+
+\noindent In this formula, $V_{1X}$ denotes $X$'s velocity up to its collision with $Y$ , while $V_{2X}$ and $V_{2Y}$ denote the velocities of the particles at some time after this collision. For concreteness' sake, let us consider a simple system consisting of two billiard balls, $A$ and $B$, on a standard billiards table.  $A$ moves across the table and collides with $B$, which was at rest.  After the collision, $A$'s velocity has changed, and $B$ takes on a velocity.
+
+As with our previous examples, there are two initial inferences to consider:\fnmark{ModelDefeas}
+
+\fntext{ModelDefeas}{Recall from Section \ref{subsec:nontrivial} that such inferences are defeasible because of modeling considerations.}
+
+\begin{equation}
+\label{eq:MRC_ballsforward}\tag{\textsc{Ball A}}
+	\mathsf{Vel.\,Law},\hspace{.5ex} V_{1A} = 1\,\text{m/s},\hspace{.5ex} V_{2A} = .6\,\text{m/s} \sststile{\Theta}{} V_{2B} = .8\,\text{m/s}
+\end{equation}
+%
+%\noindent \label{eq:MRC_ballsforward}\ref{eq:MRC_ballsforward}\hspace{8mm}\begin{minipage}[t]{.8\textwidth}
+%	$\hspace{.5ex}\mathsf{Velocity\ Law},\hspace{.5ex} V_{1A} = 1\,\text{m/s},\hspace{.5ex} V_{2A} = .6\,\text{m/s} \sststile{\Theta}{} V_{2B} = .8\,\text{m/s}$
+%\end{minipage}\\ 
+
+\begin{equation}
+\label{eq:MRC_ballsbackwards}\tag{\textsc{Ball B}}
+	 \mathsf{Vel.\,Law},\hspace{.5ex} V_{2B} = .8\,\text{m/s},\hspace{.5ex} V_{2A} = .6\,\text{m/s} \sststile{\Theta'}{} V_{1A} = 1\,\text{m/s}
+\end{equation}
+%
+%\noindent \label{eq:MRC_ballsbackwards}\textbf{Backwards Billiards}\hspace{8mm}\begin{minipage}[t]{.8\textwidth}
+%	$\hspace{.5ex} \mathsf{Velocity\ Law},\hspace{.5ex} V_{2B} = .8\,\text{m/s},\hspace{.5ex} V_{2A} = .6\,\text{m/s} \sststile{\Theta'}{} V_{1A} = 1\,\text{m/s}$
+%\end{minipage}\\ 
+
+\noindent Much like before, we must show that \ref{eq:MRC_ballsforward}'s prospects for being sturdy are strong, while \ref{eq:MRC_ballsbackwards} is not sturdy.  Following the now-familiar template, consider a would-be competitor to \ref{eq:MRC_ballsbackwards}; say one in which the velocity of ball $A$ is inferred from some prior event.  Suppose, for example, that, before colliding with $B$, $A$ was at rest until struck by a third ball $C$.  In that case, the following defeasible inference would be acceptable (where $V_{0C}$ is the velocity of ball $C$ at time interval $t_{0} < t_{1}$):
+
+\begin{equation}
+\label{eq:MRC_defeater}\tag{\textsc{Ball C}}
+	\mathsf{Vel.\,Law},\hspace{.5ex} V_{0C} = 1.17 \,\text{m/s},\hspace{.5ex} V_{1C} = 0.6\,\text{m/s} \sststile{\Theta''}{}\, V_{1A} = 1\,\text{m/s}
+\end{equation}
+
+
+\noindent Let us see whether \ref{eq:MRC_defeater} blocks the sturdiness of \ref{eq:MRC_ballsbackwards}. As before, we negate the premises of \ref{eq:MRC_defeater}, i.e., we suppose that $C$'s velocity was not $1.17$ m/s. If all went according to plan, \ref{eq:MRC_ballsbackwards} would be defeated. But alas, this is not the case: the supposition that $C$ did not collide with $A$ at $1.17$ m/s is compatible with \ref{eq:MRC_ballsbackwards} still being a good retrodiction of ball A's velocity.\fnmark{velocity} This is because a different set of conditions at time $0$ might have brought it about that $V_{1A} = 1$ m/s.  $C$'s velocity could have been higher or lower (making suitable adjustments to the angle of impact and post-collision velocity of $C$), and it would still follow that  $V_{1A} = 1$ m/s.  The difference between \ref{eq:MRC_ballsforward} and \ref{eq:MRC_ballsbackwards} cannot be made out on a straightforward analogy with our treatment of \ref{eq:shadow_nm} in Section \ref{subsec:classic_symm}.
+
+\fntext{velocity}{To simplify the presentation, the ambiguous phrase ``ball $A$'s velocity' denotes $V_{1A}$, ``ball $B$'s velocity'' denotes $V_{2B}$, and ``ball $C$'s velocity" denotes $V_{0C}$, unless otherwise specified.}
+
+While it is a dead-end, this approach to the symmetry problem highlights an interesting feature of the defeasibility model: the importance of the background conditions.  In the earlier discussion of the \ref{eq:tower_nm} inference, we noted that the existence of other buildings shading out the Empire State Building was merely a \textit{potential} explanation, since its explanantia were known to be false. We could then rule out these potential explanations by holding certain factors fixed, such as the absence of a taller tower behind the Empire State Building. The defeasibility of \ref{eq:tower_nm} thus depends in part on what counterfactual suppositions are allowed and what facts are to be held fixed.  In the discussion of the billiard ball example so far, we have permitted any counterfactual supposition about ball $C$'s velocity.   \ref{eq:MRC_ballsbackwards} is not defeated by negating $C$'s velocity because there are too many ways for $C$'s velocity to be different without changing $A$'s velocity.  As a result, the bare fact that $C$ is not at $1.17$ m/s does not defeat \ref{eq:MRC_ballsbackwards}. Since nothing is held fixed, all of the inferences we have been considering remain undefeated.  For this reason, we call this way of approaching this kind of symmetry problem \textit{permissive sturdiness.}
+
+
+%\fnmark{Backwards*}
+%\fntext{Backwards*}{Much like \ref{eq:MRC_defeater2}, there would be a ``\ref{eq:MRC_ballsbackwards}\textbf{*},'' this time involving different values of $V_{2A}$ and $V_{2B}$.}
+
+
+
+Since permissive sturdiness fails to achieve the desired asymmetry, perhaps we should hold these other routes to $A$'s velocity fixed. But how should we understand these ``routes" in an inferential idiom? In this example, let an ``alternative route" be any nontrivial inference other than Ball B or Ball C that has V1A = 1 m/s as its conclusion, \textit{e.g.}:
+
+\begin{equation}
+\label{eq:MRC_defeater2}\tag{\textsc{Ball C*}}
+	\mathsf{Vel.\,Law},\hspace{.5ex} V_{0C} = 1.28 \,\text{m/s},\hspace{.5ex} V_{1C} = 0.8\,\text{m/s} \sststile{\Theta'''}{}\, V_{1A} = 1\,\text{m/s}
+\end{equation}
+
+\noindent ``Holding fixed" then amounts to assuming that every alternative route is defeated. By holding the background conditions fixed in this way, all other inferences to  $A$'s velocity will be ruled out. This, in turn, ensures that, when we get to Step 2, and negate the premises of \ref{eq:MRC_defeater}, it follows that $V_{1A} \neq 1\,\text{m/s}$.  In other words, inferences such as  \ref{eq:MRC_defeater2} will no longer be able to ``take over" for \ref{eq:MRC_defeater} once its premises are negated in Step 2. In this way, $C$'s velocity acts like a switch for $A$'s velocity, i.e. changes in $C$'s velocity are both necessary and sufficient to change $A$'s velocity. Hence, the negated premises of \ref{eq:MRC_defeater} defeat \ref{eq:MRC_ballsbackwards}, for we get an inconsistency, $V_{1A} = 1\,\text{m/s} \wedge V_{1A} \neq 1\,\text{m/s}$. The desired result at Step 3 is thereby achieved: \ref{eq:MRC_ballsbackwards} is not sturdy, and hence not an explanation.
+
+Unfortunately, the problem with this way of holding things fixed is that it throws out the baby with the bathwater. Maintaining the assumption that every other way of inferring ball $A$'s velocity except \ref{eq:MRC_ballsbackwards} and \ref{eq:MRC_defeater} is defeated, let's now turn things around and consider whether the negated premises of \ref{eq:MRC_ballsbackwards} defeat \ref{eq:MRC_defeater}. Since we have ruled out all of the other possible future trajectories of $B$, then, if $V_{2B} \neq 0.8 \text{ m/s}$, $V_{1A}$ will not equal $1\,\text{m/s}$.\fnmark{Backtracking} So, although \ref{eq:MRC_ballsbackwards} will not be an explanation, neither will \ref{eq:MRC_defeater} (nor, presumably, will \ref{eq:MRC_ballsforward} be an explanation for that matter.)\fnmark{Normal} If everything outside of the two inferences being compared is held fixed, no inferences are sturdy.  Call this \textit{prohibitive sturdiness}.
+
+
+\fntext{Backtracking}{In effect, this will underwrite a backtracking counterfactual: ``Had $V_{2B} \neq 0.8 \text{ m/s}$, then it would have had to have been the case that $V_{1A} \neq 1\,\text{m/s}$. }
+
+\fntext{Normal}{Since the arguments showing that \ref{eq:MRC_defeater} is sturdy (or not) can be extrapolated to \ref{eq:MRC_ballsforward}, we focus on showing that the former is a candidate for sturdiness. Analogous considerations apply to the latter.}
+
+Since sturdiness depends on comparative defeasibility, and defeasibility depends, in part, on what background conditions are held fixed, sturdiness depends (in part) on the background.  We have seen that if we hold \textit{nothing} fixed, then \textit{both} the symmetry-mongering inferences, \ref{eq:MRC_ballsbackwards} and  \ref{eq:MRC_defeater}, are sturdy. That is the problem with being overly permissive. Yet, if we hold \textit{as much as possible} fixed, and then \textit{neither} of these inferences are sturdy. That is the problem with being insufficiently permissive (prohibitive sturdiness). The challenge is to finding principled ways to hold one or another aspect of the situation fixed when comparing inferences. 
+
+
+\subsection{Causal Sturdiness}
+\label{subsec:causal-sturdy}
+Let us take stock. When we were permissive about the background, we did not limit what might happen \textit{after} ball $A$ achieved its velocity ($V_{1A} = 1$ m/s).  This meant that the negated premises of \ref{eq:MRC_ballsbackwards} did not defeat to \ref{eq:MRC_defeater}. Permissive sturdiness' partly captures the fact that past events cannot be influenced by future events. Prohibitive sturdiness holds a good deal fixed with respect to what happens \textit{before} $A$ gets its velocity of $1$ m/s, so that the negated premises of \ref{eq:MRC_defeater} defeat \ref{eq:MRC_ballsbackwards}. In this way, it captures the idea that future events can be influenced by past events.  If we could combine these restrictions, the symmetry of \ref{eq:MRC_ballsforward} and \ref{eq:MRC_ballsbackwards} could be broken. But how can this be done nonarbitrarily? 
+
+The basic idea is this: systems such as the billiard balls are \textit{causal}.  In a causal system, fixing causes makes renders the temporally forward-looking inferences sturdy and it undermines the sturdiness of their temporally backwards-looking cousins. Let us call this \textit{Causal Sturdiness}
+
+\begin{equation}
+\label{causal_sturdiness}\tag{\textsc{Causal Sturdiness}}
+	\begin{split}
+	& \text{Where $C$ is an actual cause of $A$, and $B$ is a later event,} \\
+	& \text{$B \,\, \sststile{\Theta}{}\,\, A$ is not sturdy, while $C \,\, \sststile{\Theta}{}\,\, A$ may be.}
+	\end{split}
+\end{equation}
+
+
+\noindent Applied to the example at hand, this means that if $C$'s velocity is an actual cause of $A$'s velocity, then \ref{eq:MRC_ballsbackwards} is not sturdy, but this does not prohibit \ref{eq:MRC_defeater} from being sturdy inference.  
+
+The crucial concept of the Causal Sturdiness thesis is the idea of an ``actual cause.''  We borrow this notion from \cite{Woodward2003} :\fnmark{AC}
+
+\fntext{AC}{We have not used Woodward’s ultimate formulation of actual causation, (AC*), as it introduces complexities that are unnecessary for the purposes at hand.}
+
+\begin{description}
+	\item[(AC1)] The actual value of $X = x$ and the actual value of $Y = y$.
+	\item[(AC2)] There is at least one route \textit{R} from $X$ to $Y$ for which an intervention on $X$ will change the value of $Y$, given that other direct causes $Z_i$ of $Y$ that are not on this route have been fixed at their actual values. (It is assumed that all direct causes of $Y$ that are not on any route from $X$ to $Y$ remain at their actual values under the intervention on $X$.)
+\end{description}
+
+\noindent \textit{Ex hypothesi}, the actual value of $V_{0C} = 1.17$ m/s and the actual value of $V_{1A} = 1$ m/s. Hence, (AC1) is satisfied. Furthermore, (AC2) requires some ``route'' or causal chain from $V_{0C}$ to $V_{1A}$ such that at least one change to $V_{0C}$ leads to a change in $V_{1A}$ when all other causes not on this route are held fixed at their actual value. This entails that had $V_{0C} \neq 1.17$ m/s, then $V_{1A} \neq 1$ m/s, even if all of the other causes of $A$'s velocity remained exactly the same. Note that this was the desirable feature of prohibitive sturdiness: the negated premises of \ref{eq:MRC_defeater} defeat \ref{eq:MRC_ballsbackwards}, and the latter is prevented from being sturdy. 
+
+However, treating $C$'s velocity as an actual cause does not require us to hold the \textit{effects} of $A$'s velocity fixed. Hence, we also inherit the good parts of permissive sturdiness: even if we negate the premises of \ref{eq:MRC_ballsbackwards}, we may still infer $A$'s velocity from $C$'s velocity.  The reason for this is that any number of other ``retrodictive'' inferences leading to $A$'s velocity are compatible with the premises of \ref{eq:MRC_defeater}. Hence \ref{eq:MRC_defeater} is not defeated.  
+
+The Causal Sturdiness thesis says that when we treat the events under consideration as parts of a system where some events are \textit{actual causes} of others, retrodictive inferences are rendered non-sturdy.  This raises a concern: doesn't this solution to the symmetry problem concede too much to causality?
+
+%Whether to treat events as part of such a causal system is not entirely up to the investigators. The facts have to cooperate in such a way that the events satisfy conditions (AC1) and (AC2).  In this case, because the velocity of balls $A$ and $C$ satisfy these conditions, \ref{eq:MRC_ballsbackwards} is rendered non-sturdy, and the symmetry of the \ref{eq:MRC_ballsforward} and \ref{eq:MRC_ballsbackwards} inferences is broken.
+
+
+\subsection{Causation or Inference: Which Comes First?}
+\label{subsec:fundamental}
+
+Our discussion of the billiards example highlights an underlying tension in the larger debate as to whether causation or inference more fundamental to explanation. On the one hand, the example shows causal explanations to be \textit{sturdy}, which favors an ``inference-first" approach to explanation. On the other hand, it also shows \textit{causal} explanations to be sturdy, which favors a ``causation-first" approach to explanation. So what role does causation play in grounding the asymmetry in the billiards example? 
+
+%The billiards example raises a second, \textit{Diagnostic Question}: why did neither permissive nor prohibitive sturdiness ground the relevant asymmetry by themselves? Those sympathetic to causation-first and pluralistic approaches take this as a structural defect of inference-first approaches. After all, permissive and prohibitive approaches seem to be the most plausible ways of capturing the asymmetries in the billiards example in a purely inferential idiom, so the appeal to causal sturdiness is a significant concession to causal approaches to explanation. By contrast, those who adopt inference-first approaches are liable to see the differences between permissive, prohibitive, and causal sturdiness as relatively superficial, such that charges of structural defectiveness are trumped up, and the concession is no cause for alarm.
+
+On our inference-first approach, the asymmetry of explanation ultimately boils down to differences in sturdiness. Causes turn out to be especially good ways of achieving sturdiness, but they are not the only means for doing so. For instance, even though Bromberger's classic example appears to involve a causal explanation, we managed to preserve its asymmetry without appealing to any causal relationship between the tower and the shadow. More telling, accounting for the asymmetry of explanations involving regression toward the mean cannot advert to causes. Finally, and perhaps most importantly, even when we deploy causes, our argument is altogether different than the typical argument for establishing explanatory asymmetry via causal asymmetry, i.e. we did not argue as follows:
+
+\begin{itemize}
+	\item [1.]$V_{1A} = 1$ m/s causes $V_{2B} = 0.8$ m/s.
+	\item [2.]Causation is asymmetrical, i.e. if $A$ causes $B$, then $B$ does not cause $A$.
+	\item [3.]All explanations cite causes.
+	\item [$\therefore$] $V_{2B} = 0.8$ m/s does not explain $V_{1A} = 1$ m/s.
+\end{itemize}
+
+As our discussion of regression towards the mean makes clear, we reject the third premise, and, for all that we've argued, we can remain agnostic about the second. Indeed, while we accept the first premise, it also played no role in establishing the asymmetry of causal explanation in the billiard ball example. That premise relies on the causal relationship between the velocities of balls $A$ and $B$ to establish the desired asymmetry. By contrast, the Causal Sturdiness thesis relies on the causal interaction between the velocities of balls $C$ and $A$ to establish that the symmetry-mongering inference \ref{eq:MRC_ballsbackwards} is not sturdy. In short, no part of the argument above is essential to our solution of Barnes' symmetry problem. 
+
+Since the argument above is the standard way of arguing for explanatory asymmetry on the basis of causal asymmetry, it is clear that we are up to something else. More precisely, our argument is as follows: 
+
+	\begin{itemize}
+		\item [1.]All explanations are sturdy inferences.
+		\item [2.]If $V_{0C} = 1.17$ m/s is an actual cause of $V_{1A} = 1$ m/s, then \ref{eq:MRC_ballsbackwards}  is not a sturdy inference.
+		\item [3.]$V_{0C} = 1.17$ m/s is an actual cause of $V_{1A} = 1$ m/s.
+		\item [$\therefore$] \ref{eq:MRC_ballsbackwards} is not an explanation.
+	\end{itemize}
+	
+Furthermore, prioritizing inferences over causes has several advantages when thinking about explanatory asymmetries. First, some asymmetries are not causal, as was seen in the example of regression toward the mean. Second, causes that fail to be sturdy can be trumped by sturdy non-causal competitors, as was the case with Chris Davis' blister when compared with regression toward the mean. Furthermore, the billiards example now shows that even the asymmetries that, according to the earlier state of the field, appeared to be the exclusive province of causal approaches also admit of an inferential rendering. So, when compared to our inference-first approach, causation-first approaches suffer several disadvantages, and enjoy no distinct advantages. 
+
+%Pluralistic approaches also enjoy no special advantage in accounting for the role of causation in the billiards example. On this view, some explanatory asymmetries are, at root, causal asymmetries, while others are, at root, asymmetries in sturdiness. While pluralists can grant that the Causal Sturdiness thesis is true, they regard it as a red herring: causation alone suffices to account for the billiard balls' asymmetry and the fact that the inferences are sturdy is superfluous. However, absent a refutation of the Causal Sturdiness thesis, it is hard to see how such a position avoids being \textit{ad hoc}. After all, even by the pluralist's lights, sturdiness plays a role in accounting for other asymmetries that causation cannot, so the Causal Sturdiness thesis should not be dismissed just to preserve a just-so story known to fail in other quarters, when there is a perfectly good story that succeeds in all quarters. Hence, we conclude that the balance of arguments favors our answer to the Causal Role Question: causation is a particularly good way of securing sturdiness, but not the only way. 
+%
+%However, such a view assumes that it is licit for us to appeal to causation in the first place. This brings us to the Diagnostic Question. Why do neither permissive nor prohibitive sturdiness capture the relevant asymmetry in the billiards example? Causation-firsters and pluralists' take these failings as symptoms of a deep flaw in inference-first approaches. Such a diagnosis rests on the assumption that the only \textit{genuine} inference-first solutions to the symmetry problem must eschew any appeal to causation. Permissive and prohibitive sturdiness are the two most plausible proposals that respect this stricture, yet they fail to solve the symmetry problem. Hence, even if our appeal to causal sturdiness solves the billiards example, it still fails to be a genuine inference-first solution to the symmetry problem. 
+%
+%In response, we offer two challenges to our intelocutors' diagnosis. First, why should we grant them their assumption that ``genuine" inference-first approaches are forbidden from appealing to causation? Minimally, the claim that all explanations are sturdy inferences is a cornerstone of our argument. So, at the very least, this entitles us to the claim that \textit{causal} explanations are sturdy inferences. Hence, the assumption imposes an unreasonable burden of proof. Even worse, our solution to the symmetry problem does not even claim this much. It only requires that causal competitors can defeat symmetry-mongering inferences when run through our three-step comparative procedure. Hence, it's compatible with (but not entailed by) our solution to the symmetry problem that no explanations are causal. All of this accords with our answer to the Causal Role Question: causal information is an effective but non-exclusive means to sturdiness. Presumably, causal theorists claim that inferential considerations can help us to navigate causal asymmetries, and might also claim that their solution to the symmetry problem does not require any explanations to be inferences. Hence, turnabout's fair play.
+%
+%Second, why should we think that this is the only diagnosis of permissive and prohibitive sturdiness' failure to track the relevant asymmetries in the billiards example? On our view, to hold $X$ fixed while seeking to explain $Y$ is to assume that there is a defeater of the inference from $X$ to $Y$. However, which features one holds fixed is partly determined by which properties of $Y$ are of explanatory interest. For instance, most inquirers who are interested in billiard balls, such as a player trying to win a game, are interested in \textit{intervening} on the billiard balls. Consequently, they will hold fixed those competitors that are relevant to these interventions, which include prior causes, but do not include subsequent effects.\fnmark{Billiards-Qualification} From this perspective, the shortcomings of permissive and prohibitive sturdiness turn out to be pragmatic, rather than semantic or ontological, in nature. In particular, no (obvious) scientific or practical interests are served by holding nearly nothing or nearly everything fixed.
+%
+%\fntext{Billiards-Qualification}{Of course, in many cases in billiards, the effect of one collision is the cause of the next, in which case, there is \textit{some} sense in which some effects must be held fixed. In the present discussion, this only reinforces our point that there is a pragmatic dimension to what gets held fixed: it depends on the \textit{particular} balls that one \textit{ultimately} wishes to intervene upon.}
+%
+%Of course, appealing to the pragmatics of explanation in earlier discussions of explanatory symmetry has not led to altogether happy results.\fnmark{vanFraassen} In particular, one may worry that \textit{if} there are contexts in which either permissive or prohibitive sturdiness served explanatory interests, then we will have to include some potentially counterintuitive explanations---including symmetrical ones---as admissible. While we do have to bite this bullet, this is a very big ``if," for there are at least four hurdles that must be cleared in order for permissive or prohibitive sturdiness to ``serve" an explanatory interest. First, the interest must be \textit{defensible}, in the sense that it is recognizable as a scientific or practical goal (such as intervening on a physical system or winning a game of billiards). Otherwise, one may be criticized (``Why are you interested in \textit{that}?") This was the core of our diagnosis, and we see no reason to think that either permissive or prohibitive sturdiness clears this hurdle. 
+%
+%\fntext{vanFraassen}{For example, see Kitcher and Salmon's \cite{Kitcher1987} critique of van Fraassen's \cite{vanFraassen1980} pragmatic approach to explanation.}
+%
+%Second, even if one has adopted a defensible explanatory interest in certain properties of a system, the system must actually \textit{have} those properties. This is a factual matter, not a pragmatic one. For instance, an interest in intervening on billiard balls requires that the balls have \textit{causal }properties. In this way, inquirers' interests can ``misfire" if the systems lack the properties of interest. For instance, explanatory interests in a quantum system's deterministic properties or a comet's mental properties is liable to misfire. Furthermore, we see a tradeoff between satisfying these first two requirements: a defensible interest tends to specify the properties that the system must have, which increases the likelihood of misfiring.  Conversely, this suggests that if something does not have very clear conditions under which its attendant interest could misfire---as is presumably the case with permissive sturdiness---then that interest is liable to indefensible. 
+%
+%Third, recall that holding fixed amounts to assuming that certain nontrivial inferences are defeated. Once again, this is a factual matter: either such a defeater actually obtains or it does not. Hence, it is possible to be wrong about what one ought to hold fixed. For instance, assuming that \ref{eq:MRC_defeater} is defeated will not serve one's interest in, \textit{e.g.} sinking $B$ in the corner pocket through a series of intermediate collisions. In our discussion of permissive and prohibitive sturdiness, we did not touch upon this point at all, but it almost certainly disqualifies prohibitive sturdiness---which rests on the presupposition that nearly everything is held fixed. Hence, inquirers who would adopt prohibitive sturdiness as an inferential policy are prone to be mistaken about which competitors are defeated.
+%
+%Fourth, after clearing all of these hurdles, there is a further question: given what's been held fixed, which inferences are sturdy? We suspect that neither permissive nor prohibitive sturdiness can clear these four hurdles. Hence, anything that does clear them will bear closer resemblance to causal sturdiness, making the bullets bitten more digestible. Moreover, only our first hurdle relies on facts about speakers and audiences, such as interests. The remaining three hurdles concern matters of fact that obtain independently of anyone's mental states. For this reason, the role of pragmatics in answering the Diagnostic Question is exceedingly modest.
+%
+%To summarize, we have argued that certain symmetry problems are best addressed by establishing a link between causation and sturdiness. Causal information is highly useful in achieving sturdiness, so long as one has an interest in certain things, such as intervention, that presuppose that the systems we seek to explain have causal properties. The properties of a system, in turn, place several constraints on what counts as a defensible explanatory interest. Permissive and prohibitive sturdiness then fail to be admissible inferential policies largely because of their inability to serve defensible explanatory interests. We take these arguments to vindicate our ``inference-first" approach---even in the cases where we appeal to causation. In short, all explanatory asymmetries can be traced to differences in sturdiness.
+
+%
+%\fntext{Pragmatics}{}
+% 
+%
+%
+%
+%
+%
+%On our view, which background conditions are held fixed depends on a combination of inquirers' interests and empirical facts about the systems that interest them.   Whether the system \textit{can} be treated as a causal system is not up to the inquirer. There can be ``misfires" between interests and empirical facts. For instance, we cannot treat regression toward the mean as the actual cause of Chris Davis' hitting, no matter what our interests. The facts, in turn, dictate what one ought to hold fixed.  The combination of inquirer interests and objective features of the events under consideration mean that some background conditions are held fixed in a context, and this results in some competitor inferences as dead explanatory options.
+%
+%
+%
+%
+%Perhaps such interests could be contrived, but we suspect that even here, there will be grounds for at least two kinds of criticism. First, since the relevant kind of explanatory interests are answerable to empirical facts about the phenomenon under consideration (e.g. whether or not the phenomenon has causal properties that can be intervened upon), some of these contrived interests will simply misfire. Second, even if the interests do not misfire, they may be so contrived that they are themselves subject to criticism: ``Why are you interested in \textit{that}?'' Hence, while we accord a role to the pragmatics of explanation, it is a relatively modest one. With this, we have accounted for the advantages of causal sturdiness when it is compared to permissive and prohibitive sturdiness. Insofar as the absence of such an account appears to be a primary motivation for pluralism, we take the balance of arguments to favor the idea that differences in sturdiness account for explanatory symmetries. 
+%	
+%
+%
+%\kk{	
+%We offer two objections to the pluralist argument. First, so long as pluralists grant the truth of the Causal Sturdiness thesis, there is a perfectly good sense in which appeals to causation are compatible with sturdiness being the root of all explanatory asymmetry. This would falsify the first premise of this argument, since its consequent betrays a false dilemma---causal sturdiness is yet another way of solving certain kinds of symmetry problems. The reasons for this largely rehearse our reasons for favoring inference-first to causation-first approaches. Indeed, absent a refutation of the Causal Sturdiness thesis, it is hard to see how pluralism avoids being \textit{ad hoc}. After all, even by the pluralist's lights, sturdiness plays a role in accounting for other asymmetries that causation cannot, so the Causal Sturdiness thesis should not be dismissed just to preserve a just-so story known to fail in other quarters.}
+%	
+%\kk{Second, if the failings of permissive and prohibitive sturdiness are merely pragmatic in nature, then there is a certain sense in which they do provide a solution to the symmetry problem. This falsifies the second premise of the pluralist's argument. We believe that this pragmatic diagnosis is apt. We begin with a sketch of the pragmatics we have in mind, and then turn to its implications for the pluralist's argument. The main thing to note is that, on our view, to hold $X$ fixed while seeking to explain $Y$ is to assume that there is a defeater of the inference from $X$ to $Y$. This is a factual matter: either such a defeater actually obtains or it does not. Hence, it is possible to be wrong about what one holds fixed. However, which features one holds fixed is partly determined by which properties of $Y$ are of explanatory interest. While there is some variability in what these explanatory interests are, they are clearly subject to constraints. For instance, some interests fail to serve any recognizable scientific or practical goal. In this case, one may be criticized (``Why are you interested in \textit{that}?"). Hence, here is a second way one can be wrong about what one holds fixed. Furthermore, even if one has adopted a recognizable explanatory interest in certain properties of a system, the system must actually have those properties. Once again, this is a factual matter. For instance, an interest in a quantum system's deterministic properties is a clear case in which an explanatory interest fails to align with the facts on the ground. So, what gets held fixed is subject to three constraints: whether the relevant defeaters actually obtain, whether the explanatory interest is defensible, and whether the properties of interest are actual properties of the system being explained. Then, after this, a fourth (non-pragmatic) constraint enters the scene: given what's been held fixed, which inferences are sturdy?
+%}
+%	
+%\kk{With this quick sketch of our pragmatics of explanation in hand, let us return to the pluralist's argument. Most inquirers interested in billiard balls, such as a player trying to win a game, are interested in \textit{intervening} on the billiard balls. This underwrites a defensible explanatory interest in the billard balls' causal properties, and also dictates what one ought to hold fixed in the context. For instance, given that the billiard balls are a causal system, prior causes of a given billiard ball interaction ought to be held fixed, but subsequent effects ought not, as was discussed in Section \ref{subsec:causal-sturdy}.\fnmark{Billiards-Qualification} By contrast, no (obvious) scientific or practical interests are served by holding nearly nothing or nearly everything fixed. Hence, permissive and prohibitive sturdiness fail for pragmatic reasons. Admittedly, this means we must concede that \textit{if} there were contexts in which either permissive or prohibitive sturdiness served defensible explanatory interests, then we would have to include some potentially counterintuitive explanations. It is in this sense that we take the pluralist's second premise to misdiagnose the ``failings" of permissive and prohibitive sturdiness to solve the billiards problem. However, we take the four aforementioned constraints to greatly restrict the number of cases in which this kind of bullet-biting is liable to occur. 
+%}
+%	
+%%\fntext{Billiards-Qualification}{Of course, in many games of billiards, the effect of one collision is the cause of the next, in which case, there is \textit{some} sense in which some effects must be held fixed. In the present discussion, this only reinforces our point that there is a pragmatic dimension to what gets held fixed: it depends on the \textit{particular} balls that one \textit{ultimately} wishes to intervene upon. Hence, we bracket this point hereafter.}
+%	
+%\kk{Bullet-biting aside, our main point is that causal sturdiness' advantages over permissive and prohibitive sturdiness can be captured with a pragmatics of explanation that is heavily constrained by facts about the system, and even where we must appeal to speakers and audiences' interests, these are constrained by scientific and practical goals. Since the pluralist's main motivation appears to be that our appeals to causation  require a more radical departure from our ``inference-first" approach, we take the balance of arguments to favor the idea that differences in sturdiness account for all explanatory asymmetries.
+%}
+%
+%
+
+\section{Conclusion}
+Our aims in this essay have been both critical and constructive. On the critical side, we have shown that not all explanatory asymmetries are causal asymmetries, and their standard causal diagnosis cannot be right. Indeed, the symmetry problem is really a three-headed monster---at least when viewed against the broader dialectic of causal and inferential approaches to explanation. Some asymmetries have an ineluctable causal element; some are decidedly noncausal; and others are fair game for both parties to the debate.
+
+On the constructive side, we have sketched the broad contours of a new version of EAI---what we have called the defeasibility model of explanation. It departs from earlier versions of EAI in its melding of nonclassical and comparative components. This duet achieves its denouement in the concept of sturdiness---roughly the idea that explanations are inferences that succeed where their competitors fail. As we have shown, sturdiness is the common thread that ties together the different kinds of explanatory asymmetries.
+
+This is but an opening salvo in a research program that we hope to develop in greater detail, by extending the defeasibility model to solve other venerable problems in the explanation literature. Earlier versions of EAI face a variety of problems.\fnmark{Challenges} How should laws be characterized? How to make sense of indeterministic explanations of improbable events, such as the fact that a person's untreated syphilis explains his paresis, despite the fact that only 25\% of untreated syphilitics suffer from paresis?
+
+\fntext{Challenges}{For a review of these challenges, see \cite{Salmon1989} and \cite{Woodward2014}.}
+
+Equally importantly, the symmetry problem has overshadowed two \textit{advantages} that early variants of EAI enjoy over causal approaches.  First, inferentialism is a natural way to analyze \textit{non-causal} explanations.  However, this paper has only focused on the \textit{asymmetry} of these explanations. In the future, we hope to extend the defeasibility model to the growing stockpile of examples of non-causal explanations \citep{Baker2005,Batterman2002,Bokulich2011,Huneman2010,Irvine2015,Lange2013,Lange2013a,Rice2015,Risjord2005}. 
+
+Second, in comparison with causal approaches, earlier proponents of EAI enjoyed what we might call \textit{Humean modesty}. Inference-based approaches argue that explanations are simply inferential relationships between certain empirical statements. Hence, competent language users can explain by wielding inferences that carry no further commitment to a substantive modal or causal ontology. As a result, EAI often avoids the various placement problems associated with modality and causality (e.g. how modality fits within a naturalistic ontology, how modal and causal claims can be known, etc.).\fnmark{ModalEx}
+
+\fntext{ModalEx}{Indeed, in AUTHOR CITATION, we develop a more precise account of explanation using a broadly inferentialist semantics. This approach to modal and explanatory vocabulary gives those of a Humean bent a compelling story about how one can \textit{use} modal vocabulary without having to \textit{represent} or be \textit{ontologically committed} to metaphysically controversial modal entities \cite[see][]{Brandom2008,Brandom2015}. This idea can be traced back to \citep{Sellars1957}. For similar approaches to the semantics of modal vocabulary see \citep{Thomasson2007} and \citep{Stovall2015}.}
+
+
+Since the demise of the covering law model, the symmetry problem hung like an albatross around the neck of proponents of EAI. This paper has sought to loosen that grip, and to allow new approaches to EAI to breathe. By solving the problem of explanatory asymmetry, we have cleared an important barrier to showing how inferential considerations latch onto explanation's deeper structures.
+
+
+\section{Compliance with Ethical Standards}
+The author declares no potential conflicts of interests with respect to the authorship and/or publication of this article. The author received no financial support for the research and/or authorship of this article.
+
+%\bibliographystyle{chicago}
+%\bibliography{KMR_Master}
+
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+\providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+\providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+	\urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[\protect\citeauthoryear{Ariew, Rice, and Rohwer}{Ariew
+	et~al.}{2014}]{Ariew2014}
+Ariew, A., C.~Rice, and Y.~Rohwer (2014).
+\newblock Autonomous-Statistical Explanations and Natural Selection.
+\newblock {\em The British Journal for the Philosophy of Science\/}.
+
+\bibitem[\protect\citeauthoryear{Baker}{Baker}{2005}]{Baker2005}
+Baker, A. (2005).
+\newblock Are There Genuine Mathematical Explanations of Physical Phenomena?
+\newblock {\em Mind\/}~{\em 114\/}(454), 223--238.
+
+\bibitem[\protect\citeauthoryear{Barnes}{Barnes}{1992}]{Barnes1992}
+Barnes, E.~C. (1992).
+\newblock Explanatory Unification and the Problem of Asymmetry.
+\newblock {\em Philosophy of Science\/}~{\em 59\/}(4), 558--571.
+
+\bibitem[\protect\citeauthoryear{Batterman}{Batterman}{2002}]{Batterman2002}
+Batterman, R.~W. (2002).
+\newblock {\em The Devil in the Details : Asymptotic Reasoning in Explanation,
+	Reduction and Emergence}.
+\newblock New York: Oxford University Press.
+
+\bibitem[\protect\citeauthoryear{Bokulich}{Bokulich}{2011}]{Bokulich2011}
+Bokulich, A. (2011).
+\newblock How Scientific Models Can Explain.
+\newblock {\em Synthese\/}~{\em 180\/}(1), 33--45.
+
+\bibitem[\protect\citeauthoryear{Brandom}{Brandom}{2008}]{Brandom2008}
+Brandom, R. (2008).
+\newblock {\em Between Saying and Doing : Towards an Analytic Pragmatism}.
+\newblock Oxford ; New York: Oxford University Press.
+
+\bibitem[\protect\citeauthoryear{Brandom}{Brandom}{2015}]{Brandom2015}
+Brandom, R. (2015).
+\newblock {\em From Empiricism to Expressivism}.
+\newblock Cambridge, Mass.: Harvard University Press.
+
+\bibitem[\protect\citeauthoryear{Braunstein and Woolums}{Braunstein and
+Woolums}{2014}]{Braunstein2014}
+Daniel~R. Braunstein and Ken Woolums. (2014).
+\newblock The Home Run Derby Myth.
+\newblock URL
+\url{https://fivethirtyeight.com/datalab/the-home-run-derby-myth}.
+\newblock Accessed March 18, 2017.
+
+\bibitem[\protect\citeauthoryear{Bromberger}{Bromberger}{1965}]{Bromberger1965}
+Bromberger, S. (1965).
+\newblock An approach to explanation.
+\newblock In R.~Butler (Ed.), {\em Studies in analytical philosophy}, Volume~2,
+pp.\  72--105. Oxford: Blackwell.
+
+\bibitem[\protect\citeauthoryear{Bromberger}{Bromberger}{1966}]{Bromberger1966}
+Bromberger, S. (1966).
+\newblock Why-questions.
+\newblock In R.~Colodny (Ed.), {\em Mind and Cosmos: Essays in Contemporary
+	Science and Philosophy}, pp.\  86--111. Pittsburgh: University of Pittsburgh
+Press.
+
+\bibitem[\protect\citeauthoryear{Cartwright}{Cartwright}{1983}]{Cartwright1983}
+Cartwright, N. (1983).
+\newblock {\em How the Laws of Physics Lie}.
+\newblock New York: Oxford University Press.
+
+\bibitem[\protect\citeauthoryear{Friedman}{Friedman}{1974}]{Friedman1974}
+Friedman, M. (1974).
+\newblock Explanation and Scientific Understanding.
+\newblock {\em Journal of Philosophy\/}~{\em 71\/}(1), 5--19.
+
+\bibitem[\protect\citeauthoryear{Huneman}{Huneman}{2010}]{Huneman2010}
+Huneman, P. (2010).
+\newblock Topological Explanations and Robustness in Biological Sciences.
+\newblock {\em Synthese\/}~{\em 177\/}(2), 213--245.
+
+\bibitem[\protect\citeauthoryear{Irvine}{Irvine}{2015}]{Irvine2015}
+Irvine, E. (2015).
+\newblock Models, Robustness, and Non-Causal Explanation: A foray into
+cognitive science and biology.
+\newblock {\em Synthese\/}~{\em 192\/}(12), 3943--3959.
+
+\bibitem[\protect\citeauthoryear{Kitcher}{Kitcher}{1989}]{Kitcher1989}
+Kitcher, P. (1989).
+\newblock Explanatory Unification and the Causal Structure of the World.
+\newblock In P.~Kitcher and W.~C. Salmon (Eds.), {\em Scientific explanation},
+Volume XIII, pp.\  410--506. Minneapolis: University of Minnesota Press.
+
+\bibitem[\protect\citeauthoryear{Lange}{Lange}{2009}]{Lange2009}
+Lange, M. (2009).
+\newblock Why Do the Laws Explain Why?
+\newblock In T.~Handfield (Ed.), {\em Dispositions and Causes}, Mind
+Association Occasional Series. Oxford University Press.
+
+\bibitem[\protect\citeauthoryear{Lange}{Lange}{2013a}]{Lange2013}
+Lange, M. (2013a).
+\newblock Really Statistical Explanations and Genetic Drift.
+\newblock {\em Philosophy of Science\/}~{\em 80\/}(2), 169--188.
+
+\bibitem[\protect\citeauthoryear{Lange}{Lange}{2013b}]{Lange2013a}
+Lange, M. (2013b).
+\newblock What Makes a Scientific Explanation Distinctively Mathematical?
+\newblock {\em British Journal for the Philosophy of Science\/}~{\em 64\/}(3),
+485--511.
+
+\bibitem[\protect\citeauthoryear{Lange}{Lange}{2016}]{Lange2016}
+Lange, M. (2016).
+\newblock {\em Because Without Cause: Non-Causal Explanations in Science and
+	Mathematics}.
+\newblock New York: Oxford University Press.
+
+\bibitem[\protect\citeauthoryear{Lipton}{Lipton}{2004}]{Lipton2004}
+Lipton, P. (2004).
+\newblock {\em Inference to the Best Explanation}.
+\newblock International library of philosophy and scientific method. Routledge.
+
+\bibitem[\protect\citeauthoryear{Mitchell}{Mitchell}{2003}]{Mitchell2003}
+Mitchell, S.~D. (2003).
+\newblock {\em Biological Complexity and Integrative Pluralism}.
+\newblock Cambridge University Press.
+
+\bibitem[\protect\citeauthoryear{Rice}{Rice}{2015}]{Rice2015}
+Rice, C.~C. (2015).
+\newblock Moving beyond causes: Optimality models and scientific explanation.
+\newblock {\em No{\^u}s\/}~{\em 49\/}(3), 589--615.
+
+\bibitem[\protect\citeauthoryear{Risjord}{Risjord}{2005}]{Risjord2005}
+Risjord, M. (2005).
+\newblock Reasons, causes, and action explanation.
+\newblock {\em Philosophy of the Social Sciences\/}~{\em 35\/}(3), 294--306.
+
+\bibitem[\protect\citeauthoryear{Salmon}{Salmon}{1989}]{Salmon1989}
+Salmon, W.~C. (1989).
+\newblock Four decades of scientific explanation.
+\newblock In P.~Kitcher and W.~Salmon (Eds.), {\em Scientific Explanation},
+pp.\  3--219. Minneapolis: University of Minnesota Press.
+
+\bibitem[\protect\citeauthoryear{Schurz}{Schurz}{1999}]{Schurz1999}
+Schurz, G. (1999).
+\newblock Explanation as unification.
+\newblock {\em Synthese\/}~{\em 120\/}(1), 95--114.
+
+\bibitem[\protect\citeauthoryear{Schurz and Lambert}{Schurz and
+	Lambert}{1994}]{Schurz1994}
+Schurz, G. and K.~Lambert (1994).
+\newblock Outline of a theory of scientific understanding.
+\newblock {\em Synthese\/}~{\em 101\/}(1), 65--120.
+
+\bibitem[\protect\citeauthoryear{Sellars}{Sellars}{1957}]{Sellars1957}
+Sellars, W. (1957).
+\newblock Counterfactuals, dispositions, and the causal modalities.
+\newblock In G.~Maxwell (Ed.), {\em Minnesota Studies in The Philosophy of
+	Science, Vol. II}, pp.\  225--308. Minneapolis: University of Minnesota
+Press.
+
+\bibitem[\protect\citeauthoryear{Skyrms}{Skyrms}{1980}]{Skyrms1980}
+Skyrms, B. (1980).
+\newblock {\em Causal Necessity: A Pragmatic Investigation of the Necessity of
+	Laws}.
+\newblock New Haven, CT: Yale University Press.
+
+\bibitem[\protect\citeauthoryear{Stovall}{Stovall}{2015}]{Stovall2015}
+Stovall, P. (2015).
+\newblock {\em Chemicals, Organisms, and Persons: Modal Expressivism and a
+	Descriptive Metaphysics of Kinds}.
+\newblock Ph.\ D. thesis, University of Pittsburgh.
+
+\bibitem[\protect\citeauthoryear{Strevens}{Strevens}{2008}]{Strevens2008}
+Strevens, M. (2008).
+\newblock {\em Depth: An Account of Scientific Explanation}.
+\newblock Cambridge: Harvard University Press.
+
+\bibitem[\protect\citeauthoryear{Thomasson}{Thomasson}{2007}]{Thomasson2007}
+Thomasson, A.~L. (2007).
+\newblock Modal normativism and the methods of metaphysics.
+\newblock {\em Philosophical Topics\/}~{\em 35\/}(1/2), 135--160.
+
+\bibitem[\protect\citeauthoryear{Walsh}{Walsh}{2015}]{Walsh2015}
+Walsh, D.~M. (2015).
+\newblock Variance, invariance and statistical explanation.
+\newblock {\em Erkenntnis\/}~{\em 80\/}(3), 469--489.
+
+\bibitem[\protect\citeauthoryear{Woodward}{Woodward}{2003}]{Woodward2003}
+Woodward, J. (2003).
+\newblock {\em Making Things Happen: A Theory of Causal Explanation}.
+\newblock New York: Oxford University Press.
+
+\bibitem[\protect\citeauthoryear{Woodward}{Woodward}{2014}]{Woodward2014}
+Woodward, J. (2014).
+\newblock Scientific explanation.
+\newblock In E.~N. Zalta (Ed.), {\em The Stanford Encyclopedia of Philosophy\/}
+(Winter 2014 ed.).
+
+\end{thebibliography}
+
+
+\end{document}
+

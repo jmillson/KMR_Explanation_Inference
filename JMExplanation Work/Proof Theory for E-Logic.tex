@@ -1,0 +1,420 @@
+\documentclass{article}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+%\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage{mathptmx}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{pgf}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage{soul}
+\usepackage[autostyle]{csquotes}
+\usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
+
+%\usepackage{fonttable}
+
+\addbibresource{KMR_Master.bib}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA}{U}{MnSymbolA}{m}{n}
+\DeclareMathSymbol{\twoheaduparrow}{\mathop}{MnSyA}{25}
+\DeclareMathSymbol{\twoheadrightarrow}{\mathop}{MnSyA}{24}
+
+\makeatletter
+
+\usetikzlibrary{shapes}
+\usetikzlibrary{fit,shapes.misc}
+
+\newcommand\marktopleft[1]{%
+	\tikz[overlay,remember picture] 
+	\node (marker-#1-a) at (3cm, 1mm) {};%
+}
+\newcommand\markbottomright[1]{%
+	\tikz[overlay,remember picture] 
+	\node (marker-#1-b) at (-3cm,7mm) {};%
+	\tikz[overlay,remember picture,thick,inner sep=3pt]
+	\node[draw,rounded rectangle,fit=(marker-#1-a.center) (marker-#1-b.center)] {};%
+}
+
+
+
+
+
+\newcommand{\ee}{\twoheadrightarrow}
+
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+% % % % % % % % % % % % % % % Internal Commands NMC% % % % % % % % % % % % %
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+
+\newcommand{\uuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt .6pt 0pt 0pt}{$\uparrow$}}
+}
+\newcommand{\tuuparrow}{% 
+	\raisebox{.165ex}{\clipbox{0pt 1pt 0pt 0pt}{$\scriptscriptstyle\uparrow$}}
+}
+\newcommand{\muparrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .65pt 0pt 0pt}{$\scriptstyle\uparrow$}}
+}
+\newcommand{\Uuparrow}{% 
+	\raisebox{.2ex}{\clipbox{0pt .15pt 0pt 0pt}{$\Uparrow$}}
+}
+\newcommand{\thuarrow}{% 
+	\raisebox{.05ex}{\clipbox{0pt .8pt 0pt 0pt}{$\twoheaduparrow$}}
+}
+
+% % % % % COMMANDS FOR NON-MONOTONIC CONSEQUENCES % % % % % % % % %
+\newcommand{\nms}{%
+	\mathbin{\mathpalette\@nms\expandafter}
+}
+\newcommand{\@nms}{\mid\joinrel\mkern-.5mu\sim}
+
+
+\newcommand{\nmc}{%
+	\mathbin{\mathpalette\nm@\expandafter}
+}
+\newcommand{\nm@}{\mid\joinrel\mkern-.5mu\sim\mkern-3mu}
+
+\newcommand{\qmc}[1]{\mathrel{
+		\mathchoice
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\normalsize\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow#1}\hspace{-.7mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-13mu\tiny\uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow#1}}
+	}
+}
+
+\newcommand{\mqmc}{\mathrel{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-18mu\scriptsize\uuparrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\uuparrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\tuuparrow}}
+	}
+}
+
+\newcommand{\mrc}[1]{\mathbin{
+		\mathchoice
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\normalsize\hspace{.5mm}\nms^{\mkern-19mu\scriptsize\Uuparrow#1}\hspace{-.5mm}}
+		{\footnotesize\hspace{.5mm}\nms^{\mkern-13.5mu\fontsize{5.5}{0}\Uuparrow#1}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\Uuparrow#1}}
+	}
+}
+
+\newcommand{\smc}{\mathbin{
+		\mathchoice
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\hspace{.4mm}\nms^{\mkern-17mu\scriptsize\thuarrow}\hspace{.6mm}}
+		{\footnotesize\hspace{.4mm}\nms^{\mkern-11mu\tiny\thuarrow}\hspace{.6mm}}
+		{\scriptsize\nms^{\mkern-10mu\tiny\thuarrow}}
+	}
+}
+\newcommand{\nnmc}{\not\mkern-4mu\nmc}
+\newcommand{\nsmc}{\not\mkern-3mu\smc}
+\newcommand{\nmrc}{\not\mkern-3mu\mrc}
+\newcommand{\nmqmc}{\not\mkern1mu\mqmc}
+\newcommand{\nqmc}{\not\mkern1mu\qmc}
+
+\newcommand{\nme}{%
+	\mathbin{\mathpalette\@nme\expandafter}
+}
+\newcommand{\@nme}{{\mid\joinrel\mkern-.5mu\sim\mkern-2mu}_{e}\mkern3mu}
+
+
+%\newcommand{\nme}{\nms\mkern-7mu_{e}\mkern2mu}
+\newcommand{\qme}{{\qmc\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\mqme}{{\mqme\mkern-2mu}_{e}\mkern3mu}
+\newcommand{\sme}{{\smc\mkern-2mu}_{e}\mkern3mu}
+
+% % % % % % % % % % %Commands for Material Incoherence% % % % % % % % % % % %
+
+\newcommand{\bigperpp}{%
+	\mathop{\mathpalette\bigp@rpp\relax}%
+	\displaylimits
+}
+\newcommand{\bigp@rpp}[2]{%
+	\vcenter{
+		\m@th\hbox{\scalebox{\ifx#1\displaystyle1.15\else1.15\fi}{$#1\perp$}}
+	}%
+}
+\newcommand{\bigperp}{\raisemath{.5pt}{\bigperpp}}
+
+%% % % % % % Degree Command % % % % % % % % % % % % % % % % % % % %
+\newcommand{\degree}{\ensuremath{^\circ}}
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+ \newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+ \newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+ \newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+
+\makeatother
+
+
+
+
+
+%\renewcommand{\@cite}[1]{#1}
+%\usepackage[natbibapa]{apacite}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+%\hypersetup{
+%    colorlinks=false,
+%    pdfborder={0 0 0},
+%}
+
+
+\begin{document}
+\sloppy
+\raggedbottom
+\title{\vspace{-3cm}Proof Theoretic Semantics for Questions}
+
+\raggedbottom
+
+\maketitle
+
+\section{Interrogatives in NM-MS}
+
+We start with a language of atomic sentences, $ \mathcal{L}_0 = \{p_1,\ldots ,p_n\}$ and define a consequence relation over it such that $ \nmc_0 \subseteq \mathcal{P(L}_0) \times \mathcal{P(L}_0) $. The structure $ \langle \nmc_0, \mathcal{L}_0  \rangle $ has the following properties:
+
+\begin{enumerate}
+\item $ \emptyset\nnmc_0\emptyset $
+\item $ \mathcal{L}_0\nmc_0\emptyset$
+\item $ \forall\Delta,\Lambda, p\, (\Delta, p \nmc_0 p, \Lambda) $ (\textbf{Containment})
+\end{enumerate}
+
+We quantify over our consequence relations by sets of 2-tuples $ W \subseteq \mathcal{P(L}_0) \times \mathcal{P(L}_0)$ in accordance with the following axiom: if $  \forall\langle \Delta, \Lambda \rangle \in W (\Delta, \Gamma \nmc_0 \Theta, \Lambda) $ then $ \Gamma \qmc{W}_0 \Theta $.
+
+We extend $ \langle \nmc_0, \mathcal{L}_0  \rangle $ to $ \langle \nmc, \mathcal{L}  \rangle $ where $ \mathcal{L} = \mathcal{L}_0 \cup \{?\} $. The latter is an erotetic operator that maps sets of sentences in $ \mathcal{L}_0 $ to formulas in $ \mathcal{L} $, i.e 
+$ \Delta \mapsto ?\Delta $. We call formulas of $ \mathcal{L}_0  $ d-wffs and call the formulas in $ \{\mathcal{L}\}-\{\mathcal{L}_0\}   $ e-wffs.
+
+\begin{description}
+\item[Syntax of $  \mathcal{L}  $:] $ \,\,\phi \, ::=\,\, p\,\, | \,\, ?\{\phi_1,\ldots , \phi\} $
+\end{description}
+
+Possible rules for e-wffs:
+
+\centering\textbf{Right rule for $ ?\Delta $}
+\begin{prooftree}
+\def\fCenter{\ \nmc\ }
+\AxiomC{$ \Gamma \fCenter \Theta $}
+\RightLabel{\hspace{5mm}  where $ \Gamma \nnmc \theta $ for any  $ \theta \in \Theta  $}
+\UnaryInf $\Gamma \fCenter ?\Theta $
+\end{prooftree}
+
+
+\centering\textbf{Possible left rule for $ ?\{A_1,\ldots, A_n\} $}
+\begin{prooftree}
+\def\fCenter{\ \nmc \ }
+\AxiomC{\hspace{-2.5cm}$\Gamma \nmc \{A_i\}$}
+\RightLabel{\hspace{5mm}  where $ 1 \leq i \leq n $}
+\UnaryInf$\Gamma, \,?\{A_1,\ldots, A_n\} \fCenter \emptyset $
+\end{prooftree}
+
+\textbf{(Negative) Partial Answer}
+
+\begin{prooftree}
+\def\fCenter{\ \nmc\ }
+\AxiomC{$ \hspace{-1.5cm} \Gamma, \,\Delta \nmc \emptyset$}
+\UnaryInf$\Gamma,\,?(\Delta \cup \Theta) \fCenter ?\Theta $
+\end{prooftree}
+
+
+\flushleft
+
+\section{Interrogatives in NM-SS}
+
+In addition to $ \mathcal{L}_e $, we construct another language, called $ \mathcal{L}_Q $ which has two categories of well-formed expressions: \textit{d-wffs} and \textit{e-wffs}, that is, claims and questions. (For simplicity, we drop the '\textit{e}' notation from our turnstile.) The syntax of $ \mathcal{L}_Q $ is just that of $ \mathcal{L}_e $ plus the following: ?, \{, \}, and the comma. D-wffs are just sentences of $ \mathcal{L}_e $.  E-wffs, on the other hand, are expressions of the following form:  $ ?\{A_1,\ldots, A_n\}  $ where $ n > 1 $ and $A_1\ldots A_n  $ are pairwise syntactically distinct d-wffs of $ \mathcal{L}_e $. If $ ?\{A_1,\ldots, A_n\} $ is a question, then each of the d-wffs $ A_1\ldots A_n $ is a possible direct answer to the question, and these are the only possible direct answers. Not that any question in $ \mathcal{L}_Q $ has at least two possible direct answers and that the set of those answers is always finite. We must stress that e-wffs are NOT sets of d-wffs, but rather singular expressions of a strictly defined form. We can paraphrase e-wffs as aksing \textit{Which of the following claims am I entitled to: $ A_1,\ldots, A_n $? }.
+
+%e.g. $ ?\{A, B\} \neq \{B, A\} $.
+
+
+Here are possible rules for e-wffs:
+
+\vspace{.3cm}
+
+\centering\textbf{Right rule for $ ?\{A_1,\ldots, A_n\} $}
+\begin{prooftree}
+\def\fCenter{\ \nmc\ }
+\AxiomC{$ \Gamma,\, A_1\nmc B \ldots \Gamma,\, A_n\nmc B $\hspace{-.7cm}}
+\RightLabel{\hspace{5mm}  where $ \Gamma, B \nnmc A_1 \ldots \Gamma, B \nnmc A_n $}
+\UnaryInf $\Gamma,\, B \fCenter ?\{A_1,\ldots, A_n\} $
+\end{prooftree}
+
+\vspace{.3cm}
+
+\centering\textbf{Possible left rule for $ ?\{A_1,\ldots, A_n\} $}
+\begin{prooftree}
+\def\fCenter{\ \nmc \ }
+\AxiomC{\hspace{-2.5cm}$\Gamma \nmc A_i$}
+\RightLabel{\hspace{5mm}  where $ 1 \leq i \leq n $}
+\UnaryInf$\Gamma, \,?\{A_1,\ldots, A_n\} \fCenter \bigperp $
+\end{prooftree}
+
+%\centering\textbf{Possible left rule for $ ?\{A_1,\ldots, A_n\} $}
+%\begin{prooftree}
+%\def\fCenter{\ \nmc \ }
+%\AxiomC{\hspace{-.1cm}$\Gamma \nmc A_i$}
+%\AxiomC{\hspace{-.1cm}$\Gamma,\,A_i \nmc B$}
+%\RightLabel{\hspace{5mm}  where $ 1 \leq i \leq n $}
+%\BinaryInf$\Gamma, \,?\{A_1,\ldots, A_n\} \fCenter B $
+%\end{prooftree}
+\vspace{.5cm}
+
+\textbf{(Negative) Partial Answer}
+
+\begin{prooftree}
+\def\fCenter{\ \nmc\ }
+\AxiomC{$ \hspace{-1.5cm} \Gamma, \,B \nmc \bigperp$}
+\UnaryInf$\Gamma,\,?\{A_1,\ldots, A_n, B\} \fCenter ?\{A_1,\ldots, A_{n}\} $
+\end{prooftree}
+
+\flushleft
+\vspace{.5cm}
+We can give the semantics for a non-factive why-question, \textit{Why B?}, as follows: $$ ?\{A_1\ee B,\ldots, A_{n}\ee B\} $$
+Once $ \mathcal{L}_e $ is extended to include traditional logical operators, we can give the semantics for \textit{factive} why questions, e.g. \textit{Why B?}, as follows:
+
+$$ ?\{(A_1\ee B)\wedge B,\ldots, (A_{n}\ee B)\wedge B\} $$
+
+Notice that once one has an answer to this question, one is entitled to the explanans.
+
+
+
+
+\vspace{10cm}
+
+\begin{prooftree}
+\def\fCenter{\ \nme\ }
+\AxiomC{$ \Gamma,\, A\, \sme B $\hspace{-.3cm}}
+\RightLabel{\hspace{5mm}  EER}
+\UnaryInf$\Gamma \fCenter A \mathbin{\ee} B$
+\end{prooftree}
+
+\begin{prooftree}
+\def\fCenter{\ \sme \ }
+\AxiomC{\hspace{-.8cm}$\Gamma \nme A \ee B$}
+\RightLabel{\hspace{5mm}  EES}
+\UnaryInf$\Gamma, \,A \, \fCenter B $
+\end{prooftree}
+
+\begin{prooftree}
+\def\fCenter{\ \nme\ }
+\AxiomC{$ \Gamma, \,A \sme B$}
+\AxiomC{$\Gamma \fCenter \hspace{-1ex}  B $}
+\RightLabel{\hspace{5mm}  EEL}
+\BinaryInf$\Gamma, B, A \ee B\fCenter \hspace{-1ex}  A$
+\end{prooftree}
+
+
+
+
+\flushleft
+
+\noindent\textbf{Quantified Material Consequence (QMC):}\label{QMC}
+\begin{equation}
+	\Gamma, A \qmc{W} B \Longleftrightarrow_{df}
+	\begin{cases}\nonumber
+		1.\,\, W\subseteq\mathcal{P}(\mathcal{L}) & $ and $ \\[3pt] 
+		2.\,\, \forall\Delta\in W(\Gamma, A,  \Delta \nmc B ) 
+	\end{cases}
+\end{equation}
+
+\noindent\textbf{Modally Robust Consequence (MRC):}\label{MRC}
+\begin{equation}
+	\Gamma, A \mrc{W} B \Longleftrightarrow_{df}
+	\begin{cases}\nonumber
+		1.\,\, \Gamma, A \qmc{W} B& $ and $ \\[3pt] 
+		2.\,\, \forall W'(\Gamma, A \qmc{W'} B \Longrightarrow W' \subseteq W)  & $ and $\\[3pt] 
+		%3.\,\, \nqmc[]{\Gamma}{B}{W} & $ and $\\[3pt]  
+		3.\,\, \forall\Delta(\Gamma, A, \Delta \mqmc \bigperp \Longrightarrow \Delta \not\in W)
+		
+	\end{cases}
+\end{equation}
+
+
+
+\noindent\textbf{Sturdy  Consequence (SC): [Sets]}\label{SCset}
+\begin{equation}
+\Gamma, \, \Sigma \smc B \Longrightarrow
+\begin{cases}\nonumber 
+1.\,\, \Gamma, \, \Sigma \mrc{W} B & $ where $ B \not\in \Sigma $, and $ \\[3pt] 
+2.\,\, \forall \Theta\,(\Gamma, \Theta \mrc{W'} B \Longrightarrow W\not\subset W' ) & $ where $ B\not\in \Theta  \\[3pt] 
+\end{cases}
+\end{equation}
+
+
+
+
+
+
+
+\printbibliography
+
+
+\end{document}

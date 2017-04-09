@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{natbib}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{bussproofs}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{relsize}
+\usepackage{pgf}
+\usepackage{adjustbox}% http://ctan.org/pkg/adjustbox
+\usepackage{xcolor}
+\usepackage{soul}
+
+\usepackage{leftidx}
+
+\usepackage{rotating}
+
+
+\DeclareSymbolFont{symbolsC}{U}{ntxsyc}{m}{n}
+\SetSymbolFont{symbolsC}{bold}{U}{ntxsyc}{n}{b}
+\DeclareFontSubstitution{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxRight}{\mathrel}{symbolsC}{"88}
+\DeclareMathSymbol{\boxLeft}{\mathrel}{symbolsC}{"89}
+
+
+\makeatletter
+
+% % % % % % % % % Internal Commands % % % % % % % % % % % %
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+
+\newcommand{\bUp}{%
+     \begin{sideways}$\boxRight$\end{sideways}}
+\newcommand{\boxUp}{% 
+     \setbox0=\hbox{$\bUp$}%
+     \raisemath{-.2ex}{\scalebox{.6}{$\bUp$}}
+}
+
+
+\newcommand{\bigperp}{%
+  \mathop{\mathpalette\bigp@rp\relax}%
+  \displaylimits
+}
+\newcommand{\bigp@rp}[2]{%
+  \vcenter{
+    \m@th\hbox{\scalebox{\ifx#1\displaystyle1.3\else1.3\fi}{$#1\perp$}}
+  }%
+}
+
+\newcommand{\nm}{\,\mid\!\sim\,}
+\newcommand{\ssim}{% 
+     \setbox0=\hbox{$\sim$}%
+     \adjustbox{width=8pt,height=\height}{$\sim$}
+}
+\newcommand{\Uuparrow}{% 
+     \setbox0=\hbox{$\scriptstyle\Uparrow$}%
+     \raisebox{.2ex}{$\scriptstyle\Uparrow$}
+}
+\newcommand{\uuparrow}{% 
+     \setbox0=\hbox{$\scriptstyle\uparrow$}%
+     \raisebox{.2ex}{$\scriptstyle\uparrow$}
+}
+\newcommand{\thuarrow}{% 
+     \setbox0=\hbox{$\scriptstyle\twoheaduparrow$}%
+     \raisebox{.2ex}{$\scriptstyle\twoheaduparrow$}
+}
+
+% % % % % % % % % % % Lamba Script % % % % % % % % % % % % %
+\newcommand{\Biglam}{% 
+     \setbox0=\hbox{$\Lambda$}%
+     \scalebox{1.5}{$\Lambda$}
+}
+
+\newcommand{\ssns}[1]{\raisemath{-.5ex}{\Biglam}^{\!\!\raisemath{3pt}{\scriptscriptstyle #1}}_{\scriptscriptstyle\nm\,}} 
+
+
+
+% % % % % % % % % % % % some superscript commands (dont use often) % % % % % % % % % % % %
+%\newcommand{\uw}[1]{{#1}^{\!\scriptscriptstyle\uparrow W}}
+%\newcommand{\uww}[1]{{#1}^{\!\scriptscriptstyle\uparrow W'}}
+%\newcommand{\uuw}[1]{{#1}^{\!\scriptscriptstyle\Uparrow W}}
+%\newcommand{\uuww}[1]{{#1}^{\!\scriptscriptstyle\Uparrow W'}}
+\newcommand{\dhu}[1]{{#1}^{\!\!\!\scriptstyle\twoheaduparrow}}
+
+% % % % % COMMANDS FOR NON-MONOTONIC CONSEQUENCES % % % % % % % % %l
+\newcommand{\nmc}{\mathbin{\mid\joinrel\!\!\ssim}}
+\newcommand{\nme}{\mathrel{\nmc_{\!\!\!e\,}}}
+
+\newcommand{\qmc}[4][\Gamma,]{{#1#2\mathrel{\nmc}}^{\!\!\!\!\uuparrow\scriptstyle #4}#3}
+\newcommand{\nqmc}[4][\Gamma,]{{#1#2\mathrel{\not\nmc}}^{\!\!\uuparrow\scriptstyle #4}#3}
+\newcommand{\src}[4][\Gamma,]{{#1#2\mathrel{\nmc}}^{\!\!\!\!\Uuparrow\scriptstyle #4}#3}
+\newcommand{\gsrc}[3][\Gamma,]{{#1#2\mathrel{\nmc}}^{\!\!\!\!\thuarrow\scriptstyle}#3}
+\newcommand{\gsrce}[3][\Gamma,]{#1#2\mathrel{\nme}^{\!\!\!\!\!\thuarrow\scriptstyle\,\,}#3}
+
+
+\newcommand{\nlaw}[3][]{{#1#2\mathrel{\nmc}}^{\!\!\!\!\boxUp}\,#3}
+
+\makeatother
+
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+\newcommand\pref[1]{(\ref{#1})}
+\date{}
+\raggedbottom
+
+
+
+\begin{document}
+%\maketitle
+\setlength{\parindent}{1cm}
+\large
+\doublespacing
+
+According to Lange, laws are the members of the largest stable, nonmaximal set of sub-nomic facts. Lets unpack this claim. First, sub-nomic facts are just those true propositions that do not require nomic, or, indeed any modal vocabulary to be expressed. For instance, ``Like charges repel'' is a sub-nomic fact, while, ``It is a law that like charges repel'' is a nomic. A set of true propositions is said to be \textit{stable} just in case the members of the set would remain true given any antecedent that is consistent with the set itself. Lange thinks of these antecedents as counterfactual suppositions...
+
+The set of sub-nomic truths that Lange refers to consists of general and specific conditional propositions. If conditionals are, as inferentialists claim, expressive devices for endorsing material inferences, then we can think of a set of sub-nomic truths as a set of material-inferential commitments. Likewise, those counterfactual suppositions consistent with a sub-nomic truth, will just be those additional premises which could be added to the inference without defeating it, i.e. our QMC, and the largest set of such suppositions for any particular truth will be represented by our SRC. All that is left to implement in order to get a full representation of Lange's thesis in our system is a device that permits reference to sets of (distinct) \textit{base inferences} that are preserved under the same set of suppositions. Note, that SRC itself only allows us to talk about sets of inferences that are `built up' from a single base inference. But the stable inference sets which we now introduce collect all those base inferences which are subjunctively robust up to W. 
+
+
+\begin{description}
+\item[Stable Inference Set:]
+
+$ \forall p \in \mathcal{L}_0 \,(\,\src[]{p_n}{p_m}{W}  \Longleftrightarrow_{df} \langle p_n, p_m\rangle \in \ssns{W} )  $
+
+
+
+
+
+\item[Nomic Consequence]
+
+		  \begin{equation}
+		      \nlaw{A}{B}\Longleftrightarrow
+		      \begin{cases}\nonumber
+		        1.\,\, \src[]{A}{B}{W}& $ and $ \\
+				2.\,\,  \exists! W' (\,|\ssns{W}\!| \less |\ssns{W'}|\,)& \\ 
+				%3.\,\, \forall W''(W'' \neq W')(\,|\ssns{W''}\!| \leq |\ssns{W}|\,)
+				\end{cases}
+		  \end{equation}
+
+
+
+\end{description}
+
+
+\newpage
+
+
+
+
+
+
+
+\end{document}

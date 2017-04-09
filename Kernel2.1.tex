@@ -1,0 +1,671 @@
+\documentclass{article}                     % onecolumn (standard format)
+%\documentclass[smallcondensed]{svjour3}     % onecolumn (ditto)
+%\documentclass[smallextended]{svjour3}       % onecolumn (second format)
+%\documentclass[twocolumn]{svjour3}          % twocolumn
+%
+\usepackage[top=2cm,bottom=2cm,left=3cm,right=3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{turnstile}
+\usepackage{graphicx}
+\usepackage{latexsym}
+%\usepackage{bussproofs}
+\usepackage{pgf}
+\usepackage{pgfkeys}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{ushort}
+\usepackage{soul}
+\usepackage{framed}
+\usepackage{cancel}
+\usepackage{ebproof}
+\usepackage[autostyle]{csquotes}
+\usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
+
+%\usepackage{fonttable}
+
+\addbibresource{KMR_Master.bib}
+
+
+
+\DeclareMathSymbol{\Gamma}{\mathalpha}{operators}{0}
+\DeclareMathSymbol{\Delta}{\mathalpha}{operators}{1}
+\DeclareMathSymbol{\Theta}{\mathalpha}{operators}{2}
+\DeclareMathSymbol{\Lambda}{\mathalpha}{operators}{3}
+\DeclareMathSymbol{\Xi}{\mathalpha}{operators}{4}
+\DeclareMathSymbol{\Pi}{\mathalpha}{operators}{5}
+\DeclareMathSymbol{\Sigma}{\mathalpha}{operators}{6}
+\DeclareMathSymbol{\Upsilon}{\mathalpha}{operators}{7}
+\DeclareMathSymbol{\Phi}{\mathalpha}{operators}{8}
+\DeclareMathSymbol{\Psi}{\mathalpha}{operators}{9}
+\DeclareMathSymbol{\Omega}{\mathalpha}{operators}{10}
+
+
+\DeclareFontFamily{U} {MnSymbolA}{}
+
+\DeclareFontShape{U}{MnSymbolA}{m}{n}{
+  <-6> MnSymbolA5
+  <6-7> MnSymbolA6
+  <7-8> MnSymbolA7
+  <8-9> MnSymbolA8
+  <9-10> MnSymbolA9
+  <10-12> MnSymbolA10
+  <12-> MnSymbolA12}{}
+\DeclareFontShape{U}{MnSymbolA}{b}{n}{
+  <-6> MnSymbolA-Bold5
+  <6-7> MnSymbolA-Bold6
+  <7-8> MnSymbolA-Bold7
+  <8-9> MnSymbolA-Bold8
+  <9-10> MnSymbolA-Bold9
+  <10-12> MnSymbolA-Bold10
+  <12-> MnSymbolA-Bold12}{}
+
+\DeclareSymbolFont{MnSyA}{U}{MnSymbolA}{m}{n}
+\DeclareMathSymbol{\twoheaduparrow}{\mathop}{MnSyA}{25}
+\DeclareMathSymbol{\twoheaddownarrow}{\mathop}{MnSyA}{27}
+\DeclareMathSymbol{\twoheadrightarrow}{\mathop}{MnSyA}{24}
+\DeclareMathSymbol{\leadsto}{\mathop}{MnSyA}{160}
+\DeclareMathSymbol{\leadstofrom}{\mathop}{MnSyA}{180}
+\makeatletter
+
+% % % % % % % % % % % % % % % % Footnote Command % % % % % % % % % % % % %
+\usepackage{refcount}% http://ctan.org/pkg/refcount
+\newcounter{fncntr}
+\newcommand{\fnmark}[1]{\refstepcounter{fncntr}\label{#1}\footnotemark[\getrefnumber{#1}]}
+\newcommand{\fntext}[2]{\footnotetext[\getrefnumber{#1}]{#2}}
+
+% % % % % % % % % % %Commands for Materia Incoherence% % % % % % % % % % % %
+
+\newcommand{\bigperpp}{%
+	\mathop{\mathpalette\bigp@rpp\relax}%
+	\displaylimits
+}
+\newcommand{\bigp@rpp}[2]{%
+	\vcenter{
+		\m@th\hbox{\scalebox{\ifx#1\displaystyle1.3\else1.3\fi}{$#1\perp$}}
+	}%
+}
+\newcommand{\bigperp}{\raisemath{.5pt}{\bigperpp}}
+
+%%%%%%%%%%%%%Amsthm Environments%%%%%%%%%%%%%%%%%
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{corollary}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{lemma}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[section]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+\theoremstyle{notation}
+\newtheorem{notation}{Notation}
+\theoremstyle{definition}
+\newtheorem{interpretation}{Interpretation}
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem{fact}{Fact}
+
+
+%%%%%%%%%%%%%Giant Math Symbols%%%%%%%%%%%%%%%%%
+\newcommand{\vast}{\bBigg@{4}}
+\newcommand{\Vast}{\bBigg@{5}}
+
+
+%%%%%%%%%%%%%Author Comments%%%%%%%%%%%%%%%%%
+ \newcommand{\kk}[1]{\textcolor{red}{$^{\textrm{KK}}${#1}}}
+ \newcommand{\jm}[1]{\textcolor{blue}{$^{\textrm{JM}}${#1}}}
+ \newcommand{\mr}[1]{\textcolor{green}{$^{\textrm{MR}}${#1}}}
+
+
+\makeatother
+
+
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage[hidelinks]{hyperref}
+%\usepackage{lingmacros}
+%\hypersetup{
+%    colorlinks=false,
+%    pdfborder={0 0 0},
+%}
+
+
+\begin{document}
+\sloppy
+\title{Controlled Monotonicity and Sturdy Inference
+%\thanks{Grants or other notes
+%about the article that should go on the front page should be
+%placed here. General acknowledgments should be placed at the end of the article.}
+}
+
+
+\raggedbottom
+
+\maketitle
+
+\begin{framed}
+\textbf{Version 2.1}: This latest version of the Kernel incorporates three major changes to the previous draft. First, the definition of control-set has been altered so that it no longer includes set-theoretic completion for disjunctions. (See Remark 1). Second, Definition 8 for subclassical control-sets has been changed so that more classically valid sequents are permitted within the subclassical system. The third change effects Theorem 1 and is a result of the first two alterations---the rule $ \vdash\vee $ no longer holds for subclassically controlled sequents. This seems to be a welcomed result since explanations of disjunctions appear to be very unnatural. 
+\end{framed}
+
+%\textit{This new formalization of non-monotonic and sturdy inferences uses two modified versions of the system $ LK^{\mathcal{S}} $ developed by \textcite{Piazza2015}. This system appears to be superior, for our purposes, to Ulf's insofar as it gives us access to at least some of the operational rules of classical logic. Moreover, it allows us to more easily prohibit certain obviously non-candidate inferences from competing for sturdiness. Lastly, the system is quite malleable and can be augmented to meet new demands. One possible drawback might be that `islands of monotonicity' won't be directly represented in the formalism, nor will the addition of `subjunctive suppositions'. Another issue to note is that while material inferences do make an appearance in our version of the system as `material axioms,' sturdy inferences are not guaranteed to be material ones, though they will be non-monotonic, paraconsistent, and non-reflexive.} 
+
+In what follows, we assume a propositional language, $ \mathcal{L} $, for classical logic, that consists of a countably infinite set of atomic sentences $At = \{p_1, p_2, \ldots,p_n\}$, the binary connectives $\wedge, \vee,$ and $ \to $, and the unary connective $\neg$. Let $A, B, C, D $ range over formulas; let $ \Gamma, \Delta, \Sigma, \Theta, $ range over sets of formulas; and let $ \mathbf{S, T, U ,V,}$ range over sets of sets of formulas. 
+
+We begin by employing the standard sequent notations---e.g. $\Gamma, A \vdash B, \Delta $. Formulas on the left side of the turnstile are called the \textit{antecedent}; on the right side they are called the \textit{succedent}. Commas in the antecedent are read `conjunctively' and those on the right are read `disjunctively'.
+
+The sequents in our calculus, $\mathsf{LK}^\mathcal{S}_\alpha $, depart from the standard form in two respects: just below our turnstile we add a set of sets of formulas, $\mathbf{S} $, called a \textit{control-set} and to the far left of the turnstile we add a set of formulas, $\Sigma $, called a \textit{repository}. (The language of \textit{control-sets} and \textit{repositories} comes from \textcite{Piazza2015}.)
+
+$$ \Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta $$
+
+Roughly put, control-sets contain information whose addition to the premises would defeat the inference represented by the sequent.  More precisely, if a member of the control-set is included in any subset of the antecedent, then the sequent is rendered \textit{unsound}. In other words, control-sets are sets of inference-defeaters. The idea behind \textcite{Piazza2015}'s calculus $\mathsf{LK}^\mathcal{S} $ and our $\mathsf{LK}^\alpha_\mathcal{S} $ is that any application of the rules governing the expressions of $\mathcal{L}$ along a derivation ought to preserve not only validity, but also soundness.
+
+From a purely technical perspective, the point of repositories is to permit the implementation of a Gentzen-style normalization procedure, which is instrumental in proving cut-elimination. Repositories achieve this by preserving a `trace' of those formulas shifted by the rules from the left to the right side of the turnstile. (See rules $\vdash\to, \to\vdash$ and $\neg\vdash$).
+
+Aside from this technical purpose, \textcite{Piazza2015} do not provide an intuitive interpretation of the role repositories are to play in the representation of inferences. In order to fill this lacuna, we need to fix an interpretation of controlled sequents in the calculus. 
+
+\begin{framed}
+
+\noindent\textbf{Issue with $ \Sigma $:}
+What is the best way to interpret $ \Sigma $ in a controlled sequent, $\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta $ ? Note that while there are rules that add elements to the repository, there are none that govern withdrawing elements from it. Also, its not clear whether we should think of succedents as following from repositories. They really are sitting in the `background', acting a lot like records of which rules have been applied.
+
+\textbf{Proposal for $ \Sigma $:} Let's treat $ \Sigma $ as the context of inference, i.e. what $ \Gamma $ signified in Kernel 1.0.\\
+
+\noindent\textbf{Issue with $ \Gamma $:} In this new system, we will need to define sturdy inference as a relation between sets and sets, i.e. $ \Sigma\mid\Gamma\sststile{\mathbf{\lfloor\mathbf{S}\rfloor}}{\rhd} \Delta $. (I've reverted to using $ \rhd $ for our explanatory connective.) However, the premises in both the left and right rules for $ \rhd $ require us to specify formulas in the antecedent and succedent, i.e. $ \Sigma\mid\Gamma, A\sststile{\mathbf{\lfloor\mathbf{S}\rfloor}}{\rhd} B, \Delta $. So how are we to read $ \Gamma  $ in these sequents?\\
+
+\textbf{Proposal for $ \Gamma $:} Let's treat $ \Gamma $ as the complete explanation of $ \Delta $ when $ \Sigma\mid\Gamma\sststile{\mathbf{\lfloor\mathbf{S}\rfloor}}{\rhd} \Delta $ and then treat A as the partial explanation of B when $ \Sigma\mid\Gamma, A\sststile{\mathbf{\lfloor\mathbf{S}\rfloor}}{\rhd} B, \Delta $. In the latter sequent, $ \Gamma $ might be thought of as all the other partial explanations. Does this work with the way we've been treating sturdy inferences?
+
+\end{framed}
+
+
+
+
+\vspace{3mm}
+
+Here are the relevant definitions from \textcite{Piazza2015}. Definition 5 explains some of the ways in which how our system $\mathsf{LK}^\alpha_\mathcal{S} $ differs from theirs.
+
+
+\begin{definition}[Control-Set]
+A control-set is a set of formulas set-theoretically completed under conjunction as follows:
+
+$$ \{\Gamma, A \wedge B\} \in \mathbf{S} \Rightarrow \{\Gamma, A, B\} \in \mathbf{S}$$ 
+\end{definition}
+
+\begin{notation}
+	Let $ \mathbf{C}_{\Gamma} $ be the smallest control-set $ \mathbf{S} $ such that $ \Gamma \in \mathbf{S} $. If $ \Gamma = \emptyset $ then $ \mathbf{C}_{\Gamma} = \emptyset $.
+\end{notation}
+
+
+\begin{remark}
+Note that Piazza et al.'s definition of control-set includes completion for disjunction while ours does not. We find their definition, where $\{\Gamma, A \vee B\} \in \mathbf{S} \Rightarrow \{\Gamma, A\}$ and $\{\Gamma, B\} \in \mathbf{S}  $, to be gratuitous, since a controlled sequent with $ \{A\} \in \mathbf{S} $ would be unsound if its antecedent contained $ A \vee B $. Just because $ A $ defeats an inference, it does not follow that $ A\vee B $ does.
+\end{remark}
+
+\begin{definition}[Compatibility]\label{compat}
+A set of forumlas, $\Gamma$, is said to be compatible with a control-set , $\mathbf{S}$, just in case no member of $\mathbf{S}$ is included in any subset of $\Gamma$. We use `$\parallel$' to symbolize compatibility.
+\begin{itemize}
+\item $\Gamma\parallel\mathbf{S} =_{df} \forall \Sigma \in \mathbf{C}_{\Gamma}\,\,\, \forall \Lambda \in \mathbf{S}\,\,(\Lambda \not\subseteq \Sigma) $
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Controlled Sequents]
+	A controlled sequent is a standard sequent with  a repository, $ \Sigma $, and a control-set, $ \mathbf{S} $, attached:
+	$$ \Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta $$
+	When no repositories have been specified (i.e. $\Sigma = \emptyset$) we write:
+	$$ \cdot\mid\Gamma\sststile{\mathbf{S}}{}\Delta$$
+\end{definition}
+
+\begin{definition}[Soundness]
+	A controlled sequent, $ \Sigma\mid\Gamma \sststile{\mathbf{S}}{} \Delta $, is said to be \textit{sound} whenever $ \Sigma,\Gamma\parallel\mathbf{S} $.
+	
+\end{definition}
+
+
+
+\begin{definition}[System of Control-Sets, $\mathsf{LK}^\alpha_\mathcal{S} $]
+	Let $ \mathcal{S^+} $ be a system of control-sets on classical logic $ \mathsf{LK} $ belonging to the spectrum  $\mathfrak{G}_\mathsf{LK} $ as defined by \textcite{Piazza2015}. For our purposes, it is only important to note that the rules of the resulting logic, $\mathsf{LK}^\alpha_\mathcal{S} $ have the following (minimality) properties:
+	\begin{itemize}
+		\item All unary inference rules transmit the same control set from the upper controlled sequent to the lower one.
+		
+		\item All binary inference rules, attach the union of the control sets of the upper controlled sequents to the lower one.
+	\end{itemize}
+	The rules for $ \mathsf{LK}^\alpha_\mathcal{S} $ are identical to those of $ \mathsf{LK}^\mathcal{S} $ with the following exception (see next page):
+	
+	\begin{itemize}
+
+		\item Axioms in $ \mathsf{LK}^\alpha_\mathcal{S} $ come in two flavours: logical and material. Logical axioms resemble the axioms of $ \mathsf{LK}^\mathcal{S} $ insofar as they license sequents with empty repositories and identical atoms on the left- and right-hand sides of the turnstile. Material axioms are the irreflexive counterparts to the logical axioms---i.e. they license the introduction of sequents whose antecedent and succedent have no shared elements and which contain only atoms.  \textcite{Piazza2016} demonstrate that classical systems with  proper axioms having these properties preserve cut-elimination. These material axioms are intended to represent material inferences and hence the point of contact between logical theory and scientific practice. 
+
+
+	\end{itemize}
+
+\end{definition}
+
+\begin{remark}
+	While material axioms are restricted to atomic formulas on the left and right of the turnstile, they may have non-empty sets on either side. When the antecedent is empty, the axiom licenses the unconditional `assertion' of the succedent. When the succedent is empty, the axiom licenses the unconditional `assertion' of the negation each formula in the antecedent.
+\end{remark}
+\begin{remark}
+Notice that both classes of axioms in $\mathsf{LK}^\alpha_\mathcal{S} $ lack specific restrictions on their control-sets. As \textcite{Piazza2015} note, this means that (logical) axioms could be introduced which do not even preserve equivalence among atoms, i.e. $\cdot\mid p  \sststile{\{\{p\}\ldots\}}{} p $. To prevent this, we impose the following constraints on the control sets of axioms. The first covers logical axioms and comes from \textcite{Piazza2015}, the second covers material axioms and is my own.
+
+\begin{itemize}
+\item $p \not\in \bigcup\mathcal{S}(p)$, where $ \mathcal{S}(p) $ denotes the control set attached to the logical axiom introducing $ p $.
+
+\item if $\cdot\mid  p_i,\ldots,p_j \sststile{\mathbf{S}}{} p_k,\ldots,p_m  $ is a material axiom, then $\{p_i,\ldots,p_j\}\not\subseteq \bigcup\mathbf{S}$
+
+\end{itemize}
+\end{remark}
+
+\begin{definition}[Proof, Paraproof]\label{proof}
+	For a rooted, finitely branching tree $ \pi $ whose nodes are sequents of $ \mathsf{LK}^\alpha_\mathcal{S} $, and which is recursively built up from axioms by means of the rules of $ \mathsf{LK}^\alpha_\mathcal{S} $, if each sequent in $ \pi $ is sound, then $ \pi $ is said to be a proof of $ \mathsf{LK}^\alpha_\mathcal{S} $, \,otherwise $ \pi $ is called a paraproof.
+\end{definition}
+
+\begin{definition}[Provability]
+	An $ \mathsf{LK} $ sequent, $ \Gamma \vdash \Delta $, is said to be provable in $ \mathsf{LK}^\alpha_\mathcal{S} $ if there
+	exists a repository, $\Sigma$, and a control-set, $ \mathbf{S} $, such that $ \Gamma \sststile{\mathbf{S}}{} \Delta  $ is provable in $ \mathsf{LK}^\alpha_\mathcal{S} $. 
+\end{definition}
+
+Here are the axioms and rules for $\mathsf{LK}^\alpha_\mathcal{S} $:
+
+\newpage
+
+
+Axioms
+\vspace{.5cm}
+
+
+\begin{prooftree}
+	\Hypo{}
+	\Infer1[$ log.\,\,ax.$]{ \cdot\mid p\sststile{\mathcal{S}(p)}{} p}
+\end{prooftree}
+
+\vspace{.75cm}
+
+\begin{prooftree}
+	\Hypo{}
+	\Infer1[where $\{p_i,\ldots,p_j\} \cap \{p_k,\ldots,p_m\} = 0,\,\, j,m\geq0$ $ \quad\quad mat.\,\,ax. $]{ \cdot\mid  p_i,\ldots,p_j \sststile{\mathbf{S}}{} p_k,\ldots,p_m }
+\end{prooftree}
+
+
+
+\vspace{1cm}
+Cut Rule
+\vspace{.5cm}
+
+\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}A,\Delta}
+	\Hypo{\Sigma'\mid\Gamma', A\sststile{\mathbf{T}}{}\Delta'}
+	\Infer2[$cut$]{ \Sigma',\Sigma\mid\Gamma',\Gamma\sststile{\mathbf{S\cup T}}{}\Delta,\Delta'}
+\end{prooftree}
+
+
+\vspace{1cm}
+Structural Rules
+\vspace{.5cm}
+
+$
+\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta}
+	\Infer1[ LW ]{ \Sigma\mid\Gamma,A\sststile{\mathbf{S}}{}\Delta}
+\end{prooftree}
+\hspace{6.7cm}
+\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta}
+	\Infer1[ RW ]{ \Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta, A}
+\end{prooftree}
+$
+
+\vspace{.75cm}
+
+$\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta}
+	\Infer1[ $ \sigma $ ]{ \Sigma\mid\Gamma\sststile{\mathbf{S\cup T}}{}\Delta}
+\end{prooftree}
+\hspace{6.7cm}
+\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta}
+	\Infer1[ $ \rho $ ]{ \Sigma, A\mid\Gamma\sststile{\mathbf{S}}{}\Delta}
+\end{prooftree}
+$
+
+\vspace{1cm}
+Logical Rules
+\vspace{.5cm}
+
+
+$\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma,A,B\sststile{\mathbf{S}}{}\Delta}
+\Infer1[$\wedge\vdash$]{ \Sigma\mid\Gamma,A\wedge B\sststile{\mathbf{S}}{}\Delta}
+\end{prooftree}
+$ \hspace{5.7cm} $
+\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}A,\Delta}
+\Hypo{\Sigma'\mid\Gamma'\sststile{\mathbf{T}}{}B,\Delta'}
+\Infer2[$\vdash\wedge$]{ \Sigma',\Sigma\mid\Gamma',\Gamma\sststile{\mathbf{S\cup T}}{}A\wedge B,\Delta,\Delta'}
+\end{prooftree}$
+
+
+\vspace{.75cm}
+
+$\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma,A\sststile{\mathbf{S}}{}\Delta}
+\Hypo{\Sigma'\mid\Gamma,B\sststile{\mathbf{T}}{}\Delta'}
+\Infer2[$\vee\vdash$]{ \Sigma',\Sigma\mid\Gamma',\Gamma, A\vee B\sststile{\mathbf{S\cup T}}{}\Delta,\Delta'}
+\end{prooftree}
+$ \hspace{3.5cm} $
+\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta,A,B}
+\Infer1[$\vdash\vee$]{ \Sigma\mid\Gamma\sststile{\mathbf{S}}{}A\vee B,\Delta}
+\end{prooftree}$
+
+\vspace{.75cm}
+
+$\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}A,\Delta}
+\Hypo{\Sigma'\mid\Gamma',B\sststile{\mathbf{T}}{}\Delta'}
+\Infer2[$\to\vdash$]{ \Sigma',\Sigma,B\mid\Gamma',\Gamma,A\to B\sststile{\mathbf{S\cup T}}{}\Delta,\Delta'}
+\end{prooftree}
+$ \hspace{3.1cm} $
+\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma,A\sststile{\mathbf{S}}{}B,\Delta}
+\Infer1[$\vdash\to$]{ \Sigma,A\mid\Gamma\sststile{\mathbf{S}}{}A\to B,\Delta}
+\end{prooftree}$
+
+\vspace{.75cm}
+
+$\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}A,\Delta}
+\Infer1[$\neg\vdash$]{ \Sigma\mid\Gamma,\neg A\sststile{\mathbf{S}}{}\Delta}
+\end{prooftree}$
+\hspace{6cm}
+$\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma,A\sststile{\mathbf{S}}{}\Delta}
+\Infer1[$\vdash\neg$]{ \Sigma,A\mid\Gamma\sststile{\mathbf{S}}{}\neg A, \Delta}
+\end{prooftree}$
+
+\newpage
+
+
+
+{\large System $ \mathsf{LK}^{\rhd}_{\mathcal{\lfloor S \rfloor}} $ }
+\vspace{2mm}
+
+We now begin to introduce the concepts needed to represent sturdy inferences. With these notions, we extend the system $ \mathsf{LK}^\alpha_\mathcal{S} $ to that of $ \mathsf{LK}^\rhd_\mathcal{\lfloor S \rfloor} $. Our first step in doing so is to define a class of control-sets, and hence a class of consequence relations, within $ \mathsf{LK}^\alpha_\mathcal{S} $ that exhibit the properties we want our candidates for sturdy inference to have. We seem to have agreed that the most important properties are paraconsistency (i.e. sturdy sequents must not be instances of explosion), non-reflexivity, and non-transitivity. In Kernel 1.0 we bit the bullet on reflexivity, stipulated non-transitivity and neglected paraconsistency altogether. In this new approach, we control for paraconsistency and reflexivity and get non-transitivity for free!
+
+The demand for paraconsistent and non-reflexive inferences is supported by two intuitions: 1.) that contradictions are explanatorily idle and 2.) that statements, facts, etc. do not explain themselves, or, at the very least, there are no \textit{scientific} self-explanations. The latter intuition extends to partial self-explanations---e.g. $A \wedge B $ does not explain $A$---and thus supports an even stronger restriction than that of non-reflexivity, which I've sought to capture with (ii) below. Insisting that the `live options' for sturdiness have these two properties also ensures that most paradoxes of material implication are excluded. Again, the advantage of this new system is that these restrictions can be imposed by determining the contents of control-sets rather than by concocting new logical rules. We'll call the compliant control-sets `subclassical' because the controlled sequents are unsound when they are instances of certain classical axioms/theorems. 
+
+As Theorem 1 demonstrates, several rules of classical logic will not hold among subclassically controlled sequents. But what is great is that the rules that fail are precisely those that we think \textit{should} fail for explanations. Furthermore, according to Theorem 2, the cut rule also fails in the subclassical subsystem. Thus, the candidates for sturdiness are non-transitive.
+
+\begin{definition}[Subclassical Control-sets] \label{Sc_Cs} 
+
+A control-set is said to be subclassical just in case when it is attached to a sequent, $ \Sigma\mid\Gamma\sststile{\mathbf{S}}{} \Delta $ , the following conditions hold:
+
+\end{definition}
+
+\begin{enumerate}
+                    
+                
+\item[(i)] $  A \in \bigcup\mathbf{C}_{\Sigma\cup\Gamma} \text{\,\,and\,\,} \neg A \vdash B\,\Rightarrow \mathbf{C}_B \subseteq \mathbf{S} $ \\
+ 
+\item[(ii)] $A \in \Delta\,\Rightarrow \mathbf{C}_A \subseteq \mathbf{S} $\\
+
+\end{enumerate}
+\vspace{-3mm}
+
+The first condition prevents explicit and implicit inconsistencies within the antecedent of the sequent, while the second ensures that no formula in  the succedent can appear in the antecedent. 
+
+
+\begin{notation}[$\mathbb{S} $]
+For an $ \mathsf{LK} $ sequent, $ \Gamma \vdash \Delta $, let $\mathbb{S}$ denote the smallest control-set satisfying conditions (i) and (ii), such that $ \Gamma\sststile{\mathbb{S}}{} \Delta $ is a sequent in $ \mathsf{LK}^\alpha_\mathcal{S} $.
+\end{notation}
+
+\begin{definition}($ \lfloor \cdot \rfloor $ )\label{Sc_Op}
+The operator $ \lfloor \cdot \rfloor $ denotes a function that takes control-sets and controlled sequents as inputs and yields control-sets. In particular, given that $ \Gamma\sststile{\mathbf{S}}{} \Delta $ \,and\, $ \Gamma\sststile{\mathbb{S}}{} \Delta $\, are both sequents in \,$\mathsf{LK}^\alpha_\mathcal{S},\,$
+$$ \lfloor\mathbf{S}\rfloor  =_{df} \mathbf{S} \cup \mathbb{S}. $$
+
+\begin{remark}\label{SCSreltoseq}
+Note that applying $ \lfloor \cdot \rfloor $ to a control-set $ \mathbf{S} $ when it is attached to one sequent will yield a different output than if it is applied to the same control-set  attached to a different sequent, i.e. even though $\mathbf{S} = \mathbf{T}$, if $\Gamma\sststile{\lfloor\mathbf{S}\rfloor}{} \Delta \,\,\text{and}\,\, \Gamma'\sststile{\lfloor\mathbf{T}\rfloor}{} \Delta'$ and either $\Gamma\neq \Gamma' $ or $\Delta\neq\Delta'$, then $\lfloor\mathbf{S}\rfloor \neq \lfloor\mathbf{T}\rfloor$.
+\end{remark}
+
+\end{definition}
+
+\vspace{1mm}
+
+\begin{fact}
+$\Sigma\mid\Gamma, A, \neg A \,\sststile{\lfloor\mathbf{S}\rfloor}{} B,\Delta\,$ is unsound.
+\end{fact}
+\begin{proof}
+Since $A \in \bigcup\mathbf{C}_{A} \text{\,\,and\,\,} \neg A\vdash\neg A  $,\, it follows from Definitions \ref{Sc_Cs} and \ref{Sc_Op} that $ \{\neg A\} \in \mathbf{\lfloor\mathbf{S}\rfloor}  $. Thus, according to Definition \ref{compat},\, $ \,\Sigma\cup\Gamma\cup\{A,\neg A\}\nparallel\lfloor\mathbf{S}\rfloor  $.
+\end{proof}
+
+\begin{fact}
+$\Sigma\mid\Gamma, A\wedge\neg A \,\sststile{\lfloor\mathbf{S}\rfloor}{} B,\Delta\,$ is unsound.
+\begin{proof}
+Since $ A \in \bigcup\mathbf{C}_{\{A\wedge\neg A\}}$, it follows from Definitions \ref{Sc_Cs} and \ref{Sc_Op} that $ \{\neg A\} \in \mathbf{\lfloor\mathbf{S}\rfloor}$. Thus, according to Definition \ref{compat} $ \,\Sigma\cup\Gamma\cup\{A \wedge\neg A\}\nparallel\lfloor\mathbf{S}\rfloor  $.
+\end{proof}
+\end{fact}
+
+\begin{fact}
+$\Sigma\mid\Gamma,A \,\sststile{\lfloor\mathbf{S}\rfloor}{} A,\Delta\,$ is unsound.
+\begin{proof}
+Immediate from (ii)
+\end{proof}
+\end{fact}
+
+\begin{fact}
+$\Sigma\mid\Gamma,A\wedge B \,\sststile{\lfloor\mathbf{S}\rfloor}{} A,\Delta\,$ is unsound.
+\begin{proof}
+According to Definitions \ref{Sc_Cs} and \ref{Sc_Op}, $ \{A\}\in \mathbf{\lfloor\mathbf{S}\rfloor} $. Since $ \{A,B\} \in \mathbf{C}_{\{A\wedge B\}} $ \,and\, $\{A\}\subset\{A,B\},$ \,it follows from Definition \ref{compat} that $\,\Sigma\cup\Gamma\cup\{A\wedge B\}\nparallel\lfloor\mathbf{S}\rfloor $.
+\end{proof}
+\end{fact}
+
+
+\begin{notation}
+In light of Remark \ref{SCSreltoseq}, there is the risk that $ \lfloor\mathbf{S}\rfloor $ becomes ambiguous through the course of a derivation. To mitigate this risk,, we will on occasion label subclassical control-sets. For instance, when $ \lfloor\mathbf{S}\rfloor $ appears multiple times in a proof, we will label the different instances of $ \lfloor\mathbf{S}\rfloor $ as follows: $ \lfloor\mathbf{S}\rfloor^{i},  \lfloor\mathbf{S}\rfloor^{j}, \lfloor\mathbf{S}\rfloor^{k}, \ldots, \lfloor\mathbf{S}\rfloor^{n} $.
+\end{notation}
+
+\begin{theorem}[Subclassical Sequents and classical operators]
+The only rules of $ \mathsf{LK}^\alpha_\mathcal{S} $  that hold for subclassically controlled sequents are $ \wedge\vdash, \neg\vdash,$ and $\vdash\neg\, $.
+
+\begin{proof}
+By Definition \ref{proof}, an application of a rule only forms part of a proof if the end-sequent is sound. So, to show that a rule does not hold among subclassically controlled sequents, we must show that an instance of the rule has a sound subclassical conclusion but unsound subclassical premises. Since the soundness of subclassical sequents is determined by (i) and (ii), we proceed accordingly by cases. In case I we verify whether a premise unsound by (i) can lead to a sound conclusion, and likewise in case II we check whether a premise unsound by (ii) can lead to a sound conclusion. For case I, we suppose a premise is unsound because of the presence of $ \neg A , A$ in the antecedent, following Fact 1. Note that when there are no active formulas in the antecedents of the premises, then there is no way for the premises but not the conclusion to be unsound due to (i). For case II, we suppose a premise is unsound in virtue of $ A $ in the antecedent if $ A $ is in the succedent or vice versa, depending on where the active formulas appear in the rule. This approach follows from Fact 3. If no active or principle formula appears in the succedent, then there is no way for the premises but not the conclusion to be unsound due to (ii). Throughout the proof we assume that the original control-set, $ \mathbf{S} $, is compatible with the antecedent and repository of both the premise(s) and conclusion of the rule.
+
+
+\begin{itemize}[itemsep=3mm]
+	\item[$\checkmark \wedge\vdash $]
+Case I: Suppose the premise is $\Sigma\mid\neg A ,A, B \,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} \Delta\,$ and hence is unsound. The conclusion is $\Sigma\mid\neg A ,A \wedge B \,\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} \Delta\,$.  Since $A \in \bigcup\mathbf{C}_{\{\neg A, A\wedge B\}}$ \, it follows from (i) that $ \{\neg A\} \in \mathbf{\lfloor\mathbf{S}\rfloor}^{j} $ and thus the conclusion is unsound.\\
+
+Case II: Suppose the premise is $\Sigma\mid\Gamma, A, B \,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} A, \Delta\,$ and hence is unsound. The conclusion is $\Sigma\mid\Gamma, A \wedge B \,\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} A, \Delta\,$. Since $A \in \Delta$ \,, it follows from (ii) that $ \{A\} \in \lfloor\mathbf{S}\rfloor^{j} $, and since $ \{A,B\} \in \mathbf{C}_{\{A\wedge B\}}$\,, and \,$ \{A\} \subseteq \{A,B\} $ , the conclusion is unsound.
+
+  \item[$\vdash\wedge $]
+Case II: Suppose the first premise is $\Sigma\mid A \,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} A, \Delta\,$ and hence is unsound. The conclusion is $\Sigma\mid A \,\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} A \wedge B, \Delta\,$. Since by (ii), $\{A,B\} \in \lfloor\mathbf{S}\rfloor^{j},$ and $ \{A\}\not\in\lfloor\mathbf{S}\rfloor^{j} $ and $ \{A,B\} \nsubseteq \{A\}  $, the conclusion is sound.
+
+	\item[$ \vee\vdash $]
+Case I: Suppose the first premise is $\Sigma\mid\neg A ,A\,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} \Delta\,$ and hence is unsound. The conclusion is $ \Sigma\mid \neg A, A \vee B\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} \Delta $. According to (i), $ \{A\} \in \lfloor\mathbf{S}\rfloor^{j} $ since $\neg A \in \bigcup\mathbf{C}_{\{\neg A, A\vee B\}}$ and $ \neg\neg A \vdash A\, $. But $ \{A\} \nsubseteq \{\neg A, A \vee B\} $, so the conclusion is sound.
+
+	\item[$\vdash\vee $]
+Case II: Suppose the premise is $\Sigma\mid A\,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} A, B\,$ and hence is unsound. The conclusion is $\Sigma\mid A\,\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} A \vee B\,$. According to (ii), $ \{A\vee B\} \in \lfloor\mathbf{S}\rfloor^{j},$  but $ \{A\} \not\in \lfloor\mathbf{S}\rfloor^{j},$ and thus the conclusion is sound.
+
+ \item[$ \to\vdash $]
+
+Case II: Suppose the first premise is $\Sigma\mid A\,\sststile{\lfloor\mathbf{S}\rfloor}{} A, \Delta\,$ and hence is unsound. The conclusion, however, is sound since no active or principle formula appears in its succedent.
+
+	\item[$ \vdash\to $]
+Case I: Suppose the premise is $\Sigma\mid\neg A ,A \,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} B, \Delta\,$ and hence is unsound. The conclusion is $ \Sigma\mid\neg A \,\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} A\to B, \Delta\, $. According to (ii), $ \{A\to B\} \in \lfloor\mathbf{S}\rfloor^{j},$  but $ \{A\} \not\in \lfloor\mathbf{S}\rfloor^{j},$ and thus the conclusion is sound.
+
+	\item[$\checkmark \neg\vdash $]
+Case I: There are no active formulas in the antecedents of the premises.
+
+Case II: Suppose the premise is $\Sigma\mid A \,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} A, \Delta\,$ and hence is unsound. The conclusion, $\Sigma\mid A, \neg A \,\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} \Delta\,$, is unsound by (i). 
+
+	\item[$\checkmark \vdash\neg $]
+Case I: Suppose the premise is $\Sigma\mid\neg A ,A \,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} \Delta\,$ and hence is unsound. The conclusion, $\Sigma, A\mid\neg A \,\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} \neg A, \Delta\,$ is unsound by both (i) and (ii).
+
+Case II: Suppose the premise is $\Sigma\mid \Gamma, A \,\sststile{\lfloor\mathbf{S}\rfloor^{i}}{} A \,$ and hence is unsound. The conclusion, $\Sigma, A\mid\Gamma \,\sststile{\lfloor\mathbf{S}\rfloor^{j}}{} \neg A, A\,$ is unsound by (ii).
+
+\end{itemize}
+\end{proof}
+\end{theorem}
+
+\begin{remark}
+The rules that fail to hold among subclassically controlled sequents are precisely those that we think \textit{should} fail for explanations. For instance, If $ \Gamma $ explains $ A $ and $ \Gamma $ explains $ B $ it need not follow that $ \Gamma $ explains $ A \wedge B$, which is just what we'd expect given that $ \vdash\wedge $ fails for subclassically controlled sequents. Likewise, the failure of $ \vee\vdash $ solves the worry we had about disjunctive explanans. 
+\end{remark}
+
+\begin{theorem}
+The cut rule fails for subclassically controlled sequents.
+
+\begin{proof}
+We follow the same strategy as before. For case I, suppose the second premise is $\Sigma'\mid\neg A ,A \,\sststile{\lfloor\mathbf{S}\rfloor}{} \Delta'\,$ and hence is unsound. However, the conclusion, $ \Sigma',\Sigma\mid\neg A,\Gamma\sststile{\lfloor\mathbf{S\cup T}\rfloor}{}\Delta, \Delta'$, is sound. The same result is obtained for case II.
+\end{proof}
+\end{theorem}
+
+\vspace{3mm}
+
+
+\begin{notation}
+Let \, $-\Gamma = \{A \in \Gamma : \neg A \}$.
+\end{notation}
+
+\begin{definition}[Sturdy Sequents]\label{SturdySeq}
+A sequent is said to be sturdy only if its subclassical control-set is compatible with the negation of the antecedent of any provable, subclassically-controlled sequent that shares its conclusion and repository.
+
+
+\begin{equation}
+\Sigma\mid\Gamma\sststile{\mathbf{\lfloor\mathbf{S}\rfloor}}{\rhd} \Delta \,\,\Longrightarrow\hspace{1mm} 
+\Big(\, \forall \Theta\,(\Sigma\mid\Theta\sststile{\mathbf{\lfloor\mathbf{T}\rfloor}}{} \Delta) \Rightarrow -\Theta\parallel \lfloor\mathbf{S}\rfloor\,\Big)
+\end{equation}
+\end{definition}
+
+%\begin{equation}
+%\Sigma\mid\Gamma\sststile{\mathbf{\lfloor\mathbf{S}\rfloor}}{\rhd} \Delta \,\,\Longrightarrow\hspace{1mm} 
+%\Big(\, \forall \Theta\,(\Sigma\mid\Theta\sststile{\mathbf{\lfloor\mathbf{T}\rfloor}}{} \Delta) \Rightarrow \forall A \in \Theta( \neg A \not\in\lfloor\mathbf{S}\rfloor)\,\Big)
+%\end{equation}
+%\end{definition}
+
+\begin{remark}
+Since the competitors for sturdiness are provable sequents, we know that they will include sequents whose control sets have been maximally expanded via iterated applications of the $ \sigma $ rule so as to include \textit{any and all inference defeaters.} 
+\end{remark}
+
+
+
+We now extend the system $ \mathsf{LK}^\alpha_\mathcal{S} $ by adding to it the following axioms and rules. The result we call $ \mathsf{LK}^\rhd_\mathcal{\lfloor S \rfloor} $.  
+
+\vspace{2mm}
+\textbf{Sturdy Axioms}
+\vspace{.5cm}
+
+
+\begin{prooftree}
+\Hypo{}
+\Infer1[where $\{p_i,\ldots,p_j\} \cap \{p_k,\ldots,p_m\} = 0,\,\, j,m>0\quad\quad sturdy\,\,ax. $]{ \Sigma\mid  p_i,\ldots,p_j \sststile{\mathbf{\lfloor S \rfloor}}{\rhd} p_k,\ldots,p_m }
+\end{prooftree}
+
+\vspace{.5cm}
+
+\textbf{Structural Rule for $\lfloor\cdot\rfloor$}
+\vspace{5mm}
+
+\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta}
+\Infer1[$\xi$]{ \Sigma\mid\Gamma\sststile{\lfloor\mathbf{S}\rfloor}{} \Delta}
+\end{prooftree}
+
+\vspace{.75cm}
+\textbf{Rules for $\rhd$}
+\vspace{5mm}
+
+$
+\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma, A\sststile{\lfloor\mathbf{S}\rfloor}{\rhd} B, \Delta}
+\Hypo{\Sigma'\mid\Gamma', A\sststile{\mathbf{T}}{} \Delta'}
+\Hypo{\Sigma''\mid\Gamma''\sststile{\mathbf{U}}{} B}
+\Infer3[$\rhd\vdash$]{ \Sigma'',\Sigma',\Sigma, A\mid\Gamma'',\Gamma',\Gamma, A \rhd B\sststile{\mathbf{S \cup T \cup U }}{} \Delta, \Delta'}
+\end{prooftree}$
+\hspace{2cm}
+$\begin{prooftree}
+\Hypo{\Sigma\mid\Gamma, A\sststile{\lfloor\mathbf{S}\rfloor}{\rhd}B,\Delta}
+\Infer1[$\vdash\rhd$]{ \Sigma, A\mid\Gamma\sststile{\mathbf{S}}{} A \rhd B, \Delta}
+\end{prooftree}$
+
+\vspace{7mm}
+
+\begin{remark}
+Note that sturdy axioms differ from material axioms in two respects. First, sturdy axioms must have atomic formulas in both the antecedent and the succedent. Second, they may have non-empty and non-atomic repositories. The motivation for the latter is that sturdy inferences are more context sensitive than material axioms (material inferences) in general.
+\end{remark}
+
+\begin{remark}
+Here's an interesting question: How do sturdy inferences `get into' our system? I've chosen to introduce them as axioms. My thinking is that sturdy inferences are the products of scientific experimentation and thus the fodder for the proofs in  $ \mathsf{LK}^\rhd_\mathcal{\lfloor S \rfloor} $.  
+\end{remark}
+
+\begin{remark}
+Look closely and you'll see that $\rhd\vdash $ is IBE! 
+\end{remark}
+
+\begin{remark}
+ The left and right rules for $ \rhd $ make possible an application of the cut-rule that is not eliminable. I'm still seeing what can be done about this.
+\end{remark}
+%$\begin{prooftree}
+%\Hypo{\Sigma\mid\Gamma, A\sststile{\lfloor\mathbf{S}\rfloor}{\rhd} B, \Delta}
+%\Hypo{\Sigma'\mid\Gamma'\sststile{\mathbf{\lfloor\mathbf{T}\rfloor }}{}  B, \Delta'}
+%\Infer2[$\rhd\vdash$]{ \Sigma',\Sigma, A\mid\Gamma',\Gamma, A \rhd B\sststile{\mathbf{S \cup T }}{} A, \Delta, \Delta'}
+%\end{prooftree}$
+
+
+\begin{remark}
+
+ Note that the $ \xi $ rule is equivalent to a particular application of the $ \sigma $ rule where $ \mathbf{T} = \mathbb{S} $, i.e.
+ 
+ \vspace{3mm}
+ 
+ $
+ \begin{prooftree}
+ 	\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta}
+ 	\Infer1[]{ \Sigma\mid\Gamma\sststile{\lfloor\mathbf{S}\rfloor}{} \Delta}
+ \end{prooftree}
+ \hspace{1cm} \leadstofrom \hspace{1cm}
+ \begin{prooftree}
+ 	\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}\Delta}
+ 	\Infer1[]{ \Sigma\mid\Gamma\sststile{\mathbf{S}\cup\mathbb{S}}{} \Delta}
+ \end{prooftree}
+ $
+\end{remark}
+
+ \vspace{3mm}
+%\begin{minipage}{.75\textwidth}
+%Case I: Suppose the premise is $\Sigma\mid\neg A ,A, B \,\sststile{\lfloor\mathbf{S}\rfloor}{} \Delta\,$ and hence unsound. The conclusion is also unsound since $ \neg A, A \wedge B \vdash \,. $
+%\vspace{2mm}
+
+%Case II: Suppose the premise is $\Sigma\mid A, B \,\sststile{\lfloor\mathbf{S}\rfloor}{} A, \Delta\,$ and hence is unsound. The conclusion is also unsound since $ A \wedge B \vdash A. $
+%\end{minipage}
+
+
+% \begin{theorem}[Subclassical system extended]
+% 	If $ \to\vdash$ and $\vdash\to $ are replaced with $ \to\vdash*$ and $\vdash\to*$ respectively, then the new set of rules hold for subclassical control-sets.
+% 	
+% 	\medskip
+% 	
+% 	$\begin{prooftree}
+% 	\Hypo{\Sigma\mid\Gamma\sststile{\mathbf{S}}{}A,\Delta}
+% 	\Hypo{\Sigma'\mid\Gamma',B\sststile{\mathbf{T}}{}\Delta'}
+% 	\Infer2[$\to\vdash*$]{ \Sigma',\Sigma,A,B\mid\Gamma',\Gamma,A\to B\sststile{\mathbf{S\cup T}}{}\Delta,\Delta'}
+% 	\end{prooftree}
+% 	$ \hspace{3.1cm} $
+% 	\begin{prooftree}
+% 	\Hypo{\Sigma\mid\Gamma,A\sststile{\mathbf{S}}{}\Delta,B}
+% 	\Infer1[$\vdash\to*$]{ \Sigma,A,B\mid\Gamma\sststile{\mathbf{S}}{}A\to B,\Delta}
+% 	\end{prooftree}$
+% 	
+% 	\begin{proof}
+% 		...
+% 	\end{proof}
+% 	
+% \end{theorem}
+ 
+ 
+ \printbibliography
+\end{document}

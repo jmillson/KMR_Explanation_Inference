@@ -41,13 +41,13 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Explan_Assym-biblatex.bcf</file>
+      <file>LogicPaper.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>Explan_Assym-biblatex.bbl</file>
+      <file>LogicPaper.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -56,30 +56,31 @@
       <file>blx-natbib.def</file>
       <file>chicago-authordate.bbx</file>
       <file>chicago-authordate.cbx</file>
+      <file>chicago-dates-common.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
+  <external package="biblatex" priority="5" active="1">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>Explan_Assym-biblatex</infile>
+      <infile>LogicPaper</infile>
     </cmdline>
     <input>
-      <file>Explan_Assym-biblatex.bcf</file>
+      <file>LogicPaper.bcf</file>
     </input>
     <output>
-      <file>Explan_Assym-biblatex.bbl</file>
+      <file>LogicPaper.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>Explan_Assym-biblatex.bbl</file>
+      <file>LogicPaper.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Explan_Assym-biblatex.bcf</file>
+      <file>LogicPaper.bcf</file>
     </requires>
     <requires type="editable">
-      <file>KMR_Master.bib</file>
+      <file>../References/KMR_Master4.4.17.bib</file>
     </requires>
   </external>
 </requests>
