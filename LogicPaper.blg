@@ -1,9 +1,0 @@
-[0] Config.pm:354> INFO - This is Biber 2.6
-[0] Config.pm:357> INFO - Logfile is 'LogicPaper.blg'
-[50] biber-darwin:302> INFO - === Sun Apr  9, 2017, 11:09:50
-[83] Biber.pm:359> INFO - Reading 'LogicPaper.bcf'
-[223] Biber.pm:823> INFO - Found 42 citekeys in bib section 0
-[240] Biber.pm:3658> INFO - Processing section 0
-[260] Biber.pm:3828> INFO - Looking for bibtex format file '../References/KMR_Master4.4.17.bib' for section 0
-[356] Utils.pm:180> ERROR - Cannot find '../References/KMR_Master4.4.17.bib'!
-[356] Biber.pm:113> INFO - ERRORS: 1

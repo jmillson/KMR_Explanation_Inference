@@ -47,20 +47,8 @@
   owner     = {jmillson},
   timestamp = {2016.07.19},
 }
-
-@InCollection{Wanderer2010,
-  author    = {Wanderer, J.},
-  title     = {Brandom's Challenges},
-  booktitle = {Reading Brandom : on making it explicit},
-  year      = {2010},
-  publisher = {Routledge},
-  pages     = {96-114},
-  crossref  = {Weiss2010},
-  owner     = {Owner},
-  timestamp = {2014.01.07},
-}
-
-@InCollection{Achinstein1988,
+{Achinstein1988,
+>>>>>>> master
   author    = {Achinstein, Peter},
   title     = {The Illocutionary Theory of Explanation},
   booktitle = {Theories of Explanation},
@@ -4430,6 +4418,7 @@
   editor       = {Zalta, E.N.},
   title        = {Explanation in Mathematics},
   year         = {2011},
+  url          = {http://plato.stanford.edu/archives/sum2011/entries/mathematics-explanation},
   organization = {The Stanford Encyclopedia of Philosophy},
   address      = {URL = <http://plato.stanford.edu/archives/sum2011/entries/mathematics-explanation/ >},
   booktitle    = {The Stanford Encyclopedia of Philosophy},
@@ -4732,13 +4721,16 @@
   keywords    = {Language_and_Logic},
   school      = {Emory University},
 }
-
-@InProceedings{Millson2014a,
+{Millson2014a,
   author    = {Millson, Jared},
   title     = {Queries and Assertions in Minimally Discursive Practice},
   booktitle = {Proceedings of the Society for the Study of Artificial Intelligence and the Simulation of Behavior, AISB'50},
   year      = {2014},
+<<<<<<< HEAD
   editor    = {Rodger Kibble, et al.},
+=======
+  editor    = {Mark Bishop and Kate Devlin and Yasemin J. Erden and Rodger Kibble and Stephen McGregor and Mohammad Majid al-Rifaie and Andrew Martin and Monica Moreno and Stephen Rainey},
+>>>>>>> master
   month     = apr,
   address   = {Goldsmiths College, UK},
   keywords  = {Language_and_Logic},
@@ -5635,15 +5627,17 @@
   timestamp  = {2016.06.29},
   type       = {Journal Article},
 }
-
-@Book{Risjord2000,
+{Risjord2000,
   title     = {Woodcutters and Witchcraft: Rationality and Interpretive Change in the Social Sciences},
   publisher = {State University of New York Press},
   year      = {2000},
   author    = {Risjord, Mark},
   address   = {Albany},
+<<<<<<< HEAD
   isbn      = {0791445119 (hc. alk. paper) 0791445127 (pbk. alk. paper)},
   keywords  = {Pragmatic},
+=======
+>>>>>>> master
   owner     = {jaredmillson},
   pages     = {ix, 201},
   timestamp = {2016.06.29},
@@ -5857,12 +5851,6 @@
   year      = {1984},
   author    = {Salmon, Wesley C.},
   address   = {Princeton},
-  isbn      = {0691072930 (alk. paper) 0691101701 (pbk. alk. paper)},
-  keywords  = {Causal-Mechanical},
-  owner     = {jaredmillson},
-  pages     = {xiv, 305},
-  timestamp = {2016.06.29},
-  type      = {Book},
 }
 
 @Article{Salmon1978,
@@ -5882,16 +5870,18 @@
   timestamp  = {2016.06.29},
   type       = {Journal Article},
 }
-
-@InCollection{Salmon1977,
+{Salmon1977,
   author    = {Salmon, Wesley C.},
   title     = {A Third Dogma of Empiricism},
   booktitle = {Basic Problems in Methodology and Linguistics: Part Three of the Proceedings of the Fifth International Congress of Logic, Methodology and Philosophy of Science},
   year      = {1977},
   editor    = {Butts, Robert and Hintikka, Jaakko},
+<<<<<<< HEAD
   editora   = {Hintikka, Jaakko},
   editorb   = {Butts, Robert},
   series    = {The Western Ontario Series in Philosophy of Science},
+=======
+>>>>>>> master
   publisher = {Dordrecht Reidel},
   pages     = {149--166},
   address   = {Dordrecht-Holland},
@@ -7471,49 +7461,20 @@
   type       = {Book},
   url        = {http://www.loc.gov/catdir/toc/ecip084/2007046456.html http://firstsearch.oclc.org/WebZ/DCARead?standardNoType=1&standardNo=9780742542808:srcdbname=worldcat:fromExternal=true&sessionid=0},
 }
-
-@Book{Aqvist1965,
-  title     = {A New Approach to the Logical Theory of Interrogatives: Analysis},
-  publisher = {University of Uppsala},
-  year      = {1965},
-  author    = {{\AA}qvist, L.},
-  lccn      = {74173180},
-  owner     = {Owner},
-  timestamp = {2013.08.19},
-}
-
-@Article{Hamblin1958,
-  author    = {Hamblin, C. L.},
-  title     = {Questions},
-  year      = {1958},
-  volume    = {36},
-  number    = {3},
-  pages     = {159-168},
-  journal   = {Australasian Journal of Philosophy},
-  owner     = {Owner},
-  timestamp = {2013.10.11},
-}
-
-@Article{Hintikka1976,
-  author    = {Hintikka, Jaakko},
-  title     = {The Semantics of Questions and the Questions of Semantics},
-  year      = {1976},
-  volume    = {28},
-  number    = {4},
-  journal   = {Acta Philosophica Fennica},
-  owner     = {Owner},
-  timestamp = {2013.08.19},
-}
-
-@Book{Searle1985,
+{Searle1985,
   title     = {Foundations of Illocutionary Logic},
   publisher = {Cambridge University Press},
   year      = {1985},
+<<<<<<< HEAD
   author    = {Searle, John and Vanderveken, Daniel},
+=======
+  author    = {Searle, J. and Vanderveken, D.},
+>>>>>>> master
   owner     = {Owner},
   timestamp = {2013.10.11},
 }
 
+<<<<<<< HEAD
 @Book{Searle1969,
   title     = {Speech Acts: An Essay in the Philosophy of Language},
   publisher = {Cambridge University Press},
@@ -7522,8 +7483,7 @@
   owner     = {Owner},
   timestamp = {2013.10.11},
 }
-
-@Article{Turri2010,
+{Turri2010,
   author    = {John Turri},
   title     = {Prompting Challenges},
   year      = {2010},
@@ -7533,18 +7493,69 @@
   journal   = {Analysis},
   owner     = {Owner},
   timestamp = {2014.01.05},
+=======
+@Article{Stalnaker2002,
+  author    = {Stalnaker, R.},
+  title     = {Common ground},
+  journal   = {Linguistics and Philosophy},
+  year      = {2002},
+  volume    = {25},
+  number    = {5-6},
+  pages     = {701-721},
+  owner     = {Owner},
+  timestamp = {2014.02.16},
 }
 
-@Book{Weiss2010,
+@Article{Stalnaker1998,
+  author    = {Stalnaker, R.},
+  title     = {On the representation of context},
+  journal   = {Journal of Logic, Language and Information},
+  year      = {1998},
+  volume    = {7},
+  number    = {1},
+  pages     = {3-19},
+  owner     = {Owner},
+  timestamp = {2014.02.16},
+}
+
+@Article{Stalnaker1973,
+  author    = {Stalnaker, R.},
+  title     = {Presuppositions},
+  journal   = {Journal of Philosophical Logic},
+  year      = {1973},
+  volume    = {2},
+  number    = {4},
+  pages     = {447 - 457},
+  owner     = {Owner},
+  timestamp = {2014.02.16},
+}
+{Weiss2010,
   title     = {Reading Brandom : on making it explicit},
   publisher = {Routledge},
   year      = {2010},
+<<<<<<< HEAD
   author    = {Weiss, Bernhard and Wanderer, Jeremy},
+=======
+  author    = {Weiss, B. and Wanderer, J.},
+>>>>>>> master
   address   = {Abingdon, Oxon ; New York},
   owner     = {Owner},
   timestamp = {2013.08.18},
 }
 
+<<<<<<< HEAD
+=======
+@Article{Wisniewski2003,
+  author  = {Wi{\'s}niewski, A.},
+  title   = {Erotetic Search Scenarios},
+  journal = {Synthese},
+  year    = {2003},
+  volume  = {134},
+  number  = {3},
+  pages   = {389--427},
+}
+
+>>>>>>> master
 @Book{Wisniewski1995,
   title     = {The Posing of Questions: Logical Foundations of Erotetic Inferences},
   publisher = {Springer},
@@ -7553,14 +7564,16 @@
   owner     = {Owner},
   timestamp = {2013.10.08},
 }
-
-@Article{Wisniewski1994,
-  author    = {Wi{\'s}niewski, Andrzej},
+{wisniewski1994reducibility,
+  author    = {Wi{\'s}niewski, A.},
   title     = {On the reducibility of questions},
+  journal   = {Erkenntnis},
+>>>>>>> master
   year      = {1994},
   volume    = {40},
   number    = {2},
   pages     = {265--284},
+<<<<<<< HEAD
   journal   = {Erkenntnis},
   publisher = {Springer},
 }
@@ -8324,6 +8337,242 @@
   volume  = {7},
   number  = {1},
   pages   = {103--126},
+}
+
+@Book{Price2011,
+  title     = {Naturalism Without Mirrors},
+  publisher = {Oxford University Press},
+  year      = {2011},
+  author    = {Huw Price},
+  address   = {New York, NY},
+}
+
+@Article{Thomasson2013,
+  author    = {Amie L. Thomasson},
+  title     = {Norms and Necessity},
+  year      = {2013},
+  volume    = {51},
+  number    = {2},
+  pages     = {143--160},
+  journal   = {Southern Journal of Philosophy},
+  publisher = {Wiley-Blackwell},
+}
+
+@Book{Dummett1991,
+  title     = {The Logical Basis of Metaphysics},
+  publisher = {Harvard University Press},
+  year      = {1991},
+  author    = {Michael A. E. Dummett},
+}
+
+@Book{Dummett1993,
+  title     = {The Seas of Language},
+  publisher = {Oxford University Press},
+  year      = {1993},
+  author    = {Michael A. E. Dummett},
+}
+
+@Book{Horwich1999,
+  title     = {Truth},
+  publisher = {Oxford University Press, USA},
+  year      = {1999},
+  author    = {Horwich, P.},
+}
+
+@Book{Blackburn1993,
+  title     = {Essays in Quasi-Realism},
+  publisher = {Oxford University Press},
+  year      = {1993},
+  author    = {Simon Blackburn},
+}
+
+@Book{Gibbard2003,
+  title     = {Thinking How to Live},
+  publisher = {Harvard University Press},
+  year      = {2003},
+  author    = {Allan Gibbard},
+}
+
+@Article{Prawitz2006,
+  author    = {Dag Prawitz},
+  title     = {Meaning Approached Via Proofs},
+  year      = {2006},
+  volume    = {148},
+  number    = {3},
+  pages     = {507--524},
+  journal   = {Synthese},
+  publisher = {Springer},
+}
+
+@Book{Prawitz1965,
+  title     = {Natural Deduction: A Proof-Theoretical Study},
+  publisher = {Dover Publications},
+  year      = {1965},
+  author    = {Dag Prawitz},
+}
+
+@Article{Prawitz1994,
+  author    = {Dag Prawitz},
+  title     = {Meaning and Experience},
+  year      = {1994},
+  volume    = {98},
+  number    = {1},
+  pages     = {131--141},
+  journal   = {Synthese},
+  publisher = {Springer},
+}
+
+@InBook{Chrisman2014,
+  author    = {Matthew Chrisman},
+  title     = {Attitudinal Expressivism and Logical Pragmatism},
+  booktitle = {Pragmatism, Law, and Language},
+  year      = {2014},
+  editor    = {Graham Hubbs and Douglas Lind},
+  series    = {Routledge Studies in Contemporary Philosophy},
+  publisher = {New York: Routledge},
+  isbn      = {978-0415857307},
+  pages     = {117--135},
+  keywords  = {expressivism, pragmatism, logical vocabulary},
+}
+
+@Article{Schroeder-Heister2006,
+  author    = {Peter Schroeder{-}Heister},
+  title     = {Validity Concepts in Proof-Theoretic Semantics},
+  year      = {2006},
+  volume    = {148},
+  number    = {3},
+  pages     = {525--571},
+  journal   = {Synthese},
+  publisher = {Springer},
+}
+
+@Article{Sanz2014,
+  author  = {W. De Campos Sanz and T. Piecha and P. Schroeder{-}Heister},
+  title   = {Constructive Semantics, Admissibility of Rules and the Validity of Peirce's Law},
+  year    = {2014},
+  volume  = {22},
+  number  = {2},
+  pages   = {297--308},
+  journal = {Logic Journal of the IGPL},
+}
+
+@Article{Sandqvist2009,
+  author    = {Tor Sandqvist},
+  title     = {Classical Logic Without Bivalence},
+  year      = {2009},
+  volume    = {69},
+  number    = {2},
+  pages     = {211--218},
+  journal   = {Analysis},
+  publisher = {Oxford University Press},
+}
+
+@InCollection{Prawitz2007,
+  author    = {Prawitz, Dag},
+  title     = {Pragmatist and Verificationist Theories of Meaning},
+  booktitle = {The Philosophy of Michael Dummett},
+  year      = {2007},
+  editora   = {Auxier, R.E.},
+  editorb   = {Hahn, L.E.},
+  publisher = {Open Court Publishing Company},
+  location  = {Chicago and La Salle, Illinois},
+}
+
+@Article{Prior1960,
+  author  = {Prior, Arthur N},
+  title   = {The runabout inference ticket},
+  year    = {1960},
+  volume  = {21},
+  number  = {2},
+  pages   = {38--39},
+  journal = {Analysis},
+}
+
+@Article{Belnap1962,
+  author    = {Nuel Belnap},
+  title     = {Tonk, Plonk and Plink},
+  year      = {1962},
+  volume    = {22},
+  number    = {6},
+  pages     = {130--134},
+  journal   = {Analysis},
+  publisher = {Oxford University Press},
+}
+{Khalifaforthcomingc,
+  author       = {Khalifa, Kareem and Millson, Jared and Risjord, Mark},
+  title        = {Inference, Explanation, and Asymmetry},
+  journaltitle = {Synthese},
+  year         = {forthcoming},
+=======
+  owner     = {Owner},
+  publisher = {Springer},
+  timestamp = {2014.01.19},
+}
+
+@Article{Hintikka1976,
+  author    = {Hintikka, J.},
+  title     = {The Semantics of Questions and the Questions of Semantics},
+  journal   = {Acta Philosophica Fennica},
+  year      = {1976},
+  volume    = {28},
+  number    = {4},
+  owner     = {Owner},
+  timestamp = {2013.08.19},
+}
+
+@Article{Jaworski2009,
+  author    = {Jaworski, W.},
+  title     = {The Logic of How-Questions},
+  journal   = {Synthese},
+  year      = {2009},
+  volume    = {166},
+  number    = {1},
+  pages     = {133-155},
+  owner     = {Owner},
+  timestamp = {2014.02.16},
+}
+
+@Article{Kallestrup2009,
+  author  = {Kallestrup, J.},
+  title   = {Knowledge-Wh and the Problem of Convergent Knowledge},
+  journal = {Philosophy and Phenomenological Research},
+  year    = {2009},
+  volume  = {78},
+  number  = {2},
+  pages   = {468--476},
+}
+
+@Article{Kubinski1966,
+  author    = {Kubi{\'n}ski, T.},
+  title     = {A review of some problems of the logic of questions},
+  journal   = {Studia Logica},
+  year      = {1966},
+  volume    = {18},
+  number    = {1},
+  owner     = {Owner},
+  timestamp = {2014.02.16},
+}
+
+@Article{Kubinski1965,
+  author    = {Kubi{\'n}ski, T.},
+  title     = {Two kinds of quotation mark expressions in formalized languages},
+  journal   = {Studia Logica},
+  year      = {1965},
+  volume    = {17},
+  number    = {1},
+  pages     = {31 - 51},
+  owner     = {Owner},
+  timestamp = {2014.02.16},
+}
+
+@Book{Kukla2009a,
+  author    = {Kukla, R. and Lance, M.},
+  title     = {'Yo!' and 'Lo!' : the Pragmatic Topography of the Space of Reasons},
+  year      = {2009},
+  publisher = {Harvard University Press},
+  address   = {Cambridge, Mass.},
+  owner     = {Owner},
+  timestamp = {2013.09.12},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
