@@ -1,0 +1,1722 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global/}
+    \entry{Achinstein1983}{book}{}
+      \name{author}{1}{}{%
+        {{hash=0ddb00a2c07584ca298439fa2ca37f53}{%
+           family={Achinstein},
+           family_i={A\bibinitperiod},
+           given={Peter},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{0ddb00a2c07584ca298439fa2ca37f53}
+      \strng{fullhash}{0ddb00a2c07584ca298439fa2ca37f53}
+      \field{sortinit}{A}
+      \field{sortinithash}{b685c7856330eaee22789815b49de9bb}
+      \field{labelyear}{1983}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0195032152}
+      \field{title}{The Nature of Explanation}
+      \field{type}{Book}
+      \field{year}{1983}
+      \field{pages}{ix\bibrangessep 385}
+      \range{pages}{2}
+    \endentry
+    \entry{Baker2005}{article}{}
+      \name{author}{1}{}{%
+        {{hash=62f3d7e21c53f02a2ff1fa05ac4a4f7c}{%
+           family={Baker},
+           family_i={B\bibinitperiod},
+           given={Alan},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Mind Assoc}%
+      }
+      \strng{namehash}{62f3d7e21c53f02a2ff1fa05ac4a4f7c}
+      \strng{fullhash}{62f3d7e21c53f02a2ff1fa05ac4a4f7c}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{2005}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mind}
+      \field{number}{454}
+      \field{title}{Are There Genuine Mathematical Explanations of Physical Phenomena?}
+      \field{volume}{114}
+      \field{year}{2005}
+      \field{pages}{223\bibrangedash 238}
+      \range{pages}{16}
+    \endentry
+    \entry{Barnes1992}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f3d5fda53179921076bcaba7e271b687}{%
+           family={Barnes},
+           family_i={B\bibinitperiod},
+           given={Eric\bibnamedelima C.},
+           given_i={E\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3d5fda53179921076bcaba7e271b687}
+      \strng{fullhash}{f3d5fda53179921076bcaba7e271b687}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{1992}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophy of Science}
+      \field{number}{4}
+      \field{title}{Explanatory Unification and the Problem of Asymmetry}
+      \field{type}{Journal Article}
+      \field{volume}{59}
+      \field{year}{1992}
+      \field{pages}{558\bibrangedash 571}
+      \range{pages}{14}
+    \endentry
+    \entry{Batterman2002}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1ff5b707e57b65b2fe3d1408f78218fd}{%
+           family={Batterman},
+           family_i={B\bibinitperiod},
+           given={Robert\bibnamedelima W.},
+           given_i={R\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{1ff5b707e57b65b2fe3d1408f78218fd}
+      \strng{fullhash}{1ff5b707e57b65b2fe3d1408f78218fd}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{2002}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Devil in the Details : Asymptotic Reasoning in Explanation, Reduction and Emergence}
+      \field{type}{Book}
+      \field{year}{2002}
+      \field{pages}{X\bibrangedash 144 p.}
+      \range{pages}{-1}
+    \endentry
+    \entry{Bokulich2011}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cbf46575a5b0f87058555531eac20798}{%
+           family={Bokulich},
+           family_i={B\bibinitperiod},
+           given={Alisa},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbf46575a5b0f87058555531eac20798}
+      \strng{fullhash}{cbf46575a5b0f87058555531eac20798}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0039-7857}
+      \field{journaltitle}{Synthese}
+      \field{number}{1}
+      \field{title}{How Scientific Models Can Explain}
+      \field{type}{Journal Article}
+      \field{volume}{180}
+      \field{year}{2011}
+      \field{pages}{33\bibrangedash 45}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/s11229-009-9565-1
+      \endverb
+    \endentry
+    \entry{Brandom2008}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9da8c4765f65ce4f538161c8e53e5957}{%
+           family={Brandom},
+           family_i={B\bibinitperiod},
+           given={Robert},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oxford ; New York}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{9da8c4765f65ce4f538161c8e53e5957}
+      \strng{fullhash}{9da8c4765f65ce4f538161c8e53e5957}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{2008}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Between Saying and Doing : Towards an Analytic Pragmatism}
+      \field{year}{2008}
+    \endentry
+    \entry{Brandom2015}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9da8c4765f65ce4f538161c8e53e5957}{%
+           family={Brandom},
+           family_i={B\bibinitperiod},
+           given={Robert},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{9da8c4765f65ce4f538161c8e53e5957}
+      \strng{fullhash}{9da8c4765f65ce4f538161c8e53e5957}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{From Empiricism to Expressivism}
+      \field{year}{2015}
+    \endentry
+    \entry{Brandom1994}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9da8c4765f65ce4f538161c8e53e5957}{%
+           family={Brandom},
+           family_i={B\bibinitperiod},
+           given={Robert},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{9da8c4765f65ce4f538161c8e53e5957}
+      \strng{fullhash}{9da8c4765f65ce4f538161c8e53e5957}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{1994}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Making It Explicit : Reasoning, Representing, and Discursive Commitment}
+      \field{year}{1994}
+      \keyw{Language and languages Philosophy. Semantics (Philosophy) Pragmatics. Representation (Philosophy)}
+    \endentry
+    \entry{Bromberger1966}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=39e5c67ea9b91ea16785a734e90b6502}{%
+           family={Bromberger},
+           family_i={B\bibinitperiod},
+           given={S.},
+           given_i={S\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=471d8d414846e0e1ad01f34a8044ef02}{%
+           family={Colodny},
+           family_i={C\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Pittsburgh}%
+      }
+      \list{publisher}{1}{%
+        {University of Pittsburgh Press}%
+      }
+      \strng{namehash}{39e5c67ea9b91ea16785a734e90b6502}
+      \strng{fullhash}{39e5c67ea9b91ea16785a734e90b6502}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{1966}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Mind and Cosmos: Essays in Contemporary Science and Philosophy}
+      \field{title}{Why-Questions}
+      \field{year}{1966}
+      \field{pages}{86\bibrangedash 111}
+      \range{pages}{26}
+    \endentry
+    \entry{Bromberger1965}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=74efa4015c6e52a153e513112ac729e9}{%
+           family={Bromberger},
+           family_i={B\bibinitperiod},
+           given={Sylvain},
+           given_i={S\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=1d54cdacd8569633af21499c08889a85}{%
+           family={Butler},
+           family_i={B\bibinitperiod},
+           given={R.J.},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oxford}%
+      }
+      \list{publisher}{1}{%
+        {Blackwell}%
+      }
+      \strng{namehash}{74efa4015c6e52a153e513112ac729e9}
+      \strng{fullhash}{74efa4015c6e52a153e513112ac729e9}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labelyear}{1965}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Studies in analytical philosophy}
+      \field{title}{An Approach to Explanation}
+      \field{type}{Book Section}
+      \field{volume}{2}
+      \field{year}{1965}
+      \field{pages}{72\bibrangedash 105}
+      \range{pages}{34}
+    \endentry
+    \entry{Faye2007}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=c666b6e5d3d23e67e687dc65b98c06ef}{%
+           family={Faye},
+           family_i={F\bibinitperiod},
+           given={Jan},
+           given_i={J\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=0c5b21c9135614fec5b8cbeddaa2f211}{%
+           family={Persson},
+           family_i={P\bibinitperiod},
+           given={J.},
+           given_i={J\bibinitperiod}}}%
+        {{hash=9d4fb2833a4bf9e403542a5635432ba2}{%
+           family={Ylikoski},
+           family_i={Y\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \strng{fullhash}{c666b6e5d3d23e67e687dc65b98c06ef}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelyear}{2007}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Rethinking Explanation}
+      \field{series}{Boston studies in the philosophy of science}
+      \field{title}{The Pragmatic-rhetorical Theory of Explanation}
+      \field{volume}{252}
+      \field{year}{2007}
+      \field{pages}{43\bibrangedash 68}
+      \range{pages}{26}
+    \endentry
+    \entry{Fraassen1980}{book}{}
+      \name{author}{1}{}{%
+        {{hash=886434521097777414af19ffb5e550cb}{%
+           prefix={van},
+           prefix_i={v\bibinitperiod},
+           family={Fraassen},
+           family_i={F\bibinitperiod},
+           given={B.C.},
+           given_i={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Clarendon Press}%
+      }
+      \strng{namehash}{886434521097777414af19ffb5e550cb}
+      \strng{fullhash}{886434521097777414af19ffb5e550cb}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelyear}{1980}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Scientific Image}
+      \field{year}{1980}
+    \endentry
+    \entry{Friedman1974}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f1d3f37756c0c44c598929e728a13f39}{%
+           family={Friedman},
+           family_i={F\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f1d3f37756c0c44c598929e728a13f39}
+      \strng{fullhash}{f1d3f37756c0c44c598929e728a13f39}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labelyear}{1974}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Philosophy}
+      \field{number}{1}
+      \field{title}{Explanation and Scientific Understanding}
+      \field{type}{Journal Article}
+      \field{volume}{71}
+      \field{year}{1974}
+      \field{pages}{5\bibrangedash 19}
+      \range{pages}{15}
+    \endentry
+    \entry{Garfinkel1981}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f1b7602e5637f5300c191e4c3e2e3017}{%
+           family={Garfinkel},
+           family_i={G\bibinitperiod},
+           given={A.},
+           given_i={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New Haven}%
+      }
+      \list{publisher}{1}{%
+        {Yale University Press}%
+      }
+      \strng{namehash}{f1b7602e5637f5300c191e4c3e2e3017}
+      \strng{fullhash}{f1b7602e5637f5300c191e4c3e2e3017}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelyear}{1981}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Forms of Explanation: Rethinking the Questions in Social Theory}
+      \field{year}{1981}
+    \endentry
+    \entry{Hempel1965}{book}{}
+      \name{author}{1}{}{%
+        {{hash=878198fd7b9d842f0007ebe26f0ba74c}{%
+           family={Hempel},
+           family_i={H\bibinitperiod},
+           given={Carl\bibnamedelima G},
+           given_i={C\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Free Press}%
+      }
+      \strng{namehash}{878198fd7b9d842f0007ebe26f0ba74c}
+      \strng{fullhash}{878198fd7b9d842f0007ebe26f0ba74c}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelyear}{1965}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Aspects of Scientific Explanation: And Other Essays in the Philosophy of Science.}
+      \field{year}{1965}
+    \endentry
+    \entry{Hempel1942}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7e2844b2a9436d6d29509785fa07969d}{%
+           family={Hempel},
+           family_i={H\bibinitperiod},
+           given={Carl\bibnamedelima G.},
+           given_i={C\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Journal of Philosophy, Inc.}%
+      }
+      \strng{namehash}{7e2844b2a9436d6d29509785fa07969d}
+      \strng{fullhash}{7e2844b2a9436d6d29509785fa07969d}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelyear}{1942}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Philosophy}
+      \field{number}{2}
+      \field{title}{The Function of General Laws in History}
+      \field{volume}{39}
+      \field{year}{1942}
+      \field{pages}{35\bibrangedash 48}
+      \range{pages}{14}
+      \verb{url}
+      \verb http://www.jstor.org/stable/2017635
+      \endverb
+    \endentry
+    \entry{Hlobil2016}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=5d6e771a4661b04c4d7e7279cd8c2074}{%
+           family={Hlobil},
+           family_i={H\bibinitperiod},
+           given={Ulf},
+           given_i={U\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=c1cdf6ad696f53d29557006bf4924aab}{%
+           family={Arazim},
+           family_i={A\bibinitperiod},
+           given={Pavel},
+           given_i={P\bibinitperiod}}}%
+        {{hash=574208de80df7ed853686360ff0f16b5}{%
+           family={Dan\v{c}\'{a}k},
+           family_i={D\bibinitperiod},
+           given={Michal},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {College Publications}%
+      }
+      \strng{namehash}{5d6e771a4661b04c4d7e7279cd8c2074}
+      \strng{fullhash}{5d6e771a4661b04c4d7e7279cd8c2074}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelyear}{2016}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Logica Yearbook 2015}
+      \field{isbn}{9781848901773}
+      \field{title}{A Nonmonotonic Sequent Calculus for Inferentialist Expressivists}
+      \field{year}{2016}
+      \field{pages}{87\bibrangedash 105}
+      \range{pages}{19}
+    \endentry
+    \entry{Huneman2010}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fd7616b3f7bdd14979b25f8c79222791}{%
+           family={Huneman},
+           family_i={H\bibinitperiod},
+           given={Philippe},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{fd7616b3f7bdd14979b25f8c79222791}
+      \strng{fullhash}{fd7616b3f7bdd14979b25f8c79222791}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labelyear}{2010}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Synthese}
+      \field{number}{2}
+      \field{title}{Topological Explanations and Robustness in Biological Sciences}
+      \field{volume}{177}
+      \field{year}{2010}
+      \field{pages}{213\bibrangedash 245}
+      \range{pages}{33}
+    \endentry
+    \entry{Irvine2015}{article}{}
+      \name{author}{1}{}{%
+        {{hash=62f56967524aec15d6910638d7708f66}{%
+           family={Irvine},
+           family_i={I\bibinitperiod},
+           given={Elizabeth},
+           given_i={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{62f56967524aec15d6910638d7708f66}
+      \strng{fullhash}{62f56967524aec15d6910638d7708f66}
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0039-7857}
+      \field{journaltitle}{Synthese}
+      \field{number}{12}
+      \field{title}{Models, Robustness, and Non-causal Explanation: A Foray into Cognitive Science and Biology}
+      \field{type}{Journal Article}
+      \field{volume}{192}
+      \field{year}{2015}
+      \field{pages}{3943\bibrangedash 3959}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/s11229-014-0524-0
+      \endverb
+    \endentry
+    \entry{Khalifa2011a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=94a261d96f2092a8900f5c41dd1bb12a}{%
+           family={Khalifa},
+           family_i={K\bibinitperiod},
+           given={K.},
+           given_i={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{94a261d96f2092a8900f5c41dd1bb12a}
+      \strng{fullhash}{94a261d96f2092a8900f5c41dd1bb12a}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Social Epistemology}
+      \field{number}{4}
+      \field{title}{Contrastive Explanations As Social Accounts}
+      \field{volume}{24}
+      \field{year}{2011}
+      \field{pages}{263\bibrangedash 284}
+      \range{pages}{22}
+    \endentry
+    \entry{Kitcher1989}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=d135fab97047219bb9b9296a2cece7b5}{%
+           family={Kitcher},
+           family_i={K\bibinitperiod},
+           given={Philip},
+           given_i={P\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=40ed00828895ecd8a3c081f9895771e5}{%
+           family={Kitcher},
+           family_i={K\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+        {{hash=31555058b736e8886aee0f728e4c507e}{%
+           family={Salmon},
+           family_i={S\bibinitperiod},
+           given={W.\bibnamedelimi C.},
+           given_i={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Minneapolis}%
+      }
+      \list{publisher}{1}{%
+        {University of Minnesota Press}%
+      }
+      \strng{namehash}{d135fab97047219bb9b9296a2cece7b5}
+      \strng{fullhash}{d135fab97047219bb9b9296a2cece7b5}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{1989}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Scientific explanation}
+      \field{title}{Explanatory Unification and the Causal Structure of the World}
+      \field{type}{Book Section}
+      \field{volume}{XIII}
+      \field{year}{1989}
+      \field{pages}{410\bibrangedash 506}
+      \range{pages}{97}
+    \endentry
+    \entry{Kitcher1987}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d135fab97047219bb9b9296a2cece7b5}{%
+           family={Kitcher},
+           family_i={K\bibinitperiod},
+           given={Philip},
+           given_i={P\bibinitperiod}}}%
+        {{hash=3a900c021405fe87bce83b2cc1b436e2}{%
+           family={Salmon},
+           family_i={S\bibinitperiod},
+           given={Wesley\bibnamedelima C.},
+           given_i={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{c2d1113be6d16f929adad2e0cf3ff34c}
+      \strng{fullhash}{c2d1113be6d16f929adad2e0cf3ff34c}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{1987}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of philosophy}
+      \field{number}{6}
+      \field{title}{Van Fraassen on Explanation}
+      \field{type}{Journal Article}
+      \field{volume}{84}
+      \field{year}{1987}
+      \field{pages}{315\bibrangedash 330}
+      \range{pages}{16}
+    \endentry
+    \entry{Kyburg1965}{article}{}
+      \name{author}{1}{}{%
+        {{hash=43201ca6f296da714b89cbffecef1bcf}{%
+           family={Kyburg},
+           family_i={K\bibinitperiod},
+           given={Henry\bibnamedelima E.},
+           given_i={H\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{43201ca6f296da714b89cbffecef1bcf}
+      \strng{fullhash}{43201ca6f296da714b89cbffecef1bcf}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelyear}{1965}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophy of Science}
+      \field{number}{2}
+      \field{title}{Salmon's Paper}
+      \field{volume}{32}
+      \field{year}{1965}
+      \field{pages}{147\bibrangedash 151}
+      \range{pages}{5}
+    \endentry
+    \entry{Lange2013}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e110c767b3b990eab167e7be21db386f}{%
+           family={Lange},
+           family_i={L\bibinitperiod},
+           given={Marc},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e110c767b3b990eab167e7be21db386f}
+      \strng{fullhash}{e110c767b3b990eab167e7be21db386f}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{extrayear}{1}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophy of Science}
+      \field{number}{2}
+      \field{title}{Really Statistical Explanations and Genetic Drift}
+      \field{volume}{80}
+      \field{year}{2013}
+      \field{pages}{169\bibrangedash 188}
+      \range{pages}{20}
+    \endentry
+    \entry{Lange2013a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e110c767b3b990eab167e7be21db386f}{%
+           family={Lange},
+           family_i={L\bibinitperiod},
+           given={Marc},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e110c767b3b990eab167e7be21db386f}
+      \strng{fullhash}{e110c767b3b990eab167e7be21db386f}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{extrayear}{2}
+      \field{labelyear}{2013}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{British Journal for the Philosophy of Science}
+      \field{number}{3}
+      \field{title}{What Makes a Scientific Explanation Distinctively Mathematical?}
+      \field{volume}{64}
+      \field{year}{2013}
+      \field{pages}{485\bibrangedash 511}
+      \range{pages}{27}
+    \endentry
+    \entry{Lipton2004}{book}{}
+      \name{author}{1}{}{%
+        {{hash=963b86bd4ee1caf2e116632eef25cd91}{%
+           family={Lipton},
+           family_i={L\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{963b86bd4ee1caf2e116632eef25cd91}
+      \strng{fullhash}{963b86bd4ee1caf2e116632eef25cd91}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labelyear}{2004}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{International library of philosophy and scientific method}
+      \field{title}{Inference to the Best Explanation}
+      \field{year}{2004}
+    \endentry
+    \entry{Merriman1918}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4edd940f0454e7129119a69dae8f5985}{%
+           family={Merriman},
+           family_i={M\bibinitperiod},
+           given={Roger\bibnamedelima Bigelow},
+           given_i={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Macmillan}%
+      }
+      \strng{namehash}{4edd940f0454e7129119a69dae8f5985}
+      \strng{fullhash}{4edd940f0454e7129119a69dae8f5985}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelyear}{1918}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{v. 1--4}
+      \field{title}{The Rise of the Spanish Empire in the Old World and in the New}
+      \field{volume}{1--4}
+      \field{year}{1918}
+      \verb{url}
+      \verb https://books.google.com/books?id=fHAcAAAAMAAJ
+      \endverb
+    \endentry
+    \entry{Millson2014}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=b2a4a4a701ca2ba421e841760fa4b70c}{%
+           family={Millson},
+           family_i={M\bibinitperiod},
+           given={Jared},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Emory University}%
+      }
+      \strng{namehash}{b2a4a4a701ca2ba421e841760fa4b70c}
+      \strng{fullhash}{b2a4a4a701ca2ba421e841760fa4b70c}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{1}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{subtitle}{Assertions, Queries, and the Normative Structure of Minimally Discursive Practices}
+      \field{title}{How to Ask a Question in the Space of Reasons}
+      \field{type}{phdthesis}
+      \field{year}{2014}
+    \endentry
+    \entry{Millson2014a}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=b2a4a4a701ca2ba421e841760fa4b70c}{%
+           family={Millson},
+           family_i={M\bibinitperiod},
+           given={Jared},
+           given_i={J\bibinitperiod}}}%
+      }
+      \name{editor}{9}{}{%
+        {{hash=19ffe1ffd3227a73fd91e51c68788449}{%
+           family={Bishop},
+           family_i={B\bibinitperiod},
+           given={Mark},
+           given_i={M\bibinitperiod}}}%
+        {{hash=30f4f61fa51a7daf6fd1be7c218dd1f0}{%
+           family={Devlin},
+           family_i={D\bibinitperiod},
+           given={Kate},
+           given_i={K\bibinitperiod}}}%
+        {{hash=3f25523b76d738faf1f7697f2a3ee3a8}{%
+           family={Erden},
+           family_i={E\bibinitperiod},
+           given={Yasemin\bibnamedelima J.},
+           given_i={Y\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3327f74253be5819b88db4166c0070c1}{%
+           family={Kibble},
+           family_i={K\bibinitperiod},
+           given={Rodger},
+           given_i={R\bibinitperiod}}}%
+        {{hash=efb07638371c22a30c40c1f79bc5d52f}{%
+           family={McGregor},
+           family_i={M\bibinitperiod},
+           given={Stephen},
+           given_i={S\bibinitperiod}}}%
+        {{hash=f7e6a17cfba5716423761d2e762d35c2}{%
+           family={al-Rifaie},
+           family_i={R\bibinitperiod},
+           given={Mohammad\bibnamedelima Majid},
+           given_i={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0f8b44db96f0051ceb98a264428f2aff}{%
+           family={Martin},
+           family_i={M\bibinitperiod},
+           given={Andrew},
+           given_i={A\bibinitperiod}}}%
+        {{hash=71f82ff82dbc3b25b7ea9d24d83d4f2b}{%
+           family={Moreno},
+           family_i={M\bibinitperiod},
+           given={Monica},
+           given_i={M\bibinitperiod}}}%
+        {{hash=6a1276e696813b69503ec324a84edfdd}{%
+           family={Rainey},
+           family_i={R\bibinitperiod},
+           given={Stephen},
+           given_i={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Goldsmiths College, UK}%
+      }
+      \strng{namehash}{b2a4a4a701ca2ba421e841760fa4b70c}
+      \strng{fullhash}{b2a4a4a701ca2ba421e841760fa4b70c}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{extrayear}{2}
+      \field{labelyear}{2014}
+      \field{labelmonth}{04}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Society for the Study of Artificial Intelligence and the Simulation of Behavior, AISB'50}
+      \field{month}{04}
+      \field{title}{Queries and Assertions in Minimally Discursive Practice}
+      \field{year}{2014}
+    \endentry
+    \entry{Mitchell2003}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ee8c93320c9285a6de444bbf34c4c0ec}{%
+           family={Mitchell},
+           family_i={M\bibinitperiod},
+           given={Sandra\bibnamedelima D.},
+           given_i={S\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{ee8c93320c9285a6de444bbf34c4c0ec}
+      \strng{fullhash}{ee8c93320c9285a6de444bbf34c4c0ec}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelyear}{2003}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Biological Complexity and Integrative Pluralism}
+      \field{year}{2003}
+    \endentry
+    \entry{Morgan2000}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0db8c6611d844fec5900f2cfcffbd27b}{%
+           family={Morgan},
+           family_i={M\bibinitperiod},
+           given={Charles\bibnamedelima G},
+           given_i={C\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{0db8c6611d844fec5900f2cfcffbd27b}
+      \strng{fullhash}{0db8c6611d844fec5900f2cfcffbd27b}
+      \field{sortinit}{M}
+      \field{sortinithash}{2684bec41e9697b92699b46491061da2}
+      \field{labelyear}{2000}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Minds and Machines}
+      \field{number}{3}
+      \field{title}{The Nature of Nonmonotonic Reasoning}
+      \field{volume}{10}
+      \field{year}{2000}
+      \field{pages}{321\bibrangedash 360}
+      \range{pages}{40}
+    \endentry
+    \entry{Norton2003}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a762c0d50ff0d045ec0fa3df5fac3945}{%
+           family={Norton},
+           family_i={N\bibinitperiod},
+           given={John\bibnamedelima D.},
+           given_i={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{a762c0d50ff0d045ec0fa3df5fac3945}
+      \strng{fullhash}{a762c0d50ff0d045ec0fa3df5fac3945}
+      \field{sortinit}{N}
+      \field{sortinithash}{925374ca63e7594de7fafdb83e64d41d}
+      \field{labelyear}{2003}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophy of Science}
+      \field{title}{A Material Theory of Induction}
+      \field{type}{Journal Article}
+      \field{volume}{70}
+      \field{year}{2003}
+      \field{pages}{647\bibrangedash 670}
+      \range{pages}{24}
+    \endentry
+    \entry{Peregrin2014}{book}{}
+      \name{author}{1}{}{%
+        {{hash=de87f6be5a38bff33e47a3cbfcee2c49}{%
+           family={Peregrin},
+           family_i={P\bibinitperiod},
+           given={Jaroslav},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London}%
+      }
+      \list{publisher}{1}{%
+        {Palgrave Macmillan}%
+      }
+      \strng{namehash}{de87f6be5a38bff33e47a3cbfcee2c49}
+      \strng{fullhash}{de87f6be5a38bff33e47a3cbfcee2c49}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Inferentialism: Why Rules Matter}
+      \field{year}{2014}
+    \endentry
+    \entry{Rice2015}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f83fcd48dde753830d49459da05aa51e}{%
+           family={Rice},
+           family_i={R\bibinitperiod},
+           given={Collin\bibnamedelima C.},
+           given_i={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f83fcd48dde753830d49459da05aa51e}
+      \strng{fullhash}{f83fcd48dde753830d49459da05aa51e}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1468-0068}
+      \field{journaltitle}{No\^{u}s}
+      \field{number}{3}
+      \field{title}{Moving beyond Causes: Optimality Models and Scientific Explanation}
+      \field{type}{Journal Article}
+      \field{volume}{49}
+      \field{year}{2015}
+      \field{pages}{589\bibrangedash 615}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1111/nous.12042
+      \endverb
+    \endentry
+    \entry{Richardson1995}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ca26ed1579409cddc180f5651ed4fe5d}{%
+           family={Richardson},
+           family_i={R\bibinitperiod},
+           given={Alan},
+           given_i={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca26ed1579409cddc180f5651ed4fe5d}
+      \strng{fullhash}{ca26ed1579409cddc180f5651ed4fe5d}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{1995}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophical studies}
+      \field{number}{2}
+      \field{title}{Explanation: Pragmatics and Asymmetry}
+      \field{type}{Journal Article}
+      \field{volume}{80}
+      \field{year}{1995}
+      \field{pages}{109\bibrangedash 129}
+      \range{pages}{21}
+    \endentry
+    \entry{Ripley2011}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f90687aabc352444fd9407fa22d52b47}{%
+           family={Ripley},
+           family_i={R\bibinitperiod},
+           given={David},
+           given_i={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f90687aabc352444fd9407fa22d52b47}
+      \strng{fullhash}{f90687aabc352444fd9407fa22d52b47}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{2011}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Australasian journal of philosophy}
+      \field{number}{1}
+      \field{title}{Paradoxes and Failures of Cut}
+      \field{volume}{91}
+      \field{year}{2011}
+      \field{pages}{139\bibrangedash 164}
+      \range{pages}{26}
+    \endentry
+    \entry{Risjord2005}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5b578be637e76194931b5c1199070dc1}{%
+           family={Risjord},
+           family_i={R\bibinitperiod},
+           given={Mark},
+           given_i={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b578be637e76194931b5c1199070dc1}
+      \strng{fullhash}{5b578be637e76194931b5c1199070dc1}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{2005}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophy of the Social Sciences}
+      \field{number}{3}
+      \field{title}{Reasons, Causes, and Action Explanation}
+      \field{type}{Journal Article}
+      \field{volume}{35}
+      \field{year}{2005}
+      \field{pages}{294\bibrangedash 306}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1177/0048393105277987
+      \endverb
+      \verb{url}
+      \verb http://pos.sagepub.com/content/35/3/294.abstract
+      \endverb
+    \endentry
+    \entry{Risjord2000}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5b578be637e76194931b5c1199070dc1}{%
+           family={Risjord},
+           family_i={R\bibinitperiod},
+           given={Mark},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Albany}%
+      }
+      \list{publisher}{1}{%
+        {State University of New York Press}%
+      }
+      \strng{namehash}{5b578be637e76194931b5c1199070dc1}
+      \strng{fullhash}{5b578be637e76194931b5c1199070dc1}
+      \field{sortinit}{R}
+      \field{sortinithash}{c7387613477035a752d935acfc3e3ea2}
+      \field{labelyear}{2000}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Woodcutters and Witchcraft: Rationality and Interpretive Change in the Social Sciences}
+      \field{type}{Book}
+      \field{year}{2000}
+      \field{pages}{ix\bibrangessep 201}
+      \range{pages}{2}
+    \endentry
+    \entry{Salmon1977}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=3a900c021405fe87bce83b2cc1b436e2}{%
+           family={Salmon},
+           family_i={S\bibinitperiod},
+           given={Wesley\bibnamedelima C.},
+           given_i={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=d3600d0a706c811467551118558a4ba4}{%
+           family={Butts},
+           family_i={B\bibinitperiod},
+           given={Robert},
+           given_i={R\bibinitperiod}}}%
+        {{hash=257a1bb9e271078512e6dc9debe5d424}{%
+           family={Hintikka},
+           family_i={H\bibinitperiod},
+           given={Jaakko},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Dordrecht-Holland}%
+      }
+      \list{publisher}{1}{%
+        {Dordrecht Reidel}%
+      }
+      \strng{namehash}{3a900c021405fe87bce83b2cc1b436e2}
+      \strng{fullhash}{3a900c021405fe87bce83b2cc1b436e2}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1977}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Basic Problems in Methodology and Linguistics: Part Three of the Proceedings of the Fifth International Congress of Logic, Methodology and Philosophy of Science}
+      \field{series}{The Western Ontario Series in Philosophy of Science}
+      \field{title}{A Third Dogma of Empiricism}
+      \field{year}{1977}
+      \field{pages}{149\bibrangedash 166}
+      \range{pages}{18}
+    \endentry
+    \entry{Salmon1989}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=3a900c021405fe87bce83b2cc1b436e2}{%
+           family={Salmon},
+           family_i={S\bibinitperiod},
+           given={Wesley\bibnamedelima C.},
+           given_i={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=d135fab97047219bb9b9296a2cece7b5}{%
+           family={Kitcher},
+           family_i={K\bibinitperiod},
+           given={Philip},
+           given_i={P\bibinitperiod}}}%
+        {{hash=0d1b1ca8b99c304f58126c93eaf49363}{%
+           family={Salmon},
+           family_i={S\bibinitperiod},
+           given={Wesley},
+           given_i={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Minneapolis}%
+      }
+      \list{publisher}{1}{%
+        {University of Minnesota Press}%
+      }
+      \strng{namehash}{3a900c021405fe87bce83b2cc1b436e2}
+      \strng{fullhash}{3a900c021405fe87bce83b2cc1b436e2}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1989}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Scientific Explanation}
+      \field{title}{Four Decades of Scientific Explanation}
+      \field{type}{Book Section}
+      \field{year}{1989}
+      \field{pages}{3\bibrangedash 219}
+      \range{pages}{217}
+    \endentry
+    \entry{Schurz1999}{article}{}
+      \name{author}{1}{}{%
+        {{hash=92fcb8dc8c92732303ab2905854003cd}{%
+           family={Schurz},
+           family_i={S\bibinitperiod},
+           given={Gerhard},
+           given_i={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{92fcb8dc8c92732303ab2905854003cd}
+      \strng{fullhash}{92fcb8dc8c92732303ab2905854003cd}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1999}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0039-7857}
+      \field{journaltitle}{Synthese}
+      \field{number}{1}
+      \field{title}{Explanation As Unification}
+      \field{type}{Journal Article}
+      \field{volume}{120}
+      \field{year}{1999}
+      \field{pages}{95\bibrangedash 114}
+      \range{pages}{20}
+    \endentry
+    \entry{Schurz1994}{article}{}
+      \name{author}{2}{}{%
+        {{hash=92fcb8dc8c92732303ab2905854003cd}{%
+           family={Schurz},
+           family_i={S\bibinitperiod},
+           given={Gerhard},
+           given_i={G\bibinitperiod}}}%
+        {{hash=c7194fd1277ea63adf4e036132e0a05f}{%
+           family={Lambert},
+           family_i={L\bibinitperiod},
+           given={Karel},
+           given_i={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{3409660b753d60696941902a205b5e24}
+      \strng{fullhash}{3409660b753d60696941902a205b5e24}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1994}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Synthese}
+      \field{number}{1}
+      \field{title}{Outline of a Theory of Scientific Understanding}
+      \field{volume}{101}
+      \field{year}{1994}
+      \field{pages}{65\bibrangedash 120}
+      \range{pages}{56}
+    \endentry
+    \entry{Scriven1959a}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=b336d5f50ea73a0797248b2726d1db0c}{%
+           family={Scriven},
+           family_i={S\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=bc894b9b80839ca1733f38ee0640e322}{%
+           family={Gardiner},
+           family_i={G\bibinitperiod},
+           given={P.},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Glencoe, IL}%
+      }
+      \list{publisher}{1}{%
+        {Free Press}%
+      }
+      \strng{namehash}{b336d5f50ea73a0797248b2726d1db0c}
+      \strng{fullhash}{b336d5f50ea73a0797248b2726d1db0c}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1959}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Theories of History: Readings from Classical and Contemporary Sources}
+      \field{title}{Truisms as the Grounds for Historical Explanations}
+      \field{year}{1959}
+      \field{pages}{443\bibrangedash 475.}
+      \range{pages}{-1}
+    \endentry
+    \entry{Sellars1957}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=b809da50cb4a24eb8a39058c03503c3d}{%
+           family={Sellars},
+           family_i={S\bibinitperiod},
+           given={Wilfrid},
+           given_i={W\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=81cffa6919b23741e162e15648b87155}{%
+           family={Maxwell},
+           family_i={M\bibinitperiod},
+           given={Grover},
+           given_i={G\bibinitperiod}}}%
+      }
+      \name{editora}{1}{}{%
+        {{hash=2985cc8360ea9d324091ad0794573738}{%
+           family={Feigl},
+           family_i={F\bibinitperiod},
+           given={Herbert},
+           given_i={H\bibinitperiod}}}%
+      }
+      \name{editorb}{1}{}{%
+        {{hash=b336d5f50ea73a0797248b2726d1db0c}{%
+           family={Scriven},
+           family_i={S\bibinitperiod},
+           given={Michael},
+           given_i={M\bibinitperiod}}}%
+      }
+      \name{editorc}{1}{}{%
+        {{hash=81cffa6919b23741e162e15648b87155}{%
+           family={Maxwell},
+           family_i={M\bibinitperiod},
+           given={Grover},
+           given_i={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Minneapolis}%
+      }
+      \list{publisher}{1}{%
+        {University of Minnesota Press}%
+      }
+      \strng{namehash}{b809da50cb4a24eb8a39058c03503c3d}
+      \strng{fullhash}{b809da50cb4a24eb8a39058c03503c3d}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1957}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Minnesota Studies in The Philosophy of Science, Vol. II}
+      \field{title}{Counterfactuals, Dispositions, and the Causal Modalities}
+      \field{year}{1957}
+      \field{pages}{225\bibrangedash 308}
+      \range{pages}{84}
+    \endentry
+    \entry{Sellars2007}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b809da50cb4a24eb8a39058c03503c3d}{%
+           family={Sellars},
+           family_i={S\bibinitperiod},
+           given={Wilfrid},
+           given_i={W\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=613cc077c64002e5baa14fc1dc63f4d1}{%
+           family={Scharp},
+           family_i={S\bibinitperiod},
+           given={K.},
+           given_i={K\bibinitperiod}}}%
+        {{hash=eae95e461fadc8d96455a93acb3e8b3a}{%
+           family={Brandom},
+           family_i={B\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{b809da50cb4a24eb8a39058c03503c3d}
+      \strng{fullhash}{b809da50cb4a24eb8a39058c03503c3d}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2007}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{In the Space of Reasons : Selected Essays of Wilfrid Sellars}
+      \field{year}{2007}
+    \endentry
+    \entry{Sellars1953/2007}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=b809da50cb4a24eb8a39058c03503c3d}{%
+           family={Sellars},
+           family_i={S\bibinitperiod},
+           given={Wilfrid},
+           given_i={W\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=613cc077c64002e5baa14fc1dc63f4d1}{%
+           family={Scharp},
+           family_i={S\bibinitperiod},
+           given={K.},
+           given_i={K\bibinitperiod}}}%
+        {{hash=eae95e461fadc8d96455a93acb3e8b3a}{%
+           family={Brandom},
+           family_i={B\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{b809da50cb4a24eb8a39058c03503c3d}
+      \strng{fullhash}{b809da50cb4a24eb8a39058c03503c3d}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1953}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{In the Space of Reasons : selected essays of Wilfrid Sellars}
+      \strng{crossref}{Sellars2007}
+      \field{title}{Inference and Meaning}
+      \field{year}{1953}
+      \field{pages}{3\bibrangedash 27}
+      \range{pages}{25}
+    \endentry
+    \entry{Sellars1954/2007}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=b809da50cb4a24eb8a39058c03503c3d}{%
+           family={Sellars},
+           family_i={S\bibinitperiod},
+           given={Wilfrid},
+           given_i={W\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=613cc077c64002e5baa14fc1dc63f4d1}{%
+           family={Scharp},
+           family_i={S\bibinitperiod},
+           given={K.},
+           given_i={K\bibinitperiod}}}%
+        {{hash=eae95e461fadc8d96455a93acb3e8b3a}{%
+           family={Brandom},
+           family_i={B\bibinitperiod},
+           given={R.},
+           given_i={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{b809da50cb4a24eb8a39058c03503c3d}
+      \strng{fullhash}{b809da50cb4a24eb8a39058c03503c3d}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1954}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{In the Space of Reasons : selected essays of Wilfrid Sellars}
+      \strng{crossref}{Sellars2007}
+      \field{title}{Some Reflections on Language Games}
+      \field{year}{1954}
+      \field{pages}{28\bibrangedash 56}
+      \range{pages}{29}
+    \endentry
+    \entry{Skyrms1980}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8862d88d195a014f1fb9bf58754a3d24}{%
+           family={Skyrms},
+           family_i={S\bibinitperiod},
+           given={Brian},
+           given_i={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New Haven, CT}%
+      }
+      \list{publisher}{1}{%
+        {Yale University Press}%
+      }
+      \strng{namehash}{8862d88d195a014f1fb9bf58754a3d24}
+      \strng{fullhash}{8862d88d195a014f1fb9bf58754a3d24}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{1980}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Causal Necessity: A Pragmatic Investigation of the Necessity of Laws}
+      \field{year}{1980}
+    \endentry
+    \entry{Stovall2015}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=ff01f24219795d0fbdc1805307043135}{%
+           family={Stovall},
+           family_i={S\bibinitperiod},
+           given={Preston},
+           given_i={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {University of Pittsburgh}%
+      }
+      \strng{namehash}{ff01f24219795d0fbdc1805307043135}
+      \strng{fullhash}{ff01f24219795d0fbdc1805307043135}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2015}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Chemicals, Organisms, and Persons: Modal Expressivism and a Descriptive Metaphysics of Kinds}
+      \field{type}{phdthesis}
+      \field{year}{2015}
+    \endentry
+    \entry{Strevens2008}{book}{}
+      \name{author}{1}{}{%
+        {{hash=fab93f82532c77949ea6c09f130fcc57}{%
+           family={Strevens},
+           family_i={S\bibinitperiod},
+           given={M.},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{fab93f82532c77949ea6c09f130fcc57}
+      \strng{fullhash}{fab93f82532c77949ea6c09f130fcc57}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2008}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Depth: An Account of Scientific Explanation}
+      \field{type}{Book}
+      \field{year}{2008}
+    \endentry
+    \entry{Suarez2004}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2d38046d5183ca0a9859dc6a514033de}{%
+           family={Su\'{a}rez},
+           family_i={S\bibinitperiod},
+           given={Mauricio},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press}%
+      }
+      \strng{namehash}{2d38046d5183ca0a9859dc6a514033de}
+      \strng{fullhash}{2d38046d5183ca0a9859dc6a514033de}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2004}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophy of Science}
+      \field{number}{5}
+      \field{title}{An Inferential Conception of Scientific Representation}
+      \field{volume}{71}
+      \field{year}{2004}
+      \field{pages}{767\bibrangedash 779}
+      \range{pages}{13}
+    \endentry
+    \entry{Suarez2003}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2d38046d5183ca0a9859dc6a514033de}{%
+           family={Su\'{a}rez},
+           family_i={S\bibinitperiod},
+           given={Mauricio},
+           given_i={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{2d38046d5183ca0a9859dc6a514033de}
+      \strng{fullhash}{2d38046d5183ca0a9859dc6a514033de}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labelyear}{2003}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Studies in the Philosophy of Science}
+      \field{number}{3}
+      \field{title}{Scientific Representation: Against Similarity and Isomorphism}
+      \field{volume}{17}
+      \field{year}{2003}
+      \field{pages}{225\bibrangedash 244}
+      \range{pages}{20}
+    \endentry
+    \entry{Tennant2014}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d888e2237d42048d285cf82c7791008a}{%
+           family={Tennant},
+           family_i={T\bibinitperiod},
+           given={Neil},
+           given_i={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{d888e2237d42048d285cf82c7791008a}
+      \strng{fullhash}{d888e2237d42048d285cf82c7791008a}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Symbolic Logic}
+      \field{number}{03}
+      \field{title}{Natural Deduction and Sequent Calculus for Intuitionistic Relevant Logic}
+      \field{volume}{52}
+      \field{year}{2014}
+      \field{pages}{665\bibrangedash 680}
+      \range{pages}{16}
+    \endentry
+    \entry{Thomasson2007}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c972c844fc0f7d853c8a3798247e82c5}{%
+           family={Thomasson},
+           family_i={T\bibinitperiod},
+           given={Amie\bibnamedelima L.},
+           given_i={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Arkansas Press}%
+      }
+      \strng{namehash}{c972c844fc0f7d853c8a3798247e82c5}
+      \strng{fullhash}{c972c844fc0f7d853c8a3798247e82c5}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labelyear}{2007}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Philosophical Topics}
+      \field{number}{1/2}
+      \field{title}{Modal Normativism and the Methods of Metaphysics}
+      \field{volume}{35}
+      \field{year}{2007}
+      \field{pages}{135\bibrangedash 160}
+      \range{pages}{26}
+    \endentry
+    \entry{Woodward2003}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c46c1800e8b4085229725e303f5e07cf}{%
+           family={Woodward},
+           family_i={W\bibinitperiod},
+           given={James},
+           given_i={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{c46c1800e8b4085229725e303f5e07cf}
+      \strng{fullhash}{c46c1800e8b4085229725e303f5e07cf}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{2003}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0195155270}
+      \field{title}{Making Things Happen: A Theory of Causal Explanation}
+      \field{type}{Book}
+      \field{year}{2003}
+      \field{pages}{vi\bibrangessep 410}
+      \range{pages}{2}
+    \endentry
+    \entry{Woodward2014}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=c46c1800e8b4085229725e303f5e07cf}{%
+           family={Woodward},
+           family_i={W\bibinitperiod},
+           given={James},
+           given_i={J\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=d9b6284b7816d9e586e8af9a253ba08e}{%
+           family={Zalta},
+           family_i={Z\bibinitperiod},
+           given={Edward\bibnamedelima N.},
+           given_i={E\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \strng{namehash}{c46c1800e8b4085229725e303f5e07cf}
+      \strng{fullhash}{c46c1800e8b4085229725e303f5e07cf}
+      \field{sortinit}{W}
+      \field{sortinithash}{99e3ba1b3f78bb6f073e7fa7ac11636b}
+      \field{labelyear}{2014}
+      \field{datelabelsource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Stanford Encyclopedia of Philosophy}
+      \field{edition}{Winter 2014}
+      \field{howpublished}{\url{http://plato.stanford.edu/archives/win2014/entries/scientific-explanation/}}
+      \field{title}{Scientific Explanation}
+      \field{year}{2014}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
