@@ -47,32 +47,7 @@
   owner     = {jmillson},
   timestamp = {2016.07.19},
 }
-
-<<<<<<< HEAD
-@InCollection{Wanderer2010,
-=======
-@Incollection{Wanderer,
->>>>>>> master
-  author    = {Wanderer, J.},
-  title     = {Brandom's Challenges},
-  booktitle = {Reading Brandom : on making it explicit},
-  year      = {2010},
-<<<<<<< HEAD
-  publisher = {Routledge},
-  pages     = {96-114},
-  crossref  = {Weiss2010},
-=======
-  crossref  = {Weiss2010},
-  pages     = {96--114},
->>>>>>> master
-  owner     = {Owner},
-  timestamp = {2014.01.07},
-}
-
-<<<<<<< HEAD
-@InCollection{Achinstein1988,
-=======
-@Incollection{Achinstein1988,
+{Achinstein1988,
 >>>>>>> master
   author    = {Achinstein, Peter},
   title     = {The Illocutionary Theory of Explanation},
@@ -625,14 +600,13 @@
 }
 
 @Book{Bochman2005,
-  title         = {Explanatory Nonmonotonic Reasoning},
-  publisher     = {World Scientific},
-  year          = {2005},
-  author        = {Bochman, Alexander},
-  month         = jan,
-  __markedentry = {[jaredmillson:]},
-  owner         = {jaredmillson},
-  timestamp     = {2016.07.18},
+  author    = {Bochman, Alexander},
+  title     = {Explanatory Nonmonotonic Reasoning},
+  year      = {2005},
+  publisher = {World Scientific},
+  month     = jan,
+  owner     = {jaredmillson},
+  timestamp = {2016.07.18},
 }
 
 @Article{Bogen2005,
@@ -2077,14 +2051,13 @@
 }
 
 @Book{Gentzen1969,
-  title         = {The Collected Papers of Gerhard Gentzen},
-  publisher     = {North-Holland},
-  year          = {1969},
-  author        = {Gentzen, Gerhard},
-  editor        = {Szabo, M E},
-  __markedentry = {[jaredmillson:]},
-  owner         = {jaredmillson},
-  timestamp     = {2016.07.18},
+  author    = {Gentzen, Gerhard},
+  title     = {The Collected Papers of Gerhard Gentzen},
+  year      = {1969},
+  editor    = {Szabo, M E},
+  publisher = {North-Holland},
+  owner     = {jaredmillson},
+  timestamp = {2016.07.18},
 }
 
 @InCollection{Giaquinto2005,
@@ -3686,16 +3659,15 @@
 }
 
 @Article{Kremer1988,
-  author        = {Kremer, Michael},
-  title         = {Logic and Meaning: The Philosophical Significance of the Sequent Calculus},
-  year          = {1988},
-  volume        = {XCVII},
-  number        = {385},
-  pages         = {50--72},
-  __markedentry = {[jaredmillson:]},
-  journal       = {Mind},
-  owner         = {jaredmillson},
-  timestamp     = {2016.07.18},
+  author    = {Kremer, Michael},
+  title     = {Logic and Meaning: The Philosophical Significance of the Sequent Calculus},
+  journal   = {Mind},
+  year      = {1988},
+  volume    = {XCVII},
+  number    = {385},
+  pages     = {50--72},
+  owner     = {jaredmillson},
+  timestamp = {2016.07.18},
 }
 
 @Book{Kripke1980,
@@ -4746,8 +4718,7 @@
   keywords    = {Language_and_Logic},
   school      = {Emory University},
 }
-
-@InProceedings{Millson2014a,
+{Millson2014a,
   author    = {Millson, Jared},
   title     = {Queries and Assertions in Minimally Discursive Practice},
   booktitle = {Proceedings of the Society for the Study of Artificial Intelligence and the Simulation of Behavior, AISB'50},
@@ -4815,16 +4786,15 @@
 }
 
 @Article{Morgan2000,
-  author        = {Morgan, Charles G},
-  title         = {The Nature of Nonmonotonic Reasoning},
-  year          = {2000},
-  volume        = {10},
-  number        = {3},
-  pages         = {321--360},
-  __markedentry = {[jaredmillson:]},
-  journal       = {Minds and Machines},
-  owner         = {jaredmillson},
-  timestamp     = {2016.07.18},
+  author    = {Morgan, Charles G},
+  title     = {The Nature of Nonmonotonic Reasoning},
+  journal   = {Minds and Machines},
+  year      = {2000},
+  volume    = {10},
+  number    = {3},
+  pages     = {321--360},
+  owner     = {jaredmillson},
+  timestamp = {2016.07.18},
 }
 
 @Book{Morgan2007,
@@ -5520,15 +5490,14 @@
 }
 
 @Article{Reiter1980,
-  author        = {Reiter, R},
-  title         = {A Logic for Default Reasoning},
-  year          = {1980},
-  volume        = {13},
-  pages         = {81--137},
-  __markedentry = {[jaredmillson:]},
-  journal       = {Artificial Intelligence},
-  owner         = {jaredmillson},
-  timestamp     = {2016.07.18},
+  author    = {Reiter, R},
+  title     = {A Logic for Default Reasoning},
+  journal   = {Artificial Intelligence},
+  year      = {1980},
+  volume    = {13},
+  pages     = {81--137},
+  owner     = {jaredmillson},
+  timestamp = {2016.07.18},
 }
 
 @Book{Rescher1970,
@@ -5624,16 +5593,15 @@
 }
 
 @Article{Ripley2011,
-  author        = {Ripley, David},
-  title         = {Paradoxes and Failures of Cut},
-  year          = {2011},
-  volume        = {91},
-  number        = {1},
-  pages         = {139--164},
-  __markedentry = {[jaredmillson:]},
-  journal       = {Australasian journal of philosophy},
-  owner         = {jaredmillson},
-  timestamp     = {2016.07.18},
+  author    = {Ripley, David},
+  title     = {Paradoxes and Failures of Cut},
+  journal   = {Australasian journal of philosophy},
+  year      = {2011},
+  volume    = {91},
+  number    = {1},
+  pages     = {139--164},
+  owner     = {jaredmillson},
+  timestamp = {2016.07.18},
 }
 
 @Article{Risjord2005,
@@ -5653,8 +5621,7 @@
   timestamp  = {2016.06.29},
   type       = {Journal Article},
 }
-
-@Book{Risjord2000,
+{Risjord2000,
   title     = {Woodcutters and Witchcraft: Rationality and Interpretive Change in the Social Sciences},
   publisher = {State University of New York Press},
   year      = {2000},
@@ -5897,8 +5864,7 @@
   timestamp  = {2016.06.29},
   type       = {Journal Article},
 }
-
-@InCollection{Salmon1977,
+{Salmon1977,
   author    = {Salmon, Wesley C.},
   title     = {A Third Dogma of Empiricism},
   booktitle = {Basic Problems in Methodology and Linguistics: Part Three of the Proceedings of the Fifth International Congress of Logic, Methodology and Philosophy of Science},
@@ -6785,14 +6751,13 @@
 }
 
 @Article{Tennant2014,
-  author        = {Tennant, Neil},
-  title         = {Natural Deduction and Sequent Calculus for Intuitionistic Relevant Logic},
-  year          = {2014},
-  volume        = {52},
-  number        = {03},
-  pages         = {665--680},
-  __markedentry = {[jaredmillson:]},
-  journal       = {The Journal of Symbolic Logic},
+  author  = {Tennant, Neil},
+  title   = {Natural Deduction and Sequent Calculus for Intuitionistic Relevant Logic},
+  journal = {The Journal of Symbolic Logic},
+  year    = {2014},
+  volume  = {52},
+  number  = {03},
+  pages   = {665--680},
 }
 
 @Article{Thagard2007,
@@ -7489,71 +7454,7 @@
   type       = {Book},
   url        = {http://www.loc.gov/catdir/toc/ecip084/2007046456.html http://firstsearch.oclc.org/WebZ/DCARead?standardNoType=1&standardNo=9780742542808:srcdbname=worldcat:fromExternal=true&sessionid=0},
 }
-
-<<<<<<< HEAD
-@Book{Aqvist1965,
-  title     = {A New Approach to the Logical Theory of Interrogatives: Analysis},
-  publisher = {University of Uppsala},
-  year      = {1965},
-  author    = {{\AA}qvist, L.},
-  lccn      = {74173180},
-  owner     = {Owner},
-  timestamp = {2013.08.19},
-=======
-@Article{Hamblin1973,
-  author    = {Hamblin, C. L.},
-  title     = {Questions in Montague English},
-  journal   = {Foundations of Language},
-  year      = {1973},
-  volume    = {10},
-  number    = {1},
-  pages     = {41-53},
-  owner     = {Owner},
-  timestamp = {2014.02.16},
->>>>>>> master
-}
-
-@Article{Hamblin1958,
-  author    = {Hamblin, C. L.},
-  title     = {Questions},
-<<<<<<< HEAD
-=======
-  journal   = {Australasian Journal of Philosophy},
->>>>>>> master
-  year      = {1958},
-  volume    = {36},
-  number    = {3},
-  pages     = {159-168},
-<<<<<<< HEAD
-  journal   = {Australasian Journal of Philosophy},
-=======
->>>>>>> master
-  owner     = {Owner},
-  timestamp = {2013.10.11},
-}
-
-<<<<<<< HEAD
-@Article{Hintikka1976,
-  author    = {Hintikka, Jaakko},
-  title     = {The Semantics of Questions and the Questions of Semantics},
-  year      = {1976},
-  volume    = {28},
-  number    = {4},
-  journal   = {Acta Philosophica Fennica},
-  owner     = {Owner},
-  timestamp = {2013.08.19},
-=======
-@Book{Searle1969,
-  title     = {Speech Acts: An Essay in the Philosophy of Language},
-  publisher = {Cambridge University Press},
-  year      = {1969},
-  author    = {Searle, J.},
-  owner     = {Owner},
-  timestamp = {2013.10.11},
->>>>>>> master
-}
-
-@Book{Searle1985,
+{Searle1985,
   title     = {Foundations of Illocutionary Logic},
   publisher = {Cambridge University Press},
   year      = {1985},
@@ -7575,8 +7476,7 @@
   owner     = {Owner},
   timestamp = {2013.10.11},
 }
-
-@Article{Turri2010,
+{Turri2010,
   author    = {John Turri},
   title     = {Prompting Challenges},
   year      = {2010},
@@ -7622,22 +7522,7 @@
   owner     = {Owner},
   timestamp = {2014.02.16},
 }
-
-@Article{Wanderer2010,
-  author        = {Wanderer, J.},
-  title         = {Inhabiting the Space of Reasoning},
-  journal       = {Analysis},
-  year          = {2010},
-  volume        = {70},
-  number        = {2},
-  pages         = {367-378},
-  __markedentry = {[Owner:]},
-  owner         = {Owner},
-  timestamp     = {2013.07.22},
->>>>>>> master
-}
-
-@Book{Weiss2010,
+{Weiss2010,
   title     = {Reading Brandom : on making it explicit},
   publisher = {Routledge},
   year      = {2010},
@@ -7672,13 +7557,7 @@
   owner     = {Owner},
   timestamp = {2013.10.08},
 }
-
-<<<<<<< HEAD
-@Article{Wisniewski1994,
-  author    = {Wi{\'s}niewski, Andrzej},
-  title     = {On the reducibility of questions},
-=======
-@Article{wisniewski1994reducibility,
+{wisniewski1994reducibility,
   author    = {Wi{\'s}niewski, A.},
   title     = {On the reducibility of questions},
   journal   = {Erkenntnis},
@@ -8612,8 +8491,7 @@
   journal   = {Analysis},
   publisher = {Oxford University Press},
 }
-
-@Article{Khalifaforthcomingc,
+{Khalifaforthcomingc,
   author       = {Khalifa, Kareem and Millson, Jared and Risjord, Mark},
   title        = {Inference, Explanation, and Asymmetry},
   journaltitle = {Synthese},
@@ -8680,24 +8558,153 @@
   timestamp = {2014.02.16},
 }
 
-@Book{Kukla2009,
-  title     = {'Yo!' and 'Lo!' : the Pragmatic Topography of the Space of Reasons},
-  publisher = {Harvard University Press},
-  year      = {2009},
+@Book{Kukla2009a,
   author    = {Kukla, R. and Lance, M.},
+  title     = {'Yo!' and 'Lo!' : the Pragmatic Topography of the Space of Reasons},
+  year      = {2009},
+  publisher = {Harvard University Press},
   address   = {Cambridge, Mass.},
   owner     = {Owner},
   timestamp = {2013.09.12},
 }
 
-@Book{Lappin1996,
-  title     = {The handbook of contemporary semantic theory},
-  publisher = {Blackwell Reference},
-  year      = {1996},
-  author    = {Lappin, S.},
-  series    = {[Blackwell handbooks in linguistics]},
-  address   = {Oxford, OX, UK ; Cambridge, Mass., USA},
->>>>>>> master
+@Article{Schurz2008,
+  author  = {Schurz, Gehard},
+  title   = {Patterns of Abduction},
+  journal = {Synthese},
+  year    = {2008},
+  volume  = {164},
+  pages   = {201-234},
+  doi     = {10.1007/s11229-007-9223-4},
+}
+
+@Article{Meheus2006,
+  author  = {Meheus, Joke and Batens, Diderik},
+  title   = {A Formal Logic for Abductive Reasoning},
+  journal = {Logic Journal of the IGPL},
+  year    = {2006},
+  volume  = {14},
+  number  = {2},
+  pages   = {221},
+  doi     = {10.1093/jigpal/jzk015},
+}
+
+@Article{Mayer1996,
+  author  = {Mayer, Marta Cialdea and Pirri, Fiora},
+  title   = {Abduction is not Deduction-in-Reverse},
+  journal = {Logic Journal of the IGPL},
+  year    = {1996},
+  volume  = {4},
+  number  = {1},
+  pages   = {95},
+  doi     = {10.1093/jigpal/4.1.95},
+}
+
+@Article{Delrieux2004,
+  author               = {Delrieux, Claudio},
+  title                = {Abductive inference in defeasible reasoning: a model for research programmes},
+  journal              = {Journal of Applied Logic},
+  year                 = {2004},
+  volume               = {2},
+  number               = {4},
+  month                = dec,
+  pages                = {409--437},
+  doi                  = {10.1016/j.jal.2004.07.003},
+  url                  = {http://dx.doi.org/10.1016/j.jal.2004.07.003},
+  abstract             = {{Abduction is regarded as the inference process that goes from observations to explanations within a more general context or theoretical framework. There are good characterizations of abduction of surprising observations in monotonic theories. Also, in normal logic programs there are a tight relation among SLDNF and the abduction of negative literals. However, a problem that faces abduction is the explanation of anomalous observations, i.e., observations that are contradictory with respect to the current theory. For this reason, in this work we will consider the problem of embedding abduction of surprising and anomalous observations in defeasible (nonmonotonic) theories. We discuss some issues arising the pragmatic acceptance of abductive inferences in defeasible theories, and how to accommodate anomalous observations and characterize all the possible outcomes that a defeasible theory may face when confronted with new evidence. We explore the use of partial structures approach as a semantic foundation for our system. Finally, we discuss an application of our system as a formal device for representing the methodology of scientific research programmes. In this representation, a programme is regarded as a defeasible theory that draws predictions. When confronted with surprising or anomalous observations, the programme protects itself by means of heuristic procedures, which are represented in our system as abductive inference procedures.}},
+  citeulike-article-id = {3569},
+  citeulike-linkout-0  = {http://dx.doi.org/10.1016/j.jal.2004.07.003},
+  citeulike-linkout-1  = {http://www.sciencedirect.com/science/article/B758H-4D4D29P-1/2/559dda757ef4e2c7411e0ed18c9964b8},
+  keywords             = {abduction},
+  posted-at            = {2004-12-14 06:54:14},
+}
+
+@Article{Walliser2005,
+  author    = {Bernard Walliser and Denis Zwirn and Hervé Zwirn},
+  title     = {Abductive Logics in a Belief Revision Framework},
+  journal   = {Journal of Logic, Language, and Information},
+  year      = {2005},
+  volume    = {14},
+  number    = {1},
+  pages     = {87-117},
+  issn      = {09258531, 15729583},
+  url       = {http://www.jstor.org/stable/40180387},
+  abstract  = {Abduction was first introduced in the epistemological context of scientific discovery. It was more recently analyzed in artificial intelligence, especially with respect to diagnosis analysis or ordinary reasoning. These two fields share a common view of abduction as a general process of hypotheses formation. More precisely, abduction is conceived as a kind of reverse explanation where a hypothesis H can be abduced from events E if H is a "good explanation" of E. The paper surveys four known schemes for abduction that can be used in both fields. Its first contribution is a taxonomy of these schemes according to a common semantic framework based on belief revision. Its second contribution is to produce, for each non-trivial scheme, a representation theorem linking its semantic framework to a set of postulates. Its third contribution is to present semantic and axiomatic arguments in favor of one of these schemes, "ordered abduction," which has never been vindicated in the literature.},
+  publisher = {Springer},
+}
+
+@Article{Lobo1997,
+  author   = {Jorge Lobo and Carlos Uzcátegui},
+  title    = {Abductive consequence relations},
+  journal  = {Artificial Intelligence},
+  year     = {1997},
+  volume   = {89},
+  number   = {1},
+  pages    = {149 - 171},
+  issn     = {0004-3702},
+  doi      = {http://dx.doi.org/10.1016/S0004-3702(96)00032-X},
+  url      = {http://www.sciencedirect.com/science/article/pii/S000437029600032X},
+  keywords = {Abduction, Nonmonotonic consequence relations, Nonmonotonic logic, Belief revision},
+}
+
+@Article{Lycke2012,
+  author  = {Lycke, Hans},
+  title   = {A formal explication of the search for explanations: the adaptive logics approach to abductive reasoning},
+  journal = {Logic Journal of the IGPL},
+  year    = {2012},
+  volume  = {20},
+  number  = {2},
+  pages   = {497},
+  doi     = {10.1093/jigpal/jzq053},
+  eprint  = {/oup/backfile/Content_public/Journal/jigpal/20/2/10.1093/jigpal/jzq053/2/jzq053.pdf},
+  url     = { + http://dx.doi.org/10.1093/jigpal/jzq053},
+}
+
+@Book{Aliseda-LLera1997,
+  author        = {Aliseda-LLera, A.},
+  title         = {Seeking explanations: abduction in logic, philosophy of science and artificial intelligence},
+  year          = {1997},
+  series        = {ILLC dissertation Series},
+  publisher     = {Stanford University},
+  __markedentry = {[jmillson:]},
+}
+
+@Book{Flach2013,
+  author        = {Flach, P.A. and Hadjiantonis, A.M.},
+  title         = {Abduction and Induction: Essays on their Relation and Integration},
+  year          = {2013},
+  series        = {Applied Logic Series},
+  publisher     = {Springer Netherlands},
+  isbn          = {9789401706063},
+  url           = {https://books.google.com/books?id=E7fnCAAAQBAJ},
+  __markedentry = {[jmillson:6]},
+}
+
+@Article{Pino-Perez1999,
+  author   = {Ramón Pino-Pérez and Carlos Uzcátegui},
+  title    = {Jumping to explanations versus jumping to conclusions},
+  journal  = {Artificial Intelligence},
+  year     = {1999},
+  volume   = {111},
+  number   = {1},
+  pages    = {131 - 169},
+  issn     = {0004-3702},
+  doi      = {http://dx.doi.org/10.1016/S0004-3702(99)00038-7},
+  url      = {http://www.sciencedirect.com/science/article/pii/S0004370299000387},
+  keywords = {Abduction, Explanatory and nonmonotonic reasoning, Nonmonotonic consequence relations},
+}
+
+@Article{Gabbay2006,
+  author  = {Gabbay, Dov and Woods, John},
+  title   = {Advice on Abductive Logic},
+  journal = {Logic Journal of the IGPL},
+  year    = {2006},
+  volume  = {14},
+  number  = {2},
+  pages   = {189},
+  doi     = {10.1093/jigpal/jzk014},
+  eprint  = {/oup/backfile/Content_public/Journal/jigpal/14/2/10.1093/jigpal/jzk014/2/jzk014.pdf},
+  url     = { + http://dx.doi.org/10.1093/jigpal/jzk014},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
