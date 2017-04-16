@@ -984,7 +984,41 @@ We shall now demonstrate how the system $ \mathsf{LEA}$ and the language $ \math
 
 The expressions `$A \RHD B$' is intended to be read as `$ A $ \textit{best explains why} $ B$.' Note that the syntactic definition for $ \RHD $ is not recursive with respect to $ \mathcal{L}_\RHD $. Consequently, the operator $ \RHD $ is non-iterative.  We impose this syntactic constraint on the grounds that the ``\dots best explains why\ldots" locution does not appear to iterate in natural languages---at least not in English. 
 
-The rules in Figure 3 define the calculus $ \mathsf{LEA^+}$ over $ \mathcal{L}_\RHD $. While the rules of $ \mathsf{LK}^\Theta $ apply to all the formulas in $ \mathcal{L}_\RHD $, the rules for $ \mathsf{LE}^\RHD $ are restricted to the fragment $ \mathcal{L}\cap\mathcal{L}_\RHD $. This restriction is intended to prevent the generation of ill-formed formulas along a derivation, e.g. $ A \RHD (B \RHD C) $. 
+The rules in Figure \ref{LKSRHD} define the calculus $ \mathsf{LEA^+}$ over $ \mathcal{L}_\RHD $. While the rules of $ \mathsf{LK}^\Theta $ apply to all the formulas in $ \mathcal{L}_\RHD $, the rules for $ \mathsf{LE}^\RHD $ are restricted to the fragment $ \mathcal{L}\cap\mathcal{L}_\RHD $. This restriction is intended to prevent the generation of ill-formed formulas along a derivation, e.g. $ A \RHD (B \RHD C) $. 
+
+
+\begin{figure}[!t]
+	\caption{Rules of $ \mathsf{LEA}^+ $.}\label{LKSRHD}
+	
+	
+	\vspace{.3cm}
+	The rules of $ \mathsf{LK}^\Theta $ apply to all the formulas in $ \mathcal{L}_\RHD $.
+	
+	\vspace{2mm}
+	
+	The rules of $ \mathsf{LE}^\RHD $ apply to all those formulas in the fragment $ \mathcal{L}\cap\mathcal{L}_\RHD $.
+	
+	\vspace{.5cm}
+	\textbf{Rules for $\RHD$}
+	\vspace{5mm}
+	
+	$
+	\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD} B, \Delta}
+	\Hypo{\Sigma'\mid\Gamma'\sststile{\Psi\cup\overline{\Gamma'}\cup \Delta}{} B, \Delta}
+	\Infer2[$\RHD\vdash^*$]{ \Sigma',\Sigma, A\mid\Gamma',\Gamma, A \RHD B\sststile{\Theta\cup\Psi\cup\overline{\Gamma'}\cup \Delta}{} A}
+	\end{prooftree}$
+	\hspace{2cm}
+	$\begin{prooftree}
+	\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta}
+	\Infer1[$\vdash\RHD$]{ \Sigma, A\mid\Gamma\sststile{\Theta}{} A \RHD B, \Delta}
+	\end{prooftree}$
+	\vspace{5mm}
+	
+	*\,\, Provided that  $ \Gamma\cap\Gamma'\cap\{A\} = \emptyset. $
+\end{figure}
+
+
 
 As promised, the extension $ \mathsf{LEA^+}$ provides introduction (right) and elimination (left) rules for the \textit{best-explains-why} operator, i.e. $\RHD $. The $ \RHD\vdash $ rule ought to be familiar---it is essentially the $ abduct. $ rule with the abducible formula joined to a member of the succedent of the second premise (i.e. $ B $) by the $ \RHD $-connective and appended to the antecedent of the conclusion. In fact, the $ \RHD\vdash $ rule is derivable from $ abduct. $ and $ \mathsf{LW} $. %It therefore qualifies as a derivable rule in $ \mathsf{LEA^+} $ and thus  does not add any theorems to the system.
 
@@ -1033,36 +1067,6 @@ We are now in a position to make good on our promise to provide an expressivist 
 \end{theorem}
 
 
-\begin{figure}[!t]\label{LKSRHD}
-	\caption{Rules of $ \mathsf{LEA}^+ $.}
-	
-	
-	\vspace{.3cm}
-	The rules of $ \mathsf{LK}^\Theta $ apply to all the formulas in $ \mathcal{L}_\RHD $.
-	
-	\vspace{2mm}
-	
-	The rules of $ \mathsf{LE}^\RHD $ apply to all those formulas in the fragment $ \mathcal{L}\cap\mathcal{L}_\RHD $.
-	
-	\vspace{.5cm}
-	\textbf{Rules for $\RHD$}
-	\vspace{5mm}
-	
-	$
-	\begin{prooftree}
-	\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD} B, \Delta}
-	\Hypo{\Sigma'\mid\Gamma'\sststile{\Psi\cup\overline{\Gamma'}\cup \Delta}{} B, \Delta}
-	\Infer2[$\RHD\vdash^*$]{ \Sigma',\Sigma, A\mid\Gamma',\Gamma, A \RHD B\sststile{\Theta\cup\Psi\cup\overline{\Gamma'}\cup \Delta}{} A}
-	\end{prooftree}$
-	\hspace{2cm}
-	$\begin{prooftree}
-	\Hypo{\Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}B,\Delta}
-	\Infer1[$\vdash\RHD$]{ \Sigma, A\mid\Gamma\sststile{\Theta}{} A \RHD B, \Delta}
-	\end{prooftree}$
-	\vspace{5mm}
-	
-	*\,\, Provided that  $ \Gamma\cap\Gamma'\cap\{A\} = \emptyset. $
-\end{figure}
 
 
 
