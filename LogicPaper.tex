@@ -24,7 +24,7 @@
 \usepackage[doi=false,isbn=false,url=false,style=chicago-authordate,natbib=true]{biblatex}
 
 %\usepackage{fonttable}
-\addbibresource{../References/KMR_Master4.4.17.bib}
+\addbibresource{KMR_Master.bib}
 
 \floatstyle{boxed} 
 \restylefloat{figure}
@@ -205,18 +205,49 @@ In addition to being non-factive, the sense of \textit{best explanation} that we
 
 \section{Properties of Explanatory Arguments}
 
-If, \textit{ex hypothesi}, explanatory expressions \textit{do} serve to make explicit certain inferential commitments, the first question that arises is, what kinds of inferences are being made explicit? Let us call these target phenomena \textit{explanatory arguments}. Our question then becomes: what are the properties of explanatory arguments that distinguish them from other inferences? We can certainly reconstruct a Hempelian answer to this question. For Hempel, (certain) explanatory arguments are just inferences with true premises that include at least one lawlike statement. However, given the notorious difficulties that plagued Hempel's deductive-nomological account, we should resist cleaving too closely to this model. Instead, we propose to work backwards from scientific practice concerning the appropriate use of explanatory expressions and the general inferential relationships they exhibit. In other words, we proceed from the assumption that the properties of explanatory arguments may be read off of the behavior of explanatory practices.
+If, \textit{ex hypothesi}, explanatory expressions \textit{do} serve to make explicit certain inferential commitments, the first question that arises is, what kinds of inferences are being made explicit? Let us call these target phenomena \textit{explanatory arguments}. Our question then becomes: what are the properties of explanatory arguments that distinguish them from other inferences? We can certainly reconstruct a Hempelian answer to this question. For Hempel, (certain) explanatory arguments are just inferences with true premises that include at least one lawlike statement. However, given the notorious difficulties that plagued Hempel's deductive-nomological account, we should resist cleaving too closely to this model. Instead, we propose to work backwards from scientific practice concerning the appropriate use of explanatory expressions and the general inferential relationships they exhibit. In other words, we proceed from the assumption that the properties of explanatory arguments may be read off of the behavior of explanatory practices. In what follows, we use the modified turnstile, $ \sststile{}{\RHD} $ to represent the relation of explanatory argument.
 
 
 Explanatory arguments exhibit six distinctive properties. First, they are \textit{defeasible}---an argument can cease to be explanatory when new information is added to its premises. For instance, while the claim that ``The liquid's acidity explains why the blue litmus paper turned red,''  may constitute a good explanation, strengthening the explanans can easily produce a bad one: ``The liquid's acidity and the presence of chlorine gas explains why the blue litmus paper turned red.'' In this case, the additional information is incompatible with the explanandum. In other cases, however, what is added to an explanans undercuts the explanatory relation itself. For instance, that the match was struck may explain why the match lit, but if it is discovered that match was damp, then the striking no longer, by itself, explains why it lit (perhaps the match was dried before it was struck). In both sorts of cases, we say that explanatory arguments in question are defeated. Since classical deductive inferences are monontonic---i.e. the premises of a valid inference can be arbitrarily expanded and the resulting inference is also valid---capturing the defeasibility of explanatory arguments cannot be done within a strictly deductive system.
 
-Second, explanatory arguments are \textit{minimal} in the sense that all of their premises are needed to infer their conclusion. More precisely, minimality insists that (M1) no proper subset of the premises of an explanatory argument are explanatory (of the same explanandum), (M2) nor any set comprised of conjunctions of members of a proper subset of the premises, (M3) nor any set comprised of disjunctions of two or more members of a subset of the premises . For example, if the set of sentences $ \{A, B, C\} $ is a minimal explanatory argument for $ D $, then none of the following are explanatory arguments for $ D $:  $ \{A, B\} $, $ \{A\wedge B\} $, $ \{B\wedge C\} $, $ \{A \vee B \}$, $ \{A\vee (B \vee C) \} $. In general, minimality prohibits the addition of irrelevant information to explanatory arguments. For example, if the liquid's acidity explains why the litmus paper turns red, then it does not follow that the liquid's acidity \textit{and its potability} explains why the litmus paper turned red, even if the liquid is in fact potable. The minimality of explanatory arguments is thus another reason why they cannot be modeled by deductive, i.e. monotonic inferences. 
+\begin{definition}[Defeasibility]\label{def:defeasibility}
+	$ \Gamma\sststile{}{\RHD}\Delta  $ is \textit{defeasible} if and only if, for some formula $ A $, $ \Gamma, A \, \cancel{\sststile{}{\RHD}}\Delta  $.
+\end{definition}
+
+Second, explanatory arguments are \textit{minimal} in the sense that all of their premises are needed to infer their conclusion. More precisely, minimality holds that no logical consequence of the premises of an explanatory argument is explanatory unless it is logically equivalent to those premises.
+
+\begin{definition}[Minimality]\label{def:minimality}
+	$ \Gamma\sststile{}{\RHD}\Delta  $ is \textit{minimal} if and only if (if $ \Gamma'\sststile{}{\RHD}\Delta $ and $ \Gamma \vdash \Gamma' $, then $ \Gamma' \vdash \Gamma $).
+%	\begin{itemize}
+%		\item[(M1)]  if $\Gamma'\subset\Gamma$, then $\Gamma'\, \cancel{\sststile{}{\RHD}}\Delta  $ 
+%		\item [(M2)] if $ A \in \Gamma,\, B \not\in\Gamma,\,\, \{B\}\cup\Gamma-\{A\} \sststile{}{\RHD}\Delta$ and $ A \vdash B $, then $ B \vdash A $.
+%	\end{itemize}
+\end{definition}
+
+%nor any set comprised of conjunctions of members of a proper subset of the premises, (M3) nor any set comprised of disjunctions of two or more members of a subset of the premises . For example, if the set of sentences $ \{A, B, C\} $ is a minimal explanatory argument for $ D $, then none of the following are explanatory arguments for $ D $:  $ \{A, B\} $, $ \{A\wedge B\} $, $ \{B\wedge C\} $, $ \{A \vee B \}$, $ \{A\vee (B \vee C) \} $.
+
+In general, minimality prohibits the addition of irrelevant information to explanatory arguments. For example, if the liquid's acidity explains why the litmus paper turns red, then it does not follow that the liquid's acidity \textit{and its potability} explains why the litmus paper turned red, even if the liquid is in fact potable. The minimality of explanatory arguments is thus another reason why they cannot be modeled by deductive, i.e. monotonic inferences. 
 
 Third, since contradictions do not explain, explanatory arguments must have consistent premises. Classically valid arguments adhere to the principle of \textit{ex contradictione quodlibet} (\textsf{ECQ})---i.e. $ A, \neg A \vdash B $ for any arbitrary $ B $---meaning that any argument with inconsistent premises is classically valid. Logical systems that renounce \textsf{ECQ} are called either paraconsistent or premise-consistent.  Paraconsistent systems are able to represent reasoning that is \textit{tolerant} of inconsistency and that may, in some cases, even validate contradictions. By contrast, a \textit{premise-consistent} logic aims, in the opposite direction, to represent reasoning that is \textit{intolerant} of inconsistency. Since contradictions never explain, explanatory arguments are premise-consistent, not paraconsistent. Excluding theorems with contradictory premises, however, comes at the cost of logical strength. In our system, for example, disjunctive syllogism is not a theorem, so it can only be retained as a rule. Finally, note that premise consistency describes yet another form of nonmonotonic behavior.
+
+\begin{definition}[Premise-consistency]\label{def:premise-consistency}
+	$ \Gamma\sststile{}{\RHD}\Delta  $ is \textit{premise-consistent} if and only if $ \Gamma \nvdash $.
+\end{definition}
 
 %requires far more robust constraints than those needed to secure paraconsistency. The trick, however, is to do so without losing the intuitively acceptable classical theorems, since it is not, at this point, clear that these should be excluded from the class of explanatory arguments. Unfortunately, even paraconsistent systems sacrifice the validity of either \textit{disjunctive syllogism} or \textit{disjunction introduction}. As we shall see, our system is able to secure premise-consistency while preserving most classically valid inferences by keeping track of whether an inference is (classically) valid, on one hand, and whether it is defeated, on the other. We can then use the mechanism that encodes the defeat-status of an inference to track premise consistency as well. \jm{Some of this should probably go into a footnote.}
 
 Fourth, explanatory arguments are \textit{irreflexive}.\fnmark{nonrefl} For instance, ``the litmus paper turned red because it turned it red" is not an explanation. More generally, no explanatory arguments should be of the form $A \vdash A$. Even partial self-explanations seem unacceptable; $ A \wedge B \vdash A$ and its ilk should also be prohibited from qualifying as explanatory arguments. Like \textsf{ECQ}, reflexivity partly defines the consequence relation of classical logic. However, while many logics abandon \textsf{ECQ}, few logics  abandon the principle of reflexivity, let alone try to preserve the property of irreflexivity.\fnmark{irreflexlog} One particular difficulty arises from the fact that irreflexive logics cannot easily recover Modus Ponens (\textsf{MP}), yet many explanations require Modus Ponens. Our irreflexive system preserves Modus Ponens.
+
+\begin{definition}\label{def:hat}
+	Let $ \hat{\Gamma}  =_{df}  \{A, B: A\wedge B \in \Gamma\} $.  
+\end{definition}
+
+
+\begin{definition}[Irreflexivity]\label{def:irreflexivity}
+	
+	$ \Gamma\sststile{}{\RHD}\Delta  $ is \textit{irreflexive} if and only if $ \hat{\Gamma}\cap\Delta=\emptyset $.
+
+\end{definition}
 
 \fntext{nonrefl}{While a \textit{non-reflexive} system would be one in which the principle of reflexivity fails, perhaps only on occasion, an \textit{irreflexive} system is one in which no interface of reflexivity holds.}
 
@@ -631,6 +662,16 @@ By definition, $\mathcal{D}(\overline{\Gamma})$ contains all of the contradictor
 
 Despite its complex appearance, $\mathbf{S}^{\Delta}$ is nothing more than the set containing the antecedents of all those nontrivial (i.e. premise-consistent and irreflexive) theorems of $\mathsf{LK}^\Theta$ that have $\Delta$ as its conclusion. For ease of reference, the definition indexes background sets and defeater sets by the antecedents of the relevant sequent. This definition is crucial to securing sturdiness.
 
+\begin{definition}[\textsf{LK}-Equivalence Set,  $ \mathbf{T}_{\Gamma} $]\label{def:equiv_set}
+	Let  $ \mathbf{T}_{\Gamma}  $ stand for the following set:
+	
+	$$   \mathbf{T}_{\Gamma}  =_{df} \{\Lambda: \Gamma \sststile{}{\mathsf{LK}} \Lambda \text{\,and\,}  \Lambda \sststile{}{\mathsf{LK}} \Gamma \}$$
+	
+	where $\mathsf{LK}$ above a turnstile indicates that the sequent is a theorem of $\mathsf{LK}$.
+\end{definition}
+
+The members of $ \mathbf{T}_{\Gamma}  $ are just those sets that are provably equivalent to $ \Gamma $ in classical logic, i.e. $ \mathsf{LK} $.
+
 \begin{definition}[Disjunction Deletion, $ \lfloor \mathbf{S} \rfloor $]\label{disjsub}
 	
 	
@@ -657,12 +698,12 @@ The set denoted by $ \lfloor\mathbf{S} \rfloor $ is the result of deleting from 
 	
 	We extend the definition to sets of sets as follows:
 	
-	$$ \mathbf{S}\bbslash\Gamma =_{df} \{\Delta\bbslash\Gamma : \Delta \in \mathbf{S}  \} $$
+	$$ \mathbf{S}\bbslash\,\mathbf{T} =_{df} \{\Delta\bbslash\Gamma : \Delta \in \mathbf{S}  \text{\,and\,} \Gamma\in\mathbf{T} \} $$
 	
 	
 \end{definition}
 
-The set denoted by $ \mathbf{S}\bbslash\Gamma $ consists of those members of $ \mathbf{S} $ that are subsets of $ \Gamma $ and the set-complements relative to $ \Gamma $ of those members that are not subsets of $ \Gamma $. As we shall see, Definitions \ref{disjsub} and \ref{bbslash} are needed to secure minimality.
+The set denoted by $ \mathbf{S}\bbslash\mathbf{T}_{\Gamma} $ consists of those members of $ \mathbf{S} $ that are subsets of $ \Gamma $ (and its classically provable equivalents) and the set-complements relative to $ \Gamma $ (and its classically provable equivalents) of those members that are not subsets of $ \Gamma $ (or its classically provable equivalents). As we shall see, Definitions \ref{disjsub} and \ref{bbslash} are needed to secure minimality.
 
 
 
@@ -700,7 +741,7 @@ We will now consider the rules for $ \mathsf{LE^\RHD}$, presented in Figure \ref
 	$ 
 	\begin{prooftree}
 	
-	\Hypo{ \bigcup\neg(\lfloor\mathbf{S}^\Delta\rfloor \bbslash\Gamma),\,\Sigma \mid\Gamma \sststile{\Theta\cup \overline{\Gamma}  \cup\Delta}{}\Delta}
+	\Hypo{ \bigcup\neg(\lfloor\mathbf{S}^\Delta\rfloor \bbslash\mathbf{T}_{\Gamma}  ),\,\Sigma \mid\Gamma \sststile{\Theta\cup \overline{\Gamma}  \cup\Delta}{}\Delta}
 	\Infer1[$\, sturdy^{\,\ddag}$]{  \Sigma \mid\Gamma\sststile{\Theta\cup\overline{\Gamma}  \cup\Delta}{\RHD}\Delta}
 	\end{prooftree}
 	$
@@ -756,7 +797,7 @@ As mentioned above, \textit{sturdiness} is our proposal for how to understand th
 	\item[Step 3:] If the falsehood of any of these competitors defeats the inference from $A$ to $B$, then the latter is not sturdy; otherwise, it is sturdy.
 \end{description}
 
-Our \textit{sturdy} rule aims to formalize this procedure. The first step is represented by the fact that the succedent of the premise is $ \Delta $ and its background set includes a set obtained from $\mathbf{S}^\Delta $. The second step is captured by the fact that $ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma)$ appears in the background set of the premise. Roughly put, this set contains the negations of all the antecedents of nontrivial inferences whose succedent is $ \Delta $, with the caveat that the members of $ \Gamma $ are removed from any antecedent that is a superset of $ \Gamma $. Finally, the third step is reached when the premise sequent carries down into the conclusion where it appears with the explanatory-argument-denoting turnstile, i.e. $ \sststile{}{\RHD} $. 
+Our \textit{sturdy} rule aims to formalize this procedure. The first step is represented by the fact that the succedent of the premise is $ \Delta $ and its background set includes a set obtained from $\mathbf{S}^\Delta $. The second step is captured by the fact that $ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash \mathbf{T}_{\Gamma} )$ appears in the background set of the premise. Roughly put, this set contains the negations of all the antecedents of nontrivial inferences whose succedent is $ \Delta $, with the caveat that the members of $ \Gamma $ and their equivalents are removed from any antecedent that is a superset of $ \Gamma $. Finally, the third step is reached when the premise sequent carries down into the conclusion where it appears with the explanatory-argument-denoting turnstile, i.e. $ \sststile{}{\RHD} $. 
 
 By restricting premise sequents to those whose defeater sets contain $ \overline{\Gamma} $--- where $ \Gamma $ is the antecedent---the \textit{sturdy} rule ensures that the antecedents of $ \RHD $-sequents are consistent and thereby enables these sequents to represent premise-consistent inferences.
 
@@ -816,43 +857,74 @@ Furthermore, neither premise-consistency, nor irreflexivity prevent instances of
 
 \vspace{2mm}
 
-Less obvious than the achievement of irreflexivity is the fact that \textit{sturdy} also ensures that $ \RHD$-sequents are minimal in the sense articulated above by conditions (M1)--(M3).
+Less obvious than the achievement of irreflexivity is the fact that \textit{sturdy} also ensures that $ \RHD$-sequents are minimal in the sense articulated above by Definition \ref{def:minimality}. To prove this, we begin by demonstrating that no proper subset of the premises of an explanatory argument is itself explanatory of the same explanandum. This ensures that the condition in Definition \ref{def:minimality} is trivially satisfied. 
 
 %More precisely, suppose that the set of sentences $ \Gamma $ constitutes an explanatory argument for $ B $. $ \Gamma $ is said to be \textit{minimal} just in case (i.) no proper subset $ \Gamma' $ of $ \Gamma $ (i.e. $ \Gamma' \subset \Gamma $) is an explanatory argument for $ B $ and (ii.) no set comprised merely of conjunctions of the members of a proper subset (i.e. $ \Gamma'' \subseteq\Gamma'' $ such that for some $ \{A, B\} \subseteq\Gamma'$,\, $ A\wedge B \in \Gamma''$ ) is an explanatory argument for $ B $.
 
-
-
-
-
-\begin{lemma}\label{Minim}
+\begin{lemma}\label{lem:psubset}
 	If the sequent $ \Sigma\mid \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then  $ \Sigma\mid \Gamma \sststile{\Theta}{\RHD} \Delta $ is not.
 	
 	\begin{proof}
-		We proceed by proving the contrapositive. Suppose for conditional proof that $ \Gamma\sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$. It follows from \textit{sturdy} that $ \Gamma\sststile{\Theta}{} \Delta $ is a theorem and from Definition \ref{competitor_set} that $ \Gamma \in \lfloor \mathbf{S}^\Delta \rfloor$. Next suppose for \textit{reductio} that $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is also a theorem. From \textit{sturdy} it follows that $\bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma\cup \{A\})\mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma\cup \{A\} }\cup\Delta}{}\Delta$ is a theorem. Since $ \Gamma \subseteq \Gamma\cup\{A\} $, it follows from Definition \ref{competitor_set} and \ref{bbslash} that $ \neg(\Gamma) \subset \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma\cup \{A\}) $. But from Definition \ref{dclosure} it follows that $ \bigwedge\neg(\Gamma) \in \mathcal{D}(\overline{\Gamma\cup\{A\}}) $, so, according to Definition \ref{compat} $\bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma\cup \{A\})\mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma\cup \{A\} }\cup\Delta}{}\Delta$ is defeated, contradicting our supposition. Thus, if  $ \Gamma\sststile{\Theta}{\RHD} \Delta $ is a theorem, then $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is not. It follows by contraposition and double negation that if the sequent $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then  $ \Gamma \sststile{\Theta}{\RHD} \Delta $ is not.
+		We proceed by proving the contrapositive. Suppose for conditional proof that $ \Gamma\sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$. It follows from \textit{sturdy} that $ \Gamma\sststile{\Theta}{} \Delta $ is a theorem and from Definition \ref{competitor_set} that $ \Gamma \in \lfloor \mathbf{S}^\Delta \rfloor$. Next suppose for \textit{reductio} that $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is also a theorem. From \textit{sturdy} it follows that $\bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\mathbf{T}_{\Gamma\cup \{A\}})\mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma\cup \{A\} }\cup\Delta}{}\Delta$ is a theorem. Since $ \Gamma \subseteq \Gamma\cup\{A\} $, it follows from Definition \ref{competitor_set} and \ref{bbslash} that $ \neg(\Gamma) \subset \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\mathbf{T}_{\Gamma\cup \{A\}}) $. But from Definition \ref{dclosure} it follows that $ \bigwedge\neg(\Gamma) \in \mathcal{D}(\overline{\Gamma\cup\{A\}}) $, so, according to Definition \ref{compat} $\bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\mathbf{T}_{\Gamma\cup \{A\}})\mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma\cup \{A\} }\cup\Delta}{}\Delta$ is defeated, contradicting our supposition. Thus, if  $ \Gamma\sststile{\Theta}{\RHD} \Delta $ is a theorem, then $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is not. It follows by contraposition and double negation that if the sequent $ \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then  $ \Gamma \sststile{\Theta}{\RHD} \Delta $ is not.
 	\end{proof}
 \end{lemma}
 
-\begin{lemma}\label{Minimand}
-	If the sequent $ \Sigma\mid A, B, C \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then  $ \Sigma\mid B\wedge C \sststile{\Theta}{\RHD} \Delta $ is not.
+Next, we show that a disjunctive candidate is never sturdy when it must compete against one of its disjuncts. Again, this ensures that the condition in Definition \ref{def:minimality} is trivially satisfied when $ \Gamma' = \Gamma\cup\{A\vee B\}\backslash\{A\}$.
+
+\begin{lemma}\label{lem:disjmin1}
+	If the sequent $ \Sigma\mid \Gamma, A \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then $ \Sigma\mid \Gamma, A\vee B \sststile{\Theta'}{\RHD} \Delta $ is not.
 	
 	\begin{proof}
-		It suffices to show that  $ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash B\wedge C), \Sigma\mid B\wedge C \sststile{\Theta}{\RHD} \Delta $ is defeated when $\{A, B, C\} \in \lfloor \mathbf{S}^\Delta \rfloor$. First note that $ \bigwedge\neg(\{A,B,C\})= \neg A \wedge \neg B \wedge \neg C $ and that $ \neg B \vee \neg C \in \mathcal{D}(\overline{B\wedge C}) $ and thus, by the $ \mathcal{D}_\vee $-rule,  $ \{\neg B, \neg C\} \subset \mathcal{D}(\overline{B\wedge C}) $. It  follows by the $ \mathcal{D}_\wedge $-rule that $ \neg A \wedge \neg B \wedge \neg C \in \mathcal{D}(\overline{B\wedge C}) $, and thus $ \bigwedge\neg(\{\{A,B,C\}\}) \in \mathcal{D}(\overline{B\wedge C}) $. The rest of the proof mirrors that of Lemma \ref{Minim} and is left as an exercise for the reader.
+		Suppose for \textit{reductio} that $ \Gamma, A\vee B \sststile{\Theta'}{\RHD} \Delta $ is a theorem. The latter must be obtained by an application of \textit{sturdy} preceded by an application of \textsf{BE} to $ \Gamma, A\vee B \sststile{\Theta''}{} \Delta  $ (we omit the background set $ \Sigma $). If $ \pi $ is the branch immediately above $ \Gamma, A\vee B \sststile{\Theta''}{} \Delta  $, then it follows from $ \vee\vdash $ that $ \Gamma', A\sststile{\Theta'''}{} \Delta'  $ and $ \Gamma'', B\sststile{\Theta''''}{} \Delta''  $ must appear in $ \pi $. By hypothesis and \textit{sturdy} we know that $ \Gamma, A \sststile{\Theta}{} \Delta$, and since  $ \Delta =\Delta'\cup\Delta'' $ from $ \vee\vdash $, it must be the case that  $ \Delta'=\Delta $ and $ \Delta''=\emptyset $. Moreover, if $ \Delta''=\emptyset $, then $ \Gamma'', B\sststile{\Theta''''}{}  \emptyset$, and thus there is some formula $ C \in \Gamma'' $ such that $ C\vdash \neg B $. Since $ \Gamma=\Gamma'\cup\Gamma'' $ from $ \vee\vdash $, we  know that $ C \in \Gamma$.   According to our supposition, $ \bigcup\neg(\lfloor\mathbf{S}^\Delta\rfloor\bbslash\mathbf{T}_{\Gamma\cup\{A\vee B\}}), \Sigma\mid\Gamma, A\vee B \sststile{\Theta'}{} \Delta $ is a theorem and $ \Theta' = \Theta''\cup\overline{\Gamma\cup\{A\vee B\}}  \cup\Delta $. We know that $ \{\neg A \wedge \neg B\} \in  \overline{\Gamma\cup\{A\vee B\}} $. Since $ C \in \Gamma $ and $ C \vdash \neg B $ it follows from Definition \ref{dclosure} that $ C \in \mathcal{D}(\overline{\Gamma\cup\{A\vee B\}}) $. Now, by hypothesis, $ \{\neg A\}\in\neg (\lfloor\mathbf{S}^\Delta\rfloor\bbslash\mathbf{T}_{\Gamma\cup\{A\vee B\}}) $. We can  conclude that $ \neg A \wedge \neg C $ is in both $ \mathcal{D}(\Theta') $ as well as the conjunction of the background set and antecedent of $ \bigcup\neg(\lfloor\mathbf{S}^\Delta\rfloor\bbslash\mathbf{T}_{\Gamma\cup\{A\vee B\}}), \Sigma\mid\Gamma, A\vee B \sststile{\Theta'}{} \Delta $, and, therefore, that they are incompatible. Since this sequent is thus defeated, $ \Gamma, A\vee B \sststile{\Theta'}{\RHD} \Delta $ is not a theorem, contradicting our supposition.
 	\end{proof}
 \end{lemma}
 
-\begin{lemma}\label{disjmin1}
-	If the sequents $ \Sigma' \mid A \sststile{\Theta'}{} \Delta $ and $ \Sigma''\mid B \sststile{\Theta''}{} \Delta $ are theorems of $ \mathsf{LEA}$ then $\, \Sigma \mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is not. 
-	
+\begin{lemma}\label{lem:wedgemin}
+	If $ \Sigma\mid\Gamma, A, B\sststile{\Theta}{\RHD}\Delta $ is a theorem of $ \mathsf{LEA}$, then $ \Sigma\mid\Gamma, A\wedge B\sststile{\Theta'}{\RHD}\Delta $  is a theorem.
 	\begin{proof}
-		Suppose for \textit{reductio} that $ \Sigma, \mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is a theorem. It follows by hypothesis and \textit{sturdy} that $ \Sigma, \bigcup\neg(\{\{A, B\}\}\bbslash\{ A\vee B \})\mid A \vee B \sststile{\Theta\cup\overline{A \vee B}\cup\Delta}{} \Delta $ is a theorem. $ \{\{A, B\}\}\bbslash\{ A\vee B \} = \{\{A, B\}\} $ and by Definition \ref{nsetfunct}, $ \bigcup\neg({\{\{A, B\}\}}) = \{\neg A, \neg B \} $. Since $ \bigwedge \{\neg A, \neg B\} = \neg A \wedge \neg B $, we test for compatibility by determining whether $ \neg A \wedge \neg B \in \mathcal{D}(\overline{\{A \vee B \}})$. The latter is indeed obtained by Definitions \ref{dclosure} and \ref{tildefunct}. It follows that $ \Sigma, \neg(\{\{A, B\}\}\bbslash\{ A\vee B \})\mid A \vee B \sststile{\Theta\cup\overline{A \vee B}\cup\Delta}{} \Delta $ is defeated and thus that $ \Sigma\mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is not a theorem.
+		Follows Lemma \ref{compatrel}.2, and \textit{sturdy}.
 	\end{proof}
 \end{lemma}
 
-\begin{remark}
-	The consequent of Lemma \ref{disjmin1} also holds under the hypothesis that $ \Sigma' \mid A, B \sststile{\Theta'}{} \Delta $ is a theorem.
-\end{remark}
+\begin{lemma}\label{lem:negmin}
+	If $ \Sigma\mid\Gamma, A\sststile{\Theta}{\RHD}\Delta $ is a theorem of $ \mathsf{LEA}$, then $ \Sigma\mid\Gamma, \neg\neg A\sststile{\Theta'}{\RHD}\Delta $  is a theorem.
+	\begin{proof}
+		Follows Lemma \ref{compatrel}.4, and \textit{sturdy}.
+	\end{proof}
+\end{lemma}
 
-Lemma \ref{disjmin1} holds that a disjunctive candidate is never sturdy when it must compete against both of its disjuncts. Unfortunately, without a special constraint, disjunctive competitors would also block their disjuncts from obtaining sturdiness. 
+\begin{lemma}\label{lem:minimality}
+		If $ \Sigma\mid\Gamma\sststile{\Theta}{\RHD}\Delta $ and $ \Sigma\mid\Gamma'\sststile{\Theta'}{\RHD}\Delta $ are theorems of $ \mathsf{LEA}$ and $\Gamma \vdash \Gamma' $, then $ \Gamma' \vdash \Gamma $.
+		\begin{proof}
+			There are five cases to consider. In the first case, where $ \Gamma' \subset \Gamma $, Lemma \ref{lem:psubset} shows that the conditional is trivially satisfied. In the second case, where $ \Gamma'=\Gamma\cup\{A\wedge B\} \backslash \{A, B\} $ or $ \Gamma'=\Gamma\cup\{\neg\neg A\} \backslash \{A\} $, the conditional follows from Lemmas \ref{lem:wedgemin} and \ref{lem:negmin}, respectively. In the third case, where  $ \Gamma'=\Gamma\cup\{A\vee B\}\backslash\{A\} $, Lemma \ref{lem:disjmin1} demonstrates that the conditional is trivially satisfied. The fourth case is the inductive case. This follows straightforwardly from the transitivity of classical consequence. \jm{finish proof}
+		\end{proof}
+\end{lemma}
+
+
+
+
+
+%\begin{lemma}\label{Minimand}
+%	If the sequent $ \Sigma\mid A, B, C \sststile{\Theta}{\RHD} \Delta $ is a theorem of $ \mathsf{LEA}$, then  $ \Sigma\mid B\wedge C \sststile{\Theta}{\RHD} \Delta $ is not.
+%	
+%	\begin{proof}
+%		It suffices to show that  $ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash B\wedge C), \Sigma\mid B\wedge C \sststile{\Theta}{\RHD} \Delta $ is defeated when $\{A, B, C\} \in \lfloor \mathbf{S}^\Delta \rfloor$. First note that $ \bigwedge\neg(\{A,B,C\})= \neg A \wedge \neg B \wedge \neg C $ and that $ \neg B \vee \neg C \in \mathcal{D}(\overline{B\wedge C}) $ and thus, by the $ \mathcal{D}_\vee $-rule,  $ \{\neg B, \neg C\} \subset \mathcal{D}(\overline{B\wedge C}) $. It  follows by the $ \mathcal{D}_\wedge $-rule that $ \neg A \wedge \neg B \wedge \neg C \in \mathcal{D}(\overline{B\wedge C}) $, and thus $ \bigwedge\neg(\{\{A,B,C\}\}) \in \mathcal{D}(\overline{B\wedge C}) $. The rest of the proof mirrors that of Lemma \ref{Minim} and is left as an exercise for the reader.
+%	\end{proof}
+%\end{lemma}
+%
+%\begin{lemma}\label{disjmin1}
+%	If the sequents $ \Sigma' \mid A \sststile{\Theta'}{} \Delta $ and $ \Sigma''\mid B \sststile{\Theta''}{} \Delta $ are theorems of $ \mathsf{LEA}$ then $\, \Sigma \mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is not. 
+%	
+%	\begin{proof}
+%		Suppose for \textit{reductio} that $ \Sigma, \mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is a theorem. It follows by hypothesis and \textit{sturdy} that $ \Sigma, \bigcup\neg(\{\{A, B\}\}\bbslash\{ A\vee B \})\mid A \vee B \sststile{\Theta\cup\overline{A \vee B}\cup\Delta}{} \Delta $ is a theorem. $ \{\{A, B\}\}\bbslash\{ A\vee B \} = \{\{A, B\}\} $ and by Definition \ref{nsetfunct}, $ \bigcup\neg({\{\{A, B\}\}}) = \{\neg A, \neg B \} $. Since $ \bigwedge \{\neg A, \neg B\} = \neg A \wedge \neg B $, we test for compatibility by determining whether $ \neg A \wedge \neg B \in \mathcal{D}(\overline{\{A \vee B \}})$. The latter is indeed obtained by Definitions \ref{dclosure} and \ref{tildefunct}. It follows that $ \Sigma, \neg(\{\{A, B\}\}\bbslash\{ A\vee B \})\mid A \vee B \sststile{\Theta\cup\overline{A \vee B}\cup\Delta}{} \Delta $ is defeated and thus that $ \Sigma\mid A \vee B \sststile{\Theta}{\RHD} \Delta $ is not a theorem.
+%	\end{proof}
+%\end{lemma}
+%
+%\begin{remark}
+%	The consequent of Lemma \ref{disjmin1} also holds under the hypothesis that $ \Sigma' \mid A, B \sststile{\Theta'}{} \Delta $ is a theorem.
+%\end{remark}
+
+Lemma \ref{lem:disjmin1} holds that a disjunctive candidate is never sturdy when it must compete against both of its disjuncts. Unfortunately, without a special constraint, disjunctive competitors would also block their disjuncts from obtaining sturdiness. 
 
 \begin{fact}
 	$ \bigcup\neg(\{\{A \vee B\}\} \bbslash \{A\}) \in \mathcal{D}(\neg A) $.
@@ -914,7 +986,7 @@ While there is no $ cut_\RHD$ rule, proofs in $ \mathsf{LEA}$ contain an applica
 		
 		$$
 		\begin{prooftree}
-		\Hypo{ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\Gamma),\,\Sigma \mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma}  \cup\Delta}{}\Delta}
+		\Hypo{ \bigcup\neg(\lfloor \mathbf{S}^\Delta \rfloor\bbslash\mathbf{T}_{\Gamma}),\,\Sigma \mid\Gamma, A \sststile{\Theta\cup \overline{\Gamma}  \cup\Delta}{}\Delta}
 		\Infer1[$\, sturdy$]{ \Sigma \mid\Gamma, A\sststile{\Theta\cup\overline{\Gamma}  \cup\Delta}{\RHD}\Delta}
 		\Hypo{\pi}
 		\Ellipsis{}{\Sigma''\mid\Gamma''\sststile{\Psi\cup\overline{\Gamma''}\cup \Delta}{} \Delta}
@@ -957,7 +1029,7 @@ Finally, we can now see that the theorems of $ \mathsf{LEA}$ constructed with $ 
 	\begin{proof}
 		\begin{itemize}
 			\item[(1)] Defeasibility follows from Definition \ref{defeat}.
-			\item[(2)] Minimality follows from Lemmas \ref{Minim}, \ref{Minimand}, and \ref{disjmin1}.
+			\item[(2)] Minimality follows from Lemma \ref{lem:minimality}.
 			\item[(3)] Premise-consistency follows from Lemma \ref{inconsist} and Corollary \ref{contradict}.
 			\item[(4)] Irreflexivity follows from Lemma \ref{irrefl} and Corollary \ref{part_irreflex}.
 			\item[(5)] Sturdiness follows from the \textit{sturdy} rule.
